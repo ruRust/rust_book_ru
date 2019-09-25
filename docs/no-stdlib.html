@@ -1,0 +1,383 @@
+<!DOCTYPE HTML>
+<html lang="ru" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Без stdlib - Язык программирования Rust</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li><a href="INTRODUCTION.html"><strong aria-hidden="true">1.</strong> Введение</a></li><li><a href="getting-started.html"><strong aria-hidden="true">2.</strong> C чего начать</a></li><li><a href="learn-rust.html"><strong aria-hidden="true">3.</strong> Изучение Rust</a></li><li><ol class="section"><li><a href="guessing-game.html"><strong aria-hidden="true">3.1.</strong> Угадайка</a></li><li><a href="dining-philosophers.html"><strong aria-hidden="true">3.2.</strong> Обедающие философы</a></li><li><a href="rust-inside-other-languages.html"><strong aria-hidden="true">3.3.</strong> Вызов кода на Rust из других языков</a></li></ol></li><li><a href="syntax-and-semantics.html"><strong aria-hidden="true">4.</strong> Синтаксис и семантика</a></li><li><ol class="section"><li><a href="variable-bindings.html"><strong aria-hidden="true">4.1.</strong> Связывание имён</a></li><li><a href="functions.html"><strong aria-hidden="true">4.2.</strong> Функции</a></li><li><a href="primitive-types.html"><strong aria-hidden="true">4.3.</strong> Простые типы</a></li><li><a href="comments.html"><strong aria-hidden="true">4.4.</strong> Комментарии</a></li><li><a href="if.html"><strong aria-hidden="true">4.5.</strong> Конструкция if</a></li><li><a href="loops.html"><strong aria-hidden="true">4.6.</strong> Циклы</a></li><li><a href="ownership.html"><strong aria-hidden="true">4.7.</strong> Владение</a></li><li><a href="references-and-borrowing.html"><strong aria-hidden="true">4.8.</strong> Ссылки и заимствование</a></li><li><a href="lifetimes.html"><strong aria-hidden="true">4.9.</strong> Время жизни</a></li><li><a href="mutability.html"><strong aria-hidden="true">4.10.</strong> Изменяемость</a></li><li><a href="structs.html"><strong aria-hidden="true">4.11.</strong> Структуры</a></li><li><a href="enums.html"><strong aria-hidden="true">4.12.</strong> Перечисления</a></li><li><a href="match.html"><strong aria-hidden="true">4.13.</strong> Конструкция match</a></li><li><a href="patterns.html"><strong aria-hidden="true">4.14.</strong> Шаблоны сопоставления match</a></li><li><a href="method-syntax.html"><strong aria-hidden="true">4.15.</strong> Синтаксис методов</a></li><li><a href="vectors.html"><strong aria-hidden="true">4.16.</strong> Вектора</a></li><li><a href="strings.html"><strong aria-hidden="true">4.17.</strong> Строки</a></li><li><a href="generics.html"><strong aria-hidden="true">4.18.</strong> Обобщённое программирование</a></li><li><a href="traits.html"><strong aria-hidden="true">4.19.</strong> Типажи</a></li><li><a href="drop.html"><strong aria-hidden="true">4.20.</strong> Типаж Drop</a></li><li><a href="if-let.html"><strong aria-hidden="true">4.21.</strong> Конструкция if let</a></li><li><a href="trait-objects.html"><strong aria-hidden="true">4.22.</strong> Типажи-объекты</a></li><li><a href="closures.html"><strong aria-hidden="true">4.23.</strong> Замыкания</a></li><li><a href="ufcs.html"><strong aria-hidden="true">4.24.</strong> Универсальный синтаксис вызова функций</a></li><li><a href="crates-and-modules.html"><strong aria-hidden="true">4.25.</strong> Контейнеры и модули</a></li><li><a href="const-and-static.html"><strong aria-hidden="true">4.26.</strong> const и static</a></li><li><a href="attributes.html"><strong aria-hidden="true">4.27.</strong> Атрибуты</a></li><li><a href="type-aliases.html"><strong aria-hidden="true">4.28.</strong> Псевдонимы типов</a></li><li><a href="casting-between-types.html"><strong aria-hidden="true">4.29.</strong> Приведение типов</a></li><li><a href="associated-types.html"><strong aria-hidden="true">4.30.</strong> Ассоциированные типы</a></li><li><a href="unsized-types.html"><strong aria-hidden="true">4.31.</strong> Безразмерные типы</a></li><li><a href="operators-and-overloading.html"><strong aria-hidden="true">4.32.</strong> Перегрузка операций</a></li><li><a href="deref-coercions.html"><strong aria-hidden="true">4.33.</strong> Преобразования при разыменовании</a></li><li><a href="macros.html"><strong aria-hidden="true">4.34.</strong> Макросы</a></li><li><a href="raw-pointers.html"><strong aria-hidden="true">4.35.</strong> Сырые указатели</a></li><li><a href="unsafe.html"><strong aria-hidden="true">4.36.</strong> Небезопасный код</a></li></ol></li><li><a href="effective-rust.html"><strong aria-hidden="true">5.</strong> Эффективное использование Rust</a></li><li><ol class="section"><li><a href="the-stack-and-the-heap.html"><strong aria-hidden="true">5.1.</strong> Стек и куча</a></li><li><a href="testing.html"><strong aria-hidden="true">5.2.</strong> Тестирование</a></li><li><a href="conditional-compilation.html"><strong aria-hidden="true">5.3.</strong> Условная компиляция</a></li><li><a href="documentation.html"><strong aria-hidden="true">5.4.</strong> Документация</a></li><li><a href="iterators.html"><strong aria-hidden="true">5.5.</strong> Итераторы</a></li><li><a href="concurrency.html"><strong aria-hidden="true">5.6.</strong> Многозадачность</a></li><li><a href="error-handling.html"><strong aria-hidden="true">5.7.</strong> Обработка ошибок</a></li><li><a href="choosing-your-guarantees.html"><strong aria-hidden="true">5.8.</strong> Выбор гарантий</a></li><li><a href="ffi.html"><strong aria-hidden="true">5.9.</strong> Интерфейс внешних функций</a></li><li><a href="borrow-and-asref.html"><strong aria-hidden="true">5.10.</strong> Типажи Borrow и AsRef</a></li><li><a href="release-channels.html"><strong aria-hidden="true">5.11.</strong> Каналы сборок</a></li><li><a href="using-rust-without-the-standard-library.html"><strong aria-hidden="true">5.12.</strong> Using Rust without the standard library</a></li></ol></li><li><a href="nightly-rust.html"><strong aria-hidden="true">6.</strong> Нестабильные возможности Rust</a></li><li><ol class="section"><li><a href="compiler-plugins.html"><strong aria-hidden="true">6.1.</strong> Плагины к компилятору</a></li><li><a href="inline-assembly.html"><strong aria-hidden="true">6.2.</strong> Встроенный ассемблерный код</a></li><li><a href="no-stdlib.html" class="active"><strong aria-hidden="true">6.3.</strong> Без stdlib</a></li><li><a href="intrinsics.html"><strong aria-hidden="true">6.4.</strong> Внутренние средства</a></li><li><a href="lang-items.html"><strong aria-hidden="true">6.5.</strong> Элементы языка</a></li><li><a href="advanced-linking.html"><strong aria-hidden="true">6.6.</strong> Продвинутое руководство по компоновке</a></li><li><a href="benchmark-tests.html"><strong aria-hidden="true">6.7.</strong> Тесты производительности</a></li><li><a href="box-syntax-and-patterns.html"><strong aria-hidden="true">6.8.</strong> Синтаксис упаковки и шаблоны match</a></li><li><a href="slice-patterns.html"><strong aria-hidden="true">6.9.</strong> Шаблоны match для срезов</a></li><li><a href="associated-constants.html"><strong aria-hidden="true">6.10.</strong> Ассоциированные константы</a></li><li><a href="custom-allocators.html"><strong aria-hidden="true">6.11.</strong> Пользовательские менеджеры памяти</a></li></ol></li><li><a href="glossary.html"><strong aria-hidden="true">7.</strong> Глоссарий</a></li><li><a href="syntax-index.html"><strong aria-hidden="true">8.</strong> Syntax Index</a></li><li><a href="bibliography.html"><strong aria-hidden="true">9.</strong> Библиография</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Язык программирования Rust</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>% Без stdlib</p>
+<p>По умолчанию, <code>std</code> компонуется с каждым контейнером Rust. В некоторых случаях это
+нежелательно, и этого можно избежать с помощью атрибута <code>#![no_std]</code>,
+примененного (привязанного) к контейнеру.</p>
+<pre><code class="language-ignore">// a minimal library
+#![crate_type=&quot;lib&quot;]
+#![feature(no_std)]
+#![no_std]
+# // fn main() {} tricked you, rustdoc!
+</code></pre>
+<p>Очевидно, должно быть нечто большее, чем просто библиотеки: <code>#[no_std]</code> можно
+использовать с исполняемыми контейнерами, а управлять точкой входа можно двумя
+способами: с помощью атрибута <code>#[start]</code>, или с помощью переопределения
+прокладки (shim) для C функции <code>main</code> по умолчанию на вашу собственную.</p>
+<p>В функцию, помеченную атрибутом <code>#[start]</code>, передаются параметры командной
+строки в том же формате, что и в C:</p>
+<pre><pre class="playpen"><code class="language-rust">#![feature(lang_items, start, no_std, libc)]
+#![no_std]
+
+// Pull in the system libc library for what crt0.o likely requires
+extern crate libc;
+
+// Entry point for this program
+#[start]
+fn start(_argc: isize, _argv: *const *const u8) -&gt; isize {
+    0
+}
+
+// These functions and traits are used by the compiler, but not
+// for a bare-bones hello world. These are normally
+// provided by libstd.
+#[lang = &quot;stack_exhausted&quot;] extern fn stack_exhausted() {}
+#[lang = &quot;eh_personality&quot;] extern fn eh_personality() {}
+#[lang = &quot;panic_fmt&quot;] fn panic_fmt() -&gt; ! { loop {} }
+# // fn main() {} tricked you, rustdoc!
+</code></pre></pre>
+<p>Чтобы переопределить вставленную компилятором прокладку <code>main</code>, нужно сначала
+отключить ее с помощью <code>#![no_main]</code>, а затем создать соответствующий символ с
+правильным ABI и правильным именем, что также потребует переопределение
+искажения (коверкания) имен компилятором (<code>#[no_mangle]</code>):</p>
+<pre><code class="language-ignore">#![feature(no_std)]
+#![no_std]
+#![no_main]
+#![feature(lang_items, start)]
+
+extern crate libc;
+
+#[no_mangle] // для уверенности в том, что этот символ будет называться `main` на выходе
+pub extern fn main(argc: i32, argv: *const *const u8) -&gt; i32 {
+    0
+}
+
+#[lang = &quot;stack_exhausted&quot;] extern fn stack_exhausted() {}
+#[lang = &quot;eh_personality&quot;] extern fn eh_personality() {}
+#[lang = &quot;panic_fmt&quot;] fn panic_fmt() -&gt; ! { loop {} }
+# // fn main() {} tricked you, rustdoc!
+</code></pre>
+<p>В настоящее время компилятор делает определенные предположения о символах,
+которые доступны для вызова в исполняемом контейнере. Как правило, эти функции
+предоставляются стандартной библиотекой, но если она не используется, то вы
+должны определить их самостоятельно.</p>
+<p>Первая из этих трех функций, <code>stack_exhausted</code>, вызывается тогда, когда
+обнаруживается (происходит) переполнение стека. Эта функция имеет ряд
+ограничений, касающихся того, как она может быть вызвана и того, что она должна
+делать, но если регистр предела стека не поддерживается, то поток всегда имеет
+«бесконечный стек» и эта функция не должна быть вызвана (получить управление,
+срабатывать).</p>
+<p>Вторая из этих трех функций, <code>eh_personality</code>, используется в механизме
+обработки ошибок компилятора. Она часто отображается на функцию personality
+(специализации) GCC (для получения дополнительной информации смотри <a href="http://doc.rust-lang.org/std/rt/unwind/index.html">реализацию
+libstd</a>), но можно с
+уверенностью сказать, что для контейнеров, которые не вызывают панику, эта
+функция никогда не будет вызвана. Последняя функция, <code>panic_fmt</code>, также
+используются в механизме обработки ошибок компилятора.</p>
+<h2><a class="header" href="#Использование-основной-библиотеки-libcore" id="Использование-основной-библиотеки-libcore">Использование основной библиотеки (libcore)</a></h2>
+<blockquote>
+<p><strong>Примечание</strong>: структура основной библиотеки (core) является нестабильной, и
+поэтому рекомендуется использовать стандартную библиотеку (std) там, где это
+возможно.</p>
+</blockquote>
+<p>С учетом указанных выше методов, у нас есть чисто-металлический исполняемый код
+работает Rust. Стандартная библиотека предоставляет немало функциональных
+возможностей, однако, для Rust также важна производительность. Если стандартная
+библиотека не соответствует этим требованиям, то вместо нее может быть
+использована <a href="http://doc.rust-lang.org/core/index.html">libcore</a>.</p>
+<p>Основная библиотека имеет очень мало зависимостей и гораздо более компактна, чем
+стандартная библиотека. Кроме того, основная библиотека имеет большую часть
+необходимой функциональности для написания идиоматического и эффективного кода
+на Rust.</p>
+<p>В качестве примера приведем программу, которая вычисляет скалярное произведение
+двух векторов, предоставленных из кода C, и использует идиоматические практики
+Rust.</p>
+<pre><code class="language-ignore">#![feature(lang_items, start, no_std, core, libc)]
+#![no_std]
+
+# extern crate libc;
+extern crate core;
+
+use core::prelude::*;
+
+use core::mem;
+
+#[no_mangle]
+pub extern fn dot_product(a: *const u32, a_len: u32,
+                          b: *const u32, b_len: u32) -&gt; u32 {
+    use core::raw::Slice;
+
+    // Convert the provided arrays into Rust slices.
+    // The core::raw module guarantees that the Slice
+    // structure has the same memory layout as a &amp;[T]
+    // slice.
+    //
+    // This is an unsafe operation because the compiler
+    // cannot tell the pointers are valid.
+    let (a_slice, b_slice): (&amp;[u32], &amp;[u32]) = unsafe {
+        mem::transmute((
+            Slice { data: a, len: a_len as usize },
+            Slice { data: b, len: b_len as usize },
+        ))
+    };
+
+    // Iterate over the slices, collecting the result
+    let mut ret = 0;
+    for (i, j) in a_slice.iter().zip(b_slice.iter()) {
+        ret += (*i) * (*j);
+    }
+    return ret;
+}
+
+#[lang = &quot;panic_fmt&quot;]
+extern fn panic_fmt(args: &amp;core::fmt::Arguments,
+                    file: &amp;str,
+                    line: u32) -&gt; ! {
+    loop {}
+}
+
+#[lang = &quot;stack_exhausted&quot;] extern fn stack_exhausted() {}
+#[lang = &quot;eh_personality&quot;] extern fn eh_personality() {}
+# #[start] fn start(argc: isize, argv: *const *const u8) -&gt; isize { 0 }
+# fn main() {}
+</code></pre>
+<p>Обратите внимание, что здесь, в отличае от примеров, рассмотренных выше, есть
+один дополнительный lang элемент <code>panic_fmt</code>. Он должен быть определён
+потребителями libcore, потому что основная библиотека объявляет панику, но не
+определяет её. lang элемент <code>panic_fmt</code> определяет панику для этого
+контейнера, и необходимо гарантировать, что он никогда не возвращает значение.</p>
+<p>Как видно в этом примере, основная библиотека предназначена для предоставления
+всей мощи Rust при любых обстоятельствах, независимо от требований платформы.
+Дополнительные библиотеки, такие как liballoc, добавляют функциональность для
+libcore, для работы которой нужно сделать некоторые платформо-зависимые
+предположения; но эти библиотеки всё равно более переносимы, чем стандартная
+библиотека в целом.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="inline-assembly.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="intrinsics.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="inline-assembly.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="intrinsics.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+        <!-- Google Analytics Tag -->
+        <script type="text/javascript">
+            var localAddrs = ["localhost", "127.0.0.1", ""];
+
+            // make sure we don't activate google analytics if the developer is
+            // inspecting the book locally...
+            if (localAddrs.indexOf(document.location.hostname) === -1) {
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-142155799-10', 'auto');
+                ga('send', 'pageview');
+            }
+        </script>
+        
+
+        
+        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

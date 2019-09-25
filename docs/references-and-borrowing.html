@@ -1,0 +1,554 @@
+<!DOCTYPE HTML>
+<html lang="ru" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Ссылки и заимствование - Язык программирования Rust</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li><a href="INTRODUCTION.html"><strong aria-hidden="true">1.</strong> Введение</a></li><li><a href="getting-started.html"><strong aria-hidden="true">2.</strong> C чего начать</a></li><li><a href="learn-rust.html"><strong aria-hidden="true">3.</strong> Изучение Rust</a></li><li><ol class="section"><li><a href="guessing-game.html"><strong aria-hidden="true">3.1.</strong> Угадайка</a></li><li><a href="dining-philosophers.html"><strong aria-hidden="true">3.2.</strong> Обедающие философы</a></li><li><a href="rust-inside-other-languages.html"><strong aria-hidden="true">3.3.</strong> Вызов кода на Rust из других языков</a></li></ol></li><li><a href="syntax-and-semantics.html"><strong aria-hidden="true">4.</strong> Синтаксис и семантика</a></li><li><ol class="section"><li><a href="variable-bindings.html"><strong aria-hidden="true">4.1.</strong> Связывание имён</a></li><li><a href="functions.html"><strong aria-hidden="true">4.2.</strong> Функции</a></li><li><a href="primitive-types.html"><strong aria-hidden="true">4.3.</strong> Простые типы</a></li><li><a href="comments.html"><strong aria-hidden="true">4.4.</strong> Комментарии</a></li><li><a href="if.html"><strong aria-hidden="true">4.5.</strong> Конструкция if</a></li><li><a href="loops.html"><strong aria-hidden="true">4.6.</strong> Циклы</a></li><li><a href="ownership.html"><strong aria-hidden="true">4.7.</strong> Владение</a></li><li><a href="references-and-borrowing.html" class="active"><strong aria-hidden="true">4.8.</strong> Ссылки и заимствование</a></li><li><a href="lifetimes.html"><strong aria-hidden="true">4.9.</strong> Время жизни</a></li><li><a href="mutability.html"><strong aria-hidden="true">4.10.</strong> Изменяемость</a></li><li><a href="structs.html"><strong aria-hidden="true">4.11.</strong> Структуры</a></li><li><a href="enums.html"><strong aria-hidden="true">4.12.</strong> Перечисления</a></li><li><a href="match.html"><strong aria-hidden="true">4.13.</strong> Конструкция match</a></li><li><a href="patterns.html"><strong aria-hidden="true">4.14.</strong> Шаблоны сопоставления match</a></li><li><a href="method-syntax.html"><strong aria-hidden="true">4.15.</strong> Синтаксис методов</a></li><li><a href="vectors.html"><strong aria-hidden="true">4.16.</strong> Вектора</a></li><li><a href="strings.html"><strong aria-hidden="true">4.17.</strong> Строки</a></li><li><a href="generics.html"><strong aria-hidden="true">4.18.</strong> Обобщённое программирование</a></li><li><a href="traits.html"><strong aria-hidden="true">4.19.</strong> Типажи</a></li><li><a href="drop.html"><strong aria-hidden="true">4.20.</strong> Типаж Drop</a></li><li><a href="if-let.html"><strong aria-hidden="true">4.21.</strong> Конструкция if let</a></li><li><a href="trait-objects.html"><strong aria-hidden="true">4.22.</strong> Типажи-объекты</a></li><li><a href="closures.html"><strong aria-hidden="true">4.23.</strong> Замыкания</a></li><li><a href="ufcs.html"><strong aria-hidden="true">4.24.</strong> Универсальный синтаксис вызова функций</a></li><li><a href="crates-and-modules.html"><strong aria-hidden="true">4.25.</strong> Контейнеры и модули</a></li><li><a href="const-and-static.html"><strong aria-hidden="true">4.26.</strong> const и static</a></li><li><a href="attributes.html"><strong aria-hidden="true">4.27.</strong> Атрибуты</a></li><li><a href="type-aliases.html"><strong aria-hidden="true">4.28.</strong> Псевдонимы типов</a></li><li><a href="casting-between-types.html"><strong aria-hidden="true">4.29.</strong> Приведение типов</a></li><li><a href="associated-types.html"><strong aria-hidden="true">4.30.</strong> Ассоциированные типы</a></li><li><a href="unsized-types.html"><strong aria-hidden="true">4.31.</strong> Безразмерные типы</a></li><li><a href="operators-and-overloading.html"><strong aria-hidden="true">4.32.</strong> Перегрузка операций</a></li><li><a href="deref-coercions.html"><strong aria-hidden="true">4.33.</strong> Преобразования при разыменовании</a></li><li><a href="macros.html"><strong aria-hidden="true">4.34.</strong> Макросы</a></li><li><a href="raw-pointers.html"><strong aria-hidden="true">4.35.</strong> Сырые указатели</a></li><li><a href="unsafe.html"><strong aria-hidden="true">4.36.</strong> Небезопасный код</a></li></ol></li><li><a href="effective-rust.html"><strong aria-hidden="true">5.</strong> Эффективное использование Rust</a></li><li><ol class="section"><li><a href="the-stack-and-the-heap.html"><strong aria-hidden="true">5.1.</strong> Стек и куча</a></li><li><a href="testing.html"><strong aria-hidden="true">5.2.</strong> Тестирование</a></li><li><a href="conditional-compilation.html"><strong aria-hidden="true">5.3.</strong> Условная компиляция</a></li><li><a href="documentation.html"><strong aria-hidden="true">5.4.</strong> Документация</a></li><li><a href="iterators.html"><strong aria-hidden="true">5.5.</strong> Итераторы</a></li><li><a href="concurrency.html"><strong aria-hidden="true">5.6.</strong> Многозадачность</a></li><li><a href="error-handling.html"><strong aria-hidden="true">5.7.</strong> Обработка ошибок</a></li><li><a href="choosing-your-guarantees.html"><strong aria-hidden="true">5.8.</strong> Выбор гарантий</a></li><li><a href="ffi.html"><strong aria-hidden="true">5.9.</strong> Интерфейс внешних функций</a></li><li><a href="borrow-and-asref.html"><strong aria-hidden="true">5.10.</strong> Типажи Borrow и AsRef</a></li><li><a href="release-channels.html"><strong aria-hidden="true">5.11.</strong> Каналы сборок</a></li><li><a href="using-rust-without-the-standard-library.html"><strong aria-hidden="true">5.12.</strong> Using Rust without the standard library</a></li></ol></li><li><a href="nightly-rust.html"><strong aria-hidden="true">6.</strong> Нестабильные возможности Rust</a></li><li><ol class="section"><li><a href="compiler-plugins.html"><strong aria-hidden="true">6.1.</strong> Плагины к компилятору</a></li><li><a href="inline-assembly.html"><strong aria-hidden="true">6.2.</strong> Встроенный ассемблерный код</a></li><li><a href="no-stdlib.html"><strong aria-hidden="true">6.3.</strong> Без stdlib</a></li><li><a href="intrinsics.html"><strong aria-hidden="true">6.4.</strong> Внутренние средства</a></li><li><a href="lang-items.html"><strong aria-hidden="true">6.5.</strong> Элементы языка</a></li><li><a href="advanced-linking.html"><strong aria-hidden="true">6.6.</strong> Продвинутое руководство по компоновке</a></li><li><a href="benchmark-tests.html"><strong aria-hidden="true">6.7.</strong> Тесты производительности</a></li><li><a href="box-syntax-and-patterns.html"><strong aria-hidden="true">6.8.</strong> Синтаксис упаковки и шаблоны match</a></li><li><a href="slice-patterns.html"><strong aria-hidden="true">6.9.</strong> Шаблоны match для срезов</a></li><li><a href="associated-constants.html"><strong aria-hidden="true">6.10.</strong> Ассоциированные константы</a></li><li><a href="custom-allocators.html"><strong aria-hidden="true">6.11.</strong> Пользовательские менеджеры памяти</a></li></ol></li><li><a href="glossary.html"><strong aria-hidden="true">7.</strong> Глоссарий</a></li><li><a href="syntax-index.html"><strong aria-hidden="true">8.</strong> Syntax Index</a></li><li><a href="bibliography.html"><strong aria-hidden="true">9.</strong> Библиография</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Язык программирования Rust</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>% Ссылки и заимствование</p>
+<p>Эта глава является одной из трёх, описывающих систему владения ресурсами Rust.
+Эта система представляет собой наиболее уникальную и привлекательную особенность
+Rust, о которой разработчики должны иметь полное представление. Владение — это
+то, как Rust достигает своей главной цели — безопасности памяти. Система
+владения включает в себя несколько различных концепций, каждая из которых
+рассматривается в своей собственной главе:</p>
+<ul>
+<li><a href="ownership.html">владение</a>, ключевая концепция</li>
+<li>заимствование, её вы читаете сейчас</li>
+<li><a href="lifetimes.html">время жизни</a>, расширение понятия заимствования</li>
+</ul>
+<p>Эти три главы взаимосвязаны, и их порядок важен. Вы должны будете освоить все
+три главы, чтобы полностью понять систему владения.</p>
+<h1><a class="header" href="#Мета" id="Мета">Мета</a></h1>
+<p>Прежде чем перейти к подробностям, отметим два важных момента в системе
+владения.</p>
+<p>Rust сфокусирован на безопасности и скорости. Это достигается за счёт
+«абстракций с нулевой стоимостью» (zero-cost abstractions). Это значит, что в
+Rust стоимость абстракций должна быть настолько малой, насколько это возможно
+без ущерба для работоспособности. Система владения ресурсами — это яркий пример
+абстракции с нулевой стоимостью. Весь анализ, о котором мы будем говорить в этом
+руководстве, выполняется <em>во время компиляции</em>. Во время исполнения вы не
+платите за какую-либо из возможностей ничего.</p>
+<p>Тем не менее, эта система всё же имеет определённую стоимость: кривая обучения.
+Многие новые пользователи Rust «борются с проверкой заимствования» — компилятор
+Rust отказывается компилировать программу, которая по мнению автора является
+абсолютно правильной. Это часто происходит потому, что мысленное представление
+программиста о том, как должно работать владение, не совпадает с реальными
+правилами, которыми оперирует Rust. Вы, наверное, поначалу также будете
+испытывать подобные трудности. Однако существует и хорошая новость: более
+опытные разработчики на Rust говорят, что чем больше они работают с правилами
+системы владения, тем меньше они борются с компилятором.</p>
+<p>Имея это в виду, давайте перейдём к изучению системы владения.</p>
+<p><a name="borrowing"></a></p>
+<h1><a class="header" href="#Заимствование" id="Заимствование">Заимствование</a></h1>
+<p>В конце главы <a href="ownership.html">Владение</a> у нас была убогая функция, которая выглядела
+так:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+fn foo(v1: Vec&lt;i32&gt;, v2: Vec&lt;i32&gt;) -&gt; (Vec&lt;i32&gt;, Vec&lt;i32&gt;, i32) {
+    // делаем что-нибудь с v1 и v2
+
+    // возвращаем владение и результат нашей функции
+    (v1, v2, 42)
+}
+
+let v1 = vec![1, 2, 3];
+let v2 = vec![1, 2, 3];
+
+let (v1, v2, answer) = foo(v1, v2);
+#}</code></pre></pre>
+<p>Однако, этот код не является идиоматичным с точки зрения Rust, так как он не
+использует заимствование. Вот первый шаг:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+fn foo(v1: &amp;Vec&lt;i32&gt;, v2: &amp;Vec&lt;i32&gt;) -&gt; i32 {
+    // делаем что-нибудь с v1 и v2
+
+    // возвращаем ответ
+    42
+}
+
+let v1 = vec![1, 2, 3];
+let v2 = vec![1, 2, 3];
+
+let answer = foo(&amp;v1, &amp;v2);
+
+// Мы можем и дальше использовать v1 и v2!
+#}</code></pre></pre>
+<p>Вместо того, чтобы принимать <code>Vec&lt;i32&gt;</code> в качестве аргументов, мы будем
+принимать ссылки: <code>&amp;Vec&lt;i32&gt;</code>. И вместо передачи <code>v1</code> и <code>v2</code> напрямую, мы будем
+передавать <code>&amp;v1</code> и <code>&amp;v2</code>. Мы называем тип <code>&amp;T</code> «ссылка», и вместо того, чтобы
+забирать владение ресурсом, она его заимствует. Имена, которые заимствуют что-
+то, не освобождают ресурс, когда они выходят из области видимости. Это означает,
+что, после вызова <code>foo()</code>, мы снова можем использовать наши исходные имена.</p>
+<p>Ссылки являются неизменяемыми, как и имена. Это означает, что внутри <code>foo()</code>
+векторы не могут быть изменены:</p>
+<pre><code class="language-rust ignore">fn foo(v: &amp;Vec&lt;i32&gt;) {
+     v.push(5);
+}
+
+let v = vec![];
+
+foo(&amp;v);
+</code></pre>
+<p>выдаёт ошибку:</p>
+<pre><code class="language-text">error: cannot borrow immutable borrowed content `*v` as mutable
+v.push(5);
+^
+</code></pre>
+<p>Добавление значения изменяет вектор, и поэтому компилятор не позволил нам это
+сделать.</p>
+<h1><a class="header" href="#Ссылки-mut" id="Ссылки-mut">Ссылки &amp;mut</a></h1>
+<p>Вот второй вид ссылок: <code>&amp;mut T</code>. Это «изменяемая ссылка», которая позволяет
+изменять ресурс, который вы заимствуете. Например:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let mut x = 5;
+{
+    let y = &amp;mut x;
+    *y += 1;
+}
+println!(&quot;{}&quot;, x);
+#}</code></pre></pre>
+<p>Этот код напечатает <code>6</code>. Мы создали <code>y</code>, изменяемую ссылку на <code>x</code>, а затем
+добавили единицу к значению, на которое указывает <code>y</code>. Следует отметить, что <code>x</code>
+также должно быть помечено как <code>mut</code>. Если бы этого не было, то мы не могли бы
+получить изменяемую ссылку неизменяемого значения.</p>
+<p>Вы также заметили что мы добавили звездочку (<code>*</code>) перед <code>y</code>. Это сделано из-за того, 
+что <code>y</code> - это ссылка и сама данных не содержит. Вам нужно использовать (<code>*</code>), для того
+чтобы получить доступ непосредственно к содержимому на которое указывает ссылка.</p>
+<p>Во всем остальном изменяемые ссылки (<code>&amp;mut</code>) такие же, как и неизменяемые (<code>&amp;</code>).
+Однако, существует большая разница между этими двумя концепциями, и тем, как они
+взаимодействуют. Вы можете сказать, что в приведённом выше примере есть что-то
+подозрительное, потому что нам зачем-то понадобилась дополнительная область
+видимости, созданная с помощью <code>{</code> и <code>}</code>. Если мы уберем эти скобки, то получим
+ошибку:</p>
+<pre><code class="language-text">error: cannot borrow `x` as immutable because it is also borrowed as mutable
+    println!(&quot;{}&quot;, x);
+                   ^
+note: previous borrow of `x` occurs here; the mutable borrow prevents
+subsequent moves, borrows, or modification of `x` until the borrow ends
+        let y = &amp;mut x;
+                     ^
+note: previous borrow ends here
+fn main() {
+
+}
+^
+</code></pre>
+<p>Оказывается, есть определённые правила создания ссылок.</p>
+<h1><a class="header" href="#Правила" id="Правила">Правила</a></h1>
+<p>Вот правила заимствования в Rust.</p>
+<p>Во-первых, область видимости любой ссылки должна находиться в пределах области
+видимости владельца. Во-вторых, одновременно у вас может быть только один из
+двух перечисленных ниже видов заимствования, но не оба сразу:</p>
+<ul>
+<li>одна или более неизменяемых ссылок (<code>&amp;T</code>) на ресурс;</li>
+<li>ровно одна изменяемая ссылка (<code>&amp;mut T</code>) на ресурс.</li>
+</ul>
+<p>Вы можете заметить, что это похоже, хотя и не соответствует точно, определению
+состояния гонки данных:</p>
+<blockquote>
+<p>Состояние «гонки данных» возникает, когда два или более указателей
+осуществляют доступ к одной и той же области памяти одновременно, по крайней
+мере один из них производит запись, и операции не синхронизированы.</p>
+</blockquote>
+<p>Что касается неизменяемых ссылок, то вы можете иметь их столько, сколько хотите,
+так как ни одна из них не производит запись. Если же вы производите запись, и
+вам нужно два или больше указателей на одну и ту же область памяти, то вы можете
+иметь только одну <code>&amp;mut</code> одновременно. Так Rust предотвращает возникновение
+состояния гонки данных во время компиляции: мы получим ошибку компиляции, если
+нарушим эти правила.</p>
+<p>Имея это в виду, давайте рассмотрим наш пример еще раз.</p>
+<h2><a class="header" href="#Осмысливаем-области-видимости-thinking-in-scopes" id="Осмысливаем-области-видимости-thinking-in-scopes">Осмысливаем области видимости (Thinking in scopes)</a></h2>
+<p>Вот код:</p>
+<pre><code class="language-rust ignore">let mut x = 5;
+let y = &amp;mut x;
+
+*y += 1;
+
+println!(&quot;{}&quot;, x);
+</code></pre>
+<p>Этот код выдает нам такую ошибку:</p>
+<pre><code class="language-text">error: cannot borrow `x` as immutable because it is also borrowed as mutable
+    println!(&quot;{}&quot;, x);
+                   ^
+</code></pre>
+<p>Это потому, что мы нарушили правила: у нас есть изменяемая ссылка <code>&amp;mut T</code>,
+указывающая на <code>x</code>, и поэтому мы не можем создать какую-либо <code>&amp;T</code>. Одно из двух.
+Примечание подсказывает как следует рассматривать эту проблему:</p>
+<pre><code class="language-text">note: previous borrow ends here
+fn main() {
+
+}
+^
+</code></pre>
+<p>Другими словами, изменяемая ссылка сохраняется до конца нашего примера. А мы
+хотим, чтобы изменяемое заимствование заканчивалось <em>до</em> того, как мы пытаемся
+вызвать <code>println!</code> и создать неизменяемое заимствование. В Rust заимствование
+привязано к области видимости, в которой оно является действительным. И эти
+области видимости выглядят следующим образом:</p>
+<pre><code class="language-rust ignore">let mut x = 5;
+
+let y = &amp;mut x;    // -+ заимствование x через &amp;mut начинается здесь
+                   //  |
+*y += 1;           //  |
+                   //  |
+println!(&quot;{}&quot;, x); // -+ - пытаемся позаимствовать x здесь
+                   // -+ заимствование x через &amp;mut заканчивается здесь
+</code></pre>
+<p>Конфликт областей видимости: мы не можем создать <code>&amp;x</code> до тех пор, пока <code>y</code>
+находится в области видимости.</p>
+<p>Поэтому, когда мы добавляем фигурные скобки:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let mut x = 5;
+
+{                   
+    let y = &amp;mut x; // -+ заимствование через &amp;mut начинается здесь
+    *y += 1;        //  |
+}                   // -+ ... и заканчивается здесь
+
+println!(&quot;{}&quot;, x);  // &lt;- пытаемся позаимствовать x здесь
+#}</code></pre></pre>
+<p>Никаких проблем нет. Наша изменяемая ссылка выходит из области видимости до
+создания неизменяемой. Но область видимости является ключом к определению того,
+как долго длится заимствование.</p>
+<h2><a class="header" href="#Проблемы-которые-предотвращает-заимствование" id="Проблемы-которые-предотвращает-заимствование">Проблемы, которые предотвращает заимствование</a></h2>
+<p>Почему нужны эти ограничивающие правила? Ну, как мы уже отметили, эти правила
+предотвращают гонки данных. Какие виды проблем могут привести к состоянию гонки
+данных? Вот некоторые из них.</p>
+<h3><a class="header" href="#Недействительный-итератор" id="Недействительный-итератор">Недействительный итератор</a></h3>
+<p>Одним из примеров является «недействительный итератор». Такое может произойти,
+когда вы пытаетесь изменить коллекцию, которую в данный момент обходите.
+Проверка заимствования Rust предотвращает это:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let mut v = vec![1, 2, 3];
+
+for i in &amp;v {
+    println!(&quot;{}&quot;, i);
+}
+#}</code></pre></pre>
+<p>Этот код печатает числа от одного до трёх. Когда мы обходим вектор, мы получаем
+лишь ссылки на элементы. И сам <code>v</code> заимствован как неизменяемый, что означает,
+что мы не можем изменить его в процессе обхода:</p>
+<pre><code class="language-rust ignore">let mut v = vec![1, 2, 3];
+
+for i in &amp;v {
+    println!(&quot;{}&quot;, i);
+    v.push(34);
+}
+</code></pre>
+<p>Вот ошибка:</p>
+<pre><code class="language-text">error: cannot borrow `v` as mutable because it is also borrowed as immutable
+    v.push(34);
+    ^
+note: previous borrow of `v` occurs here; the immutable borrow prevents
+subsequent moves or mutable borrows of `v` until the borrow ends
+for i in &amp;v {
+          ^
+note: previous borrow ends here
+for i in &amp;v {
+    println!(“{}”, i);
+    v.push(34);
+}
+^
+</code></pre>
+<p>Мы не можем изменить <code>v</code>, потому что он уже заимствован в цикле.</p>
+<h3><a class="header" href="#Использование-после-освобождения-use-after-free" id="Использование-после-освобождения-use-after-free">Использование после освобождения (use after free)</a></h3>
+<p>Ссылки не должны жить дольше, чем ресурс, на который они ссылаются. Rust
+проверяет области видимости ваших ссылок, чтобы удостовериться, что это правда.</p>
+<p>Если Rust не будет проверять это свойство, то мы можем случайно использовать
+ссылку, которая будет недействительна. Например:</p>
+<pre><code class="language-rust ignore">let y: &amp;i32;
+{
+    let x = 5;
+    y = &amp;x;
+}
+
+println!(&quot;{}&quot;, y);
+</code></pre>
+<p>Мы получим следующую ошибку:</p>
+<pre><code class="language-text">error: `x` does not live long enough
+    y = &amp;x;
+         ^
+note: reference must be valid for the block suffix following statement 0 at
+2:16...
+let y: &amp;i32;
+{
+    let x = 5;
+    y = &amp;x;
+}
+
+note: ...but borrowed value is only valid for the block suffix following
+statement 0 at 4:18
+    let x = 5;
+    y = &amp;x;
+}
+</code></pre>
+<p>Другими словами, <code>y</code> действителен только для той области видимости, где
+существует <code>x</code>. Как только <code>x</code> выходит из области видимости, ссылка на него
+становится недействительной. Таким образом, ошибка сообщает, что заимствование
+«не живет достаточно долго» («does not live long enough»), потому что оно не
+является действительным столько времени, сколько требуется.</p>
+<p>Такая же проблема возникает, когда ссылка объявлена <em>перед</em> значением, на
+которое она ссылается. Это происходит потому что ресурсы в одном блоке
+освобождаются в порядке, противоположном порядку их объявления:</p>
+<pre><code class="language-rust ignore">let y: &amp;i32;
+let x = 5;
+y = &amp;x;
+
+println!(&quot;{}&quot;, y);
+</code></pre>
+<p>Мы получим такую ошибку:</p>
+<pre><code class="language-text">error: `x` does not live long enough
+y = &amp;x;
+     ^
+note: reference must be valid for the block suffix following statement 0 at
+2:16...
+    let y: &amp;i32;
+    let x = 5;
+    y = &amp;x;
+
+    println!(&quot;{}&quot;, y);
+}
+
+note: ...but borrowed value is only valid for the block suffix following
+statement 1 at 3:14
+    let x = 5;
+    y = &amp;x;
+
+    println!(&quot;{}&quot;, y);
+}
+</code></pre>
+<p>В примере выше <code>y</code> объявлена перед <code>x</code>, т.е. живёт дольше <code>x</code>, а это запрещено.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="ownership.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="lifetimes.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="ownership.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="lifetimes.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+        <!-- Google Analytics Tag -->
+        <script type="text/javascript">
+            var localAddrs = ["localhost", "127.0.0.1", ""];
+
+            // make sure we don't activate google analytics if the developer is
+            // inspecting the book locally...
+            if (localAddrs.indexOf(document.location.hostname) === -1) {
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-142155799-10', 'auto');
+                ga('send', 'pageview');
+            }
+        </script>
+        
+
+        
+        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

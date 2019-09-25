@@ -1,0 +1,494 @@
+<!DOCTYPE HTML>
+<html lang="ru" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Вызов кода на Rust из других языков - Язык программирования Rust</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li><a href="INTRODUCTION.html"><strong aria-hidden="true">1.</strong> Введение</a></li><li><a href="getting-started.html"><strong aria-hidden="true">2.</strong> C чего начать</a></li><li><a href="learn-rust.html"><strong aria-hidden="true">3.</strong> Изучение Rust</a></li><li><ol class="section"><li><a href="guessing-game.html"><strong aria-hidden="true">3.1.</strong> Угадайка</a></li><li><a href="dining-philosophers.html"><strong aria-hidden="true">3.2.</strong> Обедающие философы</a></li><li><a href="rust-inside-other-languages.html" class="active"><strong aria-hidden="true">3.3.</strong> Вызов кода на Rust из других языков</a></li></ol></li><li><a href="syntax-and-semantics.html"><strong aria-hidden="true">4.</strong> Синтаксис и семантика</a></li><li><ol class="section"><li><a href="variable-bindings.html"><strong aria-hidden="true">4.1.</strong> Связывание имён</a></li><li><a href="functions.html"><strong aria-hidden="true">4.2.</strong> Функции</a></li><li><a href="primitive-types.html"><strong aria-hidden="true">4.3.</strong> Простые типы</a></li><li><a href="comments.html"><strong aria-hidden="true">4.4.</strong> Комментарии</a></li><li><a href="if.html"><strong aria-hidden="true">4.5.</strong> Конструкция if</a></li><li><a href="loops.html"><strong aria-hidden="true">4.6.</strong> Циклы</a></li><li><a href="ownership.html"><strong aria-hidden="true">4.7.</strong> Владение</a></li><li><a href="references-and-borrowing.html"><strong aria-hidden="true">4.8.</strong> Ссылки и заимствование</a></li><li><a href="lifetimes.html"><strong aria-hidden="true">4.9.</strong> Время жизни</a></li><li><a href="mutability.html"><strong aria-hidden="true">4.10.</strong> Изменяемость</a></li><li><a href="structs.html"><strong aria-hidden="true">4.11.</strong> Структуры</a></li><li><a href="enums.html"><strong aria-hidden="true">4.12.</strong> Перечисления</a></li><li><a href="match.html"><strong aria-hidden="true">4.13.</strong> Конструкция match</a></li><li><a href="patterns.html"><strong aria-hidden="true">4.14.</strong> Шаблоны сопоставления match</a></li><li><a href="method-syntax.html"><strong aria-hidden="true">4.15.</strong> Синтаксис методов</a></li><li><a href="vectors.html"><strong aria-hidden="true">4.16.</strong> Вектора</a></li><li><a href="strings.html"><strong aria-hidden="true">4.17.</strong> Строки</a></li><li><a href="generics.html"><strong aria-hidden="true">4.18.</strong> Обобщённое программирование</a></li><li><a href="traits.html"><strong aria-hidden="true">4.19.</strong> Типажи</a></li><li><a href="drop.html"><strong aria-hidden="true">4.20.</strong> Типаж Drop</a></li><li><a href="if-let.html"><strong aria-hidden="true">4.21.</strong> Конструкция if let</a></li><li><a href="trait-objects.html"><strong aria-hidden="true">4.22.</strong> Типажи-объекты</a></li><li><a href="closures.html"><strong aria-hidden="true">4.23.</strong> Замыкания</a></li><li><a href="ufcs.html"><strong aria-hidden="true">4.24.</strong> Универсальный синтаксис вызова функций</a></li><li><a href="crates-and-modules.html"><strong aria-hidden="true">4.25.</strong> Контейнеры и модули</a></li><li><a href="const-and-static.html"><strong aria-hidden="true">4.26.</strong> const и static</a></li><li><a href="attributes.html"><strong aria-hidden="true">4.27.</strong> Атрибуты</a></li><li><a href="type-aliases.html"><strong aria-hidden="true">4.28.</strong> Псевдонимы типов</a></li><li><a href="casting-between-types.html"><strong aria-hidden="true">4.29.</strong> Приведение типов</a></li><li><a href="associated-types.html"><strong aria-hidden="true">4.30.</strong> Ассоциированные типы</a></li><li><a href="unsized-types.html"><strong aria-hidden="true">4.31.</strong> Безразмерные типы</a></li><li><a href="operators-and-overloading.html"><strong aria-hidden="true">4.32.</strong> Перегрузка операций</a></li><li><a href="deref-coercions.html"><strong aria-hidden="true">4.33.</strong> Преобразования при разыменовании</a></li><li><a href="macros.html"><strong aria-hidden="true">4.34.</strong> Макросы</a></li><li><a href="raw-pointers.html"><strong aria-hidden="true">4.35.</strong> Сырые указатели</a></li><li><a href="unsafe.html"><strong aria-hidden="true">4.36.</strong> Небезопасный код</a></li></ol></li><li><a href="effective-rust.html"><strong aria-hidden="true">5.</strong> Эффективное использование Rust</a></li><li><ol class="section"><li><a href="the-stack-and-the-heap.html"><strong aria-hidden="true">5.1.</strong> Стек и куча</a></li><li><a href="testing.html"><strong aria-hidden="true">5.2.</strong> Тестирование</a></li><li><a href="conditional-compilation.html"><strong aria-hidden="true">5.3.</strong> Условная компиляция</a></li><li><a href="documentation.html"><strong aria-hidden="true">5.4.</strong> Документация</a></li><li><a href="iterators.html"><strong aria-hidden="true">5.5.</strong> Итераторы</a></li><li><a href="concurrency.html"><strong aria-hidden="true">5.6.</strong> Многозадачность</a></li><li><a href="error-handling.html"><strong aria-hidden="true">5.7.</strong> Обработка ошибок</a></li><li><a href="choosing-your-guarantees.html"><strong aria-hidden="true">5.8.</strong> Выбор гарантий</a></li><li><a href="ffi.html"><strong aria-hidden="true">5.9.</strong> Интерфейс внешних функций</a></li><li><a href="borrow-and-asref.html"><strong aria-hidden="true">5.10.</strong> Типажи Borrow и AsRef</a></li><li><a href="release-channels.html"><strong aria-hidden="true">5.11.</strong> Каналы сборок</a></li><li><a href="using-rust-without-the-standard-library.html"><strong aria-hidden="true">5.12.</strong> Using Rust without the standard library</a></li></ol></li><li><a href="nightly-rust.html"><strong aria-hidden="true">6.</strong> Нестабильные возможности Rust</a></li><li><ol class="section"><li><a href="compiler-plugins.html"><strong aria-hidden="true">6.1.</strong> Плагины к компилятору</a></li><li><a href="inline-assembly.html"><strong aria-hidden="true">6.2.</strong> Встроенный ассемблерный код</a></li><li><a href="no-stdlib.html"><strong aria-hidden="true">6.3.</strong> Без stdlib</a></li><li><a href="intrinsics.html"><strong aria-hidden="true">6.4.</strong> Внутренние средства</a></li><li><a href="lang-items.html"><strong aria-hidden="true">6.5.</strong> Элементы языка</a></li><li><a href="advanced-linking.html"><strong aria-hidden="true">6.6.</strong> Продвинутое руководство по компоновке</a></li><li><a href="benchmark-tests.html"><strong aria-hidden="true">6.7.</strong> Тесты производительности</a></li><li><a href="box-syntax-and-patterns.html"><strong aria-hidden="true">6.8.</strong> Синтаксис упаковки и шаблоны match</a></li><li><a href="slice-patterns.html"><strong aria-hidden="true">6.9.</strong> Шаблоны match для срезов</a></li><li><a href="associated-constants.html"><strong aria-hidden="true">6.10.</strong> Ассоциированные константы</a></li><li><a href="custom-allocators.html"><strong aria-hidden="true">6.11.</strong> Пользовательские менеджеры памяти</a></li></ol></li><li><a href="glossary.html"><strong aria-hidden="true">7.</strong> Глоссарий</a></li><li><a href="syntax-index.html"><strong aria-hidden="true">8.</strong> Syntax Index</a></li><li><a href="bibliography.html"><strong aria-hidden="true">9.</strong> Библиография</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Язык программирования Rust</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>% Вызов кода на Rust из других языков</p>
+<p>Для нашего третьего проекта мы собираемся выбрать что-то, что подчеркнёт одну из
+самых сильных сторон в Rust: фактическое отсутствие среды исполнения.</p>
+<p>По мере роста организации, программисты все больше полагаются на множество
+языков программирования. У каждого языка программирования есть свои сильные и
+слабые стороны, а знание нескольких языков позволяет использовать определённый
+язык там, где проявляется его сильные стороны, и использовать другой язык там,
+где первый не очень хорош.</p>
+<p>Существует несколько областей, где многие языки программирования слабы в плане
+производительности выполнения программ. Часто компромисс заключается в том,
+чтобы использовать более медленный язык, который взамен способствует повышению
+производительности программиста. Чтобы решить эту проблему, часть кода системы
+можно написать на C, а затем вызвать этот код, написанный на C, как если бы он
+был написан на языке высокого уровня. Это называется «интерфейс внешних функций»
+(foreign function interface), часто сокращается до FFI.</p>
+<p>Rust включает поддержку FFI в обоих направлениях: он легко может вызвать C код,
+и он так же легко, как и C код, может быть вызван <em>извне</em>. Rust сочетает в себе
+отсутствие сборщика мусора и низкие требования к среде исполнения, что делает
+Rust отличным кандидатом на роль вызываемого из других языков, когда нужны
+некоторые дополнительные возможности.</p>
+<p>В этой книге есть целая <a href="ffi.html">глава, посвящённая FFI</a> и его специфике, а в этой
+главе мы рассмотрим именно конкретный частный случай FFI, с тремя примерами, на
+Ruby, Python и JavaScript.</p>
+<h1><a class="header" href="#Проблема" id="Проблема">Проблема</a></h1>
+<p>Есть много различных проектов, которые мы могли бы выбрать, но мы хотим
+подобрать такой пример, который продемонстрирует явное преимущество Rust над
+многими другими языками: сложные вычисления и многопоточность.</p>
+<p>Во многих языках числа размещаются в куче, а не в стеке. Это обеспечивает
+целостность поведения языка при работе с числами и с другими объектами. Особенно
+в языках, которые сосредотачиваются на объектно-ориентированном программировании
+и использовании сборщика мусора, по умолчанию память выделяется из кучи. Иногда,
+при оптимизации, для конкретных чисел память может выделяться в стеке, но вместо
+того, чтобы полагаться на работу оптимизации, мы можем захотеть убедиться в том,
+что мы используем примитивные типы чисел, а не какой-либо тип объекта.</p>
+<p>Во-вторых, многие языки имеют «глобальную блокировку интерпретатора» (global
+interpreter lock), которая ограничивает параллелизм во многих ситуациях. Это
+делается во имя безопасности, что оказывает положительный эффект, но это также и
+ограничивает объем работ, который может быть выполнен одновременно, что, в свою
+очередь, оказывает большой отрицательный эффект.</p>
+<p>Чтобы подчеркнуть эти два аспекта, мы собираемся создать небольшой проект,
+который в значительной степени их использует. Поскольку внимание в этом примере
+сфокусировано на встраивание Rust в другие языки, а не самой проблеме, мы будем
+использовать игрушечный пример:</p>
+<blockquote>
+<p>Запустить десять потоков. Внутри каждого потока считать от одного до пяти
+миллионов. После того как все десять потоков завершатся, напечатать
+&quot;сделано!&quot;.</p>
+</blockquote>
+<p>Мы выбрали пять миллионов руководствуясь тем, сколько времени занимает эта
+работа на современном компьютере. Вот пример этого кода на Ruby:</p>
+<pre><code class="language-ruby">threads = []
+
+10.times do
+  threads &lt;&lt; Thread.new do
+    count = 0
+
+    5_000_000.times do
+      count += 1
+    end
+  end
+end
+
+threads.each { |t| t.join }
+puts &quot;сделано!&quot;
+</code></pre>
+<p>Попробуйте запустить этот пример, и подберите число, которое обеспечит работу в
+течение нескольких секунд. В зависимости от аппаратного обеспечения компьютера,
+возможно, придётся увеличить или уменьшить это число.</p>
+<p>На выбранной нами системе эта программа работает <code>2.156</code> секунд. И если мы
+воспользуемся какой-нибудь утилитой для мониторинга процессов (например, <code>top</code>),
+то увидим, что она использует только одно ядро. Это GIL делает своё дело.</p>
+<p>Хотя это и игрушечная программа, на её примере можно продемонстрировать много
+проблем, аналогичных этой, характерных для реального мира. Для наших целей,
+долго крутящиеся занятые потоки представляют собой параллельные, требующие
+больших затрат, вычисления.</p>
+<h1><a class="header" href="#Библиотека-на-rust" id="Библиотека-на-rust">Библиотека на Rust</a></h1>
+<p>Давайте перепишем эту задачу на Rust. Во-первых, давайте сделаем новый проект с
+помощью Cargo:</p>
+<pre><code class="language-bash">$ cargo new embed
+$ cd embed
+</code></pre>
+<p>Эту программу легко переписать на Rust:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+use std::thread;
+
+fn process() {
+    let handles: Vec&lt;_&gt; = (0..10).map(|_| {
+        thread::spawn(|| {
+            let mut x = 0;
+            for _ in 0..5_000_000 {
+                x += 1
+            }
+            x
+        })
+    }).collect();
+
+    for h in handles {
+        println!(&quot;Поток завершился со счётом={}&quot;,
+        h.join().map_err(|_| &quot;Не удалось соединиться с потоком!&quot;).unwrap());
+    }
+}
+#}</code></pre></pre>
+<p>Мы уже знакомы с частью этого кода из предыдущих примеров. Мы создаём десять
+потоков, собирая их в вектор <code>handles</code>. Внутри каждого потока мы осуществляем
+пять миллионов повторений в цикле, и прибавляем к <code>x</code> единицу каждый раз.
+Наконец, мы воссоединяем все потоки.</p>
+<p>Сейчас, однако, это просто библиотека Rust, которая не включает все необходимое
+для успешного вызова из другого языка. Если мы попытаемся подключить её к
+другому языку в том виде, в котором она сейчас, то это не будет работать. Нам
+нужно сделать два небольших изменения, чтобы исправить это. Первое, что мы
+должны сделать, это изменить начало нашего кода:</p>
+<pre><code class="language-rust ignore">#[no_mangle]
+pub extern fn process() {
+</code></pre>
+<p>Мы добавили новый атрибут, <code>no_mangle</code>. В процессе создания библиотеки Rust, в
+выходном скомпилированном файле происходит изменение имени функции. Причины
+этого выходят за рамки данного руководства, но для того, чтобы и другие языки
+знали, как вызвать функцию, мы должны не делать этого. Указанный атрибут
+выключает такое поведение.</p>
+<p>Другим изменением, которое мы добавили, является <code>pub extern</code>. <code>pub</code> означает,
+что эта функция может быть вызвана за пределами этого модуля, а <code>extern</code>
+говорит, что её возможно вызвать из С. Вот и все! Не так и много изменений.</p>
+<p>Второе, что мы должны сделать, это изменить настройки в <code>Cargo.toml</code>. Добавьте
+это в конец файла:</p>
+<pre><code class="language-toml">[lib]
+name = &quot;embed&quot;
+crate-type = [&quot;dylib&quot;]
+</code></pre>
+<p>Это говорит Rust, что мы хотим скомпилировать нашу библиотеку в виде стандартной
+динамической библиотеки. По умолчанию, Rust компилирует в rlib, Rust-
+специфичный формат.</p>
+<p>Давайте теперь соберём проект:</p>
+<pre><code class="language-bash">$ cargo build --release
+   Compiling embed v0.1.0 (file:///home/steve/src/embed)
+</code></pre>
+<p>Мы ввели команду <code>cargo build --release</code>, которая выполняет сборку с включённой
+оптимизацией. Мы хотим, чтобы код был как можно более быстрым! Вы можете найти
+собранную библиотеку в <code>target/release</code>:</p>
+<pre><code class="language-bash">$ ls target/release/
+build  deps  examples  libembed.so  native
+</code></pre>
+<p>Файл <code>libembed.so</code> — и есть наша динамическая библиотека (shared object). Мы
+можем использовать этот файл также как и любую другую динамическую библиотеку,
+написанную на C! Попутно следует отметить, это может быть <code>embed.dll</code> (Microsoft
+Windows) или <code>libembed.dylib</code> (Mac OS X), в зависимости от операционной системы.</p>
+<p>Теперь, когда мы получили нашу собранную библиотеку Rust, давайте используем её
+из нашего кода на Ruby.</p>
+<h1><a class="header" href="#ruby" id="ruby">Ruby</a></h1>
+<p>Откройте файл <code>embed.rb</code> внутри нашего проекта, и сделайте следующее:</p>
+<pre><code class="language-ruby">require 'ffi'
+
+module Hello
+  extend FFI::Library
+  ffi_lib 'target/release/libembed.so'
+  attach_function :process, [], :void
+end
+
+Hello.process
+
+puts 'сделано!'
+</code></pre>
+<p>Прежде чем мы сможем запустить этот код, нам нужно установить пакет <code>ffi</code>:</p>
+<pre><code class="language-bash">$ gem install ffi # this may need sudo
+Fetching: ffi-1.9.8.gem (100%)
+Building native extensions.  This could take a while...
+Successfully installed ffi-1.9.8
+Parsing documentation for ffi-1.9.8
+Installing ri documentation for ffi-1.9.8
+Done installing documentation for ffi after 0 seconds
+1 gem installed
+</code></pre>
+<p>И, наконец, мы можем попробовать запустить его:</p>
+<pre><code class="language-bash">$ ruby embed.rb
+Поток завершился со счётом=5000000
+Поток завершился со счётом=5000000
+Поток завершился со счётом=5000000
+Поток завершился со счётом=5000000
+Поток завершился со счётом=5000000
+Поток завершился со счётом=5000000
+Поток завершился со счётом=5000000
+Поток завершился со счётом=5000000
+Поток завершился со счётом=5000000
+Поток завершился со счётом=5000000
+сделано!
+$
+</code></pre>
+<p>Ничего себе, это было быстро! На моей системе это заняло <code>0.086</code> секунд, а не
+две секунды как это было на чистом Ruby. Давайте разберём этот Ruby код:</p>
+<pre><code class="language-ruby">require 'ffi'
+</code></pre>
+<p>Первый делом, нам надо объявить пакет <code>ffi</code>. Он предоставляет нам интерфейс для
+использования нашей библиотеки на Rust, как библиотеку на C.</p>
+<pre><code class="language-ruby">module Hello
+  extend FFI::Library
+  ffi_lib 'target/release/libembed.so'
+</code></pre>
+<p>Автор пакета <code>ffi</code> рекомендует использовать модуль, чтобы ограничить область
+действия функции, которую мы импортировали из разделяемой библиотеки. Внутри мы
+указали <code>extend</code>, чтобы воспользоваться необходимым модулем <code>FFI::Library</code>, а
+затем вызвали <code>ffi_lib</code>, чтобы подгрузить нашу библиотеку. Мы просто передаём
+путь к библиотеке, который мы уже видели раньше, это
+<code>target/release/libembed.so</code>.</p>
+<pre><code class="language-ruby">attach_function :process, [], :void
+</code></pre>
+<p>Метод <code>attach_function</code> предоставляется пакетом <code>FFI</code>. Здесь соединяются наша
+функция <code>process()</code>, написанная на Rust, и одноимённая функция на Ruby. Так как
+<code>process()</code> не принимает аргументов, второй параметр является пустым массивом, и
+поскольку функция ничего не возвращает, мы передаём <code>:void</code> в качестве
+завершающего аргумента.</p>
+<pre><code class="language-ruby">Hello.process
+</code></pre>
+<p>Здесь мы совершаем вызов нашей Rust функции. Сочетание нашего <code>module</code> и вызова
+к <code>attach_function</code> завершает подготовку. Это выглядит как функция Ruby, но на
+самом деле это Rust!</p>
+<pre><code class="language-ruby">puts 'сделано!'
+</code></pre>
+<p>Наконец, в соответствие с нашими требованиями к проекту, мы пишем <code>сделано!</code> по
+окончанию работы программы.</p>
+<p>Вот и все! Как мы увидели, совместить два языка очень просто, и взамен мы
+получили большую производительность.</p>
+<p>Теперь давайте попробуем на Python!</p>
+<h1><a class="header" href="#python" id="python">Python</a></h1>
+<p>Создайте файл <code>embed.py</code> в этой директории и поместите в него следующее:</p>
+<pre><code class="language-python">from ctypes import cdll
+
+lib = cdll.LoadLibrary(&quot;target/release/libembed.so&quot;)
+
+lib.process()
+
+print(&quot;сделано!&quot;)
+</code></pre>
+<p>Довольно просто! Мы импортируем <code>cdll</code> из модуля <code>ctypes</code>. Затем вызываем
+<code>LoadLibrary</code>. И теперь мы можем вызвать <code>process()</code>.</p>
+<p>На моей системе это заняло <code>0.017</code> секунд. Быстро!</p>
+<h1><a class="header" href="#nodejs" id="nodejs">Node.js</a></h1>
+<p>Node — это не язык, но, в настоящее время, это доминирующая реализация
+исполнения JavaScript на сервере.</p>
+<p>Для того, чтобы сделать FFI в Node, нам сначала надо установить библиотеку:</p>
+<pre><code class="language-bash">$ npm install ffi
+</code></pre>
+<p>После установки, мы можем ей воспользоваться:</p>
+<pre><code class="language-javascript">var ffi = require('ffi');
+
+var lib = ffi.Library('target/release/libembed', {
+  'process': ['void', []]
+});
+
+lib.process();
+
+console.log(&quot;сделано!&quot;);
+</code></pre>
+<p>Пример больше похож на Ruby, чем на Python. Мы используем модуль <code>ffi</code>, чтобы
+получить доступ к <code>ffi.Library()</code>, который загружает нашу библиотеку. Нам нужно
+указать тип возвращаемого значения и типы аргументов функции: <code>void</code> для
+возвращаемого значения и пустой массив для указания отсутствия аргументов. После
+этого мы просто вызываем функцию и печатаем результат.</p>
+<p>На моей системе это заняло <code>0.092</code> секунды.</p>
+<h1><a class="header" href="#Заключение" id="Заключение">Заключение</a></h1>
+<p>Как вы можете видеть, основы, рассмотренные здесь, являются <em>очень</em> простыми.
+Конечно, мы могли бы сделать куда больше того, что мы здесь показали. Посмотрите
+главу <a href="ffi.html">FFI</a> для более подробной информации.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="dining-philosophers.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="syntax-and-semantics.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="dining-philosophers.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="syntax-and-semantics.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+        <!-- Google Analytics Tag -->
+        <script type="text/javascript">
+            var localAddrs = ["localhost", "127.0.0.1", ""];
+
+            // make sure we don't activate google analytics if the developer is
+            // inspecting the book locally...
+            if (localAddrs.indexOf(document.location.hostname) === -1) {
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-142155799-10', 'auto');
+                ga('send', 'pageview');
+            }
+        </script>
+        
+
+        
+        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

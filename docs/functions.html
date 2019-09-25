@@ -1,0 +1,489 @@
+<!DOCTYPE HTML>
+<html lang="ru" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Функции - Язык программирования Rust</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li><a href="INTRODUCTION.html"><strong aria-hidden="true">1.</strong> Введение</a></li><li><a href="getting-started.html"><strong aria-hidden="true">2.</strong> C чего начать</a></li><li><a href="learn-rust.html"><strong aria-hidden="true">3.</strong> Изучение Rust</a></li><li><ol class="section"><li><a href="guessing-game.html"><strong aria-hidden="true">3.1.</strong> Угадайка</a></li><li><a href="dining-philosophers.html"><strong aria-hidden="true">3.2.</strong> Обедающие философы</a></li><li><a href="rust-inside-other-languages.html"><strong aria-hidden="true">3.3.</strong> Вызов кода на Rust из других языков</a></li></ol></li><li><a href="syntax-and-semantics.html"><strong aria-hidden="true">4.</strong> Синтаксис и семантика</a></li><li><ol class="section"><li><a href="variable-bindings.html"><strong aria-hidden="true">4.1.</strong> Связывание имён</a></li><li><a href="functions.html" class="active"><strong aria-hidden="true">4.2.</strong> Функции</a></li><li><a href="primitive-types.html"><strong aria-hidden="true">4.3.</strong> Простые типы</a></li><li><a href="comments.html"><strong aria-hidden="true">4.4.</strong> Комментарии</a></li><li><a href="if.html"><strong aria-hidden="true">4.5.</strong> Конструкция if</a></li><li><a href="loops.html"><strong aria-hidden="true">4.6.</strong> Циклы</a></li><li><a href="ownership.html"><strong aria-hidden="true">4.7.</strong> Владение</a></li><li><a href="references-and-borrowing.html"><strong aria-hidden="true">4.8.</strong> Ссылки и заимствование</a></li><li><a href="lifetimes.html"><strong aria-hidden="true">4.9.</strong> Время жизни</a></li><li><a href="mutability.html"><strong aria-hidden="true">4.10.</strong> Изменяемость</a></li><li><a href="structs.html"><strong aria-hidden="true">4.11.</strong> Структуры</a></li><li><a href="enums.html"><strong aria-hidden="true">4.12.</strong> Перечисления</a></li><li><a href="match.html"><strong aria-hidden="true">4.13.</strong> Конструкция match</a></li><li><a href="patterns.html"><strong aria-hidden="true">4.14.</strong> Шаблоны сопоставления match</a></li><li><a href="method-syntax.html"><strong aria-hidden="true">4.15.</strong> Синтаксис методов</a></li><li><a href="vectors.html"><strong aria-hidden="true">4.16.</strong> Вектора</a></li><li><a href="strings.html"><strong aria-hidden="true">4.17.</strong> Строки</a></li><li><a href="generics.html"><strong aria-hidden="true">4.18.</strong> Обобщённое программирование</a></li><li><a href="traits.html"><strong aria-hidden="true">4.19.</strong> Типажи</a></li><li><a href="drop.html"><strong aria-hidden="true">4.20.</strong> Типаж Drop</a></li><li><a href="if-let.html"><strong aria-hidden="true">4.21.</strong> Конструкция if let</a></li><li><a href="trait-objects.html"><strong aria-hidden="true">4.22.</strong> Типажи-объекты</a></li><li><a href="closures.html"><strong aria-hidden="true">4.23.</strong> Замыкания</a></li><li><a href="ufcs.html"><strong aria-hidden="true">4.24.</strong> Универсальный синтаксис вызова функций</a></li><li><a href="crates-and-modules.html"><strong aria-hidden="true">4.25.</strong> Контейнеры и модули</a></li><li><a href="const-and-static.html"><strong aria-hidden="true">4.26.</strong> const и static</a></li><li><a href="attributes.html"><strong aria-hidden="true">4.27.</strong> Атрибуты</a></li><li><a href="type-aliases.html"><strong aria-hidden="true">4.28.</strong> Псевдонимы типов</a></li><li><a href="casting-between-types.html"><strong aria-hidden="true">4.29.</strong> Приведение типов</a></li><li><a href="associated-types.html"><strong aria-hidden="true">4.30.</strong> Ассоциированные типы</a></li><li><a href="unsized-types.html"><strong aria-hidden="true">4.31.</strong> Безразмерные типы</a></li><li><a href="operators-and-overloading.html"><strong aria-hidden="true">4.32.</strong> Перегрузка операций</a></li><li><a href="deref-coercions.html"><strong aria-hidden="true">4.33.</strong> Преобразования при разыменовании</a></li><li><a href="macros.html"><strong aria-hidden="true">4.34.</strong> Макросы</a></li><li><a href="raw-pointers.html"><strong aria-hidden="true">4.35.</strong> Сырые указатели</a></li><li><a href="unsafe.html"><strong aria-hidden="true">4.36.</strong> Небезопасный код</a></li></ol></li><li><a href="effective-rust.html"><strong aria-hidden="true">5.</strong> Эффективное использование Rust</a></li><li><ol class="section"><li><a href="the-stack-and-the-heap.html"><strong aria-hidden="true">5.1.</strong> Стек и куча</a></li><li><a href="testing.html"><strong aria-hidden="true">5.2.</strong> Тестирование</a></li><li><a href="conditional-compilation.html"><strong aria-hidden="true">5.3.</strong> Условная компиляция</a></li><li><a href="documentation.html"><strong aria-hidden="true">5.4.</strong> Документация</a></li><li><a href="iterators.html"><strong aria-hidden="true">5.5.</strong> Итераторы</a></li><li><a href="concurrency.html"><strong aria-hidden="true">5.6.</strong> Многозадачность</a></li><li><a href="error-handling.html"><strong aria-hidden="true">5.7.</strong> Обработка ошибок</a></li><li><a href="choosing-your-guarantees.html"><strong aria-hidden="true">5.8.</strong> Выбор гарантий</a></li><li><a href="ffi.html"><strong aria-hidden="true">5.9.</strong> Интерфейс внешних функций</a></li><li><a href="borrow-and-asref.html"><strong aria-hidden="true">5.10.</strong> Типажи Borrow и AsRef</a></li><li><a href="release-channels.html"><strong aria-hidden="true">5.11.</strong> Каналы сборок</a></li><li><a href="using-rust-without-the-standard-library.html"><strong aria-hidden="true">5.12.</strong> Using Rust without the standard library</a></li></ol></li><li><a href="nightly-rust.html"><strong aria-hidden="true">6.</strong> Нестабильные возможности Rust</a></li><li><ol class="section"><li><a href="compiler-plugins.html"><strong aria-hidden="true">6.1.</strong> Плагины к компилятору</a></li><li><a href="inline-assembly.html"><strong aria-hidden="true">6.2.</strong> Встроенный ассемблерный код</a></li><li><a href="no-stdlib.html"><strong aria-hidden="true">6.3.</strong> Без stdlib</a></li><li><a href="intrinsics.html"><strong aria-hidden="true">6.4.</strong> Внутренние средства</a></li><li><a href="lang-items.html"><strong aria-hidden="true">6.5.</strong> Элементы языка</a></li><li><a href="advanced-linking.html"><strong aria-hidden="true">6.6.</strong> Продвинутое руководство по компоновке</a></li><li><a href="benchmark-tests.html"><strong aria-hidden="true">6.7.</strong> Тесты производительности</a></li><li><a href="box-syntax-and-patterns.html"><strong aria-hidden="true">6.8.</strong> Синтаксис упаковки и шаблоны match</a></li><li><a href="slice-patterns.html"><strong aria-hidden="true">6.9.</strong> Шаблоны match для срезов</a></li><li><a href="associated-constants.html"><strong aria-hidden="true">6.10.</strong> Ассоциированные константы</a></li><li><a href="custom-allocators.html"><strong aria-hidden="true">6.11.</strong> Пользовательские менеджеры памяти</a></li></ol></li><li><a href="glossary.html"><strong aria-hidden="true">7.</strong> Глоссарий</a></li><li><a href="syntax-index.html"><strong aria-hidden="true">8.</strong> Syntax Index</a></li><li><a href="bibliography.html"><strong aria-hidden="true">9.</strong> Библиография</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Язык программирования Rust</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>% Функции</p>
+<p>Каждая программа на Rust имеет по крайней мере одну функцию — <code>main</code>:</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+}
+</code></pre></pre>
+<p>Это простейшее объявление функции. Как мы упоминали ранее, ключевое слово <code>fn</code>
+объявляет функцию. За ним следует её имя, пустые круглые скобки (поскольку эта
+функция не принимает аргументов), а затем тело функции, заключённое в фигурные
+скобки. Вот функция <code>foo</code>:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+fn foo() {
+}
+#}</code></pre></pre>
+<p>Итак, что насчёт аргументов, принимаемых функцией? Вот функция, печатающая
+число:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+fn print_number(x: i32) {
+    println!(&quot;x равен: {}&quot;, x);
+}
+#}</code></pre></pre>
+<p>Вот полная программа, использующая функцию <code>print_number</code>:</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    print_number(5);
+}
+
+fn print_number(x: i32) {
+    println!(&quot;x равен: {}&quot;, x);
+}
+</code></pre></pre>
+<p>Как видите, аргументы функций похожи на операторы <code>let</code>: вы можете объявить тип
+аргумента после двоеточия.</p>
+<p>Вот полная программа, которая складывает два числа и печатает их:</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    print_sum(5, 6);
+}
+
+fn print_sum(x: i32, y: i32) {
+    println!(&quot;сумма чисел: {}&quot;, x + y);
+}
+</code></pre></pre>
+<p>Аргументы разделяются запятой — и при вызове функции, и при её объявлении.</p>
+<p>В отличие от <code>let</code>, вы <em>должны</em> объявлять типы аргументов функции. Этот код не
+скомпилируется:</p>
+<pre><code class="language-rust ignore">fn print_sum(x, y) {
+    println!(&quot;сумма чисел: {}&quot;, x + y);
+}
+</code></pre>
+<p>Вы увидите такую ошибку:</p>
+<pre><code class="language-text">expected one of `!`, `:`, or `@`, found `)`
+fn print_number(x, y) {
+</code></pre>
+<p>Это осознанное решение при проектировании языка. Бесспорно, вывод типов во всей
+программе возможен. Однако даже в Haskell считается хорошим стилем явно
+документировать типы функций, хотя в этом языке и возможен полный вывод типов.
+Мы считаем, что принудительное объявление типов функций при сохранении
+локального вывода типов — это хороший компромисс.</p>
+<p>Как насчёт возвращаемого значения? Вот функция, которая прибавляет один к
+целому:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+fn add_one(x: i32) -&gt; i32 {
+    x + 1
+}
+#}</code></pre></pre>
+<p>Функции в Rust возвращают ровно одно значение, тип которого объявляется после
+«стрелки». «Стрелка» представляет собой дефис (<code>-</code>), за которым следует знак
+«больше» (<code>&gt;</code>). Заметьте, что в функции выше нет точки с запятой. Если бы мы
+добавили её:</p>
+<pre><code class="language-rust ignore">fn add_one(x: i32) -&gt; i32 {
+    x + 1;
+}
+</code></pre>
+<p>мы бы получили ошибку:</p>
+<pre><code class="language-text">error: not all control paths return a value
+fn add_one(x: i32) -&gt; i32 {
+     x + 1;
+}
+
+help: consider removing this semicolon:
+     x + 1;
+          ^
+</code></pre>
+<p>Здесь показаны две интересные особенности Rust. Во-первых, это язык,
+ориентированный на выражения, и во-вторых, смысл точки с запятой отличается от
+смысла аналогичного символа в других языках с синтаксисом на основе фигурных
+скобок и точки с запятой. Эти две особенности связаны.</p>
+<p><a name="expressions-vs-statements"></a></p>
+<h2><a class="header" href="#Выражения-и-операторы" id="Выражения-и-операторы">Выражения и операторы</a></h2>
+<p>Rust — в первую очередь язык, ориентированный на выражения. Есть только два типа
+операторов, а всё остальное является выражением.</p>
+<p>А в чём же разница? Выражение возвращает значение, в то время как оператор -
+нет. Вот почему мы получаем здесь «not all control paths return a value»:
+оператор <code>х + 1;</code> не возвращает значение. Есть два типа операторов в Rust:
+«операторы объявления» и «операторы выражения». Все остальное — выражения.
+Давайте сначала поговорим об операторах объявления.</p>
+<p><em>Оператор объявления</em> — это связывание. В некоторых языках связывание переменных
+может быть записано как выражение, а не только как оператор. Например, в Ruby:</p>
+<pre><code class="language-ruby">x = y = 5
+</code></pre>
+<p>Однако, в Rust использование <code>let</code> для связывания <em>не является</em> выражением.
+Следующий код вызовет ошибку компиляции:</p>
+<pre><code class="language-ignore">let x = (let y = 5); // expected identifier, found keyword `let`
+</code></pre>
+<p>Здесь компилятор сообщил нам, что ожидал увидеть выражение, но <code>let</code> является
+оператором, а не выражением.</p>
+<p>Обратите внимание, что присвоение уже связанной переменной (например: <code>y = 5</code>)
+является выражением, но его значение не особенно полезно. В отличие от других
+языков, где результатом присваивания является присваиваемое значение (например,
+<code>5</code> из предыдущего примера), в Rust значением присваивания является пустой
+кортеж <code>()</code>.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let mut y = 5;
+
+let x = (y = 6);  // x будет присвоено значение `()`, а не `6`
+#}</code></pre></pre>
+<p>Вторым типом операторов в Rust является <em>оператор выражения</em>. Его цель -
+превратить любое выражение в оператор. В практическом плане, грамматика Rust
+ожидает, что за операторами будут идти другие операторы. Это означает, что вы
+используете точку с запятой для отделения выражений друг от друга. Rust выглядит
+как многие другие языки, которые требуют использовать точку с запятой в конце
+каждой строки. Вы увидите её в конце почти каждой строки кода на Rust.</p>
+<p>Из-за чего мы говорим «почти»? Вы это уже видели в этом примере:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+fn add_one(x: i32) -&gt; i32 {
+    x + 1
+}
+#}</code></pre></pre>
+<p>Наша функция объявлена как возвращающая <code>i32</code>. Но если в конце есть точка с
+запятой, то вместо этого функция вернёт <code>()</code>. Компилятор Rust обрабатывает эту
+ситуацию и предлагает удалить точку с запятой.</p>
+<h2><a class="header" href="#Досрочный-возврат-из-функции" id="Досрочный-возврат-из-функции">Досрочный возврат из функции</a></h2>
+<p>А что насчёт досрочного возврата из функции? У нас есть для этого ключевое слово
+<code>return</code>:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+fn foo(x: i32) -&gt; i32 {
+    return x;
+
+    // дальнейший код не будет исполнен!
+    x + 1
+}
+#}</code></pre></pre>
+<p><code>return</code> можно написать в последней строке тела функции, но это считается
+плохим стилем:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+fn foo(x: i32) -&gt; i32 {
+    return x + 1;
+}
+#}</code></pre></pre>
+<p>Если вы никогда не работали с языком, в котором операторы являются выражениями,
+предыдущее определение без <code>return</code> может показаться вам странным. Но со
+временем вы просто перестанете замечать это.</p>
+<h2><a class="header" href="#Расходящиеся-функции" id="Расходящиеся-функции">Расходящиеся функции</a></h2>
+<p>Для функций, которые не возвращают управление («расходящихся»), в Rust есть
+специальный синтаксис:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+fn diverges() -&gt; ! {
+    panic!(&quot;Эта функция не возвращает управление!&quot;);
+}
+#}</code></pre></pre>
+<p><code>panic!</code> — это макрос, как и <code>println!()</code>, который мы встречали ранее. В отличие
+от <code>println!()</code>, <code>panic!()</code> вызывает остановку текущего потока исполнения с
+заданным сообщением. Поскольку эта функция вызывает остановку исполнения, она
+никогда не вернёт управление. Поэтому тип её возвращаемого значения обозначается
+знаком <code>!</code> и читается как «расходится».</p>
+<p>Если добавить функцию <code>diverges()</code> и запустить её, то вы получите следующее
+сообщение:</p>
+<pre><code class="language-text">thread ‘&lt;main&gt;’ panicked at ‘Эта функция не возвращает управление!’, hello.rs:2
+</code></pre>
+<p>Для получение более подробной информации вы можете посмотреть трассировку
+установив переменную среды <code>RUST_BACKTRACE</code>:</p>
+<pre><code class="language-text">$ RUST_BACKTRACE=1 ./diverges
+thread '&lt;main&gt;' panicked at 'Эта функция не возвращает управление!', hello.rs:2
+stack backtrace:
+   1:     0x7f402773a829 - sys::backtrace::write::h0942de78b6c02817K8r
+   2:     0x7f402773d7fc - panicking::on_panic::h3f23f9d0b5f4c91bu9w
+   3:     0x7f402773960e - rt::unwind::begin_unwind_inner::h2844b8c5e81e79558Bw
+   4:     0x7f4027738893 - rt::unwind::begin_unwind::h4375279447423903650
+   5:     0x7f4027738809 - diverges::h2266b4c4b850236beaa
+   6:     0x7f40277389e5 - main::h19bb1149c2f00ecfBaa
+   7:     0x7f402773f514 - rt::unwind::try::try_fn::h13186883479104382231
+   8:     0x7f402773d1d8 - __rust_try
+   9:     0x7f402773f201 - rt::lang_start::ha172a3ce74bb453aK5w
+  10:     0x7f4027738a19 - main
+  11:     0x7f402694ab44 - __libc_start_main
+  12:     0x7f40277386c8 - &lt;unknown&gt;
+  13:                0x0 - &lt;unknown&gt;
+</code></pre>
+<p><code>RUST_BACKTRACE</code> также работает при выполнении команды <code>run</code>:</p>
+<pre><code class="language-text">$ RUST_BACKTRACE=1 cargo run
+     Running `target/debug/diverges`
+thread '&lt;main&gt;' panicked at 'Эта функция не возвращает управление!', hello.rs:2
+stack backtrace:
+   1:     0x7f402773a829 - sys::backtrace::write::h0942de78b6c02817K8r
+   2:     0x7f402773d7fc - panicking::on_panic::h3f23f9d0b5f4c91bu9w
+   3:     0x7f402773960e - rt::unwind::begin_unwind_inner::h2844b8c5e81e79558Bw
+   4:     0x7f4027738893 - rt::unwind::begin_unwind::h4375279447423903650
+   5:     0x7f4027738809 - diverges::h2266b4c4b850236beaa
+   6:     0x7f40277389e5 - main::h19bb1149c2f00ecfBaa
+   7:     0x7f402773f514 - rt::unwind::try::try_fn::h13186883479104382231
+   8:     0x7f402773d1d8 - __rust_try
+   9:     0x7f402773f201 - rt::lang_start::ha172a3ce74bb453aK5w
+  10:     0x7f4027738a19 - main
+  11:     0x7f402694ab44 - __libc_start_main
+  12:     0x7f40277386c8 - &lt;unknown&gt;
+  13:                0x0 - &lt;unknown&gt;
+</code></pre>
+<p>Значение расходящейся функции может быть использовано как значение любого типа:</p>
+<pre><code class="language-should_panic"># fn diverges() -&gt; ! {
+#    panic!(&quot;Эта функция никогда не выходит!&quot;);
+# }
+let x: i32 = diverges();
+let x: String = diverges();
+</code></pre>
+<h2><a class="header" href="#Указатели-на-функции" id="Указатели-на-функции">Указатели на функции</a></h2>
+<p>Можно объявить имя, связанное с функцией:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let f: fn(i32) -&gt; i32;
+#}</code></pre></pre>
+<p><code>f</code> — это имя, связанное с указателем на функцию, которая принимает в качестве
+аргумента <code>i32</code> и возвращает <code>i32</code>. Например:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+fn plus_one(i: i32) -&gt; i32 {
+    i + 1
+}
+
+// без вывода типа
+let f: fn(i32) -&gt; i32 = plus_one;
+
+// с выводом типа
+let f = plus_one;
+#}</code></pre></pre>
+<p>Теперь мы можем использовать <code>f</code>, чтобы вызвать функцию:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+# fn plus_one(i: i32) -&gt; i32 { i + 1 }
+# let f = plus_one;
+let six = f(5);
+#}</code></pre></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="variable-bindings.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="primitive-types.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="variable-bindings.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="primitive-types.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+        <!-- Google Analytics Tag -->
+        <script type="text/javascript">
+            var localAddrs = ["localhost", "127.0.0.1", ""];
+
+            // make sure we don't activate google analytics if the developer is
+            // inspecting the book locally...
+            if (localAddrs.indexOf(document.location.hostname) === -1) {
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-142155799-10', 'auto');
+                ga('send', 'pageview');
+            }
+        </script>
+        
+
+        
+        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

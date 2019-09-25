@@ -1,0 +1,702 @@
+<!DOCTYPE HTML>
+<html lang="ru" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Стек и куча - Язык программирования Rust</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li><a href="INTRODUCTION.html"><strong aria-hidden="true">1.</strong> Введение</a></li><li><a href="getting-started.html"><strong aria-hidden="true">2.</strong> C чего начать</a></li><li><a href="learn-rust.html"><strong aria-hidden="true">3.</strong> Изучение Rust</a></li><li><ol class="section"><li><a href="guessing-game.html"><strong aria-hidden="true">3.1.</strong> Угадайка</a></li><li><a href="dining-philosophers.html"><strong aria-hidden="true">3.2.</strong> Обедающие философы</a></li><li><a href="rust-inside-other-languages.html"><strong aria-hidden="true">3.3.</strong> Вызов кода на Rust из других языков</a></li></ol></li><li><a href="syntax-and-semantics.html"><strong aria-hidden="true">4.</strong> Синтаксис и семантика</a></li><li><ol class="section"><li><a href="variable-bindings.html"><strong aria-hidden="true">4.1.</strong> Связывание имён</a></li><li><a href="functions.html"><strong aria-hidden="true">4.2.</strong> Функции</a></li><li><a href="primitive-types.html"><strong aria-hidden="true">4.3.</strong> Простые типы</a></li><li><a href="comments.html"><strong aria-hidden="true">4.4.</strong> Комментарии</a></li><li><a href="if.html"><strong aria-hidden="true">4.5.</strong> Конструкция if</a></li><li><a href="loops.html"><strong aria-hidden="true">4.6.</strong> Циклы</a></li><li><a href="ownership.html"><strong aria-hidden="true">4.7.</strong> Владение</a></li><li><a href="references-and-borrowing.html"><strong aria-hidden="true">4.8.</strong> Ссылки и заимствование</a></li><li><a href="lifetimes.html"><strong aria-hidden="true">4.9.</strong> Время жизни</a></li><li><a href="mutability.html"><strong aria-hidden="true">4.10.</strong> Изменяемость</a></li><li><a href="structs.html"><strong aria-hidden="true">4.11.</strong> Структуры</a></li><li><a href="enums.html"><strong aria-hidden="true">4.12.</strong> Перечисления</a></li><li><a href="match.html"><strong aria-hidden="true">4.13.</strong> Конструкция match</a></li><li><a href="patterns.html"><strong aria-hidden="true">4.14.</strong> Шаблоны сопоставления match</a></li><li><a href="method-syntax.html"><strong aria-hidden="true">4.15.</strong> Синтаксис методов</a></li><li><a href="vectors.html"><strong aria-hidden="true">4.16.</strong> Вектора</a></li><li><a href="strings.html"><strong aria-hidden="true">4.17.</strong> Строки</a></li><li><a href="generics.html"><strong aria-hidden="true">4.18.</strong> Обобщённое программирование</a></li><li><a href="traits.html"><strong aria-hidden="true">4.19.</strong> Типажи</a></li><li><a href="drop.html"><strong aria-hidden="true">4.20.</strong> Типаж Drop</a></li><li><a href="if-let.html"><strong aria-hidden="true">4.21.</strong> Конструкция if let</a></li><li><a href="trait-objects.html"><strong aria-hidden="true">4.22.</strong> Типажи-объекты</a></li><li><a href="closures.html"><strong aria-hidden="true">4.23.</strong> Замыкания</a></li><li><a href="ufcs.html"><strong aria-hidden="true">4.24.</strong> Универсальный синтаксис вызова функций</a></li><li><a href="crates-and-modules.html"><strong aria-hidden="true">4.25.</strong> Контейнеры и модули</a></li><li><a href="const-and-static.html"><strong aria-hidden="true">4.26.</strong> const и static</a></li><li><a href="attributes.html"><strong aria-hidden="true">4.27.</strong> Атрибуты</a></li><li><a href="type-aliases.html"><strong aria-hidden="true">4.28.</strong> Псевдонимы типов</a></li><li><a href="casting-between-types.html"><strong aria-hidden="true">4.29.</strong> Приведение типов</a></li><li><a href="associated-types.html"><strong aria-hidden="true">4.30.</strong> Ассоциированные типы</a></li><li><a href="unsized-types.html"><strong aria-hidden="true">4.31.</strong> Безразмерные типы</a></li><li><a href="operators-and-overloading.html"><strong aria-hidden="true">4.32.</strong> Перегрузка операций</a></li><li><a href="deref-coercions.html"><strong aria-hidden="true">4.33.</strong> Преобразования при разыменовании</a></li><li><a href="macros.html"><strong aria-hidden="true">4.34.</strong> Макросы</a></li><li><a href="raw-pointers.html"><strong aria-hidden="true">4.35.</strong> Сырые указатели</a></li><li><a href="unsafe.html"><strong aria-hidden="true">4.36.</strong> Небезопасный код</a></li></ol></li><li><a href="effective-rust.html"><strong aria-hidden="true">5.</strong> Эффективное использование Rust</a></li><li><ol class="section"><li><a href="the-stack-and-the-heap.html" class="active"><strong aria-hidden="true">5.1.</strong> Стек и куча</a></li><li><a href="testing.html"><strong aria-hidden="true">5.2.</strong> Тестирование</a></li><li><a href="conditional-compilation.html"><strong aria-hidden="true">5.3.</strong> Условная компиляция</a></li><li><a href="documentation.html"><strong aria-hidden="true">5.4.</strong> Документация</a></li><li><a href="iterators.html"><strong aria-hidden="true">5.5.</strong> Итераторы</a></li><li><a href="concurrency.html"><strong aria-hidden="true">5.6.</strong> Многозадачность</a></li><li><a href="error-handling.html"><strong aria-hidden="true">5.7.</strong> Обработка ошибок</a></li><li><a href="choosing-your-guarantees.html"><strong aria-hidden="true">5.8.</strong> Выбор гарантий</a></li><li><a href="ffi.html"><strong aria-hidden="true">5.9.</strong> Интерфейс внешних функций</a></li><li><a href="borrow-and-asref.html"><strong aria-hidden="true">5.10.</strong> Типажи Borrow и AsRef</a></li><li><a href="release-channels.html"><strong aria-hidden="true">5.11.</strong> Каналы сборок</a></li><li><a href="using-rust-without-the-standard-library.html"><strong aria-hidden="true">5.12.</strong> Using Rust without the standard library</a></li></ol></li><li><a href="nightly-rust.html"><strong aria-hidden="true">6.</strong> Нестабильные возможности Rust</a></li><li><ol class="section"><li><a href="compiler-plugins.html"><strong aria-hidden="true">6.1.</strong> Плагины к компилятору</a></li><li><a href="inline-assembly.html"><strong aria-hidden="true">6.2.</strong> Встроенный ассемблерный код</a></li><li><a href="no-stdlib.html"><strong aria-hidden="true">6.3.</strong> Без stdlib</a></li><li><a href="intrinsics.html"><strong aria-hidden="true">6.4.</strong> Внутренние средства</a></li><li><a href="lang-items.html"><strong aria-hidden="true">6.5.</strong> Элементы языка</a></li><li><a href="advanced-linking.html"><strong aria-hidden="true">6.6.</strong> Продвинутое руководство по компоновке</a></li><li><a href="benchmark-tests.html"><strong aria-hidden="true">6.7.</strong> Тесты производительности</a></li><li><a href="box-syntax-and-patterns.html"><strong aria-hidden="true">6.8.</strong> Синтаксис упаковки и шаблоны match</a></li><li><a href="slice-patterns.html"><strong aria-hidden="true">6.9.</strong> Шаблоны match для срезов</a></li><li><a href="associated-constants.html"><strong aria-hidden="true">6.10.</strong> Ассоциированные константы</a></li><li><a href="custom-allocators.html"><strong aria-hidden="true">6.11.</strong> Пользовательские менеджеры памяти</a></li></ol></li><li><a href="glossary.html"><strong aria-hidden="true">7.</strong> Глоссарий</a></li><li><a href="syntax-index.html"><strong aria-hidden="true">8.</strong> Syntax Index</a></li><li><a href="bibliography.html"><strong aria-hidden="true">9.</strong> Библиография</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Язык программирования Rust</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>% Стек и куча</p>
+<p>Как любой системный язык программирования, Rust работает на низком уровне. Если
+вы пришли из языка высокого уровня, то вам могут быть незнакомы некоторые
+аспекты системного программирования. Наиболее важными из них являются те,
+которые касаются работы с памятью в стеке и в куче. Если вы уже знакомы с тем,
+как в C-подобных языках используется выделение памяти в стеке, то эта глава
+освежит ваши знания. Если же вы еще не знакомы с этим, то в общих чертах узнаете
+об этом понятии, но с акцентом на Rust.</p>
+<h1><a class="header" href="#Управление-памятью" id="Управление-памятью">Управление памятью</a></h1>
+<p>Эти два термина касаются управления памятью. Стек и куча — это абстракции,
+которые помогают вам определить, когда требуется выделение и освобождение
+памяти.</p>
+<p>Вот высокоуровневое сравнение.</p>
+<p>Стек работает очень быстро; в Rust память
+выделяется в стеке по умолчанию. Выделение памяти в стеке является локальным по
+отношению к вызову функции, и имеет ограниченный размер. Куча, с другой стороны,
+работает медленнее, а выделение памяти в куче осуществляется в программе
+явно. Но такая память имеет теоретически неограниченный размер, и доступна
+глобально.</p>
+<h1><a class="header" href="#Стек" id="Стек">Стек</a></h1>
+<p>Давайте поговорим о следующей программе на Rust:</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let x = 42;
+}
+</code></pre></pre>
+<p>Эта программа имеет одно связанное имя, <code>x</code>. Память для него необходимо
+где-то выделить. Rust по умолчанию «выделяет память в стеке», что означает, что
+переменные «помещаются в стеке». Что это значит?</p>
+<p>Когда функция вызывается, то выделяется некоторый объем памяти для всех её
+локальных переменных и некоторой дополнительной информации. Это называется
+«стековый кадр» (stack frame). В этом руководстве мы будем игнорировать эту
+дополнительную информацию, и будем рассматривать лишь локальные переменные,
+которые мы определяем. Таким образом, в этом случае, когда выполняется
+<code>main()</code>, мы выделяем одно 32-битное целое число в нашем кадре стека. Как вы
+можете видеть, это происходит автоматически — мы не должны писать какой-либо
+специальный код на Rust для этого.</p>
+<p>Когда функция завершается, её стековый кадр освобождается. Это происходит
+автоматически — для этого нам не надо предпринимать никаких действий.</p>
+<p>Вот и все, что касается этой простой программы. Главное, что здесь нужно
+понять — это что выделение в стеке очень, очень быстро. Поскольку все локальные
+переменные известны нам заранее, мы можем выделить память для них всех сразу. И
+так как они, как правило, одновременно выходят из области видимости, мы можем
+очень быстро освободить выделенную память.</p>
+<p>Недостатком является то, что мы не можем хранить необходимые значения дольше,
+чем в рамках одной функции.</p>
+<p>А ещё мы не говорили о том, что же означает название «стек». Для этого мы должны
+привести немного более сложный пример:</p>
+<pre><pre class="playpen"><code class="language-rust">fn foo() {
+    let y = 5;
+    let z = 100;
+}
+
+fn main() {
+    let x = 42;
+
+    foo();
+}
+</code></pre></pre>
+<p>Эта программа имеет в общей сложности три переменные: две в <code>foo()</code> и одну в
+<code>main()</code>. Так же как и раньше, когда вызывается <code>main()</code>, в её стековом кадре
+выделяется одно целое число. Но, прежде чем мы сможем показать, что происходит,
+когда вызывается <code>foo()</code>, мы должны визуализировать то, что происходит с
+памятью. Ваша операционная система представляет отображение памяти для вашей
+программы. Это довольно просто: огромный список адресов, от 0 до большого числа,
+представляющего количество оперативной памяти у вашего компьютера. Например,
+если у вас есть гигабайт оперативной памяти, то ваши адреса будут от <code>0</code> до
+<code>1 073 741 823</code>. Это число равно 2<sup>30</sup>, количеству байтов в
+гигабайте.</p>
+<p>Эта память вроде гигантского массива: адреса начинаются с нуля и продолжаются до
+конечного числа. Так вот схема нашего первого кадра стека:</p>
+<table><thead><tr><th>Адрес</th><th>Имя</th><th>Значение</th></tr></thead><tbody>
+<tr><td>0</td><td>x</td><td>42</td></tr>
+</tbody></table>
+<p>У нас есть переменная <code>x</code>, расположенная по адресу <code>0</code>, имеющая значение <code>42</code>.</p>
+<p>Когда вызывается <code>foo()</code>, выделяется новый стековый кадр:</p>
+<table><thead><tr><th>Адрес</th><th>Имя</th><th>Значение</th></tr></thead><tbody>
+<tr><td>2</td><td>z</td><td>100</td></tr>
+<tr><td>1</td><td>y</td><td>5</td></tr>
+<tr><td>0</td><td>x</td><td>42</td></tr>
+</tbody></table>
+<p>Поскольку <code>0</code> было задействовано в первом кадре, для кадра <code>foo()</code> используются
+<code>1</code> и <code>2</code>. При дальнейших вызовах функций стек будет расти вверх.</p>
+<p>Здесь необходимо принять к сведению некоторые важные замечания. Адреса 0, 1 и 2
+приведены исключительно в иллюстративных целях, и не имеют никакого отношения к
+фактическим адресам, которые компьютер будет использовать. В частности, набор
+адресов в действительности включает выравнивающие разделители, состоящие из
+некоторого числа байтов, которые отделяют каждый из адресов. Размер этого
+разделителя может даже превышать размер хранящегося значения.</p>
+<p>После того, как <code>foo()</code> завершается, её кадр будет освобожден:</p>
+<table><thead><tr><th>Адрес</th><th>Имя</th><th>Значение</th></tr></thead><tbody>
+<tr><td>0</td><td>x</td><td>42</td></tr>
+</tbody></table>
+<p>А потом, после <code>main()</code>, даже это последнее значение уходит. Легко!</p>
+<p>Это называется «стек» (по-русски, стопка), потому что он работает как стопка
+тарелок: первая тарелка, которую вы положили, будет последней тарелкой,
+которую вы возьмете обратно. По этой причине стек иногда называют очередью
+«последним пришел, первым вышел». Последнее значение, которое вы положили в
+стек, будет первым, которое вы получите из него.</p>
+<p>Давайте попробуем трёхуровневый пример:</p>
+<pre><pre class="playpen"><code class="language-rust">fn bar() {
+    let i = 6;
+}
+
+fn foo() {
+    let a = 5;
+    let b = 100;
+    let c = 1;
+
+    bar();
+}
+
+fn main() {
+    let x = 42;
+
+    foo();
+}
+</code></pre></pre>
+<p>Сначала вызывается <code>main()</code>:</p>
+<table><thead><tr><th>Адрес</th><th>Имя</th><th>Значение</th></tr></thead><tbody>
+<tr><td>0</td><td>x</td><td>42</td></tr>
+</tbody></table>
+<p>Затем из <code>main()</code> вызывается <code>foo()</code>:</p>
+<table><thead><tr><th>Адрес</th><th>Имя</th><th>Значение</th></tr></thead><tbody>
+<tr><td>3</td><td>c</td><td>1</td></tr>
+<tr><td>2</td><td>b</td><td>100</td></tr>
+<tr><td>1</td><td>a</td><td>5</td></tr>
+<tr><td>0</td><td>x</td><td>42</td></tr>
+</tbody></table>
+<p>И затем из <code>foo()</code> вызывается <code>bar()</code>:</p>
+<table><thead><tr><th>Адрес</th><th>Имя</th><th>Значение</th></tr></thead><tbody>
+<tr><td>4</td><td>i</td><td>6</td></tr>
+<tr><td>3</td><td>c</td><td>1</td></tr>
+<tr><td>2</td><td>b</td><td>100</td></tr>
+<tr><td>1</td><td>a</td><td>5</td></tr>
+<tr><td>0</td><td>x</td><td>42</td></tr>
+</tbody></table>
+<p>Вот что мы имели ввиду раньше, говоря, что наш стек растет вверх.</p>
+<p>После того, как <code>bar()</code> завершается, её кадр будет освобожден, оставляя только
+<code>foo()</code> и <code>main()</code>:</p>
+<table><thead><tr><th>Адрес</th><th>Имя</th><th>Значение</th></tr></thead><tbody>
+<tr><td>3</td><td>c</td><td>1</td></tr>
+<tr><td>2</td><td>b</td><td>100</td></tr>
+<tr><td>1</td><td>a</td><td>5</td></tr>
+<tr><td>0</td><td>x</td><td>42</td></tr>
+</tbody></table>
+<p>А затем завершается <code>foo()</code>, оставляя только <code>main()</code>:</p>
+<table><thead><tr><th>Адрес</th><th>Имя</th><th>Значение</th></tr></thead><tbody>
+<tr><td>0</td><td>x</td><td>42</td></tr>
+</tbody></table>
+<p>И вот мы закончили. Уловили суть? Это как стопка тарелок: вы кладете наверх, и
+берёте сверху.</p>
+<h1><a class="header" href="#Куча" id="Куча">Куча</a></h1>
+<p>Такой способ выделения памяти работает очень хорошо, но он может быть
+использован не всегда. Иногда вам необходимо передать некоторую память между
+различными функциями или сохранить её валидность после окончания выполнения
+функции. Для этого мы можем использовать кучу.</p>
+<p>В Rust, вы можете выделить память в куче с помощью упаковки, т.е.
+<a href="http://doc.rust-lang.org/std/boxed/index.html">типа <code>Box&lt;T&gt;</code></a>. (Примечание переводчика: мы называем <code>Box&lt;T&gt;</code> упаковкой,
+потому что <code>T</code> как бы «упакован» в <code>Box</code>: упаковка знает размер того, что лежит
+внутри. Эта информация закодирована в типе <code>T</code>, поэтому во время исполнения, для
+размерных типов, это просто указатель.) Вот пример:</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let x = Box::new(5);
+    let y = 42;
+}
+</code></pre></pre>
+<p>Вот что происходит с памятью, когда вызывается <code>main()</code>:</p>
+<table><thead><tr><th>Адрес</th><th>Имя</th><th>Значение</th></tr></thead><tbody>
+<tr><td>1</td><td>y</td><td>42</td></tr>
+<tr><td>0</td><td>x</td><td>??????</td></tr>
+</tbody></table>
+<p>Мы выделяем место для двух переменных в стеке. <code>y</code> представляет собой <code>42</code>,
+тут всё как обычно. Но что насчёт <code>x</code>? Наш <code>x</code> представляет собой <code>Box&lt;i32&gt;</code>,
+а упаковка выделяет память в куче. Фактическое значение упаковки — структура,
+которая хранит указатель на «кучу». Когда начинает выполняться функция,
+осуществляется вызов <code>Box::new()</code>, который выделяет некоторый объем памяти в
+куче, и кладет туда <code>5</code>. Теперь память выглядит следующим образом:</p>
+<table><thead><tr><th>Адрес</th><th>Имя</th><th>Значение</th></tr></thead><tbody>
+<tr><td>(2<sup>30</sup>) - 1</td><td></td><td>5</td></tr>
+<tr><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>1</td><td>y</td><td>42</td></tr>
+<tr><td>0</td><td>x</td><td>→ (2<sup>30</sup>) - 1</td></tr>
+</tbody></table>
+<p>В нашем гипотетическом компьютере c 1Гб оперативной памяти имеется
+2<sup>30</sup> адресов. А так как наш стек растет от нуля, то проще всего
+выделить память с другого конца. Таким образом, наше первое значение находится
+на самом высоком месте в памяти. Поскольку структура <code>x</code> хранит <a href="raw-pointers.html">сырой
+указатель (raw pointer)</a> на адрес, который мы выделили в куче, то
+значение <code>x</code> равно (2<sup>30</sup>) - 1 — это то самое местоположение в памяти.</p>
+<p>Мы не слишком много говорили о том, что на самом деле означает «выделить» и
+«освободить память» в этом контексте. Чрезмерное углубление в детали по этому
+вопросу выходит за рамки данного руководства, но важно отметить, что куча — это
+не просто стек, который растет с противоположного конца. Как мы увидим в
+дальнейших примерах в этой книге, память из кучи может быть выделена и
+освобождена в любом порядке, что в конечном итоге может привести к «дыркам». Вот
+схема размещения памяти программы, проработавшей в течение некоторого времени:</p>
+<table><thead><tr><th>Адрес</th><th>Имя</th><th>Значение</th></tr></thead><tbody>
+<tr><td>(2<sup>30</sup>) - 1</td><td></td><td>5</td></tr>
+<tr><td>(2<sup>30</sup>) - 2</td><td></td><td></td></tr>
+<tr><td>(2<sup>30</sup>) - 3</td><td></td><td></td></tr>
+<tr><td>(2<sup>30</sup>) - 4</td><td></td><td>42</td></tr>
+<tr><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>3</td><td>y</td><td>→ (2<sup>30</sup>) - 4</td></tr>
+<tr><td>2</td><td>y</td><td>42</td></tr>
+<tr><td>1</td><td>y</td><td>42</td></tr>
+<tr><td>0</td><td>x</td><td>→ (2<sup>30</sup>) - 1</td></tr>
+</tbody></table>
+<p>В этом примере мы выделили четыре элемента в куче, но освободили лишь два из
+них. Отсюда разрыв между (2<sup>30</sup>) - 1 и (2<sup>30</sup>) - 4, который в
+настоящее время не используется. Конкретные детали того, как и почему это
+происходит, зависят от того, какую стратегию вы используете для управления
+кучей. Различные программы могут использовать различные «распределители памяти»,
+которые представляют собой библиотеки, которые управляют памятью за вас.
+Программы на Rust используют для этого <a href="http://www.canonware.com/jemalloc/">jemalloc</a>.</p>
+<p>Ладно, вернемся к нашему примеру. Так как эта память расположена в куче, то она
+может оставаться валидной дольше, чем функция, которая выделяет упаковку. В
+данном случае, однако, это не так.<sup class="footnote-reference"><a href="#moving">1</a></sup> Когда функция завершается, мы должны
+освободить кадр стека для <code>main()</code>. Хотя у <code>Box&lt;T&gt;</code> для этого есть свой трюк:
+<a href="drop.html">Drop</a>. Реализация <code>Drop</code> для <code>Box</code> освобождает память, которая была
+выделена при создании. Отлично! Поэтому, когда <code>x</code> уходит, сначала освобождается
+память, выделенная в куче:</p>
+<table><thead><tr><th>Адрес</th><th>Имя</th><th>Значение</th></tr></thead><tbody>
+<tr><td>1</td><td>y</td><td>42</td></tr>
+<tr><td>0</td><td>x</td><td>??????</td></tr>
+</tbody></table>
+<div class="footnote-definition" id="moving"><sup class="footnote-definition-label">1</sup>
+<p>Мы можем продлить время жизни памяти путем передачи права
+собственности, что иногда называют «перемещение из упаковки» («moving
+out of the box»). Более сложные примеры будут рассмотрены позже.</p>
+</div>
+<p>А потом кадр стека уходит, освобождая всю нашу память.</p>
+<h1><a class="header" href="#Аргументы-и-заимствование" id="Аргументы-и-заимствование">Аргументы и заимствование</a></h1>
+<p>У нас есть некоторые простые примеры со стеком и кучей, но что насчёт аргументов
+функции и заимствования? Вот небольшая программа на Rust:</p>
+<pre><pre class="playpen"><code class="language-rust">fn foo(i: &amp;i32) {
+    let z = 42;
+}
+
+fn main() {
+    let x = 5;
+    let y = &amp;x;
+
+    foo(y);
+}
+</code></pre></pre>
+<p>Когда мы входим в <code>main()</code>, память выглядит следующим образом:</p>
+<table><thead><tr><th>Адрес</th><th>Имя</th><th>Значение</th></tr></thead><tbody>
+<tr><td>1</td><td>y</td><td>→ 0</td></tr>
+<tr><td>0</td><td>x</td><td>5</td></tr>
+</tbody></table>
+<p>Значением <code>x</code> является <code>5</code>, а <code>y</code> представляет собой ссылку на <code>x</code>. То есть, ее
+значением является адрес памяти, по которому расположен <code>x</code>. В данном случае это
+<code>0</code>.</p>
+<p>А что насчёт случая, когда мы вызываем <code>foo()</code>, передавая <code>y</code> в качестве
+аргумента?</p>
+<table><thead><tr><th>Адрес</th><th>Имя</th><th>Значение</th></tr></thead><tbody>
+<tr><td>3</td><td>z</td><td>42</td></tr>
+<tr><td>2</td><td>i</td><td>→ 0</td></tr>
+<tr><td>1</td><td>y</td><td>→ 0</td></tr>
+<tr><td>0</td><td>x</td><td>5</td></tr>
+</tbody></table>
+<p>Кадры стека используются не только для локальных имён, но также и для
+аргументов. Таким образом, в этом случае, наш кадр должен содержать как <code>i</code>, наш
+аргумент, так и <code>z</code>, наше локальное имя. <code>i</code> — это копия аргумента <code>y</code>.
+Соответственно, значением <code>i</code>, как и значением <code>y</code>, является <code>0</code>.</p>
+<p>Это одна из причин, почему заимствование переменной не освобождает какую-либо
+память: значением ссылки является просто указатель на область памяти. Если мы
+освободим находящуюся по этому указателю память, то это может привести к ошибкам
+в дальнейшей работе.</p>
+<h1><a class="header" href="#Сложный-пример" id="Сложный-пример">Сложный пример</a></h1>
+<p>Хорошо, давайте рассмотрим следующую, более сложную программу шаг за шагом:</p>
+<pre><pre class="playpen"><code class="language-rust">fn foo(x: &amp;i32) {
+    let y = 10;
+    let z = &amp;y;
+
+    baz(z);
+    bar(x, z);
+}
+
+fn bar(a: &amp;i32, b: &amp;i32) {
+    let c = 5;
+    let d = Box::new(5);
+    let e = &amp;d;
+
+    baz(e);
+}
+
+fn baz(f: &amp;i32) {
+    let g = 100;
+}
+
+fn main() {
+    let h = 3;
+    let i = Box::new(20);
+    let j = &amp;h;
+
+    foo(j);
+}
+</code></pre></pre>
+<p>Сначала мы вызываем <code>main()</code>:</p>
+<table><thead><tr><th>Адрес</th><th>Имя</th><th>Значение</th></tr></thead><tbody>
+<tr><td>(2<sup>30</sup>) - 1</td><td></td><td>20</td></tr>
+<tr><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>2</td><td>j</td><td>→ 0</td></tr>
+<tr><td>1</td><td>i</td><td>→ (2<sup>30</sup>) - 1</td></tr>
+<tr><td>0</td><td>h</td><td>3</td></tr>
+</tbody></table>
+<p>Мы выделяем память для <code>j</code>, <code>i</code>, и <code>h</code>. <code>i</code> выделена в куче и поэтому содержит
+указатель на значение в куче.</p>
+<p>Далее, в конце вызова <code>main()</code>, вызывается <code>foo()</code>:</p>
+<table><thead><tr><th>Адрес</th><th>Имя</th><th>Значение</th></tr></thead><tbody>
+<tr><td>(2<sup>30</sup>) - 1</td><td></td><td>20</td></tr>
+<tr><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>5</td><td>z</td><td>→ 4</td></tr>
+<tr><td>4</td><td>y</td><td>10</td></tr>
+<tr><td>3</td><td>x</td><td>→ 0</td></tr>
+<tr><td>2</td><td>j</td><td>→ 0</td></tr>
+<tr><td>1</td><td>i</td><td>→ (2<sup>30</sup>) - 1</td></tr>
+<tr><td>0</td><td>h</td><td>3</td></tr>
+</tbody></table>
+<p>Пространство выделяется для <code>x</code>, <code>y</code> и <code>z</code>. Аргумент <code>x</code> имеет такое же
+значение, как и <code>j</code>, так как мы передали <code>j</code> в качестве аргумента. Это указатель
+на адрес <code>0</code>, так как <code>j</code> указывает на <code>h</code>.</p>
+<p>Далее, <code>foo()</code> вызывает <code>baz()</code>, передавая <code>z</code>:</p>
+<table><thead><tr><th>Адрес</th><th>Имя</th><th>Значение</th></tr></thead><tbody>
+<tr><td>(2<sup>30</sup>) - 1</td><td></td><td>20</td></tr>
+<tr><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>7</td><td>g</td><td>100</td></tr>
+<tr><td>6</td><td>f</td><td>→ 4</td></tr>
+<tr><td>5</td><td>z</td><td>→ 4</td></tr>
+<tr><td>4</td><td>y</td><td>10</td></tr>
+<tr><td>3</td><td>x</td><td>→ 0</td></tr>
+<tr><td>2</td><td>j</td><td>→ 0</td></tr>
+<tr><td>1</td><td>i</td><td>→ (2<sup>30</sup>) - 1</td></tr>
+<tr><td>0</td><td>h</td><td>3</td></tr>
+</tbody></table>
+<p>Мы выделили память для <code>f</code> и <code>g</code>. <code>baz()</code> очень короткая, и когда она
+завершается, мы избавляемся от её кадра стека:</p>
+<table><thead><tr><th>Адрес</th><th>Имя</th><th>Значение</th></tr></thead><tbody>
+<tr><td>(2<sup>30</sup>) - 1</td><td></td><td>20</td></tr>
+<tr><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>5</td><td>z</td><td>→ 4</td></tr>
+<tr><td>4</td><td>y</td><td>10</td></tr>
+<tr><td>3</td><td>x</td><td>→ 0</td></tr>
+<tr><td>2</td><td>j</td><td>→ 0</td></tr>
+<tr><td>1</td><td>i</td><td>→ (2<sup>30</sup>) - 1</td></tr>
+<tr><td>0</td><td>h</td><td>3</td></tr>
+</tbody></table>
+<p>Далее <code>foo()</code> вызывает <code>bar()</code> с аргументами <code>x</code> и <code>z</code>:</p>
+<table><thead><tr><th>Адрес</th><th>Имя</th><th>Значение</th></tr></thead><tbody>
+<tr><td>(2<sup>30</sup>) - 1</td><td></td><td>20</td></tr>
+<tr><td>(2<sup>30</sup>) - 2</td><td></td><td>5</td></tr>
+<tr><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>10</td><td>e</td><td>→ 9</td></tr>
+<tr><td>9</td><td>d</td><td>→ (2<sup>30</sup>) - 2</td></tr>
+<tr><td>8</td><td>c</td><td>5</td></tr>
+<tr><td>7</td><td>b</td><td>→ 4</td></tr>
+<tr><td>6</td><td>a</td><td>→ 0</td></tr>
+<tr><td>5</td><td>z</td><td>→ 4</td></tr>
+<tr><td>4</td><td>y</td><td>10</td></tr>
+<tr><td>3</td><td>x</td><td>→ 0</td></tr>
+<tr><td>2</td><td>j</td><td>→ 0</td></tr>
+<tr><td>1</td><td>i</td><td>→ (2<sup>30</sup>) - 1</td></tr>
+<tr><td>0</td><td>h</td><td>3</td></tr>
+</tbody></table>
+<p>Тут мы выделяем другое значение в куче, и поэтому мы вычитаем единицу из
+(2<sup>30</sup>) - 1. Это выражение написать легче, чем <code>1 073 741 822</code>.
+В любом случае, переменные создаются, как обычно.</p>
+<p>В конце <code>bar()</code> вызывает <code>baz()</code>:</p>
+<table><thead><tr><th>Адрес</th><th>Имя</th><th>Значение</th></tr></thead><tbody>
+<tr><td>(2<sup>30</sup>) - 1</td><td></td><td>20</td></tr>
+<tr><td>(2<sup>30</sup>) - 2</td><td></td><td>5</td></tr>
+<tr><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>12</td><td>g</td><td>100</td></tr>
+<tr><td>11</td><td>f</td><td>→ 9</td></tr>
+<tr><td>10</td><td>e</td><td>→ 9</td></tr>
+<tr><td>9</td><td>d</td><td>→ (2<sup>30</sup>) - 2</td></tr>
+<tr><td>8</td><td>c</td><td>5</td></tr>
+<tr><td>7</td><td>b</td><td>→ 4</td></tr>
+<tr><td>6</td><td>a</td><td>→ 0</td></tr>
+<tr><td>5</td><td>z</td><td>→ 4</td></tr>
+<tr><td>4</td><td>y</td><td>10</td></tr>
+<tr><td>3</td><td>x</td><td>→ 0</td></tr>
+<tr><td>2</td><td>j</td><td>→ 0</td></tr>
+<tr><td>1</td><td>i</td><td>→ (2<sup>30</sup>) - 1</td></tr>
+<tr><td>0</td><td>h</td><td>3</td></tr>
+</tbody></table>
+<p>Сейчас мы на наибольшей глубине! Поздравляем с достижением данной точки.</p>
+<p>После завершения <code>baz()</code>, мы избавляемся от <code>f</code> и <code>g</code>:</p>
+<table><thead><tr><th>Адрес</th><th>Имя</th><th>Значение</th></tr></thead><tbody>
+<tr><td>(2<sup>30</sup>) - 1</td><td></td><td>20</td></tr>
+<tr><td>(2<sup>30</sup>) - 2</td><td></td><td>5</td></tr>
+<tr><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>10</td><td>e</td><td>→ 9</td></tr>
+<tr><td>9</td><td>d</td><td>→ (2<sup>30</sup>) - 2</td></tr>
+<tr><td>8</td><td>c</td><td>5</td></tr>
+<tr><td>7</td><td>b</td><td>→ 4</td></tr>
+<tr><td>6</td><td>a</td><td>→ 0</td></tr>
+<tr><td>5</td><td>z</td><td>→ 4</td></tr>
+<tr><td>4</td><td>y</td><td>10</td></tr>
+<tr><td>3</td><td>x</td><td>→ 0</td></tr>
+<tr><td>2</td><td>j</td><td>→ 0</td></tr>
+<tr><td>1</td><td>i</td><td>→ (2<sup>30</sup>) - 1</td></tr>
+<tr><td>0</td><td>h</td><td>3</td></tr>
+</tbody></table>
+<p>Далее мы выполняем возврат из <code>bar()</code>. В этом случае <code>d</code> представляет собой
+<code>Box&lt;T&gt;</code>, поэтому он также освобождает и то, на что он указывает:
+(2<sup>30</sup>) - 2.</p>
+<table><thead><tr><th>Адрес</th><th>Имя</th><th>Значение</th></tr></thead><tbody>
+<tr><td>(2<sup>30</sup>) - 1</td><td></td><td>20</td></tr>
+<tr><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>5</td><td>z</td><td>→ 4</td></tr>
+<tr><td>4</td><td>y</td><td>10</td></tr>
+<tr><td>3</td><td>x</td><td>→ 0</td></tr>
+<tr><td>2</td><td>j</td><td>→ 0</td></tr>
+<tr><td>1</td><td>i</td><td>→ (2<sup>30</sup>) - 1</td></tr>
+<tr><td>0</td><td>h</td><td>3</td></tr>
+</tbody></table>
+<p>И после этого происходит возврат из <code>foo()</code>:</p>
+<table><thead><tr><th>Адрес</th><th>Имя</th><th>Значение</th></tr></thead><tbody>
+<tr><td>(2<sup>30</sup>) - 1</td><td></td><td>20</td></tr>
+<tr><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>2</td><td>j</td><td>→ 0</td></tr>
+<tr><td>1</td><td>i</td><td>→ (2<sup>30</sup>) - 1</td></tr>
+<tr><td>0</td><td>h</td><td>3</td></tr>
+</tbody></table>
+<p>И вот, наконец, <code>main()</code>, которая очищает все остальное. Когда освобождается <code>i</code>
+(<code>Drop</code>), будет также очищен и конец кучи.</p>
+<h1><a class="header" href="#А-что-делают-другие-языки" id="А-что-делают-другие-языки">А что делают другие языки?</a></h1>
+<p>Большинство языков со сборщиком мусора по умолчанию выделяет память из кучи. Это
+означает, что каждое значение будет упаковано. Есть ряд причин, почему делается
+именно так, но они выходят за рамки данного руководства. Есть несколько
+возможных оптимизаций, которые, правда, не достигают своей цели во всех случаях.
+Вместо того чтобы полагаться на стек и <code>Drop</code> в вопросах очистки памяти, сборщик
+мусора работает с кучей.</p>
+<h1><a class="header" href="#Что-использовать" id="Что-использовать">Что использовать?</a></h1>
+<p>Но, если стек быстрее и проще в управлении, зачем тогда нужна куча? Весомая
+причина заключается в том, что память в стеке может выделяться только по
+принципу «первым пришёл — последним вышел». Таким образом, место из-под кадра
+стека предыдущего вызова функции будет переиспользовано под следующий вызов.
+Выделение в куче — более общая техника. Она позволяет выделение и освобождение
+памяти в любом порядке. Однако, это достигается ценой увеличения сложности
+реализации механизма выделения памяти.</p>
+<p>В общем случае, следует предпочитать выделение в стеке, и поэтому, Rust
+использует выделение в стеке по умолчанию. LIFO модель стека («последним
+пришёл — первым вышел») фундаментально проще. Это значит, что программа быстрее
+исполняется, и проще по смыслу.</p>
+<h2><a class="header" href="#Эффективность-во-время-выполнения" id="Эффективность-во-время-выполнения">Эффективность во время выполнения</a></h2>
+<p>Управление памятью для стека тривиально: машина просто увеличивает или
+уменьшает одно значение, так называемый «указатель стека» (stack pointer).
+Управление памятью для кучи сложнее: память, выделенная в куче, освобождается в
+произвольные моменты, а каждая область выделенной в куче памяти может быть
+произвольного размера. Распределителю памяти, как правило, требуется приложить
+гораздо больше усилий для определения областей, которые можно использовать
+заново.</p>
+<p>Если вы хотите изучить эту тему более подробно, то <a href="http://www.cs.northwestern.edu/%7Epdinda/icsclass/doc/dsa.pdf">эта статья</a> будет
+отличным введением.</p>
+<h2><a class="header" href="#Простота-программы" id="Простота-программы">Простота программы</a></h2>
+<p>Выделение памяти в стеке воздействует как на сам язык Rust, так и на модель
+мышления разработчиков. Стековая семантика — ключевое понятие Rust. Мы получаем
+автоматическое управление памятью без усложнения среды исполнения. Именно этот
+механизм позволяет освободить память в куче, как только её владелец вышел из
+области видимости — по сути, как только схлопнулся стек кадра, на котором он
+жил. К сожалению, в некоторых ситуациях стека недостаточно. Если нужна большая
+гибкость во владении памятью, можно воспользоваться счётчиками ссылок <code>Rc&lt;T&gt;</code> и
+<code>Arc&lt;T&gt;</code>.</p>
+<p>Желание более удобно пользоваться памятью в куче может доходить до крайности. С
+одной стороны, можно реализовать сборщик мусора — но это сильно увеличивает
+сложность среды исполнения. С другой стороны, полностью ручное управление
+памятью с явным вызовом процедуры освобождения часто приводит к ошибкам,
+предотвратить которые компилятор Rust не в силах.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="effective-rust.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="testing.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="effective-rust.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="testing.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+        <!-- Google Analytics Tag -->
+        <script type="text/javascript">
+            var localAddrs = ["localhost", "127.0.0.1", ""];
+
+            // make sure we don't activate google analytics if the developer is
+            // inspecting the book locally...
+            if (localAddrs.indexOf(document.location.hostname) === -1) {
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-142155799-10', 'auto');
+                ga('send', 'pageview');
+            }
+        </script>
+        
+
+        
+        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

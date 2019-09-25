@@ -1,0 +1,13 @@
+[book]
+authors = ["funkill2"]
+language = "ru"
+multilingual = false
+src = "src"
+title = "Язык программирования Rust"
+
+[output.html]
+google-analytics="UA-142155799-10"
+
+[output.html.playpen]
+editable = true
+editor = "ace"

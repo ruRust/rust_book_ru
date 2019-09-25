@@ -1,0 +1,554 @@
+<!DOCTYPE HTML>
+<html lang="ru" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Выбор гарантий - Язык программирования Rust</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li><a href="INTRODUCTION.html"><strong aria-hidden="true">1.</strong> Введение</a></li><li><a href="getting-started.html"><strong aria-hidden="true">2.</strong> C чего начать</a></li><li><a href="learn-rust.html"><strong aria-hidden="true">3.</strong> Изучение Rust</a></li><li><ol class="section"><li><a href="guessing-game.html"><strong aria-hidden="true">3.1.</strong> Угадайка</a></li><li><a href="dining-philosophers.html"><strong aria-hidden="true">3.2.</strong> Обедающие философы</a></li><li><a href="rust-inside-other-languages.html"><strong aria-hidden="true">3.3.</strong> Вызов кода на Rust из других языков</a></li></ol></li><li><a href="syntax-and-semantics.html"><strong aria-hidden="true">4.</strong> Синтаксис и семантика</a></li><li><ol class="section"><li><a href="variable-bindings.html"><strong aria-hidden="true">4.1.</strong> Связывание имён</a></li><li><a href="functions.html"><strong aria-hidden="true">4.2.</strong> Функции</a></li><li><a href="primitive-types.html"><strong aria-hidden="true">4.3.</strong> Простые типы</a></li><li><a href="comments.html"><strong aria-hidden="true">4.4.</strong> Комментарии</a></li><li><a href="if.html"><strong aria-hidden="true">4.5.</strong> Конструкция if</a></li><li><a href="loops.html"><strong aria-hidden="true">4.6.</strong> Циклы</a></li><li><a href="ownership.html"><strong aria-hidden="true">4.7.</strong> Владение</a></li><li><a href="references-and-borrowing.html"><strong aria-hidden="true">4.8.</strong> Ссылки и заимствование</a></li><li><a href="lifetimes.html"><strong aria-hidden="true">4.9.</strong> Время жизни</a></li><li><a href="mutability.html"><strong aria-hidden="true">4.10.</strong> Изменяемость</a></li><li><a href="structs.html"><strong aria-hidden="true">4.11.</strong> Структуры</a></li><li><a href="enums.html"><strong aria-hidden="true">4.12.</strong> Перечисления</a></li><li><a href="match.html"><strong aria-hidden="true">4.13.</strong> Конструкция match</a></li><li><a href="patterns.html"><strong aria-hidden="true">4.14.</strong> Шаблоны сопоставления match</a></li><li><a href="method-syntax.html"><strong aria-hidden="true">4.15.</strong> Синтаксис методов</a></li><li><a href="vectors.html"><strong aria-hidden="true">4.16.</strong> Вектора</a></li><li><a href="strings.html"><strong aria-hidden="true">4.17.</strong> Строки</a></li><li><a href="generics.html"><strong aria-hidden="true">4.18.</strong> Обобщённое программирование</a></li><li><a href="traits.html"><strong aria-hidden="true">4.19.</strong> Типажи</a></li><li><a href="drop.html"><strong aria-hidden="true">4.20.</strong> Типаж Drop</a></li><li><a href="if-let.html"><strong aria-hidden="true">4.21.</strong> Конструкция if let</a></li><li><a href="trait-objects.html"><strong aria-hidden="true">4.22.</strong> Типажи-объекты</a></li><li><a href="closures.html"><strong aria-hidden="true">4.23.</strong> Замыкания</a></li><li><a href="ufcs.html"><strong aria-hidden="true">4.24.</strong> Универсальный синтаксис вызова функций</a></li><li><a href="crates-and-modules.html"><strong aria-hidden="true">4.25.</strong> Контейнеры и модули</a></li><li><a href="const-and-static.html"><strong aria-hidden="true">4.26.</strong> const и static</a></li><li><a href="attributes.html"><strong aria-hidden="true">4.27.</strong> Атрибуты</a></li><li><a href="type-aliases.html"><strong aria-hidden="true">4.28.</strong> Псевдонимы типов</a></li><li><a href="casting-between-types.html"><strong aria-hidden="true">4.29.</strong> Приведение типов</a></li><li><a href="associated-types.html"><strong aria-hidden="true">4.30.</strong> Ассоциированные типы</a></li><li><a href="unsized-types.html"><strong aria-hidden="true">4.31.</strong> Безразмерные типы</a></li><li><a href="operators-and-overloading.html"><strong aria-hidden="true">4.32.</strong> Перегрузка операций</a></li><li><a href="deref-coercions.html"><strong aria-hidden="true">4.33.</strong> Преобразования при разыменовании</a></li><li><a href="macros.html"><strong aria-hidden="true">4.34.</strong> Макросы</a></li><li><a href="raw-pointers.html"><strong aria-hidden="true">4.35.</strong> Сырые указатели</a></li><li><a href="unsafe.html"><strong aria-hidden="true">4.36.</strong> Небезопасный код</a></li></ol></li><li><a href="effective-rust.html"><strong aria-hidden="true">5.</strong> Эффективное использование Rust</a></li><li><ol class="section"><li><a href="the-stack-and-the-heap.html"><strong aria-hidden="true">5.1.</strong> Стек и куча</a></li><li><a href="testing.html"><strong aria-hidden="true">5.2.</strong> Тестирование</a></li><li><a href="conditional-compilation.html"><strong aria-hidden="true">5.3.</strong> Условная компиляция</a></li><li><a href="documentation.html"><strong aria-hidden="true">5.4.</strong> Документация</a></li><li><a href="iterators.html"><strong aria-hidden="true">5.5.</strong> Итераторы</a></li><li><a href="concurrency.html"><strong aria-hidden="true">5.6.</strong> Многозадачность</a></li><li><a href="error-handling.html"><strong aria-hidden="true">5.7.</strong> Обработка ошибок</a></li><li><a href="choosing-your-guarantees.html" class="active"><strong aria-hidden="true">5.8.</strong> Выбор гарантий</a></li><li><a href="ffi.html"><strong aria-hidden="true">5.9.</strong> Интерфейс внешних функций</a></li><li><a href="borrow-and-asref.html"><strong aria-hidden="true">5.10.</strong> Типажи Borrow и AsRef</a></li><li><a href="release-channels.html"><strong aria-hidden="true">5.11.</strong> Каналы сборок</a></li><li><a href="using-rust-without-the-standard-library.html"><strong aria-hidden="true">5.12.</strong> Using Rust without the standard library</a></li></ol></li><li><a href="nightly-rust.html"><strong aria-hidden="true">6.</strong> Нестабильные возможности Rust</a></li><li><ol class="section"><li><a href="compiler-plugins.html"><strong aria-hidden="true">6.1.</strong> Плагины к компилятору</a></li><li><a href="inline-assembly.html"><strong aria-hidden="true">6.2.</strong> Встроенный ассемблерный код</a></li><li><a href="no-stdlib.html"><strong aria-hidden="true">6.3.</strong> Без stdlib</a></li><li><a href="intrinsics.html"><strong aria-hidden="true">6.4.</strong> Внутренние средства</a></li><li><a href="lang-items.html"><strong aria-hidden="true">6.5.</strong> Элементы языка</a></li><li><a href="advanced-linking.html"><strong aria-hidden="true">6.6.</strong> Продвинутое руководство по компоновке</a></li><li><a href="benchmark-tests.html"><strong aria-hidden="true">6.7.</strong> Тесты производительности</a></li><li><a href="box-syntax-and-patterns.html"><strong aria-hidden="true">6.8.</strong> Синтаксис упаковки и шаблоны match</a></li><li><a href="slice-patterns.html"><strong aria-hidden="true">6.9.</strong> Шаблоны match для срезов</a></li><li><a href="associated-constants.html"><strong aria-hidden="true">6.10.</strong> Ассоциированные константы</a></li><li><a href="custom-allocators.html"><strong aria-hidden="true">6.11.</strong> Пользовательские менеджеры памяти</a></li></ol></li><li><a href="glossary.html"><strong aria-hidden="true">7.</strong> Глоссарий</a></li><li><a href="syntax-index.html"><strong aria-hidden="true">8.</strong> Syntax Index</a></li><li><a href="bibliography.html"><strong aria-hidden="true">9.</strong> Библиография</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Язык программирования Rust</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>% Выбор гарантий</p>
+<p>Одна из важных черт языка Rust — это то, что он позволяет нам управлять
+накладными расходами и гарантиями программы.</p>
+<p>В стандартной библиотеке Rust есть различные «обёрточные типы», которые
+реализуют множество компромиссов между накладными расходами, эргономикой, и
+гарантиями. Многие позволяют выбирать между проверками во время компиляции и
+проверками во время исполнения. Эта глава подробно объяснит несколько избранных
+абстракций.</p>
+<p>Перед тем, как продолжить, крайне рекомендуем познакомиться с
+<a href="ownership.html">владением</a> и <a href="references-and-borrowing.html">заимствованием</a> в Rust.</p>
+<h1><a class="header" href="#Основные-типы-указателей" id="Основные-типы-указателей">Основные типы указателей</a></h1>
+<h2><a class="header" href="#boxt" id="boxt"><code>Box&lt;T&gt;</code></a></h2>
+<p><a href="https://doc.rust-lang.org/stable/std/boxed/struct.Box.html"><code>Box&lt;T&gt;</code></a> — «владеющий» указатель, или, по-другому, «упаковка». Хотя он и
+может выдавать ссылки на содержащиеся в нём данные, он — единственный владелец
+этих данных. В частности, когда происходит что-то вроде этого:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let x = Box::new(1);
+let y = x;
+// x больше не доступен
+#}</code></pre></pre>
+<p>Здесь упаковка была <em>перемещена</em> в <code>y</code>. Поскольку <code>x</code> больше не владеет ею, с
+этого момента компилятор не позволит использовать <code>x</code>. Упаковка также может быть
+перемещена <em>из</em> функции — для этого функция возвращает её как свой результат.</p>
+<p>Когда упаковка, которая не была перемещена, выходит из области видимости,
+выполняются деструкторы. Эти деструкторы освобождают содержащиеся данные.</p>
+<p>Мы абстрагируемся от динамического выделения памяти, и это абстракция без
+накладных расходов. Это идеальный способ выделить память в куче и безопасно
+передавать указатель на эту память. Заметьте, что вы можете создавать ссылки на
+упаковку по обычным правилам заимствования, которые проверяются во время
+компиляции.</p>
+<h2><a class="header" href="#t-и-mut-t" id="t-и-mut-t"><code>&amp;T</code> и <code>&amp;mut T</code></a></h2>
+<p>Это неизменяемые и изменяемые ссылки, соответственно. Они реализуют шаблон
+«read-write lock», т.е. вы можете создать или одну изменяемую ссылку на данные,
+или любое число неизменяемых, но не оба вида ссылок одновременно. Эта гарантия
+проверяется во время компиляции, и ничего не стоит во время исполнения. В
+большинстве случаев эти два типа указателей покрывают все нужды по передаче
+дешёвых ссылок между частями кода.</p>
+<p>При копировании эти указатели сохраняют связанное с ними время жизни — они всё
+равно не могут прожить дольше, чем исходное значение, на которое они ссылаются.</p>
+<h2><a class="header" href="#const-t-и-mut-t" id="const-t-и-mut-t"><code>*const T</code> и <code>*mut T</code></a></h2>
+<p>Это сырые указатели в стиле C, не имеющие связанной информации о времени жизни и
+владельце. Они просто указывают на какое-то место в памяти, без дополнительных
+ограничений. Они гарантируют только то, что они могут быть разыменованы только в
+коде, помеченном как «небезопасный».</p>
+<p>Они полезны при создании безопасных низкоуровневых абстракций вроде <code>Vec&lt;T&gt;</code>, но
+их следует избегать в безопасном коде.</p>
+<h2><a class="header" href="#rct" id="rct"><code>Rc&lt;T&gt;</code></a></h2>
+<p>Это первая рассматриваемая обёртка, использование которой влечёт за собой
+накладные расходы во время исполнения.</p>
+<p><a href="https://doc.rust-lang.org/stable/std/rc/struct.Rc.html"><code>Rc&lt;T&gt;</code></a> — это указатель со счётчиком ссылок. Другими словами, он позволяет
+создавать несколько «владеющих» указателей на одни и те же данные, и эти данные
+будут уничтожены, когда все указатели выйдут из области видимости.</p>
+<p>Собственно, внутри у него счётчик ссылок (reference count, или сокращённо
+refcount), который увеличивается каждый раз, когда происходит клонирование <code>Rc</code>,
+и уменьшается когда <code>Rc</code> выходит из области видимости. Основная ответственность
+<code>Rc&lt;T&gt;</code> — удостовериться в том, что для разделяемых данных вызываются
+деструкторы.</p>
+<p>Хранимые данные при этом неизменяемы, и если создаётся цикл ссылок, данные
+утекут. Если нам нужно отсутствие утечек в присутствие циклов, нужно
+использовать сборщик мусора.</p>
+<h4><a class="header" href="#Гарантии" id="Гарантии">Гарантии</a></h4>
+<p>Здесь главная гарантия в том, что данные не будут уничтожены, пока все ссылки на
+них не исчезнут.</p>
+<p>Счётчик ссылок нужно использовать, когда мы хотим динамически выделить какие-то
+данные и предоставить ссылки на эти данные только для чтения, и при этом неясно,
+какая часть программы последней закончит использование ссылки. Это подходящая
+альтернатива <code>&amp;T</code>, когда невозможно статически доказать правильность <code>&amp;T</code>, или
+когда это создаёт слишком большие неудобства в написании кода, на который
+разработчик не хочет тратить своё время.</p>
+<p>Этот указатель <em>не</em> является потокобезопасным, и Rust не позволяет передавать
+его или делиться им с другими потоками. Это позволяет избежать накладных
+расходов от использования атомарных операций там, где они не нужны.</p>
+<p>Есть похожий умный указатель, <code>Weak&lt;T&gt;</code>. Это невладеющий, но и не заимствуемый,
+умный указатель. Он тоже похож на <code>&amp;T</code>, но не ограничен временем жизни —
+<code>Weak&lt;T&gt;</code> можно не отпускать. Однако, возможна ситуация, когда попытка доступа к
+хранимым в нём данным провалится и вернёт <code>None</code>, поскольку <code>Weak&lt;T&gt;</code> может
+пережить владеющие <code>Rc</code>. Его удобно использовать в случае циклических структур
+данных и некоторых других.</p>
+<h4><a class="header" href="#Накладные-расходы" id="Накладные-расходы">Накладные расходы</a></h4>
+<p>Что касается памяти, <code>Rc&lt;T&gt;</code> — это одно выделение, однако оно будет включать
+два лишних слова (т.е. два значения типа <code>usize</code>) по сравнению с обычным
+<code>Box&lt;T&gt;</code>. Это верно и для «сильных», и для «слабых» счётчиков ссылок.</p>
+<p>Расходы на <code>Rc&lt;T&gt;</code> заключаются в увеличении и уменьшении счётчика ссылок каждый
+раз, когда <code>Rc&lt;T&gt;</code> клонируется или выходит из области видимости, соответственно.
+Отметим, что клонирование не выполняет глубокое копирование, а просто
+увеличивает счётчик и возвращает копию <code>Rc&lt;T&gt;</code>.</p>
+<h1><a class="header" href="#Типы-ячейки-cell-types" id="Типы-ячейки-cell-types">Типы-ячейки (cell types)</a></h1>
+<p>Типы <code>Cell</code> предоставляют «внутреннюю» изменяемость. Другими словами, они
+содержат данные, которые можно изменять даже если тип не может быть получен в
+изменяемом виде (например, когда он за указателем <code>&amp;</code> или за <code>Rc&lt;T&gt;</code>).</p>
+<p><a href="https://doc.rust-lang.org/stable/std/cell/">Документация модуля <code>cell</code> довольно хорошо объясняет эти вещи</a>.</p>
+<p>Эти типы <em>обычно</em> используют в полях структур, но они не ограничены таким
+использованием.</p>
+<h2><a class="header" href="#cellt" id="cellt"><code>Cell&lt;T&gt;</code></a></h2>
+<p><a href="https://doc.rust-lang.org/stable/std/cell/struct.Cell.html"><code>Cell&lt;T&gt;</code></a> — это тип, который обеспечивает внутреннюю изменяемость без
+накладных расходов, но только для типов, реализующих типаж <code>Copy</code>. Поскольку
+компилятор знает, что все данные, вложенные в <code>Cell&lt;T&gt;</code>, находятся на стеке, их
+можно просто заменять без страха утечки ресурсов.</p>
+<p>Нарушить инварианты с помощью этой обёртки всё равно можно, поэтому будьте
+осторожны при её использовании. Если поле обёрнуто в <code>Cell</code>, это индикатор того,
+что эти данные изменяемы и поле может не сохранить своё значение с момента
+чтения до момента его использования.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+use std::cell::Cell;
+
+let x = Cell::new(1);
+let y = &amp;x;
+let z = &amp;x;
+x.set(2);
+y.set(3);
+z.set(4);
+println!(&quot;{}&quot;, x.get());
+#}</code></pre></pre>
+<p>Заметьте, что здесь мы смогли изменить значение через различные ссылки без права
+изменения.</p>
+<p>В плане затрат во время исполнения, такой код аналогичен нижеследующему:</p>
+<pre><code class="language-rust ignore">let mut x = 1;
+let y = &amp;mut x;
+let z = &amp;mut x;
+x = 2;
+*y = 3;
+*z = 4;
+println!(&quot;{}&quot;, x);
+</code></pre>
+<p>но имеет преимущество в том, что он действительно компилируется.</p>
+<h4><a class="header" href="#Гарантии-1" id="Гарантии-1">Гарантии</a></h4>
+<p>Этот тип ослабляет правило отсутствия совпадающих указателей с правом записи
+там, где оно не нужно. Однако, он также ослабляет гарантии, которые
+предоставляет такое ограничение; поэтому если ваши инварианты зависят от данных,
+хранимых в <code>Cell</code>, будьте осторожны.</p>
+<p>Это применяется при изменении примитивов и других типов, реализующих <code>Copy</code>,
+когда нет лёгкого способа сделать это в соответствии с статическими правилами
+<code>&amp;</code> и <code>&amp;mut</code>.</p>
+<p><code>Cell</code> не позволяет получать внутренние ссылки на данные, что позволяет безопасно
+менять его содержимое.</p>
+<h4><a class="header" href="#Накладные-расходы-1" id="Накладные-расходы-1">Накладные расходы</a></h4>
+<p>Накладные расходы при использовании <code>Cell&lt;T&gt;</code> отсутствуют, однако если вы
+оборачиваете в него большие структуры, есть смысл вместо этого обернуть
+отдельные поля, поскольку иначе каждая запись будет производить полное
+копирование структуры.</p>
+<h2><a class="header" href="#refcellt" id="refcellt"><code>RefCell&lt;T&gt;</code></a></h2>
+<p><a href="https://doc.rust-lang.org/stable/std/cell/struct.RefCell.html"><code>RefCell&lt;T&gt;</code></a> также предоставляет внутреннюю изменяемость, но не
+ограничен только типами, реализующими <code>Copy</code>.</p>
+<p>Однако, у этого решения есть накладные расходы. <code>RefCell&lt;T&gt;</code> реализует шаблон
+«read-write lock» во время исполнения, а не во время компиляции, как <code>&amp;T</code>/
+<code>&amp;mut T</code>. Он похож на однопоточный мьютекс. У него есть функции <code>borrow()</code> и
+<code>borrow_mut()</code>, которые изменяют внутренний счётчик ссылок и возвращают умный
+указатель, который может быть разыменован без права изменения или с ним,
+соответственно. Счётчик ссылок восстанавливается, когда умные указатели выходят
+из области видимости. С этой системой мы можем динамически гарантировать, что во
+время заимствования с правом изменения никаких других ссылок на значение больше
+нет. Если программист пытается позаимствовать значение в этот момент, поток
+запаникует.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+use std::cell::RefCell;
+
+let x = RefCell::new(vec![1,2,3,4]);
+{
+    println!(&quot;{:?}&quot;, *x.borrow())
+}
+
+{
+    let mut my_ref = x.borrow_mut();
+    my_ref.push(1);
+}
+#}</code></pre></pre>
+<p>Как и <code>Cell</code>, это в основном применяется в ситуациях, когда сложно или
+невозможно удовлетворить статическую проверку заимствования. В целом мы знаем,
+что такие изменения не будут происходить вложенным образом, но это стоит
+дополнительно проверить.</p>
+<p>Для больших, сложных программ, есть смысл положить некоторые вещи в <code>RefCell</code>,
+чтобы упростить работу с ними. Например, многие словари в структуре <code>ctxt</code><a href="../rustc/middle/ty/struct.ctxt.html">ctxt</a>
+в компиляторе Rust обёрнуты в этот тип. Они изменяются только однажды — во
+время создания, но не во время инициализации, или несколько раз в явно отдельных
+местах. Однако, поскольку эта структура повсеместно используется везде,
+жонглирование изменяемыми и неизменяемыми указателями было бы очень сложным (или
+невозможным), и наверняка создало бы мешанину указателей <code>&amp;</code>, которую сложно
+было бы расширять. С другой стороны, <code>RefCell</code> предоставляет дешёвый (но не
+бесплатный) способ обращаться к таким данным. В будущем, если кто-то добавит
+код, который пытается изменить ячейку, пока она заимствована, это вызовет
+панику, источник которой можно отследить. И такая паника обычно происходит
+детерминированно.</p>
+<p>Похожим образом, в DOM Servo много изменения данных, большая часть которого
+происходит внутри типа DOM, но часть выходит за его границы и изменяет
+произвольные вещи. Использование <code>RefCell</code> и <code>Cell</code> для ограждения этих
+изменений позволяет нам избежать необходимости беспокоиться об изменяемости
+везде, и одновременно обозначает места, где изменение <em>действительно</em>
+происходит.</p>
+<p>Заметьте, что стоит избегать использования <code>RefCell</code>, если возможно достаточно
+простое решение с помощью указателей <code>&amp;</code>.</p>
+<h4><a class="header" href="#Гарантии-2" id="Гарантии-2">Гарантии</a></h4>
+<p><code>RefCell</code> ослабляет <em>статические</em> ограничения, предотвращающие совпадение
+изменяемых указателей, и заменяет их на <em>динамические</em> ограничения. Сами
+гарантии при этом не изменяются.</p>
+<h4><a class="header" href="#Накладные-расходы-2" id="Накладные-расходы-2">Накладные расходы</a></h4>
+<p><code>RefCell</code> не выделяет память, но содержит дополнительный индикатор «состояния
+заимствования» (размером в одно слово) вместе с данными.</p>
+<p>Во время исполнения каждое заимствование вызывает изменение и проверку счётчика
+ссылок.</p>
+<h1><a class="header" href="#Синхронизированные-типы" id="Синхронизированные-типы">Синхронизированные типы</a></h1>
+<p>Многие из вышеперечисленных типов не могут быть использованы потокобезопасным
+образом. В частности, <code>Rc&lt;T&gt;</code> и <code>RefCell&lt;T&gt;</code>, оба из которых используют
+не-атомарные счётчики ссылок, не могут быть использованы так. (<em>Атомарные</em>
+счётчики ссылок — это такие, которые могут быть увеличены из нескольких
+потоков, не вызывая при этом гонку данных.) Благодаря этому они привносят меньше
+накладных расходов, но нам также потребуются и потокобезопасные варианты этих
+типов. Они существуют — это <code>Arc&lt;T&gt;</code> и <code>Mutex&lt;T&gt;</code>/<code>RWLock&lt;T&gt;</code>.</p>
+<p>Заметьте, что не-потокобезопасные типы <em>не могут</em> быть переданы между потоками,
+и это проверяется во время компиляции.</p>
+<p>В модуле <a href="https://doc.rust-lang.org/stable/std/sync/index.html">sync</a> много полезных обёрточных типов для многопоточного
+программирования, но мы затронем только главные из них.</p>
+<h2><a class="header" href="#arct" id="arct"><code>Arc&lt;T&gt;</code></a></h2>
+<p><a href="https://doc.rust-lang.org/stable/std/sync/struct.Arc.html"><code>Arc&lt;T&gt;</code></a> — это вариант <code>Rc&lt;T&gt;</code>, который использует атомарный счётчик
+ссылок (поэтому «Arc»). Его можно свободно передавать между потоками.</p>
+<p><code>shared_ptr</code> из C++ похож на <code>Arc</code>, но в случае C++ вложенные данные всегда
+изменяемы. Чтобы получить семантику, похожую на семантику C++, нужно
+использовать <code>Arc&lt;Mutex&lt;T&gt;&gt;</code>, <code>Arc&lt;RwLock&lt;T&gt;&gt;</code>, или <code>Arc&lt;UnsafeCell&lt;T&gt;&gt;</code><sup class="footnote-reference"><a href="#4">1</a></sup>.
+(<code>UnsafeCell&lt;T&gt;</code> — это тип-ячейка, который может содержать любые данные и не
+имеет накладных расходов, но доступ к его содержимому производится только внутри
+небезопасных блоков.) Последний стоит использовать только тогда, когда мы
+уверены в том, что наша работа не вызовет нарушения безопасности памяти.
+Учитывайте, что запись в структуру не атомарна, а многие функции вроде
+<code>vec.push()</code> могут выделять память заново в процессе работы, и тем самым
+вызывать небезопасное поведение.</p>
+<div class="footnote-definition" id="4"><sup class="footnote-definition-label">1</sup>
+<p>На самом деле, <code>Arc&lt;UnsafeCell&lt;T&gt;&gt;</code> не скомпилируется, поскольку
+<code>UnsafeCell&lt;T&gt;</code> не реализует <code>Send</code> или <code>Sync</code>, но мы можем обернуть его в
+тип и реализовать для него <code>Send</code>/<code>Sync</code> вручную, чтобы получить
+<code>Arc&lt;Wrapper&lt;T&gt;&gt;</code>, где <code>Wrapper</code> — это <code>struct Wrapper&lt;T&gt;(UnsafeCell&lt;T&gt;)</code>.</p>
+</div>
+<h4><a class="header" href="#Гарантии-3" id="Гарантии-3">Гарантии</a></h4>
+<p>Как и <code>Rc</code>, этот тип гарантирует, что деструктор хранимых в нём данных будет
+вызван, когда последний <code>Arc</code> выходит из области видимости (за исключением
+случаев с циклами). В отличие от <code>Rc</code>, <code>Arc</code> предоставляет эту гарантию и в
+многопоточном окружении.</p>
+<h4><a class="header" href="#Накладные-расходы-3" id="Накладные-расходы-3">Накладные расходы</a></h4>
+<p>Накладные расходы увеличиваются по сравнению с <code>Rc</code>, т.к. теперь для изменения
+счётчика ссылок используются атомарные операции (которые происходят каждый раз
+при клонировании или выходе из области видимости). Когда вы хотите поделиться
+данными в пределах одного потока, предпочтительнее использовать простые ссылки
+<code>&amp;</code>.</p>
+<h2><a class="header" href="#mutext-and-rwlockt" id="mutext-and-rwlockt"><code>Mutex&lt;T&gt;</code> and <code>RwLock&lt;T&gt;</code></a></h2>
+<p><a href="https://doc.rust-lang.org/stable/std/sync/struct.Mutex.html"><code>Mutex&lt;T&gt;</code></a> и <a href="https://doc.rust-lang.org/stable/std/sync/struct.RwLock.html"><code>RwLock&lt;T&gt;</code></a> предоставляют механизм
+взаимоисключения с помощью охранных значений RAII. Охранные значения — это
+объекты, имеющие некоторое состояние, как замок, пока не выполнится их
+деструктор. В обоих случаях, мьютекс непрозрачен, пока на нём не вызовут
+<code>lock()</code>, после чего поток остановится до момента, когда мьютекс может быть
+закрыт, после чего возвращается охранное значение. Оно может быть использовано
+для доступа к вложенным данным с правом изменения, а мьютекс будет снова открыт,
+когда охранное значение выйдет из области видимости.</p>
+<pre><code class="language-rust ignore">{
+    let guard = mutex.lock();
+    // охранное значение разыменовывается в изменяемое значение
+    // вложенного в мьютекс типа
+    *guard += 1;
+} // мьютекс открывается когда выполняется деструктор
+</code></pre>
+<p><code>RwLock</code> имеет преимущество — он эффективно работает в случае множественных
+чтений. Ведь читать из общих данных всегда безопасно, пока в эти данные никто не
+хочет писать; и <code>RwLock</code> позволяет читающим получить «право чтения». Право
+чтения может быть получено многими потоками одновременно, и за читающими следит
+счётчик ссылок. Тот же, кто хочет записать данные, должен получить «право
+записи», а оно может быть получено только когда все читающие вышли из области
+видимости.</p>
+<h4><a class="header" href="#Гарантии-4" id="Гарантии-4">Гарантии</a></h4>
+<p>Оба этих типа предоставляют безопасное изменение данных из разных потоков, но не
+защищают от взаимной блокировки (deadlock). Некоторая дополнительная
+безопасность протокола работы с данными может быть получена с помощью системы
+типов.</p>
+<h4><a class="header" href="#Накладные-расходы-4" id="Накладные-расходы-4">Накладные расходы</a></h4>
+<p>Для поддержания состояния прав чтения и записи эти типы используют в своей
+реализации конструкции, похожие на атомарные типы, и они довольно дороги. Они
+могут блокировать все межпроцессорные чтения из памяти, пока не закончат работу.
+Ожидание возможности закрытия этих примитивов синхронизации тоже может быть
+медленным, когда производится много одновременных попыток доступа к данным.</p>
+<h1><a class="header" href="#Сочетание" id="Сочетание">Сочетание</a></h1>
+<p>Распространённая жалоба на код на Rust — это сложность чтения типов вроде
+<code>Rc&lt;RefCell&lt;Vec&lt;T&gt;&gt;&gt;</code> (или ещё более сложных сочетаний похожих типов). Не всегда
+понятно, что делает такая комбинация, или почему автор решил использовать именно
+такой тип. Не ясно и то, в каких случаях сам программист должен использовать
+похожие сочетания типов.</p>
+<p>Обычно, вам понадобятся такие типы, когда вы хотите сочетать гарантии разных
+типов, но не хотите переплачивать за то, что вам не нужно.</p>
+<p>Например, одно из таких сочетаний — это <code>Rc&lt;RefCell&lt;T&gt;&gt;</code>. Сам по себе <code>Rc&lt;T&gt;</code>
+не может быть разыменован с правом изменения; поскольку <code>Rc&lt;T&gt;</code> позволяет
+делиться данными и одновременная попытка изменения данных может привести к
+небезопасному поведению, мы кладём внутрь <code>RefCell&lt;T&gt;</code>, чтобы получить
+динамическую проверку одновременных попыток изменения. Теперь у нас есть
+разделяемые изменяемые данные, но одновременный доступ к ним предоставляется
+только на чтение, а запись всегда исключительна.</p>
+<p>Далее мы можем развить эту мысль и получить <code>Rc&lt;RefCell&lt;Vec&lt;T&gt;&gt;&gt;</code> или
+<code>Rc&lt;Vec&lt;RefCell&lt;T&gt;&gt;&gt;</code>. Это — изменяемые, разделяемые между потоками вектора,
+но они не одинаковы.</p>
+<p>В первом типе <code>RefCell&lt;T&gt;</code> оборачивает <code>Vec&lt;T&gt;</code>, поэтому изменяем весь <code>Vec&lt;T&gt;</code>
+целиком. В то же время, это значит, что в каждый момент времени может быть
+только одна ссылка на <code>Vec&lt;T&gt;</code> с правом изменения. Поэтому код не может
+одновременно работать с разными элементами вектора, обращаясь к ним через разные
+<code>Rc</code>. Однако, мы сможем добавлять и удалять элементы вектора в произвольные
+моменты времени. Этот тип похож на <code>&amp;mut Vec&lt;T&gt;</code>, с тем различием, что проверка
+заимствования делается во время исполнения.</p>
+<p>Во втором типе заимствуются отдельные элементы, а вектор в целом неизменяем.
+Поэтому мы можем получить ссылки на отдельные элементы, но не можем добавлять
+или удалять элементы. Это похоже на <code>&amp;mut [T]</code><sup class="footnote-reference"><a href="#3">2</a></sup>, но, опять-таки, проверка
+заимствования производится во время исполнения.</p>
+<p>В многопоточных программах возникает похожая ситуация с <code>Arc&lt;Mutex&lt;T&gt;&gt;</code>, который
+обеспечивает разделяемое владение и одновременное изменение.</p>
+<p>Когда вы читаете такой код, рассматривайте гарантии и накладные расходы каждого
+вложенного типа шаг за шагом.</p>
+<p>Когда вы выбираете сложный тип, поступайте наоборот: решите, какие гарантии вам
+нужны, и в каком «слое» сочетания они понадобятся. Например, если у вас стоит
+выбор между <code>Vec&lt;RefCell&lt;T&gt;&gt;</code> и <code>RefCell&lt;Vec&lt;T&gt;&gt;</code>, найдите компромисс путём
+рассуждений, как мы делали выше по тексту, и выберите нужный вам тип.</p>
+<div class="footnote-definition" id="3"><sup class="footnote-definition-label">2</sup>
+<p><code>&amp;[T]</code> и <code>&amp;mut [T]</code> — это <em>срезы</em>; они состоят из указателя и длины, и
+могут ссылаться на часть вектора или массива. <code>&amp;mut [T]</code> также позволяет
+изменять свои элементы, но его длину изменить нельзя.</p>
+</div>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="error-handling.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="ffi.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="error-handling.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="ffi.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+        <!-- Google Analytics Tag -->
+        <script type="text/javascript">
+            var localAddrs = ["localhost", "127.0.0.1", ""];
+
+            // make sure we don't activate google analytics if the developer is
+            // inspecting the book locally...
+            if (localAddrs.indexOf(document.location.hostname) === -1) {
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-142155799-10', 'auto');
+                ga('send', 'pageview');
+            }
+        </script>
+        
+
+        
+        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

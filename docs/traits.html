@@ -1,0 +1,621 @@
+<!DOCTYPE HTML>
+<html lang="ru" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Типажи - Язык программирования Rust</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li><a href="INTRODUCTION.html"><strong aria-hidden="true">1.</strong> Введение</a></li><li><a href="getting-started.html"><strong aria-hidden="true">2.</strong> C чего начать</a></li><li><a href="learn-rust.html"><strong aria-hidden="true">3.</strong> Изучение Rust</a></li><li><ol class="section"><li><a href="guessing-game.html"><strong aria-hidden="true">3.1.</strong> Угадайка</a></li><li><a href="dining-philosophers.html"><strong aria-hidden="true">3.2.</strong> Обедающие философы</a></li><li><a href="rust-inside-other-languages.html"><strong aria-hidden="true">3.3.</strong> Вызов кода на Rust из других языков</a></li></ol></li><li><a href="syntax-and-semantics.html"><strong aria-hidden="true">4.</strong> Синтаксис и семантика</a></li><li><ol class="section"><li><a href="variable-bindings.html"><strong aria-hidden="true">4.1.</strong> Связывание имён</a></li><li><a href="functions.html"><strong aria-hidden="true">4.2.</strong> Функции</a></li><li><a href="primitive-types.html"><strong aria-hidden="true">4.3.</strong> Простые типы</a></li><li><a href="comments.html"><strong aria-hidden="true">4.4.</strong> Комментарии</a></li><li><a href="if.html"><strong aria-hidden="true">4.5.</strong> Конструкция if</a></li><li><a href="loops.html"><strong aria-hidden="true">4.6.</strong> Циклы</a></li><li><a href="ownership.html"><strong aria-hidden="true">4.7.</strong> Владение</a></li><li><a href="references-and-borrowing.html"><strong aria-hidden="true">4.8.</strong> Ссылки и заимствование</a></li><li><a href="lifetimes.html"><strong aria-hidden="true">4.9.</strong> Время жизни</a></li><li><a href="mutability.html"><strong aria-hidden="true">4.10.</strong> Изменяемость</a></li><li><a href="structs.html"><strong aria-hidden="true">4.11.</strong> Структуры</a></li><li><a href="enums.html"><strong aria-hidden="true">4.12.</strong> Перечисления</a></li><li><a href="match.html"><strong aria-hidden="true">4.13.</strong> Конструкция match</a></li><li><a href="patterns.html"><strong aria-hidden="true">4.14.</strong> Шаблоны сопоставления match</a></li><li><a href="method-syntax.html"><strong aria-hidden="true">4.15.</strong> Синтаксис методов</a></li><li><a href="vectors.html"><strong aria-hidden="true">4.16.</strong> Вектора</a></li><li><a href="strings.html"><strong aria-hidden="true">4.17.</strong> Строки</a></li><li><a href="generics.html"><strong aria-hidden="true">4.18.</strong> Обобщённое программирование</a></li><li><a href="traits.html" class="active"><strong aria-hidden="true">4.19.</strong> Типажи</a></li><li><a href="drop.html"><strong aria-hidden="true">4.20.</strong> Типаж Drop</a></li><li><a href="if-let.html"><strong aria-hidden="true">4.21.</strong> Конструкция if let</a></li><li><a href="trait-objects.html"><strong aria-hidden="true">4.22.</strong> Типажи-объекты</a></li><li><a href="closures.html"><strong aria-hidden="true">4.23.</strong> Замыкания</a></li><li><a href="ufcs.html"><strong aria-hidden="true">4.24.</strong> Универсальный синтаксис вызова функций</a></li><li><a href="crates-and-modules.html"><strong aria-hidden="true">4.25.</strong> Контейнеры и модули</a></li><li><a href="const-and-static.html"><strong aria-hidden="true">4.26.</strong> const и static</a></li><li><a href="attributes.html"><strong aria-hidden="true">4.27.</strong> Атрибуты</a></li><li><a href="type-aliases.html"><strong aria-hidden="true">4.28.</strong> Псевдонимы типов</a></li><li><a href="casting-between-types.html"><strong aria-hidden="true">4.29.</strong> Приведение типов</a></li><li><a href="associated-types.html"><strong aria-hidden="true">4.30.</strong> Ассоциированные типы</a></li><li><a href="unsized-types.html"><strong aria-hidden="true">4.31.</strong> Безразмерные типы</a></li><li><a href="operators-and-overloading.html"><strong aria-hidden="true">4.32.</strong> Перегрузка операций</a></li><li><a href="deref-coercions.html"><strong aria-hidden="true">4.33.</strong> Преобразования при разыменовании</a></li><li><a href="macros.html"><strong aria-hidden="true">4.34.</strong> Макросы</a></li><li><a href="raw-pointers.html"><strong aria-hidden="true">4.35.</strong> Сырые указатели</a></li><li><a href="unsafe.html"><strong aria-hidden="true">4.36.</strong> Небезопасный код</a></li></ol></li><li><a href="effective-rust.html"><strong aria-hidden="true">5.</strong> Эффективное использование Rust</a></li><li><ol class="section"><li><a href="the-stack-and-the-heap.html"><strong aria-hidden="true">5.1.</strong> Стек и куча</a></li><li><a href="testing.html"><strong aria-hidden="true">5.2.</strong> Тестирование</a></li><li><a href="conditional-compilation.html"><strong aria-hidden="true">5.3.</strong> Условная компиляция</a></li><li><a href="documentation.html"><strong aria-hidden="true">5.4.</strong> Документация</a></li><li><a href="iterators.html"><strong aria-hidden="true">5.5.</strong> Итераторы</a></li><li><a href="concurrency.html"><strong aria-hidden="true">5.6.</strong> Многозадачность</a></li><li><a href="error-handling.html"><strong aria-hidden="true">5.7.</strong> Обработка ошибок</a></li><li><a href="choosing-your-guarantees.html"><strong aria-hidden="true">5.8.</strong> Выбор гарантий</a></li><li><a href="ffi.html"><strong aria-hidden="true">5.9.</strong> Интерфейс внешних функций</a></li><li><a href="borrow-and-asref.html"><strong aria-hidden="true">5.10.</strong> Типажи Borrow и AsRef</a></li><li><a href="release-channels.html"><strong aria-hidden="true">5.11.</strong> Каналы сборок</a></li><li><a href="using-rust-without-the-standard-library.html"><strong aria-hidden="true">5.12.</strong> Using Rust without the standard library</a></li></ol></li><li><a href="nightly-rust.html"><strong aria-hidden="true">6.</strong> Нестабильные возможности Rust</a></li><li><ol class="section"><li><a href="compiler-plugins.html"><strong aria-hidden="true">6.1.</strong> Плагины к компилятору</a></li><li><a href="inline-assembly.html"><strong aria-hidden="true">6.2.</strong> Встроенный ассемблерный код</a></li><li><a href="no-stdlib.html"><strong aria-hidden="true">6.3.</strong> Без stdlib</a></li><li><a href="intrinsics.html"><strong aria-hidden="true">6.4.</strong> Внутренние средства</a></li><li><a href="lang-items.html"><strong aria-hidden="true">6.5.</strong> Элементы языка</a></li><li><a href="advanced-linking.html"><strong aria-hidden="true">6.6.</strong> Продвинутое руководство по компоновке</a></li><li><a href="benchmark-tests.html"><strong aria-hidden="true">6.7.</strong> Тесты производительности</a></li><li><a href="box-syntax-and-patterns.html"><strong aria-hidden="true">6.8.</strong> Синтаксис упаковки и шаблоны match</a></li><li><a href="slice-patterns.html"><strong aria-hidden="true">6.9.</strong> Шаблоны match для срезов</a></li><li><a href="associated-constants.html"><strong aria-hidden="true">6.10.</strong> Ассоциированные константы</a></li><li><a href="custom-allocators.html"><strong aria-hidden="true">6.11.</strong> Пользовательские менеджеры памяти</a></li></ol></li><li><a href="glossary.html"><strong aria-hidden="true">7.</strong> Глоссарий</a></li><li><a href="syntax-index.html"><strong aria-hidden="true">8.</strong> Syntax Index</a></li><li><a href="bibliography.html"><strong aria-hidden="true">9.</strong> Библиография</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Язык программирования Rust</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>% Типажи</p>
+<p>Типаж --- это возможность объяснить компилятору, что данный тип должен
+предоставлять определённую функциональность.</p>
+<p>Вы помните ключевое слово <code>impl</code>, используемое для вызова функции через
+синтаксис метода?</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+# #![feature(core)]
+struct Circle {
+    x: f64,
+    y: f64,
+    radius: f64,
+}
+
+impl Circle {
+    fn area(&amp;self) -&gt; f64 {
+        std::f64::consts::PI * (self.radius * self.radius)
+    }
+}
+#}</code></pre></pre>
+<p>Типажи схожи, за исключением того, что мы определяем типаж, содержащий лишь
+сигнатуру метода, а затем реализуем этот типаж для нужной структуры. Например,
+как показано ниже:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+# #![feature(core)]
+struct Circle {
+    x: f64,
+    y: f64,
+    radius: f64,
+}
+
+trait HasArea {
+    fn area(&amp;self) -&gt; f64;
+}
+
+impl HasArea for Circle {
+    fn area(&amp;self) -&gt; f64 {
+        std::f64::consts::PI * (self.radius * self.radius)
+    }
+}
+#}</code></pre></pre>
+<p>Как вы можете видеть, блок <code>trait</code> очень похож на блок <code>impl</code>. Различие состоит
+лишь в том, что тело метода не определяется, а определяется только его
+сигнатура. Когда мы реализуем типаж, мы используем <code>impl Trait for Item</code>, а не
+просто <code>impl Item</code>.</p>
+<p>Мы можем использовать типажи для ограничения обобщённых типов. Рассмотрим
+похожую функцию, которая также не компилируется, и выводит ошибку:</p>
+<pre><code class="language-rust ignore">fn print_area&lt;T&gt;(shape: T) {
+    println!(&quot;This shape has an area of {}&quot;, shape.area());
+}
+</code></pre>
+<p>Rust выводит:</p>
+<pre><code class="language-text">error: type `T` does not implement any method in scope named `area`
+</code></pre>
+<p>Поскольку <code>T</code> может быть любого типа, мы не можем быть уверены, что он реализует
+метод <code>area</code>. Но мы можем добавить «ограничение по типажу» к нашему обобщённому
+типу <code>T</code>, гарантируя, что он будет соответствовать требованиям:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+# trait HasArea {
+#     fn area(&amp;self) -&gt; f64;
+# }
+fn print_area&lt;T: HasArea&gt;(shape: T) {
+    println!(&quot;This shape has an area of {}&quot;, shape.area());
+}
+#}</code></pre></pre>
+<p>Синтаксис <code>&lt;T: HasArea&gt;</code> означает «любой тип, реализующий типаж <code>HasArea</code>».
+Так как типажи определяют сигнатуры типов функций, мы можем быть уверены, что
+любой тип, который реализует <code>HasArea</code>, будет иметь метод <code>.area()</code>.</p>
+<p>Вот расширенный пример того, как это работает:</p>
+<pre><pre class="playpen"><code class="language-rust"># #![feature(core)]
+trait HasArea {
+    fn area(&amp;self) -&gt; f64;
+}
+
+struct Circle {
+    x: f64,
+    y: f64,
+    radius: f64,
+}
+
+impl HasArea for Circle {
+    fn area(&amp;self) -&gt; f64 {
+        std::f64::consts::PI * (self.radius * self.radius)
+    }
+}
+
+struct Square {
+    x: f64,
+    y: f64,
+    side: f64,
+}
+
+impl HasArea for Square {
+    fn area(&amp;self) -&gt; f64 {
+        self.side * self.side
+    }
+}
+
+fn print_area&lt;T: HasArea&gt;(shape: T) {
+    println!(&quot;Площадь этой фигуры равна {}&quot;, shape.area());
+}
+
+fn main() {
+    let c = Circle {
+        x: 0.0f64,
+        y: 0.0f64,
+        radius: 1.0f64,
+    };
+
+    let s = Square {
+        x: 0.0f64,
+        y: 0.0f64,
+        side: 1.0f64,
+    };
+
+    print_area(c);
+    print_area(s);
+}
+</code></pre></pre>
+<p>Ниже показан вывод программы:</p>
+<pre><code class="language-text">Площадь этой фигуры равна 3.141593
+Площадь этой фигуры равна 1
+</code></pre>
+<p>Как вы можете видеть, теперь <code>print_area</code> не только является обобщённой
+функцией, но и гарантирует, что будет получен корректный тип. Если же мы
+передадим некорректный тип:</p>
+<pre><code class="language-rust ignore">print_area(5);
+</code></pre>
+<p>Мы получим ошибку времени компиляции:</p>
+<pre><code class="language-text">error: the trait `HasArea` is not implemented for the type `_` [E0277]
+</code></pre>
+<p>До сих пор мы добавляли реализации типажей лишь для структур, но реализовать
+типаж можно для любого типа. Технически, мы <em>могли бы</em> реализовать <code>HasArea</code> для
+<code>i32</code>:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+trait HasArea {
+    fn area(&amp;self) -&gt; f64;
+}
+
+impl HasArea for i32 {
+    fn area(&amp;self) -&gt; f64 {
+        println!(&quot;это нелепо&quot;);
+
+        *self as f64
+    }
+}
+
+5.area();
+#}</code></pre></pre>
+<p>Хотя технически это возможно, реализация методов для примитивных типов считается
+плохим стилем программирования.</p>
+<p>Может показаться, что такой подход легко приводит к бардаку в коде, однако
+есть два ограничения, связанные с реализацией типажей, которые мешают коду выйти
+из-под контроля. Во-первых, если типаж не определён в нашей области видимости,
+он не применяется. Например, стандартная библиотека предоставляет типаж
+<a href="https://doc.rust-lang.org/stable/std/io/trait.Write.html"><code>Write</code></a>, который добавляет типу <code>File</code> функциональность ввода-вывода.
+По умолчанию у <code>File</code> не будет этих методов:</p>
+<pre><code class="language-rust ignore">let mut f = std::fs::File::open(&quot;foo.txt&quot;).ok().expect(&quot;Не могу открыть foo.txt&quot;);
+let buf = b&quot;whatever&quot;; // литерал строки байт. buf: &amp;[u8; 8]
+let result = f.write(buf);
+# result.unwrap(); // игнорируем ошибку
+</code></pre>
+<p>Вот ошибка:</p>
+<pre><code class="language-text">error: type `std::fs::File` does not implement any method in scope named `write`
+let result = f.write(buf);
+               ^~~~~~~~~~
+</code></pre>
+<p>Сначала мы должны сделать <code>use</code> для типажа <code>Write</code>:</p>
+<pre><code class="language-rust ignore">use std::io::Write;
+
+let mut f = std::fs::File::open(&quot;foo.txt&quot;).ok().expect(&quot;Не могу открыть foo.txt&quot;);
+let buf = b&quot;whatever&quot;;
+let result = f.write(buf);
+# result.unwrap(); // игнорируем ошибку
+</code></pre>
+<p>Это скомпилируется без ошибки.</p>
+<p>Благодаря такой логике работы, даже если кто-то сделает что-то страшное —
+например, добавит методы <code>i32</code>, это не коснётся вас, пока вы не импортируете
+типаж.</p>
+<p>Второе ограничение реализации типажей --- это то, что или типаж, или тип, для
+которого вы реализуете типаж, должен быть реализован вами. Мы могли бы
+определить <code>HasArea</code> для <code>i32</code>, потому что <code>HasArea</code> — это наш код. Но если бы
+мы попробовали реализовать для <code>i32</code> <code>ToString</code> — типаж, предоставляемый Rust —
+мы бы не смогли сделать это, потому что ни типаж, ни тип не реализован нами.</p>
+<p>Последнее, что нужно сказать о типажах: обобщённые функции с ограничением по
+типажам используют <em>мономорфизацию</em> (<em>mono</em>: один, <em>morph</em>: форма), поэтому они
+диспетчеризуются статически. Что это значит? Посмотрите главу
+<a href="trait-objects.html">Типажи-объекты</a>, чтобы получить больше информации.</p>
+<h1><a class="header" href="#Множественные-ограничения-по-типажам" id="Множественные-ограничения-по-типажам">Множественные ограничения по типажам</a></h1>
+<p>Вы уже видели, как можно ограничить обобщённый параметр типа определённым
+типажом:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+fn foo&lt;T: Clone&gt;(x: T) {
+    x.clone();
+}
+#}</code></pre></pre>
+<p>Если вам нужно больше одного ограничения, вы можете использовать <code>+</code>:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+use std::fmt::Debug;
+
+fn foo&lt;T: Clone + Debug&gt;(x: T) {
+    x.clone();
+    println!(&quot;{:?}&quot;, x);
+}
+#}</code></pre></pre>
+<p>Теперь тип <code>T</code> должен реализовавать как типаж <code>Clone</code>, так и типаж <code>Debug</code>.</p>
+<h1><a class="header" href="#Утверждение-where" id="Утверждение-where">Утверждение where</a></h1>
+<p>Написание функций с несколькими обобщёнными типами и небольшим количеством
+ограничений по типажам выглядит не так уж плохо, но, с увеличением количества
+зависимостей, синтаксис получается более неуклюжим:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+use std::fmt::Debug;
+
+fn foo&lt;T: Clone, K: Clone + Debug&gt;(x: T, y: K) {
+    x.clone();
+    y.clone();
+    println!(&quot;{:?}&quot;, y);
+}
+#}</code></pre></pre>
+<p>Имя функции находится слева, а список параметров — далеко справа. Ограничения
+загромождают место.</p>
+<p>Есть решение и для этой проблемы, и оно называется «утверждение <code>where</code>»:</p>
+<pre><pre class="playpen"><code class="language-rust">use std::fmt::Debug;
+
+fn foo&lt;T: Clone, K: Clone + Debug&gt;(x: T, y: K) {
+    x.clone();
+    y.clone();
+    println!(&quot;{:?}&quot;, y);
+}
+
+fn bar&lt;T, K&gt;(x: T, y: K) where T: Clone, K: Clone + Debug {
+    x.clone();
+    y.clone();
+    println!(&quot;{:?}&quot;, y);
+}
+
+fn main() {
+    foo(&quot;Привет&quot;, &quot;мир&quot;);
+    bar(&quot;Привет&quot;, &quot;мир&quot;);
+}
+</code></pre></pre>
+<p><code>foo()</code> использует синтаксис, показанный ранее, а <code>bar()</code> использует утверждение
+<code>where</code>. Все, что нам нужно сделать, это убрать ограничения при определении
+типов параметров, а затем добавить <code>where</code> после списка параметров. В более
+длинных списках можно использовать пробелы:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+use std::fmt::Debug;
+
+fn bar&lt;T, K&gt;(x: T, y: K)
+    where T: Clone,
+          K: Clone + Debug {
+
+    x.clone();
+    y.clone();
+    println!(&quot;{:?}&quot;, y);
+}
+#}</code></pre></pre>
+<p>Такая гибкость может добавить ясности в сложных ситуациях.</p>
+<p>На самом деле <code>where</code> это больше, чем просто упрощение синтаксиса. Например:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+trait ConvertTo&lt;Output&gt; {
+    fn convert(&amp;self) -&gt; Output;
+}
+
+impl ConvertTo&lt;i64&gt; for i32 {
+    fn convert(&amp;self) -&gt; i64 { *self as i64 }
+}
+
+// может быть вызван с T == i32
+fn normal&lt;T: ConvertTo&lt;i64&gt;&gt;(x: &amp;T) -&gt; i64 {
+    x.convert()
+}
+
+// может быть вызван с T == i64
+fn inverse&lt;T&gt;() -&gt; T
+        // использует ConvertTo как если бы это было «ConvertTo&lt;i64&gt;»
+        where i32: ConvertTo&lt;T&gt; {
+    1i32.convert()
+}
+#}</code></pre></pre>
+<p>Этот код демонстрирует дополнительные преимущества использования утверждения
+<code>where</code>: оно позволяет задавать ограничение, где с левой стороны располагается
+произвольный тип (в данном случае <code>i32</code>), а не только простой параметр типа
+(вроде <code>T</code>).</p>
+<h1><a class="header" href="#Методы-по-умолчанию" id="Методы-по-умолчанию">Методы по умолчанию</a></h1>
+<p>Есть еще одна особенность типажей, о которой стоит поговорить: методы по
+умолчанию. Проще всего показать это на примере:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+trait Foo {
+    fn is_valid(&amp;self) -&gt; bool;
+
+    fn is_invalid(&amp;self) -&gt; bool { !self.is_valid() }
+}
+#}</code></pre></pre>
+<p>В типах, реализующих типаж <code>Foo</code>, нужно реализовать метод <code>is_valid()</code>, а
+<code>is_invalid()</code> будет реализован по-умолчанию. Его поведение можно
+переопределить:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+# trait Foo {
+#     fn is_valid(&amp;self) -&gt; bool;
+#
+#     fn is_invalid(&amp;self) -&gt; bool { !self.is_valid() }
+# }
+struct UseDefault;
+
+impl Foo for UseDefault {
+    fn is_valid(&amp;self) -&gt; bool {
+        println!(&quot;Вызван UseDefault.is_valid.&quot;);
+        true
+    }
+}
+
+struct OverrideDefault;
+
+impl Foo for OverrideDefault {
+    fn is_valid(&amp;self) -&gt; bool {
+        println!(&quot;Вызван OverrideDefault.is_valid.&quot;);
+        true
+    }
+
+    fn is_invalid(&amp;self) -&gt; bool {
+        println!(&quot;Вызван OverrideDefault.is_invalid!&quot;);
+        true // эта реализация противоречит сама себе!
+    }
+}
+
+let default = UseDefault;
+assert!(!default.is_invalid()); // печатает «Вызван UseDefault.is_valid.»
+
+let over = OverrideDefault;
+assert!(over.is_invalid()); // печатает «Вызван OverrideDefault.is_invalid!»
+#}</code></pre></pre>
+<h1><a class="header" href="#Наследование" id="Наследование">Наследование</a></h1>
+<p>Иногда чтобы реализовать один типаж, нужно реализовать типажи, от которых он
+зависит:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+trait Foo {
+    fn foo(&amp;self);
+}
+
+trait FooBar : Foo {
+    fn foobar(&amp;self);
+}
+#}</code></pre></pre>
+<p>Типы, реализующие <code>FooBar</code>, должны реализовывать <code>Foo</code>:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+# trait Foo {
+#     fn foo(&amp;self);
+# }
+# trait FooBar : Foo {
+#     fn foobar(&amp;self);
+# }
+struct Baz;
+
+impl Foo for Baz {
+    fn foo(&amp;self) { println!(&quot;foo&quot;); }
+}
+
+impl FooBar for Baz {
+    fn foobar(&amp;self) { println!(&quot;foobar&quot;); }
+}
+#}</code></pre></pre>
+<p>Если мы забудем реализовать <code>Foo</code>, компилятор скажет нам об этом:</p>
+<pre><code class="language-text">error: the trait `main::Foo` is not implemented for the type `main::Baz` [E0277]
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="generics.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="drop.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="generics.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="drop.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+        <!-- Google Analytics Tag -->
+        <script type="text/javascript">
+            var localAddrs = ["localhost", "127.0.0.1", ""];
+
+            // make sure we don't activate google analytics if the developer is
+            // inspecting the book locally...
+            if (localAddrs.indexOf(document.location.hostname) === -1) {
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-142155799-10', 'auto');
+                ga('send', 'pageview');
+            }
+        </script>
+        
+
+        
+        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

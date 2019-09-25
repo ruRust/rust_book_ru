@@ -1,0 +1,749 @@
+<!DOCTYPE HTML>
+<html lang="ru" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Документация - Язык программирования Rust</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li><a href="INTRODUCTION.html"><strong aria-hidden="true">1.</strong> Введение</a></li><li><a href="getting-started.html"><strong aria-hidden="true">2.</strong> C чего начать</a></li><li><a href="learn-rust.html"><strong aria-hidden="true">3.</strong> Изучение Rust</a></li><li><ol class="section"><li><a href="guessing-game.html"><strong aria-hidden="true">3.1.</strong> Угадайка</a></li><li><a href="dining-philosophers.html"><strong aria-hidden="true">3.2.</strong> Обедающие философы</a></li><li><a href="rust-inside-other-languages.html"><strong aria-hidden="true">3.3.</strong> Вызов кода на Rust из других языков</a></li></ol></li><li><a href="syntax-and-semantics.html"><strong aria-hidden="true">4.</strong> Синтаксис и семантика</a></li><li><ol class="section"><li><a href="variable-bindings.html"><strong aria-hidden="true">4.1.</strong> Связывание имён</a></li><li><a href="functions.html"><strong aria-hidden="true">4.2.</strong> Функции</a></li><li><a href="primitive-types.html"><strong aria-hidden="true">4.3.</strong> Простые типы</a></li><li><a href="comments.html"><strong aria-hidden="true">4.4.</strong> Комментарии</a></li><li><a href="if.html"><strong aria-hidden="true">4.5.</strong> Конструкция if</a></li><li><a href="loops.html"><strong aria-hidden="true">4.6.</strong> Циклы</a></li><li><a href="ownership.html"><strong aria-hidden="true">4.7.</strong> Владение</a></li><li><a href="references-and-borrowing.html"><strong aria-hidden="true">4.8.</strong> Ссылки и заимствование</a></li><li><a href="lifetimes.html"><strong aria-hidden="true">4.9.</strong> Время жизни</a></li><li><a href="mutability.html"><strong aria-hidden="true">4.10.</strong> Изменяемость</a></li><li><a href="structs.html"><strong aria-hidden="true">4.11.</strong> Структуры</a></li><li><a href="enums.html"><strong aria-hidden="true">4.12.</strong> Перечисления</a></li><li><a href="match.html"><strong aria-hidden="true">4.13.</strong> Конструкция match</a></li><li><a href="patterns.html"><strong aria-hidden="true">4.14.</strong> Шаблоны сопоставления match</a></li><li><a href="method-syntax.html"><strong aria-hidden="true">4.15.</strong> Синтаксис методов</a></li><li><a href="vectors.html"><strong aria-hidden="true">4.16.</strong> Вектора</a></li><li><a href="strings.html"><strong aria-hidden="true">4.17.</strong> Строки</a></li><li><a href="generics.html"><strong aria-hidden="true">4.18.</strong> Обобщённое программирование</a></li><li><a href="traits.html"><strong aria-hidden="true">4.19.</strong> Типажи</a></li><li><a href="drop.html"><strong aria-hidden="true">4.20.</strong> Типаж Drop</a></li><li><a href="if-let.html"><strong aria-hidden="true">4.21.</strong> Конструкция if let</a></li><li><a href="trait-objects.html"><strong aria-hidden="true">4.22.</strong> Типажи-объекты</a></li><li><a href="closures.html"><strong aria-hidden="true">4.23.</strong> Замыкания</a></li><li><a href="ufcs.html"><strong aria-hidden="true">4.24.</strong> Универсальный синтаксис вызова функций</a></li><li><a href="crates-and-modules.html"><strong aria-hidden="true">4.25.</strong> Контейнеры и модули</a></li><li><a href="const-and-static.html"><strong aria-hidden="true">4.26.</strong> const и static</a></li><li><a href="attributes.html"><strong aria-hidden="true">4.27.</strong> Атрибуты</a></li><li><a href="type-aliases.html"><strong aria-hidden="true">4.28.</strong> Псевдонимы типов</a></li><li><a href="casting-between-types.html"><strong aria-hidden="true">4.29.</strong> Приведение типов</a></li><li><a href="associated-types.html"><strong aria-hidden="true">4.30.</strong> Ассоциированные типы</a></li><li><a href="unsized-types.html"><strong aria-hidden="true">4.31.</strong> Безразмерные типы</a></li><li><a href="operators-and-overloading.html"><strong aria-hidden="true">4.32.</strong> Перегрузка операций</a></li><li><a href="deref-coercions.html"><strong aria-hidden="true">4.33.</strong> Преобразования при разыменовании</a></li><li><a href="macros.html"><strong aria-hidden="true">4.34.</strong> Макросы</a></li><li><a href="raw-pointers.html"><strong aria-hidden="true">4.35.</strong> Сырые указатели</a></li><li><a href="unsafe.html"><strong aria-hidden="true">4.36.</strong> Небезопасный код</a></li></ol></li><li><a href="effective-rust.html"><strong aria-hidden="true">5.</strong> Эффективное использование Rust</a></li><li><ol class="section"><li><a href="the-stack-and-the-heap.html"><strong aria-hidden="true">5.1.</strong> Стек и куча</a></li><li><a href="testing.html"><strong aria-hidden="true">5.2.</strong> Тестирование</a></li><li><a href="conditional-compilation.html"><strong aria-hidden="true">5.3.</strong> Условная компиляция</a></li><li><a href="documentation.html" class="active"><strong aria-hidden="true">5.4.</strong> Документация</a></li><li><a href="iterators.html"><strong aria-hidden="true">5.5.</strong> Итераторы</a></li><li><a href="concurrency.html"><strong aria-hidden="true">5.6.</strong> Многозадачность</a></li><li><a href="error-handling.html"><strong aria-hidden="true">5.7.</strong> Обработка ошибок</a></li><li><a href="choosing-your-guarantees.html"><strong aria-hidden="true">5.8.</strong> Выбор гарантий</a></li><li><a href="ffi.html"><strong aria-hidden="true">5.9.</strong> Интерфейс внешних функций</a></li><li><a href="borrow-and-asref.html"><strong aria-hidden="true">5.10.</strong> Типажи Borrow и AsRef</a></li><li><a href="release-channels.html"><strong aria-hidden="true">5.11.</strong> Каналы сборок</a></li><li><a href="using-rust-without-the-standard-library.html"><strong aria-hidden="true">5.12.</strong> Using Rust without the standard library</a></li></ol></li><li><a href="nightly-rust.html"><strong aria-hidden="true">6.</strong> Нестабильные возможности Rust</a></li><li><ol class="section"><li><a href="compiler-plugins.html"><strong aria-hidden="true">6.1.</strong> Плагины к компилятору</a></li><li><a href="inline-assembly.html"><strong aria-hidden="true">6.2.</strong> Встроенный ассемблерный код</a></li><li><a href="no-stdlib.html"><strong aria-hidden="true">6.3.</strong> Без stdlib</a></li><li><a href="intrinsics.html"><strong aria-hidden="true">6.4.</strong> Внутренние средства</a></li><li><a href="lang-items.html"><strong aria-hidden="true">6.5.</strong> Элементы языка</a></li><li><a href="advanced-linking.html"><strong aria-hidden="true">6.6.</strong> Продвинутое руководство по компоновке</a></li><li><a href="benchmark-tests.html"><strong aria-hidden="true">6.7.</strong> Тесты производительности</a></li><li><a href="box-syntax-and-patterns.html"><strong aria-hidden="true">6.8.</strong> Синтаксис упаковки и шаблоны match</a></li><li><a href="slice-patterns.html"><strong aria-hidden="true">6.9.</strong> Шаблоны match для срезов</a></li><li><a href="associated-constants.html"><strong aria-hidden="true">6.10.</strong> Ассоциированные константы</a></li><li><a href="custom-allocators.html"><strong aria-hidden="true">6.11.</strong> Пользовательские менеджеры памяти</a></li></ol></li><li><a href="glossary.html"><strong aria-hidden="true">7.</strong> Глоссарий</a></li><li><a href="syntax-index.html"><strong aria-hidden="true">8.</strong> Syntax Index</a></li><li><a href="bibliography.html"><strong aria-hidden="true">9.</strong> Библиография</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Язык программирования Rust</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>% Документация</p>
+<p>Документация является важной частью любого программного проекта, и в Rust ей
+уделяется не меньше внимания, чем самому коду. Давайте поговорим об инструментах
+Rust, предназначенных для создания документации к проекту.</p>
+<h2><a class="header" href="#О-rustdoc" id="О-rustdoc">О <code>rustdoc</code></a></h2>
+<p>Дистрибутив Rust включает в себя инструмент, <code>rustdoc</code>, который генерирует
+документацию. <code>rustdoc</code> также используется Cargo через <code>cargo doc</code>.</p>
+<p>Документация может быть сгенерирована двумя методами: из исходного кода, и из
+отдельных файлов в формате Markdown.</p>
+<h2><a class="header" href="#Документирование-исходного-кода" id="Документирование-исходного-кода">Документирование исходного кода</a></h2>
+<p>Основной способ документирования проекта на Rust заключается в комментировании
+исходного кода. Для этой цели вы можете использовать документирующие
+комментарии:</p>
+<pre><code class="language-rust ignore">/// Создаёт новый `Rc&lt;T&gt;`.
+///
+/// # Examples
+///
+/// ```
+/// use std::rc::Rc;
+///
+/// let five = Rc::new(5);
+/// ```
+pub fn new(value: T) -&gt; Rc&lt;T&gt; {
+    // здесь реализация
+}
+</code></pre>
+<p>Этот код генерирует документацию, которая выглядит <a href="http://doc.rust-lang.org/std/rc/struct.Rc.html#method.new">так</a>. В приведенном
+коде реализация метода была заменена на обычный комментарий. Первое, на что
+следует обратить внимание в этом примере, это на использование <code>///</code> вместо
+<code>//</code>. Символы <code>///</code> указывают, что это документирующий комментарий.</p>
+<p>Документирующие комментарии пишутся на Markdown.</p>
+<p>Rust отслеживает такие комментарии, и использует их при создании документации.</p>
+<p>При документировании таких вещей, как перечисления, нужно учитывать некоторые
+особенности работы <code>rustdoc</code>. Такой код работает:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// Тип `Option`. Подробнее смотрите [документацию уровня модуля](http://doc.rust-lang.org/).
+enum Option&lt;T&gt; {
+    /// Нет значения
+    None,
+    /// Некоторое значение `T`
+    Some(T),
+}
+#}</code></pre></pre>
+<p>А такой — нет:</p>
+<pre><code class="language-rust ignore">/// Тип `Option`. Подробнее смотрите [документацию уровня модуля](http://doc.rust-lang.org/).
+enum Option&lt;T&gt; {
+    None, /// Нет значения
+    Some(T), /// Некоторое значение `T`
+}
+</code></pre>
+<p>Вы получите ошибку:</p>
+<pre><code class="language-text">hello.rs:4:1: 4:2 error: expected ident, found `}`
+hello.rs:4 }
+           ^
+</code></pre>
+<p>Эта досадная <a href="https://github.com/rust-lang/rust/issues/22547">ошибка</a>
+заключается в следующем: комментарии документации распространяются на элементы,
+расположенные за ними, а в данном примере нет элемента, расположенного после
+последнего комментария.</p>
+<h3><a class="header" href="#Написание-комментариев-документации" id="Написание-комментариев-документации">Написание комментариев документации</a></h3>
+<p>Давайте рассмотрим каждую часть приведенного комментария в деталях:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// Создаёт новый `Rc&lt;T&gt;`.
+# fn foo() {}
+#}</code></pre></pre>
+<p>Первая строка документирующего комментария должна представлять из себя краткую
+информацию о функциональности. Одно предложение. Только самое основное.
+Высокоуровневое.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+///
+/// Подробности создания `Rc&lt;T&gt;`, возможно, описывающие сложности семантики,
+/// дополнительные опции, и всё остальное.
+///
+# fn foo() {}
+#}</code></pre></pre>
+<p>Наш исходный пример включал только строку с краткой информацией, но если бы у
+нас было больше информации, о которой следует сказать, мы могли бы добавить эту
+информацию в новом параграфе.</p>
+<h4><a class="header" href="#Специальные-разделы" id="Специальные-разделы">Специальные разделы</a></h4>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// # Examples
+# fn foo() {}
+#}</code></pre></pre>
+<p>Далее идут специальные разделы. Они обознаются заголовком, который начинается с
+<code>#</code>. Существуют три вида заголовков, которые обычно используются. Они не
+являются каким-либо специальным синтаксисом, на данный момент это просто
+соглашение.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// # Panics
+# fn foo() {}
+#}</code></pre></pre>
+<p>Раздел <code>Panics</code>. Неустранимые ошибки при неправильном вызове функции (так
+называемые ошибки программирования) в Rust, как правило, вызывают панику,
+которая, в крайнем случае, убивает весь текущий поток (thread). Если ваша
+функция имеет подобное нетривиальное поведение — т.е. обнаруживает/вызывает
+панику, то очень важно задокументировать это.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// # Failures
+# fn foo() {}
+#}</code></pre></pre>
+<p>Раздел <code>Failures</code>. Если ваша функция или метод возвращает <code>Result&lt;T, E&gt;</code>, то
+хорошим тоном является описание условий, при которых она возвращает <code>Err(E)</code>.
+Это чуть менее важно, чем описание <code>Panics</code>, потому как неудача кодируется в
+системе типов, но это не значит, что стоит пренебрегать данной возможностью.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// # Safety
+# fn foo() {}
+#}</code></pre></pre>
+<p>Раздел <code>Safety</code>. Если ваша функция является <code>unsafe</code>, необходимо пояснить, какие
+инварианты вызова должны поддерживаться.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// # Examples
+///
+/// ```
+/// use std::rc::Rc;
+///
+/// let five = Rc::new(5);
+/// ```
+# fn foo() {}
+#}</code></pre></pre>
+<p>Раздел <code>Examples</code>. Включите в этот раздел один или несколько примеров
+использования функции или метода, и ваши пользователи будут вам благодарны.
+Примеры должны размещаться внутри блоков кода, о которых мы сейчас поговорим.
+Этот раздел может иметь более одного подраздела:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// # Examples
+///
+/// Простые образцы типа `&amp;str`:
+///
+/// ```
+/// let v: Vec&lt;&amp;str&gt; = &quot;И была у них курочка Ряба&quot;.split(' ').collect();
+/// assert_eq!(v, vec![&quot;И&quot;, &quot;была&quot;, &quot;у&quot;, &quot;них&quot;, &quot;курочка&quot;, &quot;Ряба&quot;]);
+/// ```
+///
+/// Более сложные образцы с замыканиями:
+///
+/// ```
+/// let v: Vec&lt;&amp;str&gt; = &quot;абв1где2жзи&quot;.split(|c: char| c.is_numeric()).collect();
+/// assert_eq!(v, vec![&quot;абв&quot;, &quot;где&quot;, &quot;жзи&quot;]);
+/// ```
+# fn foo() {}
+#}</code></pre></pre>
+<p>Давайте подробно обсудим блоки кода.</p>
+<h4><a class="header" href="#Блок-кода" id="Блок-кода">Блок кода</a></h4>
+<p>Чтобы написать код на Rust в комментарии, используйте символы ```:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// ```
+/// println!(&quot;Привет, мир&quot;);
+/// ```
+# fn foo() {}
+#}</code></pre></pre>
+<p>Если вы хотите написать код на любом другом языке (не на Rust), вы можете
+добавить аннотацию:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// ```c
+/// printf(&quot;Hello, world\n&quot;);
+/// ```
+# fn foo() {}
+#}</code></pre></pre>
+<p>Это позволит использовать подсветку синтаксиса, соответствующую тому языку,
+который был указан в аннотации. Если же это простой текст, то в аннотации
+указывается <code>text</code>.</p>
+<p>Важно выбрать правильную аннотацию, потому что <code>rustdoc</code> использует ее
+интересным способом: Rust может выполнять проверку работоспособности примеров на
+момент создания документации. Это позволяет избежать устаревания примеров.
+Предположим, у вас есть код на C. Если вы опустите аннотацию, указывающую, что
+это код на C, то <code>rustdoc</code> будет думать, что это код на Rust, поэтому он
+пожалуется при попытке создания документации.</p>
+<h2><a class="header" href="#Тесты-в-документации" id="Тесты-в-документации">Тесты в документации</a></h2>
+<p>Давайте обсудим наш пример документации:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// ```
+/// println!(&quot;Привет, мир&quot;);
+/// ```
+# fn foo() {}
+#}</code></pre></pre>
+<p>Заметьте, что здесь нет нужды в <code>fn main()</code> или чём-нибудь подобном. <code>rustdoc</code>
+автоматически добавит оборачивающий <code>main()</code> вокруг вашего кода в нужном месте.
+Например:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// ```
+/// use std::rc::Rc;
+///
+/// let five = Rc::new(5);
+/// ```
+# fn foo() {}
+#}</code></pre></pre>
+<p>В конечном итоге это будет тест:</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    use std::rc::Rc;
+    let five = Rc::new(5);
+}
+</code></pre></pre>
+<p>Вот полный алгоритм, который <code>rustdoc</code> использует для обработки примеров:</p>
+<ol>
+<li>Любые ведущие (leading) атрибуты <code>#![foo]</code> остаются без изменений в качестве
+атрибутов контейнера.</li>
+<li>Будут вставлены некоторые общие атрибуты <code>allow</code>, в том числе:
+<code>unused_variables</code>, <code>unused_assignments</code>, <code>unused_mut</code>, <code>unused_attributes</code>,
+<code>dead_code</code>. Небольшие примеры часто приводят к срабатыванию этих анализов.</li>
+<li>Если пример не содержит <code>extern crate</code>, то будет вставлено <code>extern crate &lt;mycrate&gt;;</code>.</li>
+<li>Наконец, если пример не содержит <code>fn main</code>, то оставшаяся часть текста будет
+обернута в <code>fn main() { your_code }</code></li>
+</ol>
+<p>Хотя иногда этого не достаточно. Например, что насчёт всех этих примеров кода с
+<code>///</code>, о которых мы говорили? Простой текст, обработанный <code>rustdoc</code>, выглядит
+так:</p>
+<pre><code class="language-text">/// Некоторая документация.
+# fn foo() {}
+</code></pre>
+<p>А исходный текст на Rust после обработки выглядит так:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// Некоторая документация.
+# fn foo() {}
+#}</code></pre></pre>
+<p>Да, именно так: вы можете добавлять строки, которые начинаются с <code># </code>, и они
+будут скрыты в выводе, но при этом будут использоваться во время компиляции
+кода. Вы можете использовать это в своих интересах. Если в документирующем
+комментарии необходимо обратиться к какой-то функции, то ниже нужно будет
+добавить определение этой функции. В то же время, это делается только для того,
+чтобы удовлетворить компилятор, поэтому сокрытие ненужных строк в выводе делает
+пример более ясным. Вы можете использовать эту технику, чтобы детально объяснять
+длинные примеры, сохраняя при этом тестируемость документации. Например, вот
+код:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let x = 5;
+let y = 6;
+println!(&quot;{}&quot;, x + y);
+#}</code></pre></pre>
+<p>Ниже приведено отрисованное объяснение этого кода.</p>
+<p>Сперва мы устанавливаем <code>x</code> равным пяти:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let x = 5;
+# let y = 6;
+# println!(&quot;{}&quot;, x + y);
+#}</code></pre></pre>
+<p>Затем мы устанавливаем <code>y</code> равным шести:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+# let x = 5;
+let y = 6;
+# println!(&quot;{}&quot;, x + y);
+#}</code></pre></pre>
+<p>В конце мы печатаем сумму <code>x</code> и <code>y</code>:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+# let x = 5;
+# let y = 6;
+println!(&quot;{}&quot;, x + y);
+#}</code></pre></pre>
+<p>А вот то же самое объяснение, но в виде простого текста:</p>
+<blockquote>
+<p>Сперва мы устанавливаем <code>x</code> равным пяти:</p>
+<pre><code class="language-text">let x = 5;
+# let y = 6;
+# println!(&quot;{}&quot;, x + y);
+</code></pre>
+<p>Затем мы устанавливаем <code>y</code> равным шести:</p>
+<pre><code class="language-text"># let x = 5;
+let y = 6;
+# println!(&quot;{}&quot;, x + y);
+</code></pre>
+<p>В конце мы печатаем сумму <code>x</code> и <code>y</code>:</p>
+<pre><code class="language-text"># let x = 5;
+# let y = 6;
+println!(&quot;{}&quot;, x + y);
+</code></pre>
+</blockquote>
+<p>Повторяя все части примера, вы можете быть уверены, что ваш пример
+компилируется, а не просто отображает кусочки кода, которые как-то относятся к
+той или иной части вашего объяснения.</p>
+<h3><a class="header" href="#Документирование-макросов" id="Документирование-макросов">Документирование макросов</a></h3>
+<p>Вот пример документирования макроса:</p>
+<pre><pre class="playpen"><code class="language-rust">/// Паниковать с данным сообщением, если только выражение не является истиной.
+///
+/// # Examples
+///
+/// ```
+/// # #[macro_use] extern crate foo;
+/// # fn main() {
+/// panic_unless!(1 + 1 == 2, &quot;Математика сломалась.&quot;);
+/// # }
+/// ```
+///
+/// ```should_panic
+/// # #[macro_use] extern crate foo;
+/// # fn main() {
+/// panic_unless!(true == false, &quot;Я сломан.&quot;);
+/// # }
+/// ```
+#[macro_export]
+macro_rules! panic_unless {
+    ($condition:expr, $($rest:expr),+) =&gt; ({ if ! $condition { panic!($($rest),+); } });
+}
+# fn main() {}
+</code></pre></pre>
+<p>В нем вы можете заметить три вещи. Во-первых, мы должны собственноручно добавить
+строку с <code>extern crate</code> для того, чтобы мы могли указать атрибут <code>#[macro_use]</code>.
+Во-вторых, мы также собственноручно должны добавить <code>main()</code>. И наконец, разумно
+будет использовать <code>#</code>, чтобы закомментировать все, что мы добавили в первых
+двух пунктах, что бы оно не отображалось в генерируемом выводе.</p>
+<h3><a class="header" href="#Запуск-тестов-в-документации" id="Запуск-тестов-в-документации">Запуск тестов в документации</a></h3>
+<p>Для запуска тестов можно использовать одну из двух комманд</p>
+<pre><code class="language-bash">$ rustdoc --test path/to/my/crate/root.rs
+# или
+$ cargo test
+</code></pre>
+<p>Все верно, <code>cargo test</code> также выполняет тесты, встроенные в документацию. Тем не
+менее, <code>cargo test</code> не будет тестировать исполняемые контейнеры, только
+библиотечные. Это связано с тем, как работает <code>rustdoc</code>: он компонуется с
+библиотекой, которую надо протестировать, но в случае с исполняемым файлом
+компоноваться не с чем.</p>
+<p>Есть еще несколько полезных аннотаций, которые помогают <code>rustdoc</code> работать
+правильно при тестировании кода:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// ```ignore
+/// fn foo() {
+/// ```
+# fn foo() {}
+#}</code></pre></pre>
+<p>Аннотация <code>ignore</code> указывает Rust, что код должен быть проигнорирован. Почти во
+всех случаях это не то, что вам нужно, так как эта директива носит очень общий
+характер. Вместо неё лучше использовать аннотацию <code>text</code>, если это не код, или
+<code>#</code>, чтобы получить рабочий пример, отображающий только ту часть, которая вам
+нужна.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// ```should_panic
+/// assert!(false);
+/// ```
+# fn foo() {}
+#}</code></pre></pre>
+<p>Аннотация <code>should_panic</code> указывает <code>rustdoc</code>, что код должен компилироваться, но
+выполнение теста должно завершиться ошибкой.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// ```no_run
+/// loop {
+///     println!(&quot;Привет, мир&quot;);
+/// }
+/// ```
+# fn foo() {}
+#}</code></pre></pre>
+<p>Аннотация <code>no_run</code> указывает, что код должен компилироваться, но запускать его
+на выполнение не требуется. Это важно для таких примеров, которые должны успешно
+компилироваться, но выполнение которых оказывается бесконечным циклом! Например:
+«Вот как запустить сетевой сервис».</p>
+<h3><a class="header" href="#Документирование-модулей" id="Документирование-модулей">Документирование модулей</a></h3>
+<p>Rust предоставляет ещё один вид документирующих комментариев, <code>//!</code>. Этот
+комментарий относится не к следующему за ним элементу, а к элементу, который его
+включает. Другими словами:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+mod foo {
+    //! Это документация для модуля `foo`.
+    //!
+    //! # Examples
+
+    // ...
+}
+#}</code></pre></pre>
+<p>Приведённый пример демонстрирует наиболее распространённое использование <code>//!</code>:
+документирование модуля. Если же модуль расположен в файле <code>foo.rs</code>, то вы,
+открывая его код, часто будете видеть следующее:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+//! Модуль использования разных `foo`.
+//!
+//! Модуль `foo` содержит много полезной функциональности ла-ла-ла
+#}</code></pre></pre>
+<h3><a class="header" href="#Стиль-документирующих-комментариев" id="Стиль-документирующих-комментариев">Стиль документирующих комментариев</a></h3>
+<p>Изучите <a href="https://github.com/rust-lang/rfcs/blob/master/text/0505-api-comment-conventions.md">RFC 505</a> для получения полных сведений о соглашениях по стилю и
+формату документации.</p>
+<h2><a class="header" href="#Другая-документация" id="Другая-документация">Другая документация</a></h2>
+<p>Все эти правила поведения также применимы и в отношении исходных файлов не на
+Rust. Так как комментарии пишутся на Markdown, то часто эти файлы имеют
+расширение <code>.md</code>.</p>
+<p>Когда вы пишете документацию в файлах Markdown, вам не нужно добавлять префикс
+документирующего комментария, <code>///</code>. Например:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// # Examples
+///
+/// ```
+/// use std::rc::Rc;
+///
+/// let five = Rc::new(5);
+/// ```
+# fn foo() {}
+#}</code></pre></pre>
+<p>преобразуется в</p>
+<pre><code class="language-markdown"># Examples
+
+```
+use std::rc::Rc;
+
+let five = Rc::new(5);
+```
+</code></pre>
+<p>когда он находится в файле Markdown. Однако есть один недостаток: файлы Markdown
+должны иметь заголовок наподобие этого:</p>
+<pre><code class="language-markdown">% Заголовок
+
+Это пример документации.
+</code></pre>
+<p>Строка, начинающаяся с <code>%</code>, должна быть самой первой строкой файла.</p>
+<h2><a class="header" href="#Атрибуты-doc" id="Атрибуты-doc">Атрибуты <code>doc</code></a></h2>
+<p>На более глубоком уровне, комментарии документации — это синтаксический сахар
+для атрибутов документации:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// this
+# fn foo() {}
+
+#[doc=&quot;this&quot;]
+# fn bar() {}
+#}</code></pre></pre>
+<p>Т.е. представленные выше комментарии идентичны, также как и ниже:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+//! this
+
+#![doc=&quot;/// this&quot;]
+#}</code></pre></pre>
+<p>Вы не часто будете видеть этот атрибут, используемый для написания документации,
+но он может быть полезен для изменения некоторых настроек, или при написании
+макроса.</p>
+<h3><a class="header" href="#Ре-экспорт" id="Ре-экспорт">Ре-экспорт</a></h3>
+<p><code>rustdoc</code> будет показывать документацию для общедоступного (public) ре-экспорта
+в двух местах:</p>
+<pre><code class="language-ignore">extern crate foo;
+
+pub use foo::bar;
+</code></pre>
+<p>Это создаст документацию для <code>bar</code> как в документации для контейнера <code>foo</code>, так
+и в документации к вашему контейнеру. То есть в обоих местах будет использована
+одна и та же документация.</p>
+<p>Такое поведение может быть подавлено с помощью <code>no_inline</code>:</p>
+<pre><code class="language-ignore">extern crate foo;
+
+#[doc(no_inline)]
+pub use foo::bar;
+</code></pre>
+<h3><a class="header" href="#Управление-html" id="Управление-html">Управление HTML</a></h3>
+<p>Вы можете управлять некоторыми аспектами HTML, который генерирует <code>rustdoc</code>,
+через атрибут <code>#![doc]</code>:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#![doc(html_logo_url = &quot;http://www.rust-lang.org/logos/rust-logo-128x128-blk-v2.png&quot;,
+#fn main() {
+       html_favicon_url = &quot;http://www.rust-lang.org/favicon.ico&quot;,
+       html_root_url = &quot;http://doc.rust-lang.org/&quot;)];
+#}</code></pre></pre>
+<p>В этом примере устанавливается несколько различных опций: логотип, иконка и
+корневой URL.</p>
+<h2><a class="header" href="#Опции-генерации" id="Опции-генерации">Опции генерации</a></h2>
+<p><code>rustdoc</code> также содержит несколько опций командной строки для дальнейшей
+настройки:</p>
+<ul>
+<li><code>--html-in-header FILE</code>: включить содержимое FILE в конец раздела
+<code>&lt;head&gt;...&lt;/head&gt;</code>.</li>
+<li><code>--html-before-content FILE</code>: включить содержимое FILE сразу после <code>&lt;body&gt;</code>,
+перед отображаемым содержимым (в том числе строки поиска).</li>
+<li><code>--html-after-content FILE</code>: включить содержимое FILE после всего
+отображаемого содержимого.</li>
+</ul>
+<h2><a class="header" href="#Замечание-по-безопасности" id="Замечание-по-безопасности">Замечание по безопасности</a></h2>
+<p>Комментарии в документации в формате Markdown помещаются в конечную веб-страницу
+без обработки. Будьте осторожны с HTML-литералами:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// &lt;script&gt;alert(document.cookie)&lt;/script&gt;
+# fn foo() {}
+#}</code></pre></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="conditional-compilation.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="iterators.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="conditional-compilation.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="iterators.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+        <!-- Google Analytics Tag -->
+        <script type="text/javascript">
+            var localAddrs = ["localhost", "127.0.0.1", ""];
+
+            // make sure we don't activate google analytics if the developer is
+            // inspecting the book locally...
+            if (localAddrs.indexOf(document.location.hostname) === -1) {
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-142155799-10', 'auto');
+                ga('send', 'pageview');
+            }
+        </script>
+        
+
+        
+        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

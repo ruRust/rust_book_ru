@@ -1,0 +1,1022 @@
+<!DOCTYPE HTML>
+<html lang="ru" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Угадайка - Язык программирования Rust</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li><a href="INTRODUCTION.html"><strong aria-hidden="true">1.</strong> Введение</a></li><li><a href="getting-started.html"><strong aria-hidden="true">2.</strong> C чего начать</a></li><li><a href="learn-rust.html"><strong aria-hidden="true">3.</strong> Изучение Rust</a></li><li><ol class="section"><li><a href="guessing-game.html" class="active"><strong aria-hidden="true">3.1.</strong> Угадайка</a></li><li><a href="dining-philosophers.html"><strong aria-hidden="true">3.2.</strong> Обедающие философы</a></li><li><a href="rust-inside-other-languages.html"><strong aria-hidden="true">3.3.</strong> Вызов кода на Rust из других языков</a></li></ol></li><li><a href="syntax-and-semantics.html"><strong aria-hidden="true">4.</strong> Синтаксис и семантика</a></li><li><ol class="section"><li><a href="variable-bindings.html"><strong aria-hidden="true">4.1.</strong> Связывание имён</a></li><li><a href="functions.html"><strong aria-hidden="true">4.2.</strong> Функции</a></li><li><a href="primitive-types.html"><strong aria-hidden="true">4.3.</strong> Простые типы</a></li><li><a href="comments.html"><strong aria-hidden="true">4.4.</strong> Комментарии</a></li><li><a href="if.html"><strong aria-hidden="true">4.5.</strong> Конструкция if</a></li><li><a href="loops.html"><strong aria-hidden="true">4.6.</strong> Циклы</a></li><li><a href="ownership.html"><strong aria-hidden="true">4.7.</strong> Владение</a></li><li><a href="references-and-borrowing.html"><strong aria-hidden="true">4.8.</strong> Ссылки и заимствование</a></li><li><a href="lifetimes.html"><strong aria-hidden="true">4.9.</strong> Время жизни</a></li><li><a href="mutability.html"><strong aria-hidden="true">4.10.</strong> Изменяемость</a></li><li><a href="structs.html"><strong aria-hidden="true">4.11.</strong> Структуры</a></li><li><a href="enums.html"><strong aria-hidden="true">4.12.</strong> Перечисления</a></li><li><a href="match.html"><strong aria-hidden="true">4.13.</strong> Конструкция match</a></li><li><a href="patterns.html"><strong aria-hidden="true">4.14.</strong> Шаблоны сопоставления match</a></li><li><a href="method-syntax.html"><strong aria-hidden="true">4.15.</strong> Синтаксис методов</a></li><li><a href="vectors.html"><strong aria-hidden="true">4.16.</strong> Вектора</a></li><li><a href="strings.html"><strong aria-hidden="true">4.17.</strong> Строки</a></li><li><a href="generics.html"><strong aria-hidden="true">4.18.</strong> Обобщённое программирование</a></li><li><a href="traits.html"><strong aria-hidden="true">4.19.</strong> Типажи</a></li><li><a href="drop.html"><strong aria-hidden="true">4.20.</strong> Типаж Drop</a></li><li><a href="if-let.html"><strong aria-hidden="true">4.21.</strong> Конструкция if let</a></li><li><a href="trait-objects.html"><strong aria-hidden="true">4.22.</strong> Типажи-объекты</a></li><li><a href="closures.html"><strong aria-hidden="true">4.23.</strong> Замыкания</a></li><li><a href="ufcs.html"><strong aria-hidden="true">4.24.</strong> Универсальный синтаксис вызова функций</a></li><li><a href="crates-and-modules.html"><strong aria-hidden="true">4.25.</strong> Контейнеры и модули</a></li><li><a href="const-and-static.html"><strong aria-hidden="true">4.26.</strong> const и static</a></li><li><a href="attributes.html"><strong aria-hidden="true">4.27.</strong> Атрибуты</a></li><li><a href="type-aliases.html"><strong aria-hidden="true">4.28.</strong> Псевдонимы типов</a></li><li><a href="casting-between-types.html"><strong aria-hidden="true">4.29.</strong> Приведение типов</a></li><li><a href="associated-types.html"><strong aria-hidden="true">4.30.</strong> Ассоциированные типы</a></li><li><a href="unsized-types.html"><strong aria-hidden="true">4.31.</strong> Безразмерные типы</a></li><li><a href="operators-and-overloading.html"><strong aria-hidden="true">4.32.</strong> Перегрузка операций</a></li><li><a href="deref-coercions.html"><strong aria-hidden="true">4.33.</strong> Преобразования при разыменовании</a></li><li><a href="macros.html"><strong aria-hidden="true">4.34.</strong> Макросы</a></li><li><a href="raw-pointers.html"><strong aria-hidden="true">4.35.</strong> Сырые указатели</a></li><li><a href="unsafe.html"><strong aria-hidden="true">4.36.</strong> Небезопасный код</a></li></ol></li><li><a href="effective-rust.html"><strong aria-hidden="true">5.</strong> Эффективное использование Rust</a></li><li><ol class="section"><li><a href="the-stack-and-the-heap.html"><strong aria-hidden="true">5.1.</strong> Стек и куча</a></li><li><a href="testing.html"><strong aria-hidden="true">5.2.</strong> Тестирование</a></li><li><a href="conditional-compilation.html"><strong aria-hidden="true">5.3.</strong> Условная компиляция</a></li><li><a href="documentation.html"><strong aria-hidden="true">5.4.</strong> Документация</a></li><li><a href="iterators.html"><strong aria-hidden="true">5.5.</strong> Итераторы</a></li><li><a href="concurrency.html"><strong aria-hidden="true">5.6.</strong> Многозадачность</a></li><li><a href="error-handling.html"><strong aria-hidden="true">5.7.</strong> Обработка ошибок</a></li><li><a href="choosing-your-guarantees.html"><strong aria-hidden="true">5.8.</strong> Выбор гарантий</a></li><li><a href="ffi.html"><strong aria-hidden="true">5.9.</strong> Интерфейс внешних функций</a></li><li><a href="borrow-and-asref.html"><strong aria-hidden="true">5.10.</strong> Типажи Borrow и AsRef</a></li><li><a href="release-channels.html"><strong aria-hidden="true">5.11.</strong> Каналы сборок</a></li><li><a href="using-rust-without-the-standard-library.html"><strong aria-hidden="true">5.12.</strong> Using Rust without the standard library</a></li></ol></li><li><a href="nightly-rust.html"><strong aria-hidden="true">6.</strong> Нестабильные возможности Rust</a></li><li><ol class="section"><li><a href="compiler-plugins.html"><strong aria-hidden="true">6.1.</strong> Плагины к компилятору</a></li><li><a href="inline-assembly.html"><strong aria-hidden="true">6.2.</strong> Встроенный ассемблерный код</a></li><li><a href="no-stdlib.html"><strong aria-hidden="true">6.3.</strong> Без stdlib</a></li><li><a href="intrinsics.html"><strong aria-hidden="true">6.4.</strong> Внутренние средства</a></li><li><a href="lang-items.html"><strong aria-hidden="true">6.5.</strong> Элементы языка</a></li><li><a href="advanced-linking.html"><strong aria-hidden="true">6.6.</strong> Продвинутое руководство по компоновке</a></li><li><a href="benchmark-tests.html"><strong aria-hidden="true">6.7.</strong> Тесты производительности</a></li><li><a href="box-syntax-and-patterns.html"><strong aria-hidden="true">6.8.</strong> Синтаксис упаковки и шаблоны match</a></li><li><a href="slice-patterns.html"><strong aria-hidden="true">6.9.</strong> Шаблоны match для срезов</a></li><li><a href="associated-constants.html"><strong aria-hidden="true">6.10.</strong> Ассоциированные константы</a></li><li><a href="custom-allocators.html"><strong aria-hidden="true">6.11.</strong> Пользовательские менеджеры памяти</a></li></ol></li><li><a href="glossary.html"><strong aria-hidden="true">7.</strong> Глоссарий</a></li><li><a href="syntax-index.html"><strong aria-hidden="true">8.</strong> Syntax Index</a></li><li><a href="bibliography.html"><strong aria-hidden="true">9.</strong> Библиография</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Язык программирования Rust</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>% Угадайка</p>
+<p>В качестве нашего первого проекта мы решим классическую для начинающих
+программистов задачу: игра-угадайка. Немного о том, как игра должна работать:
+наша программа генерирует случайное целое число из промежутка от 1 до 100. Затем
+она просит ввести число, которое она «загадала». Для каждого введённого нами
+числа, она говорит, больше ли оно, чем «загаданное», или меньше. Игра
+заканчивается когда мы отгадываем число. Звучит неплохо, не так ли?</p>
+<h1><a class="header" href="#Создание-нового-проекта" id="Создание-нового-проекта">Создание нового проекта</a></h1>
+<p>Давайте создадим новый проект. Перейдите в вашу директорию с проектами. Помните,
+как мы создавали структуру директорий и <code>Cargo.toml</code> для <code>hello_world</code>? Cargo
+может сделать это за нас. Давайте воспользуемся этим:</p>
+<pre><code class="language-bash">$ cd ~/projects
+$ cargo new guessing_game --bin
+$ cd guessing_game
+</code></pre>
+<p>Мы сказали Cargo, что хотим создать новый проект с именем <code>guessing_game</code>. При
+помощи флага <code>--bin</code> мы указали, что хотим создать исполняемый файл, а не
+библиотеку.</p>
+<p>Давайте посмотрим сгенерированный <code>Cargo.toml</code>:</p>
+<pre><code class="language-toml">[package]
+
+name = &quot;guessing_game&quot;
+version = &quot;0.1.0&quot;
+authors = [&quot;Your Name &lt;you@example.com&gt;&quot;]
+</code></pre>
+<p>Cargo взял эту информацию из вашего рабочего окружения. Если данные неверны,
+исправьте их.</p>
+<p>Наконец, Cargo создал программу «Привет, мир!». Загляните в файл <code>src/main.rs</code>:</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    println!(&quot;Hello, world!&quot;);
+}
+</code></pre></pre>
+<p>Давайте попробуем скомпилировать созданный Cargo проект:</p>
+<pre><code class="language-bash">$ cargo build
+   Compiling guessing_game v0.1.0 (file:///home/you/projects/guessing_game)
+</code></pre>
+<p>Замечательно! Снова откройте <code>src/main.rs</code>. Мы будем писать весь наш код в этом
+файле.</p>
+<p>Прежде чем мы начнём работу, давайте рассмотрим ещё одну команду Cargo: <code>run</code>.
+<code>cargo run</code> похожа на <code>cargo build</code>, но после завершения компиляции она
+запускает получившийся исполняемый файл:</p>
+<pre><code class="language-bash">$ cargo run
+   Compiling guessing_game v0.1.0 (file:///home/you/projects/guessing_game)
+     Running `target/debug/guessing_game`
+Привет, мир!
+</code></pre>
+<p>Великолепно! Команда <code>run</code> помогает, когда надо быстро пересобрать проект. Наша
+игра как раз и есть такой проект: нам требуется быстро тестировать каждое
+изменение, прежде чем мы приступим к следующей части программы.</p>
+<h1><a class="header" href="#Обработка-предположения" id="Обработка-предположения">Обработка предположения</a></h1>
+<p>Давайте начнём! Первая вещь, которую мы должны сделать для нашей игры, — это
+позволить игроку вводить предположения. Поместите следующий код в ваш
+<code>src/main.rs</code>:</p>
+<pre><pre class="playpen"><code class="language-rust no_run">use std::io;
+
+fn main() {
+    println!(&quot;Угадайте число!&quot;);
+
+    println!(&quot;Пожалуйста, введите предположение.&quot;);
+
+    let mut guess = String::new();
+
+    io::stdin().read_line(&amp;mut guess)
+        .expect(&quot;Не удалось прочитать строку&quot;);
+
+    println!(&quot;Ваша попытка: {}&quot;, guess);
+}
+</code></pre></pre>
+<p>Здесь много чего! Давайте разберём этот участок по частям.</p>
+<pre><code class="language-rust ignore">use std::io;
+</code></pre>
+<p>Нам надо получить то, что ввёл пользователь, а затем вывести результат на экран.
+Значит нам понадобится библиотека <code>io</code> из стандартной библиотеки. Изначально
+Rust импортирует в нашу программу лишь самые необходимые вещи — [<em>прелюдию</em>]
+<a href="http://doc.rust-lang.org/std/prelude/index.html">prelude</a> (prelude). Если чего-то нет в прелюдии, мы должны при помощи
+<code>use</code> явно указать, что хотим это использовать. Здесь также присутствует вторая
+прелюдия — <a href="http://doc.rust-lang.org/std/io/prelude/index.html"><code>io</code>-прелюдия</a>; когда вы её импортируете,
+она подключает ряд полезных вещей, связанных с <code>io</code>.</p>
+<pre><code class="language-rust ignore">fn main() {
+</code></pre>
+<p>Как вы уже знаете, функция <code>main()</code> — это точка входа в нашу программу.
+<code>fn</code> объявляет новую функцию. Пустые круглые скобки <code>()</code> показывают, что она не
+принимает аргументов. Открывающая фигурная скобка <code>{</code> начинает тело нашей
+функции. Из-за того, что мы не указали тип возвращаемого значения,
+предполагается, что будет возвращаться <code>()</code> — пустой <a href="primitive-types.html#tuples">кортеж</a>.</p>
+<pre><code class="language-rust ignore">    println!(&quot;Угадайте число!&quot;);
+
+    println!(&quot;Пожалуйста, введите предположение.&quot;);
+</code></pre>
+<p>Мы уже изучили, что <code>println!()</code> — это <a href="macros.html">макрос</a>, который выводит
+<a href="strings.html">строки</a> на экран.</p>
+<pre><code class="language-rust ignore">    let mut guess = String::new();
+</code></pre>
+<p>Теперь интереснее! Как же много всего происходит в этой строке! Первая вещь, на
+которую следует обратить внимание, — <a href="variable-bindings.html">выражение let</a>, которое используется
+для <em>создания связи</em>. Оно выглядит так:</p>
+<pre><code class="language-rust ignore">let foo = bar;
+</code></pre>
+<p>Это создаёт новую связь с именем <code>foo</code> и привязывает ей значение <code>bar</code>. Во
+многих языках это называется <em>переменная</em>, но в Rust связывание переменных имеет
+несколько трюков в рукаве.</p>
+<p>Например, по умолчанию, связи <a href="mutability.html">неизменяемы</a>. По этой причине наш
+пример использует <code>mut</code>: этот модификатор разрешает менять связь. С левой
+стороны от присваивания у <code>let</code> может быть не просто имя связи, фактически он
+принимает <a href="patterns.html">образец</a>. Мы будем использовать их дальше. Их достаточно
+просто использовать:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let foo = 5; // неизменяемая связь
+let mut bar = 5; // изменяемая связь
+#}</code></pre></pre>
+<p>Ах да, <code>//</code> начинает комментарий, который заканчивается в конце строки. Rust
+игнорирует всё, что находится в <a href="comments.html">комментариях</a>.</p>
+<p>Теперь мы знаем, что <code>let mut guess</code> объявляет изменяемую связь с именем
+<code>guess</code>, а по другую сторону от <code>=</code> находится то, что будет привязано:
+<code>String::new()</code>.</p>
+<p><code>String</code> — это строковый тип, предоставляемый нам стандартной библиотекой.
+<a href="http://doc.rust-lang.org/std/string/struct.String.html"><code>String</code></a> — это текст в кодировке UTF-8 переменной длины.</p>
+<p>Синтаксис <code>::new()</code> использует <code>::</code>, так как это привязанная к определённому
+типу функция. То есть она привязана к самому типу <code>String</code>, а не к определённой
+переменной типа <code>String</code>. Некоторые языки называют это «статическим методом».</p>
+<p>Имя этой функции — <code>new()</code>, так как она создаёт новый, пустой экземпляр типа
+<code>String</code>. Вы можете найти эту функцию у многих типов, потому что это общее имя
+для создания нового значения определённого типа.</p>
+<p>Давайте посмотрим дальше:</p>
+<pre><code class="language-rust ignore">    io::stdin().read_line(&amp;mut guess)
+        .expect(&quot;Не удалось прочитать строку&quot;);
+</code></pre>
+<p>Это уже побольше! Давайте это всё разберём. В первой строке есть две части.
+Это первая:</p>
+<pre><code class="language-rust ignore">io::stdin()
+</code></pre>
+<p>Помните, как мы импортировали (<code>use</code>) <code>std::io</code> в самом начале нашей программы?
+Сейчас мы вызвали ассоциированную с ним функцию. Если бы мы не сделали <code>use std::io</code>, нам бы пришлось здесь написать <code>std::io::stdin()</code>.</p>
+<p>Эта функция возвращает обработчик стандартного ввода нашего терминала. Более
+подробно об этом можно почитать в <a href="http://doc.rust-lang.org/std/io/struct.Stdin.html"><code>std::io::Stdin</code></a>.</p>
+<p>Следующая часть использует этот обработчик для получения всего, что введёт
+пользователь:</p>
+<pre><code class="language-rust ignore">.read_line(&amp;mut guess)
+</code></pre>
+<p>Здесь мы вызвали метод <a href="http://doc.rust-lang.org/std/io/struct.Stdin.html#method.read_line"><code>read_line()</code></a> обработчика. <a href="method-syntax.html">Методы</a>
+похожи на ассоциированные функции, но доступны только у определённого экземпляра
+типа, а не самого типа. Мы указали один аргумент функции <code>read_line()</code>: <code>&amp;mut guess</code>.</p>
+<p>Помните, как мы выше привязали <code>guess</code>? Мы сказали, что эта ссылка изменяема.
+Однако <code>read_line</code> не получает в качестве аргумента <code>String</code>: она получает <code>&amp;mut String</code>. В Rust есть такая особенность, называемая «<a href="references-and-borrowing.html"><em>ссылки</em></a>»,
+которая позволяет нам иметь несколько ссылок на одни и те же данные, что
+позволяет избежать излишнего их копирования. Ссылки — достаточно сложная
+особенность, и одним из основных подкупающих достоинств Rust является то, как он
+решает вопрос безопасности и простоты их использования. Пока что для завершения
+программы нам не требуется разбираться в таких подробностях. Сейчас всё, что нам
+нужно, — это знать, что ссылки, как и связывание при помощи <code>let</code>, неизменяемы
+по умолчанию. Следовательно, мы должны написать <code>&amp;mut guess</code>, а не <code>&amp;guess</code>.</p>
+<p>Почему <code>read_line()</code> получает изменяемую ссылку на строку? Его работа — это
+взять то, что пользователь написал в стандартный ввод, и положить это в
+строку. Итак, метод получает строку в качестве аргумента, и для того, чтобы
+поместить в неё введённое значение, ссылка на данную строку должна быть
+изменяемой.</p>
+<p>Мы, однако, ещё не вполне разобрались с этой строкой кода. Хотя рассмотренный
+фрагмент программы — просто одна строка её текста, он является лишь первой
+частью одной <em>логической</em> строки кода. Посмотрим далее:</p>
+<pre><code class="language-rust ignore">        .expect(&quot;Не удалось прочитать строку&quot;);
+</code></pre>
+<p>Когда мы вызываем метод, используя синтаксис <code>.foo()</code>, мы можем перенести вызов
+в новую строку и сделать для него отступ. Это помогает разбивать длинные строки
+на несколько. Мы <em>могли бы</em> сделать и так:</p>
+<pre><code class="language-rust ignore">    io::stdin().read_line(&amp;mut guess).expect(&quot;Не удалось прочитать строку&quot;);
+</code></pre>
+<p>Однако это достаточно трудно читать. Поэтому мы разделили строку: по строке на
+каждый вызов метода. Мы уже поговорили о <code>read_line()</code>, но ещё ничего не сказали
+про <code>expect()</code>. Мы узнали, что <code>read_line()</code> помещает введённые пользователем
+данные в ссылку <code>&amp;mut String</code>, которую мы передали методу в качестве аргумента.
+Но данный метод также возвращает значение: в данном случае это экземпляр типа
+<a href="http://doc.rust-lang.org/std/io/type.Result.html"><code>io::Result</code></a>. В стандартной библиотеке Rust есть несколько типов
+с именем <code>Result</code>: общая версия <a href="http://doc.rust-lang.org/std/result/enum.Result.html"><code>Result</code></a> и несколько отдельных версий
+в подбиблиотеках, например <code>io::Result</code>.</p>
+<p>Назначение типов <code>Result</code> — преобразовывать информацию об ошибках, полученных
+от обработчика. У значений типа <code>Result</code>, как и любого другого типа, есть
+определённые для него методы. Так, у <code>io::Result</code> имеется <a href="http://doc.rust-lang.org/std/option/enum.Option.html#method.expect">метод
+<code>expect()</code></a>, который берёт значение, для которого был вызван этот метод,
+и, если оно неудачное, выполняет <a href="error-handling.html"><code>panic!</code></a> со строкой, переданной методу
+в качестве аргумента. <code>panic!</code> остановит нашу программу и выведет сообщение
+об ошибке.</p>
+<p>Если убрать вызовы этих двух методов, наша программа скомпилируется,
+но компилятор выдаст следующее предупреждение:</p>
+<pre><code class="language-bash">$ cargo build
+   Compiling guessing_game v0.1.0 (file:///home/you/projects/guessing_game)
+src/main.rs:10:5: 10:39 warning: unused result which must be used,
+#[warn(unused_must_use)] on by default
+src/main.rs:10     io::stdin().read_line(&amp;mut guess);
+                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+</code></pre>
+<p>Rust предупреждает, что мы не используем значение <code>Result</code>. Это предупреждение
+пришло из специальной аннотации, которая указана в <code>io::Result</code>. Rust пытается
+сказать нам, что мы не обрабатываем ошибки, которые могут возникнуть. Наиболее
+правильным решением предотвращения ошибки будет её обработка. К счастью, если
+мы только хотим обрушить приложение, когда возникает проблема, мы можем
+использовать эти два небольших метода. Если мы можем восстановить что-либо
+из ошибки, мы должны сделать кое-что другое, но мы оставим это для будущего
+проекта.</p>
+<p>Осталось разобрать всего одну строку из первого примера:</p>
+<pre><code class="language-rust ignore">    println!(&quot;Ваша попытка: {}&quot;, guess);
+}
+</code></pre>
+<p>Здесь выводится на экран строка, которая была получена с нашего ввода. <code>{}</code> —
+это указатель места заполнения. В качестве второго аргумента макроса <code>println!</code>
+мы указали значение <code>guess</code>, которое и будет подставлено вместо <code>{}</code>. Для вывода
+нескольких значений мы могли бы использовать несколько указателей, по одному
+на каждую привязку:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let x = 5;
+let y = 10;
+
+println!(&quot;x и y: {} и {}&quot;, x, y);
+#}</code></pre></pre>
+<p>Просто.</p>
+<p>Мы можем запустить то, что у нас есть, при помощи <code>cargo run</code>:</p>
+<pre><code class="language-bash">$ cargo run
+   Compiling guessing_game v0.1.0 (file:///home/you/projects/guessing_game)
+     Running `target/debug/guessing_game`
+Угадайте число!
+Пожалуйста, введите предположение.
+6
+Ваша попытка: 6
+</code></pre>
+<p>Всё правильно! Наша первая часть завершена: мы можем получать данные с
+клавиатуры и потом печатать их на экран.</p>
+<h1><a class="header" href="#Генерация-секретного-числа" id="Генерация-секретного-числа">Генерация секретного числа</a></h1>
+<p>Далее, нам надо сгенерировать секретное число. В стандартной библиотеке Rust нет
+ничего, что могло бы нам предоставить функционал для генерации случайных чисел.
+Однако разработчики Rust для этого предоставили [<em>контейнер</em> (crate) <code>rand</code>]
+<a href="https://crates.io/crates/rand">randcrate</a>. «Контейнер» — это пакет с кодом Rust. Наш проект — «бинарный
+контейнер», из которого в итоге получится исполняемый файл. <code>rand</code> —
+«библиотечный контейнер», который содержит код, предназначенный для
+использования с другими программами.</p>
+<p>Использование внешних контейнеров — задача для Cargo. Прежде чем мы начнём
+писать код с использованием <code>rand</code>, мы должны модифицировать наш <code>Cargo.toml</code>.
+Откроем его и добавим в конец следующие строчки:</p>
+<pre><code class="language-toml">[dependencies]
+
+rand=&quot;0.3.0&quot;
+</code></pre>
+<p>Раздел <code>[dependencies]</code> в <code>Cargo.toml</code> похож на раздел <code>[package]</code>: к нему
+относится всё то, что помещено после строки объявления, вплоть до следующего
+раздела. Cargo использует раздел зависимостей, чтобы знать, какие сторонние
+контейнеры потребуются, а также какие их версии необходимы. В данном случае
+мы используем версию <code>0.3.0</code>, под которой Cargo подразумевает любую версию,
+совместимую с заданной. Cargo понимает [Семантическое версионирование]
+<a href="http://semver.org/lang/ru">semver</a>, которое является стандартом нумерации версий. Простое указание номера,
+как показано выше, является сокращением для <code>^0.3.0</code>, и обозначает «все версии,
+совместимые с 0.3.0». Если мы хотим использовать только <code>0.3.0</code>, то можно
+написать <code>rand=&quot;=0.3.0&quot;</code> (обратите внимание на два знака равенства). А если мы
+хотим использовать последнюю версию контейнера, мы можем использовать <code>*</code>. Также
+мы можем указать необходимый промежуток версий. В <a href="http://doc.crates.io/crates-io.html">документации Cargo</a>
+вы найдёте больше информации.</p>
+<p>Теперь, не совершив никаких изменений в коде нашей программы, давайте соберём
+проект:</p>
+<pre><code class="language-bash">$ cargo build
+    Updating registry `https://github.com/rust-lang/crates.io-index`
+ Downloading rand v0.3.8
+ Downloading libc v0.1.6
+   Compiling libc v0.1.6
+   Compiling rand v0.3.8
+   Compiling guessing_game v0.1.0 (file:///home/you/projects/guessing_game)
+</code></pre>
+<p>(Конечно же, вы можете увидеть другие номера версий.)</p>
+<p>Много нового! Теперь, когда у нас есть внешние зависимости, Cargo скачал
+последние версии каждой из них из своего реестра, являющегося копией реестра с
+<a href="https://crates.io">Crates.io</a>. Crates.io — это место, где программисты на Rust могут
+публиковать свои проекты с открытым исходным кодом, чтобы их использовали в
+других проектах.</p>
+<p>После обновления реестра Cargo проверяет раздел <code>[dependencies]</code> и скачивает
+всё, что нам необходимо. В нашем случае мы указали, что проект зависит от
+<code>rand</code>. Самому контейнеру <code>rand</code> для работы нужен контейнер <code>libc</code>. По этой
+причине Cargo скачал и <code>libc</code>. Загрузив библиотеки, Cargo компилирует их,
+а затем собирает и наш проект.</p>
+<p>Когда мы запустим <code>cargo build</code> снова, текст вывода будет уже другим:</p>
+<pre><code class="language-bash">$ cargo build
+</code></pre>
+<p>Всё правильно, ничего не будет выведено! Cargo знает, и наш проект, и все его
+зависимости уже собраны, и поэтому незачем делать это снова. Раз делать
+ничего не надо, Cargo просто завершил работу. Если мы вновь откроем файл
+<code>src/main.rs</code>, сделаем какие-нибудь изменения и затем сохраним их, мы увидим
+только одну строку:</p>
+<pre><code class="language-bash">$ cargo build
+   Compiling guessing_game v0.1.0 (file:///home/you/projects/guessing_game)
+</code></pre>
+<p>Итак, мы сказали Cargo, что нам нужна библиотека <code>rand</code> с любой версией ветки
+<code>0.3.x</code>, и он взял последнюю версию на тот момент, когда его запустили, —
+<code>v0.3.8</code>. Но что делать, когда на следующей неделе выйдет версия <code>v0.3.9</code>,
+содержащая важные изменения? Что, если исправления настолько масштабны, что
+версия <code>0.3.9</code> становится несовместимой с нашим кодом?</p>
+<p>Решением этой проблемы является файл <code>Cargo.lock</code>, который находится в
+директории с нашим проектом. Когда мы в первый раз собирали наш проект, Cargo
+подобрал версии, подходящие под наши условия, и записал их в файл <code>Cargo.lock</code>.
+Когда мы в будущем будем собирать наш проект, Cargo будет проверять, существует
+ли <code>Cargo.lock</code>, и затем использовать указанные в нём версии контейнеров.
+Благодаря этому мы автоматически получаем повторяемые сборки. Другими словами,
+мы будем использовать контейнер версии <code>0.3.8</code> до тех пор, пока явно не обновим
+информацию о его версии в <code>Cargo.lock</code>.</p>
+<p>А что, если мы захотим использовать версию <code>v0.3.9</code>? У Cargo есть другая
+команда, <code>update</code>, которая скажет Cargo: «Игнорируй Cargo.lock, найди и загрузи
+последние версии библиотек из веток, указанных в Cargo.toml. Когда всё сделаешь,
+запиши информацию о версиях в Cargo.lock». По умолчанию Cargo ищет только такую
+версию, номер которой больше, чем <code>0.3.0</code>, и меньше, чем <code>0.4.0</code>. Если мы хотим
+перейти на версии <code>0.4.x</code>, мы должны указать это в <code>Cargo.toml</code>. Потом, когда мы
+запустим <code>cargo build</code>, Cargo обновит индекс и пересмотрит наши требования
+к <code>rand</code>.</p>
+<p>В <a href="http://doc.crates.io">документации</a> по Cargo можно узнать намного больше как о нём, так
+и о <a href="http://doc.crates.io/crates-io.html">его экосистеме</a>, но сказанного выше нам пока хватит. Cargo
+делает повторное использование библиотек намного проще, и программисты на Rust,
+как правило, пишут небольшие проекты, которые входят в состав других, более
+крупных, проектов.</p>
+<p>Давайте наконец <em>использовать</em> <code>rand</code>. Вот наш следующий шаг:</p>
+<pre><code class="language-rust ignore">extern crate rand;
+
+use std::io;
+use rand::Rng;
+
+fn main() {
+    println!(&quot;Угадайте число!&quot;);
+
+    let secret_number = rand::thread_rng().gen_range(1, 101);
+
+    println!(&quot;Загаданное число: {}&quot;, secret_number);
+
+    println!(&quot;Пожалуйста, введите предположение.&quot;);
+
+    let mut guess = String::new();
+
+    io::stdin().read_line(&amp;mut guess)
+        .expect(&quot;Не удалось прочитать строку&quot;);
+
+    println!(&quot;Ваша попытка: {}&quot;, guess);
+}
+</code></pre>
+<p>Первое, что мы сделали, — изменили первую строку. Теперь она выглядит так:
+<code>extern crate rand</code>. Так как мы указали <code>rand</code> в разделе <code>[dependencies]</code>, мы
+можем использовать <code>extern crate</code> для того, чтобы Rust знал, что мы собираемся
+использовать эту зависимость. <code>extern crate</code> также выполняет эквивалент
+оператора <code>use rand;</code>, т.е. теперь мы можем использовать всё, что есть в
+контейнере <code>rand</code>, используя префикс <code>rand::</code>.</p>
+<p>Далее, мы добавили новую строку <code>use</code>: <code>use rand::Rng</code>. Мы собираемся
+использовать метод, а ему нужно, чтобы <code>Rng</code> был в области видимости. Основная
+идея такова: методы, объявленные где-то в другом месте, называются «типажами»
+(traits), и для того, чтобы этот метод можно было использовать, необходимо иметь
+типаж в области видимости. Чтобы узнать об этом более подробно, вы можете
+прочитать раздел о <a href="traits.html">типажах</a>.</p>
+<p>Мы добавили две новые строки в середину кода:</p>
+<pre><code class="language-rust ignore">    let secret_number = rand::thread_rng().gen_range(1, 101);
+
+    println!(&quot;Загаданное число: {}&quot;, secret_number);
+</code></pre>
+<p>Мы используем функцию <code>rand::thread_rng()</code> для получения копии генератора
+случайных чисел, которая будет локальной для текущего <a href="concurrency.html">потока</a>
+выполнения. Выше мы добавили <code>use rand::Rng</code> и теперь можем использовать метод
+<code>gen_range()</code>. Этот метод получает два аргумента и генерирует число, которое
+может быть больше либо равно первому аргументу и меньше, чем второй аргумент.
+Таким образом, если мы укажем числа 1 и 101, то от генератора можно получить
+числа от 1 до 100 включительно.</p>
+<p>Вторая строка печатает наше секретное число. Это поможет нам во время
+тестирования, пока мы разрабатываем нашу программу, но мы обязательно удалим
+данную строчку в финальной версии. Будет неинтересно играть в игру, если она
+сразу печатает ответ!</p>
+<p>Давайте запустим изменённую программу:</p>
+<pre><code class="language-bash">$ cargo run
+   Compiling guessing_game v0.1.0 (file:///home/you/projects/guessing_game)
+     Running `target/debug/guessing_game`
+Угадайте число!
+Загаданное число: 7
+Пожалуйста, введите предположение.
+4
+Ваша попытка: 4
+$ cargo run
+     Running `target/debug/guessing_game`
+Угадайте число!
+Загаданное число: 83
+Пожалуйста, введите предположение.
+5
+Ваша попытка: 5
+</code></pre>
+<p>Замечательно! Следующий шаг — сравнение нашего предположения с «загаданным»
+числом.</p>
+<h1><a class="header" href="#Сравнение" id="Сравнение">Сравнение</a></h1>
+<p>Теперь, когда мы знаем, что ввёл пользователь, давайте сравним «загаданное»
+число с предполагаемым ответом. Здесь приведён наш следующий шаг, который, к
+сожалению, не будет работать:</p>
+<pre><code class="language-rust ignore">extern crate rand;
+
+use std::io;
+use std::cmp::Ordering;
+use rand::Rng;
+
+fn main() {
+    println!(&quot;Угадайте число!&quot;);
+
+    let secret_number = rand::thread_rng().gen_range(1, 101);
+
+    println!(&quot;Загаданное число: {}&quot;, secret_number);
+
+    println!(&quot;Пожалуйста, введите предположение.&quot;);
+
+    let mut guess = String::new();
+
+    io::stdin().read_line(&amp;mut guess)
+        .expect(&quot;Не удалось прочитать строку&quot;);
+
+    println!(&quot;Ваша попытка: {}&quot;, guess);
+
+    match guess.cmp(&amp;secret_number) {
+        Ordering::Less    =&gt; println!(&quot;Слишком маленькое!&quot;),
+        Ordering::Greater =&gt; println!(&quot;Слишком большое!&quot;),
+        Ordering::Equal   =&gt; println!(&quot;Вы выиграли!&quot;),
+    }
+}
+</code></pre>
+<p>Здесь мы видим что-то новое. Первое — это ещё один <code>use</code>. Мы ввели в область
+видимости тип <code>std::cmp::Ordering</code>. Далее, ещё пять новых строк в конце, которые
+используют его:</p>
+<pre><code class="language-rust ignore">match guess.cmp(&amp;secret_number) {
+    Ordering::Less    =&gt; println!(&quot;Слишком маленькое!&quot;),
+    Ordering::Greater =&gt; println!(&quot;Слишком большое!&quot;),
+    Ordering::Equal   =&gt; println!(&quot;Вы выиграли!&quot;),
+}
+</code></pre>
+<p>Метод <code>cmp()</code> может быть вызван у чего-либо, что может сравниваться, и
+получает в качестве аргумента ссылку на то, с чем мы хотим его сравнить.
+Результатом сравнения будет значение типа <code>Ordering</code>, который мы импортировали
+выше. Мы используем оператор <a href="match.html"><code>match</code></a> для определения <code>Ordering</code> —
+результата сравнения. <code>Ordering</code> — <a href="enums.html"><code>перечисление</code></a>. Они обозначаются
+<code>enum</code>, сокращённо от <code>enumeration</code> (перечисление). Перечисления выглядят
+следующим образом:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+enum Foo {
+    Bar,
+    Baz,
+}
+#}</code></pre></pre>
+<p>С таким определением всё, что имеет тип <code>Foo</code> может иметь значение либо
+<code>Foo::Bar</code>, либо <code>Foo::Baz</code>. Мы используем <code>::</code> для обозначения пространства
+имён для вариантов перечисления.</p>
+<p>У перечисления <a href="http://doc.rust-lang.org/std/cmp/enum.Ordering.html"><code>Ordering</code></a> есть три возможных варианта: <code>Less</code>,
+<code>Equal</code> и <code>Greater</code>. Выражение <code>match</code> получает переменную какого-либо типа и
+предлагает вам создать «ветви» для каждого возможного значения. Так как у нас
+есть три возможных значения <code>Ordering</code>, у нас будет три ветви:</p>
+<pre><code class="language-rust ignore">match guess.cmp(&amp;secret_number) {
+    Ordering::Less    =&gt; println!(&quot;Слишком маленькое!&quot;),
+    Ordering::Greater =&gt; println!(&quot;Слишком большое!&quot;),
+    Ordering::Equal   =&gt; println!(&quot;Вы выиграли!&quot;),
+}
+</code></pre>
+<p>Если результатом сравнения будет значение <code>Less</code>, мы выведем на экран <code>Слишком маленькое!</code>; если будет <code>Greater</code>, то <code>Слишком большое!</code>; и если <code>Equal</code>, то
+<code>Вы выиграли!</code>. <code>match</code> очень удобен, и он часто используется в Rust.</p>
+<p>Мы упоминали, что это не совсем корректный код, но всё же давайте попробуем:</p>
+<pre><code class="language-bash">$ cargo build
+   Compiling guessing_game v0.1.0 (file:///home/you/projects/guessing_game)
+src/main.rs:28:21: 28:35 error: mismatched types:
+ expected `&amp;collections::string::String`,
+    found `&amp;_`
+(expected struct `collections::string::String`,
+    found integral variable) [E0308]
+src/main.rs:28     match guess.cmp(&amp;secret_number) {
+                                   ^~~~~~~~~~~~~~
+error: aborting due to previous error
+Could not compile `guessing_game`.
+</code></pre>
+<p>У-у-у! Это большая ошибка. Суть этой ошибки в «несоответствии типов» (mismatched
+types). В Rust строгая статическая система типов. Но в нём также есть вывод
+типов. Когда мы пишем <code>let guess = String::new()</code>, Rust понимает, что <code>guess</code>
+должна быть типа <code>String</code>, благодаря чему мы можем не указывать тип явно.
+<code>secret_number</code> — число, которое может иметь значение от одного до ста.
+Оно может иметь тип <code>i32</code> — 32-битное целое, или <code>u32</code> — 32-битное целое без
+знака, или <code>i64</code> — 64-битное целое, или какой-нибудь другой. По умолчанию, Rust
+сделает его 32-битным целым, <code>i32</code>. Однако здесь Rust не знает, как сравнить
+<code>guess</code> и <code>secret_number</code>. Они должны быть одного типа. В итоге, чтобы можно
+было сравнить <code>guess</code> и <code>secret_number</code>, мы должны преобразовать переменную
+<code>guess</code>, которую мы прочитали с ввода, из типа <code>String</code> в настоящий числовой
+тип. Мы можем сделать это, добавив несколько строчек. Вот как будет выглядеть
+наша программа:</p>
+<pre><code class="language-rust ignore">extern crate rand;
+
+use std::io;
+use std::cmp::Ordering;
+use rand::Rng;
+
+fn main() {
+    println!(&quot;Угадайте число!&quot;);
+
+    let secret_number = rand::thread_rng().gen_range(1, 101);
+
+    println!(&quot;Загаданное число: {}&quot;, secret_number);
+
+    println!(&quot;Пожалуйста, введите предположение.&quot;);
+
+    let mut guess = String::new();
+
+    io::stdin().read_line(&amp;mut guess)
+        .expect(&quot;Не удалось прочитать строку&quot;);
+
+    let guess: u32 = guess.trim().parse()
+        .expect(&quot;Пожалуйста, введите число!&quot;);
+
+    println!(&quot;Ваша попытка: {}&quot;, guess);
+
+    match guess.cmp(&amp;secret_number) {
+        Ordering::Less    =&gt; println!(&quot;Слишком маленькое!&quot;),
+        Ordering::Greater =&gt; println!(&quot;Слишком большое!&quot;),
+        Ordering::Equal   =&gt; println!(&quot;Вы выиграли!&quot;),
+    }
+}
+</code></pre>
+<p>Вот строки, которые мы добавили:</p>
+<pre><code class="language-rust ignore">    let guess: u32 = guess.trim().parse()
+        .expect(&quot;Пожалуйста, введите число!&quot;);
+</code></pre>
+<p>Подождите минутку, у нас ведь уже есть <code>guess</code>? Rust позволил нам «затенить»
+(скрыть) предыдущее <code>guess</code> новым. Это часто используется в подобных случаях,
+когда <code>guess</code> изначально бывает типа <code>String</code>, но нам требуется преобразовать её
+в <code>u32</code>. Затенение позволяет нам переиспользовать имя <code>guess</code> вместо того, чтобы
+создавать для значений разных типов уникальные имена (такие как <code>guess_str</code> и
+<code>guess</code>).</p>
+<p>Мы связали <code>guess</code> с выражением, похожим на написанное когда-то ранее:</p>
+<pre><code class="language-rust ignore">guess.trim().parse()
+</code></pre>
+<p>Здесь <code>guess</code> ссылается на старый <code>guess</code>, который ещё является строкой,
+полученной нами с ввода. Метод <code>trim()</code> у типа <code>String</code> удаляет все пробелы
+из начала и конца нашей строки. Это важно, ведь для нормальной работы
+<code>read_line()</code> нам необходимо нажать <code>Enter</code> по окончании ввода. Это значит,
+что если мы наберём <code>5</code> и нажмём <code>Enter</code>, то <code>guess</code> будет выглядеть следующим
+образом: <code>5\n</code>. Последовательность <code>\n</code> обозначает «новую строку» (newline) —
+значение клавиши <code>Enter</code>. <code>trim()</code> удалит её и оставит только <code>5</code>. <a href="http://doc.rust-lang.org/std/primitive.str.html#method.parse">Метод
+<code>parse()</code></a>, применяемый к строке, преобразует её в число. Он может
+анализировать различные числа, но мы можем указать Rust, какой именно тип
+нам нужен. Поэтому мы указали <code>let guess: u32</code>. Двоеточие <code>:</code>, идущее после
+<code>guess</code>, говорит Rust, что мы указываем тип значения. <code>u32</code> — 32-битное
+беззнаковое целое число. В Rust встроено <a href="primitive-types.html#numeric-types">несколько числовых типов</a>,
+но мы выбрали именно <code>u32</code>. Это достаточно хороший тип, чтобы хранить небольшие
+положительные числа.</p>
+<p>Как и <code>read_line()</code>, вызов <code>parse()</code> может вызвать проблемы. Что, если наша
+строка будет содержать <code>A👍%</code>? Мы не сможем преобразовать её в число. Как и в
+случае с <code>read_line()</code>, мы будем использовать метод <code>expect()</code> на случай, если
+<code>parse()</code> не сможет преобразовать строку.</p>
+<p>Давайте запустим нашу программу!</p>
+<pre><code class="language-bash">$ cargo run
+   Compiling guessing_game v0.1.0 (file:///home/you/projects/guessing_game)
+     Running `target/guessing_game`
+Угадайте число!
+Загаданное число: 58
+Пожалуйста, введите предположение.
+  76
+Ваша попытка: 76
+Слишком большое!
+</code></pre>
+<p>Замечательно! Вы можете видеть, что мы добавили пробел перед нашим числом, но
+программа поняла, что мы хотели сказать <code>76</code>. Запустим программу ещё несколько
+раз и проверим, что загадывание числа работает.</p>
+<p>Теперь большая часть нашей игры работает, но мы можем сделать только одно
+предположение. Давайте изменим это, добавив циклы!</p>
+<h1><a class="header" href="#Зацикливание" id="Зацикливание">Зацикливание</a></h1>
+<p>Ключевое слово <code>loop</code> создаёт бесконечный цикл. Давайте добавим его:</p>
+<pre><code class="language-rust ignore">extern crate rand;
+
+use std::io;
+use std::cmp::Ordering;
+use rand::Rng;
+
+fn main() {
+    println!(&quot;Угадайте число!&quot;);
+
+    let secret_number = rand::thread_rng().gen_range(1, 101);
+
+    println!(&quot;Загаданное число: {}&quot;, secret_number);
+
+    loop {
+        println!(&quot;Пожалуйста, введите предположение.&quot;);
+
+        let mut guess = String::new();
+
+        io::stdin().read_line(&amp;mut guess)
+            .expect(&quot;Не удалось прочитать строку&quot;);
+
+        let guess: u32 = guess.trim().parse()
+            .expect(&quot;Пожалуйста, введите число!&quot;);
+
+        println!(&quot;Ваша попытка: {}&quot;, guess);
+
+        match guess.cmp(&amp;secret_number) {
+            Ordering::Less    =&gt; println!(&quot;Слишком маленькое!&quot;),
+            Ordering::Greater =&gt; println!(&quot;Слишком большое!&quot;),
+            Ordering::Equal   =&gt; println!(&quot;Вы выиграли!&quot;),
+        }
+    }
+}
+</code></pre>
+<p>И посмотрим на работу приложения. Но подождите, мы же добавили бесконечный цикл?
+Всё верно. Помните, что мы говорили о <code>parse()</code>? Если мы введём не числовой
+ответ, то просто вызовем <code>panic!</code> и выйдем из программы. Посмотрите:</p>
+<pre><code class="language-bash">$ cargo run
+   Compiling guessing_game v0.1.0 (file:///home/you/projects/guessing_game)
+     Running `target/guessing_game`
+Угадайте число!
+Загаданное число: 59
+Пожалуйста, введите предположение.
+45
+Ваша попытка: 45
+Слишком маленькое!
+Пожалуйста, введите предположение.
+60
+Ваша попытка: 60
+Слишком большое!
+Пожалуйста, введите предположение.
+59
+Ваша попытка: 59
+Вы выиграли!
+Пожалуйста, введите предположение.
+quit
+thread '&lt;main&gt;' panicked at 'Пожалуйста, введите число!'
+</code></pre>
+<p>Ха! Если мы введём <code>quit</code>, то действительно выйдем из программы. Как и при вводе
+любого другого не числового значения. Что ж, это, мягко говоря, не очень хорошо.
+Для начала давайте сделаем выход из программы, когда мы выиграли игру:</p>
+<pre><code class="language-rust ignore">extern crate rand;
+
+use std::io;
+use std::cmp::Ordering;
+use rand::Rng;
+
+fn main() {
+    println!(&quot;Угадайте число!&quot;);
+
+    let secret_number = rand::thread_rng().gen_range(1, 101);
+
+    println!(&quot;Загаданное число: {}&quot;, secret_number);
+
+    loop {
+        println!(&quot;Пожалуйста, введите предположение.&quot;);
+
+        let mut guess = String::new();
+
+        io::stdin().read_line(&amp;mut guess)
+            .expect(&quot;Не удалось прочитать строку&quot;);
+
+        let guess: u32 = guess.trim().parse()
+            .expect(&quot;Пожалуйста, введите число!&quot;);
+
+        println!(&quot;Ваша попытка: {}&quot;, guess);
+
+        match guess.cmp(&amp;secret_number) {
+            Ordering::Less    =&gt; println!(&quot;Слишком маленькое!&quot;),
+            Ordering::Greater =&gt; println!(&quot;Слишком большое!&quot;),
+            Ordering::Equal   =&gt; {
+                println!(&quot;Вы выиграли!&quot;);
+                break;
+            }
+        }
+    }
+}
+</code></pre>
+<p>С добавлением строки <code>break</code> после вывода <code>Вы выиграли!</code> мы получили
+возможность выхода из цикла, когда мы угадали загаданное число. Выход из цикла
+здесь также означает и завершение нашей программы, так как цикл — это последнее,
+что есть в <code>main()</code>. Нам надо сделать ещё одно улучшение — при любом нечисловом
+вводе мы не должны выходить из программы, мы просто должны проигнорировать ввод.
+Мы можем сделать это следующим образом:</p>
+<pre><code class="language-rust ignore">extern crate rand;
+
+use std::io;
+use std::cmp::Ordering;
+use rand::Rng;
+
+fn main() {
+    println!(&quot;Угадайте число!&quot;);
+
+    let secret_number = rand::thread_rng().gen_range(1, 101);
+
+    println!(&quot;Загаданное число: {}&quot;, secret_number);
+
+    loop {
+        println!(&quot;Пожалуйста, введите предположение.&quot;);
+
+        let mut guess = String::new();
+
+        io::stdin().read_line(&amp;mut guess)
+            .expect(&quot;Не удалось прочитать строку&quot;);
+
+        let guess: u32 = match guess.trim().parse() {
+            Ok(num) =&gt; num,
+            Err(_) =&gt; continue,
+        };
+
+        println!(&quot;Ваша попытка: {}&quot;, guess);
+
+        match guess.cmp(&amp;secret_number) {
+            Ordering::Less    =&gt; println!(&quot;Слишком маленькое!&quot;),
+            Ordering::Greater =&gt; println!(&quot;Слишком большое!&quot;),
+            Ordering::Equal   =&gt; {
+                println!(&quot;Вы выиграли!&quot;);
+                break;
+            }
+        }
+    }
+}
+</code></pre>
+<p>Вот строка, которую мы изменили:</p>
+<pre><code class="language-rust ignore">let guess: u32 = match guess.trim().parse() {
+    Ok(num) =&gt; num,
+    Err(_) =&gt; continue,
+};
+</code></pre>
+<p>Здесь показано, как мы можем перейти от «сбоя при ошибке» к «обработке ошибки»,
+заменив <code>expect()</code> на инструкцию <code>match</code>. <code>Result</code>, возвращённый функцией
+<code>parse()</code>, как и <code>Ordering</code>, является перечислением. Однако в данном случае
+каждый из вариантов имеет некоторые ассоциированные с ним данные: <code>Ok</code> — успех,
+<code>Err</code> — ошибку. У каждого есть некоторая дополнительная информация:
+преобразованное число, либо тип ошибки. Здесь мы проверили значение результата
+работы <code>parse()</code> при помощи <code>match</code>. В случае, если результат равен <code>Ok</code>, то
+<code>match</code> привяжет внутреннее значение результата (<code>Ok(num)</code>) к имени <code>num</code> и
+вернёт в привязку <code>guess</code>. Когда происходит ошибка (<code>Err</code>), нам не важно, какая
+именно это ошибка, поэтому мы используем вместо имени <code>_</code>. Так мы проигнорируем
+ошибку и вызовем <code>continue</code>, что отправит нас на следующую итерацию цикла.</p>
+<p>Теперь всё должно быть нормально! Давайте посмотрим:</p>
+<pre><code class="language-bash">$ cargo run
+   Compiling guessing_game v0.1.0 (file:///home/you/projects/guessing_game)
+     Running `target/guessing_game`
+Угадайте число!
+Загаданное число: 61
+Пожалуйста, введите предположение.
+10
+Ваша попытка: 10
+Слишком маленькое!
+Пожалуйста, введите предположение.
+99
+Ваша попытка: 99
+Слишком большое!
+Пожалуйста, введите предположение.
+foo
+Пожалуйста, введите предположение.
+61
+Ваша попытка: 61
+Вы выиграли!
+</code></pre>
+<p>Замечательно! Если мы ещё чуть-чуть подкрутим нашу программу, игра будет готова.
+Догадываетесь, что нужно поменять? Всё правильно, мы не должны выводить наше
+секретное число. Знание этого числа хорошо для тестирования, но оно портит всю
+игру. Так выглядит окончательный вариант нашего кода:</p>
+<pre><code class="language-rust ignore">extern crate rand;
+
+use std::io;
+use std::cmp::Ordering;
+use rand::Rng;
+
+fn main() {
+    println!(&quot;Угадайте число!&quot;);
+
+    let secret_number = rand::thread_rng().gen_range(1, 101);
+
+    loop {
+        println!(&quot;Пожалуйста, введите предположение.&quot;);
+
+        let mut guess = String::new();
+
+        io::stdin().read_line(&amp;mut guess)
+            .expect(&quot;Не удалось прочитать строку&quot;);
+
+        let guess: u32 = match guess.trim().parse() {
+            Ok(num) =&gt; num,
+            Err(_) =&gt; continue,
+        };
+
+        println!(&quot;Ваша попытка: {}&quot;, guess);
+
+        match guess.cmp(&amp;secret_number) {
+            Ordering::Less    =&gt; println!(&quot;Слишком маленькое!&quot;),
+            Ordering::Greater =&gt; println!(&quot;Слишком большое!&quot;),
+            Ordering::Equal   =&gt; {
+                println!(&quot;Вы выиграли!&quot;);
+                break;
+            }
+        }
+    }
+}
+</code></pre>
+<h1><a class="header" href="#Готово" id="Готово">Готово!</a></h1>
+<p>Вы сделали «Угадайку»! Поздравляем!</p>
+<p>Этот первый проект показал вам многое: <code>let</code>, <code>match</code>, методы, ассоциированные
+функции, использование внешних контейнеров и многое другое. Наш следующий проект
+покажет ещё больше.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="learn-rust.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="dining-philosophers.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="learn-rust.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="dining-philosophers.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+        <!-- Google Analytics Tag -->
+        <script type="text/javascript">
+            var localAddrs = ["localhost", "127.0.0.1", ""];
+
+            // make sure we don't activate google analytics if the developer is
+            // inspecting the book locally...
+            if (localAddrs.indexOf(document.location.hostname) === -1) {
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-142155799-10', 'auto');
+                ga('send', 'pageview');
+            }
+        </script>
+        
+
+        
+        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

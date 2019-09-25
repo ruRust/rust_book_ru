@@ -1,0 +1,675 @@
+<!DOCTYPE HTML>
+<html lang="ru" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Тестирование - Язык программирования Rust</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li><a href="INTRODUCTION.html"><strong aria-hidden="true">1.</strong> Введение</a></li><li><a href="getting-started.html"><strong aria-hidden="true">2.</strong> C чего начать</a></li><li><a href="learn-rust.html"><strong aria-hidden="true">3.</strong> Изучение Rust</a></li><li><ol class="section"><li><a href="guessing-game.html"><strong aria-hidden="true">3.1.</strong> Угадайка</a></li><li><a href="dining-philosophers.html"><strong aria-hidden="true">3.2.</strong> Обедающие философы</a></li><li><a href="rust-inside-other-languages.html"><strong aria-hidden="true">3.3.</strong> Вызов кода на Rust из других языков</a></li></ol></li><li><a href="syntax-and-semantics.html"><strong aria-hidden="true">4.</strong> Синтаксис и семантика</a></li><li><ol class="section"><li><a href="variable-bindings.html"><strong aria-hidden="true">4.1.</strong> Связывание имён</a></li><li><a href="functions.html"><strong aria-hidden="true">4.2.</strong> Функции</a></li><li><a href="primitive-types.html"><strong aria-hidden="true">4.3.</strong> Простые типы</a></li><li><a href="comments.html"><strong aria-hidden="true">4.4.</strong> Комментарии</a></li><li><a href="if.html"><strong aria-hidden="true">4.5.</strong> Конструкция if</a></li><li><a href="loops.html"><strong aria-hidden="true">4.6.</strong> Циклы</a></li><li><a href="ownership.html"><strong aria-hidden="true">4.7.</strong> Владение</a></li><li><a href="references-and-borrowing.html"><strong aria-hidden="true">4.8.</strong> Ссылки и заимствование</a></li><li><a href="lifetimes.html"><strong aria-hidden="true">4.9.</strong> Время жизни</a></li><li><a href="mutability.html"><strong aria-hidden="true">4.10.</strong> Изменяемость</a></li><li><a href="structs.html"><strong aria-hidden="true">4.11.</strong> Структуры</a></li><li><a href="enums.html"><strong aria-hidden="true">4.12.</strong> Перечисления</a></li><li><a href="match.html"><strong aria-hidden="true">4.13.</strong> Конструкция match</a></li><li><a href="patterns.html"><strong aria-hidden="true">4.14.</strong> Шаблоны сопоставления match</a></li><li><a href="method-syntax.html"><strong aria-hidden="true">4.15.</strong> Синтаксис методов</a></li><li><a href="vectors.html"><strong aria-hidden="true">4.16.</strong> Вектора</a></li><li><a href="strings.html"><strong aria-hidden="true">4.17.</strong> Строки</a></li><li><a href="generics.html"><strong aria-hidden="true">4.18.</strong> Обобщённое программирование</a></li><li><a href="traits.html"><strong aria-hidden="true">4.19.</strong> Типажи</a></li><li><a href="drop.html"><strong aria-hidden="true">4.20.</strong> Типаж Drop</a></li><li><a href="if-let.html"><strong aria-hidden="true">4.21.</strong> Конструкция if let</a></li><li><a href="trait-objects.html"><strong aria-hidden="true">4.22.</strong> Типажи-объекты</a></li><li><a href="closures.html"><strong aria-hidden="true">4.23.</strong> Замыкания</a></li><li><a href="ufcs.html"><strong aria-hidden="true">4.24.</strong> Универсальный синтаксис вызова функций</a></li><li><a href="crates-and-modules.html"><strong aria-hidden="true">4.25.</strong> Контейнеры и модули</a></li><li><a href="const-and-static.html"><strong aria-hidden="true">4.26.</strong> const и static</a></li><li><a href="attributes.html"><strong aria-hidden="true">4.27.</strong> Атрибуты</a></li><li><a href="type-aliases.html"><strong aria-hidden="true">4.28.</strong> Псевдонимы типов</a></li><li><a href="casting-between-types.html"><strong aria-hidden="true">4.29.</strong> Приведение типов</a></li><li><a href="associated-types.html"><strong aria-hidden="true">4.30.</strong> Ассоциированные типы</a></li><li><a href="unsized-types.html"><strong aria-hidden="true">4.31.</strong> Безразмерные типы</a></li><li><a href="operators-and-overloading.html"><strong aria-hidden="true">4.32.</strong> Перегрузка операций</a></li><li><a href="deref-coercions.html"><strong aria-hidden="true">4.33.</strong> Преобразования при разыменовании</a></li><li><a href="macros.html"><strong aria-hidden="true">4.34.</strong> Макросы</a></li><li><a href="raw-pointers.html"><strong aria-hidden="true">4.35.</strong> Сырые указатели</a></li><li><a href="unsafe.html"><strong aria-hidden="true">4.36.</strong> Небезопасный код</a></li></ol></li><li><a href="effective-rust.html"><strong aria-hidden="true">5.</strong> Эффективное использование Rust</a></li><li><ol class="section"><li><a href="the-stack-and-the-heap.html"><strong aria-hidden="true">5.1.</strong> Стек и куча</a></li><li><a href="testing.html" class="active"><strong aria-hidden="true">5.2.</strong> Тестирование</a></li><li><a href="conditional-compilation.html"><strong aria-hidden="true">5.3.</strong> Условная компиляция</a></li><li><a href="documentation.html"><strong aria-hidden="true">5.4.</strong> Документация</a></li><li><a href="iterators.html"><strong aria-hidden="true">5.5.</strong> Итераторы</a></li><li><a href="concurrency.html"><strong aria-hidden="true">5.6.</strong> Многозадачность</a></li><li><a href="error-handling.html"><strong aria-hidden="true">5.7.</strong> Обработка ошибок</a></li><li><a href="choosing-your-guarantees.html"><strong aria-hidden="true">5.8.</strong> Выбор гарантий</a></li><li><a href="ffi.html"><strong aria-hidden="true">5.9.</strong> Интерфейс внешних функций</a></li><li><a href="borrow-and-asref.html"><strong aria-hidden="true">5.10.</strong> Типажи Borrow и AsRef</a></li><li><a href="release-channels.html"><strong aria-hidden="true">5.11.</strong> Каналы сборок</a></li><li><a href="using-rust-without-the-standard-library.html"><strong aria-hidden="true">5.12.</strong> Using Rust without the standard library</a></li></ol></li><li><a href="nightly-rust.html"><strong aria-hidden="true">6.</strong> Нестабильные возможности Rust</a></li><li><ol class="section"><li><a href="compiler-plugins.html"><strong aria-hidden="true">6.1.</strong> Плагины к компилятору</a></li><li><a href="inline-assembly.html"><strong aria-hidden="true">6.2.</strong> Встроенный ассемблерный код</a></li><li><a href="no-stdlib.html"><strong aria-hidden="true">6.3.</strong> Без stdlib</a></li><li><a href="intrinsics.html"><strong aria-hidden="true">6.4.</strong> Внутренние средства</a></li><li><a href="lang-items.html"><strong aria-hidden="true">6.5.</strong> Элементы языка</a></li><li><a href="advanced-linking.html"><strong aria-hidden="true">6.6.</strong> Продвинутое руководство по компоновке</a></li><li><a href="benchmark-tests.html"><strong aria-hidden="true">6.7.</strong> Тесты производительности</a></li><li><a href="box-syntax-and-patterns.html"><strong aria-hidden="true">6.8.</strong> Синтаксис упаковки и шаблоны match</a></li><li><a href="slice-patterns.html"><strong aria-hidden="true">6.9.</strong> Шаблоны match для срезов</a></li><li><a href="associated-constants.html"><strong aria-hidden="true">6.10.</strong> Ассоциированные константы</a></li><li><a href="custom-allocators.html"><strong aria-hidden="true">6.11.</strong> Пользовательские менеджеры памяти</a></li></ol></li><li><a href="glossary.html"><strong aria-hidden="true">7.</strong> Глоссарий</a></li><li><a href="syntax-index.html"><strong aria-hidden="true">8.</strong> Syntax Index</a></li><li><a href="bibliography.html"><strong aria-hidden="true">9.</strong> Библиография</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Язык программирования Rust</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>% Тестирование</p>
+<blockquote>
+<p>Program testing can be a very effective way to show the presence of bugs, but
+it is hopelessly inadequate for showing their absence.</p>
+<p>Edsger W. Dijkstra, &quot;The Humble Programmer&quot; (1972)</p>
+</blockquote>
+<blockquote>
+<p>Тестирование программы может быть очень эффективным способом показать наличие
+ошибок, но оно безнадёжно неподходяще для доказательства их отсутствия.</p>
+<p>Дейкстра, Эдсгер Вибе, «The Humble Programmer» (1972)</p>
+</blockquote>
+<p>Давайте поговорим о том, как тестировать код на Rust. Мы не будем рассказывать о
+том, какой подход к тестированию Rust кода является верным. Есть много подходов,
+каждый из которых имеет свое представление о правильном написании тестов. Но все
+эти подходы используют одни и те же основные инструменты, и мы покажем вам
+синтаксис их использования.</p>
+<h1><a class="header" href="#Тесты-с-атрибутом-test" id="Тесты-с-атрибутом-test">Тесты с атрибутом <code>test</code></a></h1>
+<p>В самом простом случае, тест в Rust — это функция, аннотированная атрибутом
+<code>test</code>. Давайте создадим новый проект Cargo, который будет называться <code>adder</code>:</p>
+<pre><code class="language-bash">$ cargo new adder
+$ cd adder
+</code></pre>
+<p>При создании нового проекта, Cargo автоматически сгенерирует простой тест. Ниже
+представлено содержимое <code>src/lib.rs</code>:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+#[test]
+fn it_works() {
+}
+#}</code></pre></pre>
+<p>Обратите внимание на <code>#[test]</code>. Этот атрибут указывает, что это тестовая
+функция. В этом примере она не имеет тела. Но такого вида функции достаточно,
+чтобы удачно выполнить тест. Запуск тестов осуществляется командой <code>cargo test</code>.</p>
+<pre><code class="language-bash">$ cargo test
+   Compiling adder v0.0.1 (file:///home/you/projects/adder)
+     Running target/adder-91b3e234d4ed382a
+
+running 1 test
+test it_works ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured
+
+   Doc-tests adder
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured
+</code></pre>
+<p>Cargo скомпилировал и запустил наши тесты. В результате мы получили выходные
+данные, поделенные на два раздела: один содержит информацию о тесте, который мы
+написали, а другой — информацию о тестах из документации. Но об этом позже. А
+сейчас посмотрим на эту строку:</p>
+<pre><code class="language-text">test it_works ... ok
+</code></pre>
+<p>Обратите внимание на <code>it_works</code>. Это название нашей функции:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+fn it_works() {
+# }
+#}</code></pre></pre>
+<p>Мы также получили итоговую строку:</p>
+<pre><code class="language-text">test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured
+</code></pre>
+<p>Так почему же наш ничего не делающий тест был выполнен удачно? Любой тест,
+который не вызывает <code>panic!</code>, выполняется удачно, а любой тест, который вызывает
+<code>panic!</code>, выполняется неудачно. Давайте сделаем тест, который выполнится
+неудачно:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+#[test]
+fn it_works() {
+    assert!(false);
+}
+#}</code></pre></pre>
+<p><code>assert!</code> — это макрос, определенный в Rust, и принимающий один аргумент: если
+аргумент имеет значение <code>true</code>, то ничего не происходит; если аргумент является
+<code>false</code>, то вызывается <code>panic!</code>. Давайте запустим наши тесты снова:</p>
+<pre><code class="language-bash">$ cargo test
+   Compiling adder v0.0.1 (file:///home/you/projects/adder)
+     Running target/adder-91b3e234d4ed382a
+
+running 1 test
+test it_works ... FAILED
+
+failures:
+
+---- it_works stdout ----
+        thread 'it_works' panicked at 'assertion failed: false', /home/steve/tmp/adder/src/lib.rs:3
+
+
+
+failures:
+    it_works
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured
+
+thread '&lt;main&gt;' panicked at 'Some tests failed', /home/steve/src/rust/src/libtest/lib.rs:247
+</code></pre>
+<p>Rust сообщает, что наш тест выполнен неудачно:</p>
+<pre><code class="language-text">test it_works ... FAILED
+</code></pre>
+<p>Это же отражается в итоговой строке:</p>
+<pre><code class="language-text">test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured
+</code></pre>
+<p>Мы также получаем ненулевой код состояния. Можно использовать <code>$?</code> на OS X и Linux:</p>
+<pre><code class="language-bash">$ echo $?
+101
+</code></pre>
+<p>На Windows, если вы используете <code>cmd</code>:</p>
+<pre><code class="language-bash">    echo %ERRORLEVEL%
+</code></pre>
+<p>И если вы используете PowerShell:</p>
+<pre><code class="language-bash">    echo $LASTEXITCODE # сам код
+    echo $? # логическое, успешно или не успешно
+</code></pre>
+<p>Это бывает полезно, если вы хотите интегрировать <code>cargo test</code> в сторонний
+инструмент.</p>
+<p>Можно инвертировать ожидаемый результат теста с помощью атрибута:
+<code>should_panic</code>:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+#[test]
+#[should_panic]
+fn it_works() {
+    assert!(false);
+}
+#}</code></pre></pre>
+<p>Теперь этот тест будет выполнен удачно, если вызывается <code>panic!</code>, и неудачно,
+если <code>panic!</code> не вызывается. Давайте попробуем:</p>
+<pre><code class="language-bash">$ cargo test
+   Compiling adder v0.0.1 (file:///home/you/projects/adder)
+     Running target/adder-91b3e234d4ed382a
+
+running 1 test
+test it_works ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured
+
+   Doc-tests adder
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured
+</code></pre>
+<p>Rust предоставляет и другой макрос, <code>assert_eq!</code>, который проверяет равенство
+двух аргументов:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+#[test]
+#[should_panic]
+fn it_works() {
+    assert_eq!(&quot;Hello&quot;, &quot;world&quot;);
+}
+#}</code></pre></pre>
+<p>А теперь этот тест будет выполнен удачно или неудачно? Из-за атрибута
+<code>should_panic</code> он завершится удачно:</p>
+<pre><code class="language-bash">$ cargo test
+   Compiling adder v0.0.1 (file:///home/you/projects/adder)
+     Running target/adder-91b3e234d4ed382a
+
+running 1 test
+test it_works ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured
+
+   Doc-tests adder
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured
+</code></pre>
+<p>Тесты <code>should_panic</code> могут быть хрупкими, поскольку трудно гарантировать, что
+тест не вызовет панику по неожиданной причине. Чтобы помочь в этом аспекте, к
+атрибуту <code>should_panic</code> может быть добавлен необязательный параметр <code>expected</code>.
+Тогда тест также будет проверять, что сообщение об ошибке содержит ожидаемый
+текст. Ниже представлен более безопасный вариант приведенного выше примера:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+#[test]
+#[should_panic(expected = &quot;assertion failed&quot;)]
+fn it_works() {
+    assert_eq!(&quot;Hello&quot;, &quot;world&quot;);
+}
+#}</code></pre></pre>
+<p>Вот и все, что касается основ! Давайте напишем один «настоящий» тест:</p>
+<pre><code class="language-rust ignore">pub fn add_two(a: i32) -&gt; i32 {
+    a + 2
+}
+
+#[test]
+fn it_works() {
+    assert_eq!(4, add_two(2));
+}
+</code></pre>
+<p>Это распространенное использование макроса <code>assert_eq!</code>: вызывать некоторую
+функцию с известными аргументами и сравнить результат её вызова с ожидаемым
+результатом.</p>
+<h1><a class="header" href="#Тесты-с-атрибутом-ignore" id="Тесты-с-атрибутом-ignore">Тесты с атрибутом <code>ignore</code></a></h1>
+<p>Некоторые тесты могу занимать много времени на выполнение. Такие тесты могут
+быть отключены по умолчанию с помощью атрибута <code>ignore</code>:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+fn it_works() {
+    assert_eq!(4, add_two(2));
+}
+
+#[test]
+#[ignore]
+fn expensive_test() {
+    // код, который занимает час на выполнение
+}
+#}</code></pre></pre>
+<p>Теперь запустим наши тесты и видим, что <code>it_works</code> запускается, а
+<code>expensive_test</code> нет:</p>
+<pre><code class="language-bash">$ cargo test
+   Compiling adder v0.0.1 (file:///home/you/projects/adder)
+     Running target/adder-91b3e234d4ed382a
+
+running 2 tests
+test expensive_test ... ignored
+test it_works ... ok
+
+test result: ok. 1 passed; 0 failed; 1 ignored; 0 measured
+
+   Doc-tests adder
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured
+</code></pre>
+<p>Дорогостоящие тесты могут быть запущены с помощью команды
+<code>cargo test -- --ignored</code>:</p>
+<pre><code class="language-bash">$ cargo test -- --ignored
+     Running target/adder-91b3e234d4ed382a
+
+running 1 test
+test expensive_test ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured
+
+   Doc-tests adder
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured
+</code></pre>
+<p>Аргумент <code>--ignored</code> — это аргумент для тестового исполняемого файла, а не для
+Cargo, именно поэтому команда выглядит так <code>cargo test -- --ignored</code>.</p>
+<h1><a class="header" href="#Тесты-в-модуле-test" id="Тесты-в-модуле-test">Тесты в модуле <code>test</code></a></h1>
+<p>Есть один нюанс, из-за которого наш пример нельзя назвать идиоматичным:
+отсутствует модуль тестирования. Идиоматичный вариант нашего примера будет
+выглядеть примерно так:</p>
+<pre><code class="language-rust ignore">pub fn add_two(a: i32) -&gt; i32 {
+    a + 2
+}
+
+#[cfg(test)]
+mod test {
+    use super::add_two;
+
+    #[test]
+    fn it_works() {
+        assert_eq!(4, add_two(2));
+    }
+}
+</code></pre>
+<p>Здесь есть несколько изменений. Первое — это введение <code>mod test</code> с атрибутом
+<code>cfg</code>. Модуль позволяет сгруппировать все наши тесты вместе, а также, если
+нужно, определить вспомогательные функции, которые будут отделены от остальной
+части контейнера. Атрибут <code>cfg</code> указывает на то, что тест будет скомпилирован,
+только когда мы попытаемся запустить тесты. Это может сэкономить время
+компиляции, а также гарантирует, что наши тесты полностью исключены из обычной
+сборки.</p>
+<p>Второе изменение заключается в объявлении <code>use</code>. Так как мы находимся во
+внутреннем модуле, то мы должны объявить использование тестируемой функции в его
+области видимости. Это может раздражать, если у вас большой модуль, и поэтому
+обычно используют возможность <code>glob</code>. Давайте изменим <code>src/lib.rs</code>
+соответствующим образом:</p>
+<pre><code class="language-rust ignore">
+pub fn add_two(a: i32) -&gt; i32 {
+    a + 2
+}
+
+#[cfg(test)]
+mod test {
+    use super::*;
+
+    #[test]
+    fn it_works() {
+        assert_eq!(4, add_two(2));
+    }
+}
+</code></pre>
+<p>Обратите внимание на различие в строке с <code>use</code>. Теперь запустим наши тесты:</p>
+<pre><code class="language-bash">$ cargo test
+    Updating registry `https://github.com/rust-lang/crates.io-index`
+   Compiling adder v0.0.1 (file:///home/you/projects/adder)
+     Running target/adder-91b3e234d4ed382a
+
+running 1 test
+test test::it_works ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured
+
+   Doc-tests adder
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured
+</code></pre>
+<p>Работает!</p>
+<p>Данный подход представляет собой использование модуля <code>test</code>, содержащего
+модульные тесты (unit tests). Любой код, задачей которого является только лишь
+тестирование небольшого кусочка функциональности, имеет смысл перенести в этот
+модуль. Но что если мы хотим написать «интеграционные тесты» (integration
+tests)? Для этого следует использовать директорию <code>tests</code>.</p>
+<h1><a class="header" href="#Тесты-в-директории-tests" id="Тесты-в-директории-tests">Тесты в директории <code>tests</code></a></h1>
+<p>Чтобы написать интеграционный тест, давайте создадим директорию <code>tests</code>, и
+положим в нее файл <code>tests/lib.rs</code> со следующим содержимым:</p>
+<pre><code class="language-rust ignore">extern crate adder;
+
+#[test]
+fn it_works() {
+    assert_eq!(4, adder::add_two(2));
+}
+</code></pre>
+<p>Выглядит примерно так же, как и наши предыдущие тесты, но есть некоторые
+отличия. Теперь сверху у нас <code>extern crate adder</code>. Это потому, что тесты в
+директории <code>tests</code> — это отдельный контейнер, и, следовательно, мы должны
+компоноваться с нашей библиотекой. Это также объясняет, почему директория
+<code>tests</code> — наиболее подходящее место для написания интеграционных тестов: они
+используют библиотеку, как это делал бы любой другой потребитель.</p>
+<p>Давайте запустим их:</p>
+<pre><code class="language-bash">$ cargo test
+   Compiling adder v0.0.1 (file:///home/you/projects/adder)
+     Running target/adder-91b3e234d4ed382a
+
+running 1 test
+test test::it_works ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured
+
+     Running target/lib-c18e7d3494509e74
+
+running 1 test
+test it_works ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured
+
+   Doc-tests adder
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured
+</code></pre>
+<p>Теперь у нас появилось три раздела: запускается старый модульный тест, а также
+новый интеграционный тест.</p>
+<p>Это все, что касается директории <code>tests</code>. Модуль <code>test</code> здесь не нужен, так как
+здесь всё относится к тестам.</p>
+<p>Давайте, наконец, перейдем к третьей части: тесты в документации.</p>
+<h1><a class="header" href="#Тесты-в-документации" id="Тесты-в-документации">Тесты в документации</a></h1>
+<p>Нет ничего лучше, чем документация с примерами. Нет ничего хуже, чем примеры,
+которые на самом деле не работают, потому что код изменился с тех пор, как была
+написана документация. Для того, чтобы такой ситуации не возникало, Rust
+поддерживает автоматический запуск примеров в документации (имейте ввиду, что
+это работает только с библиотеками). Вот дополненный <code>src/lib.rs</code> с примерами:</p>
+<pre><code class="language-rust ignore">//! Контейнер `adder` предоставляет функции сложения чисел.
+//!
+//! # Examples
+//!
+//! ```
+//! assert_eq!(4, adder::add_two(2));
+//! ```
+
+/// Эта функция прибавляет 2 к своему аргументу.
+///
+/// # Examples
+///
+/// ```
+/// use adder::add_two;
+///
+/// assert_eq!(4, add_two(2));
+/// ```
+pub fn add_two(a: i32) -&gt; i32 {
+    a + 2
+}
+
+#[cfg(test)]
+mod test {
+    use super::*;
+
+    #[test]
+    fn it_works() {
+        assert_eq!(4, add_two(2));
+    }
+}
+</code></pre>
+<p>Обратите внимание на документацию уровня модуля, начинающуюся с <code>//!</code> и на
+документацию уровня функции, начинающуюся с <code>///</code>. Документация Rust
+поддерживает Markdown в комментариях, поэтому блоки кода помечают тройными
+символами `. В комментарии документации обычно включают раздел <code># Examples</code>,
+содержащий примеры, такие как этот. (Примечание переводчика: заголовок <code># Examples</code> имеет особое значение: его нельзя написать по-другому или написать на
+русском языке, иначе Rust не найдёт примеров кода в документации.)</p>
+<p>Давайте запустим тесты снова:</p>
+<pre><code class="language-bash">$ cargo test
+   Compiling adder v0.0.1 (file:///home/steve/tmp/adder)
+     Running target/adder-91b3e234d4ed382a
+
+running 1 test
+test test::it_works ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured
+
+     Running target/lib-c18e7d3494509e74
+
+running 1 test
+test it_works ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured
+
+   Doc-tests adder
+
+running 2 tests
+test add_two_0 ... ok
+test _0 ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured
+</code></pre>
+<p>Теперь у нас запускаются все три вида тестов! Обратите внимание на имена тестов
+из документации: <code>_0</code> генерируется для модульных тестов, и <code>add_two_0</code> — для
+функциональных тестов. Цифры на конце будут увеличиваться автоматически, если вы
+добавите еще примеров. Например, при добавлении ещё одного функционального
+теста, он получит имя <code>add_two_1</code>.</p>
+<p>Мы не рассмотрели все детали написания тестов в документации. Подробнее
+смотрите главу <a href="documentation.html">Документация</a>.</p>
+<p>Последнее замечание: тесты в документации <em>не работают</em> для исполняемых файлов.
+Подробнее об организации файлов можно узнать в главе <a href="crates-and-modules.html">Контейнеры и модули</a>.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="the-stack-and-the-heap.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="conditional-compilation.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="the-stack-and-the-heap.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="conditional-compilation.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+        <!-- Google Analytics Tag -->
+        <script type="text/javascript">
+            var localAddrs = ["localhost", "127.0.0.1", ""];
+
+            // make sure we don't activate google analytics if the developer is
+            // inspecting the book locally...
+            if (localAddrs.indexOf(document.location.hostname) === -1) {
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-142155799-10', 'auto');
+                ga('send', 'pageview');
+            }
+        </script>
+        
+
+        
+        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

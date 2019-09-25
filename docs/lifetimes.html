@@ -1,0 +1,522 @@
+<!DOCTYPE HTML>
+<html lang="ru" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Время жизни - Язык программирования Rust</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li><a href="INTRODUCTION.html"><strong aria-hidden="true">1.</strong> Введение</a></li><li><a href="getting-started.html"><strong aria-hidden="true">2.</strong> C чего начать</a></li><li><a href="learn-rust.html"><strong aria-hidden="true">3.</strong> Изучение Rust</a></li><li><ol class="section"><li><a href="guessing-game.html"><strong aria-hidden="true">3.1.</strong> Угадайка</a></li><li><a href="dining-philosophers.html"><strong aria-hidden="true">3.2.</strong> Обедающие философы</a></li><li><a href="rust-inside-other-languages.html"><strong aria-hidden="true">3.3.</strong> Вызов кода на Rust из других языков</a></li></ol></li><li><a href="syntax-and-semantics.html"><strong aria-hidden="true">4.</strong> Синтаксис и семантика</a></li><li><ol class="section"><li><a href="variable-bindings.html"><strong aria-hidden="true">4.1.</strong> Связывание имён</a></li><li><a href="functions.html"><strong aria-hidden="true">4.2.</strong> Функции</a></li><li><a href="primitive-types.html"><strong aria-hidden="true">4.3.</strong> Простые типы</a></li><li><a href="comments.html"><strong aria-hidden="true">4.4.</strong> Комментарии</a></li><li><a href="if.html"><strong aria-hidden="true">4.5.</strong> Конструкция if</a></li><li><a href="loops.html"><strong aria-hidden="true">4.6.</strong> Циклы</a></li><li><a href="ownership.html"><strong aria-hidden="true">4.7.</strong> Владение</a></li><li><a href="references-and-borrowing.html"><strong aria-hidden="true">4.8.</strong> Ссылки и заимствование</a></li><li><a href="lifetimes.html" class="active"><strong aria-hidden="true">4.9.</strong> Время жизни</a></li><li><a href="mutability.html"><strong aria-hidden="true">4.10.</strong> Изменяемость</a></li><li><a href="structs.html"><strong aria-hidden="true">4.11.</strong> Структуры</a></li><li><a href="enums.html"><strong aria-hidden="true">4.12.</strong> Перечисления</a></li><li><a href="match.html"><strong aria-hidden="true">4.13.</strong> Конструкция match</a></li><li><a href="patterns.html"><strong aria-hidden="true">4.14.</strong> Шаблоны сопоставления match</a></li><li><a href="method-syntax.html"><strong aria-hidden="true">4.15.</strong> Синтаксис методов</a></li><li><a href="vectors.html"><strong aria-hidden="true">4.16.</strong> Вектора</a></li><li><a href="strings.html"><strong aria-hidden="true">4.17.</strong> Строки</a></li><li><a href="generics.html"><strong aria-hidden="true">4.18.</strong> Обобщённое программирование</a></li><li><a href="traits.html"><strong aria-hidden="true">4.19.</strong> Типажи</a></li><li><a href="drop.html"><strong aria-hidden="true">4.20.</strong> Типаж Drop</a></li><li><a href="if-let.html"><strong aria-hidden="true">4.21.</strong> Конструкция if let</a></li><li><a href="trait-objects.html"><strong aria-hidden="true">4.22.</strong> Типажи-объекты</a></li><li><a href="closures.html"><strong aria-hidden="true">4.23.</strong> Замыкания</a></li><li><a href="ufcs.html"><strong aria-hidden="true">4.24.</strong> Универсальный синтаксис вызова функций</a></li><li><a href="crates-and-modules.html"><strong aria-hidden="true">4.25.</strong> Контейнеры и модули</a></li><li><a href="const-and-static.html"><strong aria-hidden="true">4.26.</strong> const и static</a></li><li><a href="attributes.html"><strong aria-hidden="true">4.27.</strong> Атрибуты</a></li><li><a href="type-aliases.html"><strong aria-hidden="true">4.28.</strong> Псевдонимы типов</a></li><li><a href="casting-between-types.html"><strong aria-hidden="true">4.29.</strong> Приведение типов</a></li><li><a href="associated-types.html"><strong aria-hidden="true">4.30.</strong> Ассоциированные типы</a></li><li><a href="unsized-types.html"><strong aria-hidden="true">4.31.</strong> Безразмерные типы</a></li><li><a href="operators-and-overloading.html"><strong aria-hidden="true">4.32.</strong> Перегрузка операций</a></li><li><a href="deref-coercions.html"><strong aria-hidden="true">4.33.</strong> Преобразования при разыменовании</a></li><li><a href="macros.html"><strong aria-hidden="true">4.34.</strong> Макросы</a></li><li><a href="raw-pointers.html"><strong aria-hidden="true">4.35.</strong> Сырые указатели</a></li><li><a href="unsafe.html"><strong aria-hidden="true">4.36.</strong> Небезопасный код</a></li></ol></li><li><a href="effective-rust.html"><strong aria-hidden="true">5.</strong> Эффективное использование Rust</a></li><li><ol class="section"><li><a href="the-stack-and-the-heap.html"><strong aria-hidden="true">5.1.</strong> Стек и куча</a></li><li><a href="testing.html"><strong aria-hidden="true">5.2.</strong> Тестирование</a></li><li><a href="conditional-compilation.html"><strong aria-hidden="true">5.3.</strong> Условная компиляция</a></li><li><a href="documentation.html"><strong aria-hidden="true">5.4.</strong> Документация</a></li><li><a href="iterators.html"><strong aria-hidden="true">5.5.</strong> Итераторы</a></li><li><a href="concurrency.html"><strong aria-hidden="true">5.6.</strong> Многозадачность</a></li><li><a href="error-handling.html"><strong aria-hidden="true">5.7.</strong> Обработка ошибок</a></li><li><a href="choosing-your-guarantees.html"><strong aria-hidden="true">5.8.</strong> Выбор гарантий</a></li><li><a href="ffi.html"><strong aria-hidden="true">5.9.</strong> Интерфейс внешних функций</a></li><li><a href="borrow-and-asref.html"><strong aria-hidden="true">5.10.</strong> Типажи Borrow и AsRef</a></li><li><a href="release-channels.html"><strong aria-hidden="true">5.11.</strong> Каналы сборок</a></li><li><a href="using-rust-without-the-standard-library.html"><strong aria-hidden="true">5.12.</strong> Using Rust without the standard library</a></li></ol></li><li><a href="nightly-rust.html"><strong aria-hidden="true">6.</strong> Нестабильные возможности Rust</a></li><li><ol class="section"><li><a href="compiler-plugins.html"><strong aria-hidden="true">6.1.</strong> Плагины к компилятору</a></li><li><a href="inline-assembly.html"><strong aria-hidden="true">6.2.</strong> Встроенный ассемблерный код</a></li><li><a href="no-stdlib.html"><strong aria-hidden="true">6.3.</strong> Без stdlib</a></li><li><a href="intrinsics.html"><strong aria-hidden="true">6.4.</strong> Внутренние средства</a></li><li><a href="lang-items.html"><strong aria-hidden="true">6.5.</strong> Элементы языка</a></li><li><a href="advanced-linking.html"><strong aria-hidden="true">6.6.</strong> Продвинутое руководство по компоновке</a></li><li><a href="benchmark-tests.html"><strong aria-hidden="true">6.7.</strong> Тесты производительности</a></li><li><a href="box-syntax-and-patterns.html"><strong aria-hidden="true">6.8.</strong> Синтаксис упаковки и шаблоны match</a></li><li><a href="slice-patterns.html"><strong aria-hidden="true">6.9.</strong> Шаблоны match для срезов</a></li><li><a href="associated-constants.html"><strong aria-hidden="true">6.10.</strong> Ассоциированные константы</a></li><li><a href="custom-allocators.html"><strong aria-hidden="true">6.11.</strong> Пользовательские менеджеры памяти</a></li></ol></li><li><a href="glossary.html"><strong aria-hidden="true">7.</strong> Глоссарий</a></li><li><a href="syntax-index.html"><strong aria-hidden="true">8.</strong> Syntax Index</a></li><li><a href="bibliography.html"><strong aria-hidden="true">9.</strong> Библиография</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Язык программирования Rust</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>% Время жизни</p>
+<p>Эта глава является одной из трёх, описывающих систему владения ресурсами Rust.
+Эта система представляет собой наиболее уникальную и привлекательную особенность
+Rust, о которой разработчики должны иметь полное представление. Владение — это
+то, как Rust достигает своей главной цели — безопасности памяти. Система
+владения включает в себя несколько различных концепций, каждая из которых
+рассматривается в своей собственной главе:</p>
+<ul>
+<li><a href="ownership.html">владение</a>, ключевая концепция</li>
+<li><a href="references-and-borrowing.html">заимствование</a>, и связанная с ним возможность «ссылки»</li>
+<li>время жизни, её вы читаете сейчас</li>
+</ul>
+<p>Эти три главы взаимосвязаны, и их порядок важен. Вы должны будете освоить все
+три главы, чтобы полностью понять систему владения.</p>
+<h1><a class="header" href="#Мета" id="Мета">Мета</a></h1>
+<p>Прежде чем перейти к подробностям, отметим два важных момента в системе
+владения.</p>
+<p>Rust сфокусирован на безопасности и скорости. Это достигается за счёт
+«абстракций с нулевой стоимостью» (zero-cost abstractions). Это значит, что в
+Rust стоимость абстракций должна быть настолько малой, насколько это возможно
+без ущерба для работоспособности. Система владения ресурсами — это яркий пример
+абстракции с нулевой стоимостью. Весь анализ, о котором мы будем говорить в этом
+руководстве, выполняется <em>во время компиляции</em>. Во время исполнения вы не
+платите за какую-либо из возможностей ничего.</p>
+<p>Тем не менее, эта система всё же имеет определённую стоимость: кривая обучения.
+Многие пользователи Rust занимаются тем, что мы зовём «борьбой с проверкой
+заимствования» — компилятор Rust отказывается компилировать программу, которая
+по мнению автора является абсолютно правильной. Это часто происходит потому, что
+мысленное представление программиста о том, как должно работать владение, не
+совпадает с реальными правилами, которыми оперирует Rust. Вы, наверное, поначалу
+также будете испытывать подобные трудности. Однако существует и хорошая новость:
+более опытные разработчики на Rust говорят, что чем больше они работают с
+правилами системы владения, тем меньше они борются с компилятором.</p>
+<p>Имея это в виду, давайте перейдём к изучению системы владения.</p>
+<h1><a class="header" href="#Время-жизни" id="Время-жизни">Время жизни</a></h1>
+<p>Одалживание ссылки на ресурс, которым кто-то владеет, может быть довольно
+сложным. Например, представьте себе следующую последовательность операций:</p>
+<ul>
+<li>Мы получаем абстрактную ссылку на какой-то ресурс.</li>
+<li>Мы одалживаем вам ссылку на этот ресурс.</li>
+<li>Мы решаем, что ресурс нам больше не требуется, и освобождаем его, в то время
+как у вас все еще есть на него ссылка.</li>
+<li>Вы решаете использовать этот ресурс.</li>
+</ul>
+<p>Ой-ой! Ваша ссылка указывает на недопустимый ресурс. Это называется «висячий
+указатель» или «использование после освобождения», когда ресурсом является
+память.</p>
+<p>Чтобы исправить это, мы должны убедиться, что четвертый шаг никогда не
+произойдет после третьего. Система владения в Rust делает это через понятие
+времени жизни, которое описывает область видимости, на протяжении которой ссылка
+будет действительна.</p>
+<p>Когда у нас есть функция, которая принимает ссылку в качестве аргумента, мы
+можем явно или неявно указать время жизни ссылки:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// неявно
+fn foo(x: &amp;i32) {
+}
+
+// явно
+fn bar&lt;'a&gt;(x: &amp;'a i32) {
+}
+#}</code></pre></pre>
+<p>Читается <code>'a</code> как «время жизни a». Технически, все ссылки имеют некоторое время
+жизни, связанное с ними, но компилятор позволяет опускать его в общих случаях.
+Прежде чем мы перейдем к этому, давайте разберем пример ниже, с явным указанием
+времени жизни:</p>
+<pre><code class="language-rust ignore">fn bar&lt;'a&gt;(...)
+</code></pre>
+<p>Эта часть объявляет параметры времени жизни. Она говорит, что <code>bar</code> имеет один
+параметр времени жизни, <code>'a</code>. Если бы в качестве параметров функции у нас было
+две ссылки, то это выглядело бы так:</p>
+<pre><code class="language-rust ignore">fn bar&lt;'a, 'b&gt;(...)
+</code></pre>
+<p>Затем в списке параметров функции мы используем заданные параметры времени
+жизни:</p>
+<pre><code class="language-rust ignore">...(x: &amp;'a i32)
+</code></pre>
+<p>Если бы мы хотели <code>&amp;mut</code> ссылку, то сделали бы так:</p>
+<pre><code class="language-rust ignore">...(x: &amp;'a mut i32)
+</code></pre>
+<p>Если вы сравните <code>&amp;mut i32</code> с <code>&amp;'a mut i32</code>, то увидите, что они отличаются
+только определением времени жизни <code>'a</code>, написанным между <code>&amp;</code> и <code>mut i32</code>. <code>&amp;mut i32</code> читается как «изменяемая ссылка на i32», а <code>&amp;'a mut i32</code> — как «изменяемая
+ссылка на i32 со временем жизни 'a».</p>
+<h2><a class="header" href="#Внутри-a-hrefstructshtmlstructaов" id="Внутри-a-hrefstructshtmlstructaов">Внутри <a href="structs.html"><code>struct</code></a>'ов</a></h2>
+<p>Вы также должны будете явно указать время жизни при работе со
+<a href="structs.html"><code>struct</code></a>'ми:</p>
+<pre><pre class="playpen"><code class="language-rust">struct Foo&lt;'a&gt; {
+    x: &amp;'a i32,
+}
+
+fn main() {
+    let y = &amp;5; // то же самое, что и `let _y = 5; let y = &amp;_y;`
+    let f = Foo { x: y };
+
+    println!(&quot;{}&quot;, f.x);
+}
+</code></pre></pre>
+<p>Как вы можете заметить, структуры также могут иметь время жизни. Так же как и
+функции,</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+struct Foo&lt;'a&gt; {
+# x: &amp;'a i32,
+# }
+#}</code></pre></pre>
+<p>объявляет время жизни и</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+# struct Foo&lt;'a&gt; {
+x: &amp;'a i32,
+# }
+#}</code></pre></pre>
+<p>использует его. Почему же мы должны определять время жизни здесь? Мы должны
+убедиться, что ссылка на <code>Foo</code> не может жить дольше, чем ссылка на <code>i32</code>,
+содержащаяся в нем.</p>
+<h2><a class="header" href="#Блоки-impl" id="Блоки-impl">Блоки <code>impl</code></a></h2>
+<p>Давайте реализуем метод для <code>Foo</code>:</p>
+<pre><pre class="playpen"><code class="language-rust">struct Foo&lt;'a&gt; {
+    x: &amp;'a i32,
+}
+
+impl&lt;'a&gt; Foo&lt;'a&gt; {
+    fn x(&amp;self) -&gt; &amp;'a i32 { self.x }
+}
+
+fn main() {
+    let y = &amp;5; // то же самое, что и `let _y = 5; let y = &amp;_y;`
+    let f = Foo { x: y };
+
+    println!(&quot;x is: {}&quot;, f.x());
+}
+</code></pre></pre>
+<p>Как вы можете видеть, нам нужно объявить время жизни для <code>Foo</code> в строке с
+<code>impl</code>. Мы повторяем <code>'a</code> дважды, как в функциях: <code>impl&lt;'a&gt;</code> определяет  время
+жизни <code>'a</code>, и <code>Foo&lt;'a&gt;</code> использует его.</p>
+<h2><a class="header" href="#Несколько-времён-жизни-multiple-lifetimes" id="Несколько-времён-жизни-multiple-lifetimes">Несколько времён жизни (Multiple lifetimes)</a></h2>
+<p>Если вы имеете несколько ссылок, вы можете использовать одно и то же время
+жизни несколько раз:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+fn x_or_y&lt;'a&gt;(x: &amp;'a str, y: &amp;'a str) -&gt; &amp;'a str {
+#}</code></pre></pre>
+<p>Этот код говорит, что <code>x</code> и <code>y</code> находятся в одной области видимости друг с
+другом, и что возвращаемое значение живо на протяжении той же области видимости.
+Если вы хотите, чтобы <code>x</code> и <code>y</code> имели разные времена жизни, вы должны
+использовать параметры нескольких времён жизни:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+fn x_or_y&lt;'a, 'b&gt;(x: &amp;'a str, y: &amp;'b str) -&gt; &amp;'a str {
+#}</code></pre></pre>
+<p>В этом примере <code>x</code> и <code>y</code> имеют различные области видимости, но возвращаемое
+значение имеет то же время жизни, что и <code>x</code>.</p>
+<h2><a class="header" href="#Осмысливаем-области-видимости-thinking-in-scopes" id="Осмысливаем-области-видимости-thinking-in-scopes">Осмысливаем области видимости (Thinking in scopes)</a></h2>
+<p>Один из способов понять, что же такое время жизни — это визуализировать область,
+в которой ссылка является действительной. Например:</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let y = &amp;5;     // -+ y входит в область видимости
+                    //  |
+    // что-то       //  |
+                    //  |
+}                   // -+ y выходит из области видимости
+</code></pre></pre>
+<p>Добавим нашу структуру <code>Foo</code>:</p>
+<pre><pre class="playpen"><code class="language-rust">struct Foo&lt;'a&gt; {
+    x: &amp;'a i32,
+}
+
+fn main() {
+    let y = &amp;5;           // -+ y входит в область видимости
+    let f = Foo { x: y }; // -+ f входит в область видимости
+    // что-то             //  |
+                          //  |
+}                         // -+ f и y выходят из области видимости
+</code></pre></pre>
+<p>Наша <code>f</code> живет в области видимости <code>y</code>, поэтому все работает. Что же произойдёт,
+если это будет не так? Этот код не будет работать:</p>
+<pre><code class="language-rust ignore">struct Foo&lt;'a&gt; {
+    x: &amp;'a i32,
+}
+
+fn main() {
+    let x;                    // -+ x входит в область видимости
+                              //  |
+    {                         //  |
+        let y = &amp;5;           // ---+ y входит в область видимости
+        let f = Foo { x: y }; // ---+ f входит в область видимости
+        x = &amp;f.x;             //  | | здесь ошибка
+    }                         // ---+ f и y выходят из области видимости
+                              //  |
+    println!(&quot;{}&quot;, x);        //  |
+}                             // -+ x выходит из области видимости
+</code></pre>
+<p>Уф! Как вы можете видеть здесь, области видимости <code>f</code> и <code>y</code> меньше, чем область
+видимости <code>x</code>. Но когда мы выполняем <code>x = &amp;f.x</code>, мы присваиваем <code>x</code> ссылку на
+что-то, что вот-вот выйдет из области видимости.</p>
+<p>Присвоение имени времени жизни — это способ задать имя области видимости. Чтобы
+думать о чём-то, нужно иметь название для этого.</p>
+<h2><a class="header" href="#static" id="static">'static</a></h2>
+<p>Время жизни с именем «static» — особенное. Оно обозначает, что что-то имеет
+время жизни, равное времени жизни всей программы. Большинство программистов на
+Rust впервые сталкиваются с <code>'static</code>, когда имеют дело со строками:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let x: &amp;'static str = &quot;Привет, мир.&quot;;
+#}</code></pre></pre>
+<p>Строковые литералы имеют тип <code>&amp;'static str</code>, потому что ссылка всегда
+действительна: строки располагаются в сегменте данных конечного двоичного файла.
+Другой пример — глобальные переменные:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+static FOO: i32 = 5;
+let x: &amp;'static i32 = &amp;FOO;
+#}</code></pre></pre>
+<p>В этом примере <code>i32</code> добавляется в сегмент данных двоичного файла, а <code>x</code>
+ссылается на него.</p>
+<h2><a class="header" href="#Опускание-времени-жизни" id="Опускание-времени-жизни">Опускание времени жизни</a></h2>
+<p>В Rust есть мощный локальный вывод типов. Однако, сигнатуры объявлений верхнего
+уровня не выводятся, чтобы можно было рассуждать о типах на основании одних лишь
+сигнатур. Из соображений удобства, введён ограниченный механизм вывода типов
+сигнатур функций, называемый «опускание времени жизни» («lifetime elision»). Он
+выводит типы на основании только элементов сигнатуры — тело функции при этом не
+учитывается. При этом его назначение — это вывести лишь параметры времени жизни
+аргументов. Для этого он реализует три простых правила. Таким образом, опускание
+времени жизни упрощает написание сигнатур, одновременно не скрывая реальные типы
+аргументов.</p>
+<p>Когда речь идет о неявном времени жизни, мы используем термины <em>входное время
+жизни</em> (<em>input lifetime</em>) и <em>выходное время жизни</em> (<em>output lifetime</em>). <em>Входное
+время жизни</em> связано с передаваемыми в функцию параметрами, а <em>выходное время
+жизни</em> связано с возвращаемым функцией значением. Например, эта функция имеет
+входное время жизни:</p>
+<pre><code class="language-rust ignore">fn foo&lt;'a&gt;(bar: &amp;'a str)
+</code></pre>
+<p>А эта имеет выходное время жизни:</p>
+<pre><code class="language-rust ignore">fn foo&lt;'a&gt;() -&gt; &amp;'a str
+</code></pre>
+<p>Эта же имеет как входное, так и выходное время жизни:</p>
+<pre><code class="language-rust ignore">fn foo&lt;'a&gt;(bar: &amp;'a str) -&gt; &amp;'a str
+</code></pre>
+<p>Ниже представлены три правила:</p>
+<ul>
+<li>
+<p>Каждое неявное время жизни в аргументах функции становится отдельным
+временем жизни.</p>
+</li>
+<li>
+<p>Если есть ровно одно входное время жизни, явное или неявное, то это время
+жизни назначается всем неявным выходным временам жизни.</p>
+</li>
+<li>
+<p>Если есть несколько входных времён жизни, но одно из них это <code>&amp;self</code> или <code>&amp;mut self</code>, то всем неявным выходным временам жизни назначается время жизни <code>self</code>.</p>
+</li>
+</ul>
+<p>В противном случае, неявное задание выходного времени жизни является ошибкой.</p>
+<h3><a class="header" href="#Примеры" id="Примеры">Примеры</a></h3>
+<p>Вот некоторые примеры функций, представленные в двух видах: с явно и неявно
+заданным временем жизни:</p>
+<pre><code class="language-rust ignore">fn print(s: &amp;str); // неявно
+fn print&lt;'a&gt;(s: &amp;'a str); // явно
+
+fn debug(lvl: u32, s: &amp;str); // неявно
+fn debug&lt;'a&gt;(lvl: u32, s: &amp;'a str); // явно
+
+// В предыдущем примере для `lvl` не требуется указывать время жизни, потому что
+// это не ссылка (`&amp;`). Только элементы, связанные с ссылками (например, такие
+// как структура, содержащая ссылку) требуют указания времени жизни.
+
+fn substr(s: &amp;str, until: u32) -&gt; &amp;str; // неявно
+fn substr&lt;'a&gt;(s: &amp;'a str, until: u32) -&gt; &amp;'a str; // явно
+
+fn get_str() -&gt; &amp;str; // НЕКОРРЕКТНО, нет входных параметров
+
+fn frob(s: &amp;str, t: &amp;str) -&gt; &amp;str; // НЕКОРРЕКТНО, два входных параметра
+fn frob&lt;'a, 'b&gt;(s: &amp;'a str, t: &amp;'b str) -&gt; &amp;str; // Развёрнуто: Выходное время жизни неясно
+
+fn get_mut(&amp;mut self) -&gt; &amp;mut T; // неявно
+fn get_mut&lt;'a&gt;(&amp;'a mut self) -&gt; &amp;'a mut T; // явно
+
+fn args&lt;T:ToCStr&gt;(&amp;mut self, args: &amp;[T]) -&gt; &amp;mut Command // неявно
+fn args&lt;'a, 'b, T:ToCStr&gt;(&amp;'a mut self, args: &amp;'b [T]) -&gt; &amp;'a mut Command // явно
+
+fn new(buf: &amp;mut [u8]) -&gt; BufWriter; // неявно
+fn new&lt;'a&gt;(buf: &amp;'a mut [u8]) -&gt; BufWriter&lt;'a&gt; // явно
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="references-and-borrowing.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="mutability.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="references-and-borrowing.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="mutability.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+        <!-- Google Analytics Tag -->
+        <script type="text/javascript">
+            var localAddrs = ["localhost", "127.0.0.1", ""];
+
+            // make sure we don't activate google analytics if the developer is
+            // inspecting the book locally...
+            if (localAddrs.indexOf(document.location.hostname) === -1) {
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-142155799-10', 'auto');
+                ga('send', 'pageview');
+            }
+        </script>
+        
+
+        
+        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
