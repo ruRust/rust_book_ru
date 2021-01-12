@@ -1,147 +1,57 @@
 <!DOCTYPE HTML>
-<html lang="ru" class="sidebar-visible no-js">
+<html lang="ru" class="no-js">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Обработка ошибок - Язык программирования Rust</title>
-        
-
+        <title>Outdated link: Обработка ошибок - Язык программирования Rust</title>
+        <meta name="robots" content="noindex,follow">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
 
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <base href="">
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="book.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
 
-        <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
         <link rel="stylesheet" href="tomorrow-night.css">
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
         
-
+        <link rel="stylesheet" href="theme/first-edition.css">
         
     </head>
     <body class="light">
-        <!-- Provide site root to javascript -->
-        <script type="text/javascript">
-            var path_to_root = "";
-            var default_theme = "light";
-        </script>
-
-        <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
-            try {
-                var theme = localStorage.getItem('mdbook-theme');
-                var sidebar = localStorage.getItem('mdbook-sidebar');
-
-                if (theme.startsWith('"') && theme.endsWith('"')) {
-                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
-                }
-
-                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
-                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
-                }
-            } catch (e) { }
-        </script>
-
-        <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
-            var theme;
-            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
-            if (theme === null || theme === undefined) { theme = default_theme; }
-            document.body.className = theme;
-            document.querySelector('html').className = theme + ' js';
-        </script>
-
-        <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
-            var html = document.querySelector('html');
-            var sidebar = 'hidden';
-            if (document.body.clientWidth >= 1080) {
-                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
-                sidebar = sidebar || 'visible';
-            }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
-        </script>
-
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li><a href="INTRODUCTION.html"><strong aria-hidden="true">1.</strong> Введение</a></li><li><a href="getting-started.html"><strong aria-hidden="true">2.</strong> C чего начать</a></li><li><a href="learn-rust.html"><strong aria-hidden="true">3.</strong> Изучение Rust</a></li><li><ol class="section"><li><a href="guessing-game.html"><strong aria-hidden="true">3.1.</strong> Угадайка</a></li><li><a href="dining-philosophers.html"><strong aria-hidden="true">3.2.</strong> Обедающие философы</a></li><li><a href="rust-inside-other-languages.html"><strong aria-hidden="true">3.3.</strong> Вызов кода на Rust из других языков</a></li></ol></li><li><a href="syntax-and-semantics.html"><strong aria-hidden="true">4.</strong> Синтаксис и семантика</a></li><li><ol class="section"><li><a href="variable-bindings.html"><strong aria-hidden="true">4.1.</strong> Связывание имён</a></li><li><a href="functions.html"><strong aria-hidden="true">4.2.</strong> Функции</a></li><li><a href="primitive-types.html"><strong aria-hidden="true">4.3.</strong> Простые типы</a></li><li><a href="comments.html"><strong aria-hidden="true">4.4.</strong> Комментарии</a></li><li><a href="if.html"><strong aria-hidden="true">4.5.</strong> Конструкция if</a></li><li><a href="loops.html"><strong aria-hidden="true">4.6.</strong> Циклы</a></li><li><a href="ownership.html"><strong aria-hidden="true">4.7.</strong> Владение</a></li><li><a href="references-and-borrowing.html"><strong aria-hidden="true">4.8.</strong> Ссылки и заимствование</a></li><li><a href="lifetimes.html"><strong aria-hidden="true">4.9.</strong> Время жизни</a></li><li><a href="mutability.html"><strong aria-hidden="true">4.10.</strong> Изменяемость</a></li><li><a href="structs.html"><strong aria-hidden="true">4.11.</strong> Структуры</a></li><li><a href="enums.html"><strong aria-hidden="true">4.12.</strong> Перечисления</a></li><li><a href="match.html"><strong aria-hidden="true">4.13.</strong> Конструкция match</a></li><li><a href="patterns.html"><strong aria-hidden="true">4.14.</strong> Шаблоны сопоставления match</a></li><li><a href="method-syntax.html"><strong aria-hidden="true">4.15.</strong> Синтаксис методов</a></li><li><a href="vectors.html"><strong aria-hidden="true">4.16.</strong> Вектора</a></li><li><a href="strings.html"><strong aria-hidden="true">4.17.</strong> Строки</a></li><li><a href="generics.html"><strong aria-hidden="true">4.18.</strong> Обобщённое программирование</a></li><li><a href="traits.html"><strong aria-hidden="true">4.19.</strong> Типажи</a></li><li><a href="drop.html"><strong aria-hidden="true">4.20.</strong> Типаж Drop</a></li><li><a href="if-let.html"><strong aria-hidden="true">4.21.</strong> Конструкция if let</a></li><li><a href="trait-objects.html"><strong aria-hidden="true">4.22.</strong> Типажи-объекты</a></li><li><a href="closures.html"><strong aria-hidden="true">4.23.</strong> Замыкания</a></li><li><a href="ufcs.html"><strong aria-hidden="true">4.24.</strong> Универсальный синтаксис вызова функций</a></li><li><a href="crates-and-modules.html"><strong aria-hidden="true">4.25.</strong> Контейнеры и модули</a></li><li><a href="const-and-static.html"><strong aria-hidden="true">4.26.</strong> const и static</a></li><li><a href="attributes.html"><strong aria-hidden="true">4.27.</strong> Атрибуты</a></li><li><a href="type-aliases.html"><strong aria-hidden="true">4.28.</strong> Псевдонимы типов</a></li><li><a href="casting-between-types.html"><strong aria-hidden="true">4.29.</strong> Приведение типов</a></li><li><a href="associated-types.html"><strong aria-hidden="true">4.30.</strong> Ассоциированные типы</a></li><li><a href="unsized-types.html"><strong aria-hidden="true">4.31.</strong> Безразмерные типы</a></li><li><a href="operators-and-overloading.html"><strong aria-hidden="true">4.32.</strong> Перегрузка операций</a></li><li><a href="deref-coercions.html"><strong aria-hidden="true">4.33.</strong> Преобразования при разыменовании</a></li><li><a href="macros.html"><strong aria-hidden="true">4.34.</strong> Макросы</a></li><li><a href="raw-pointers.html"><strong aria-hidden="true">4.35.</strong> Сырые указатели</a></li><li><a href="unsafe.html"><strong aria-hidden="true">4.36.</strong> Небезопасный код</a></li></ol></li><li><a href="effective-rust.html"><strong aria-hidden="true">5.</strong> Эффективное использование Rust</a></li><li><ol class="section"><li><a href="the-stack-and-the-heap.html"><strong aria-hidden="true">5.1.</strong> Стек и куча</a></li><li><a href="testing.html"><strong aria-hidden="true">5.2.</strong> Тестирование</a></li><li><a href="conditional-compilation.html"><strong aria-hidden="true">5.3.</strong> Условная компиляция</a></li><li><a href="documentation.html"><strong aria-hidden="true">5.4.</strong> Документация</a></li><li><a href="iterators.html"><strong aria-hidden="true">5.5.</strong> Итераторы</a></li><li><a href="concurrency.html"><strong aria-hidden="true">5.6.</strong> Многозадачность</a></li><li><a href="error-handling.html" class="active"><strong aria-hidden="true">5.7.</strong> Обработка ошибок</a></li><li><a href="choosing-your-guarantees.html"><strong aria-hidden="true">5.8.</strong> Выбор гарантий</a></li><li><a href="ffi.html"><strong aria-hidden="true">5.9.</strong> Интерфейс внешних функций</a></li><li><a href="borrow-and-asref.html"><strong aria-hidden="true">5.10.</strong> Типажи Borrow и AsRef</a></li><li><a href="release-channels.html"><strong aria-hidden="true">5.11.</strong> Каналы сборок</a></li><li><a href="using-rust-without-the-standard-library.html"><strong aria-hidden="true">5.12.</strong> Using Rust without the standard library</a></li></ol></li><li><a href="nightly-rust.html"><strong aria-hidden="true">6.</strong> Нестабильные возможности Rust</a></li><li><ol class="section"><li><a href="compiler-plugins.html"><strong aria-hidden="true">6.1.</strong> Плагины к компилятору</a></li><li><a href="inline-assembly.html"><strong aria-hidden="true">6.2.</strong> Встроенный ассемблерный код</a></li><li><a href="no-stdlib.html"><strong aria-hidden="true">6.3.</strong> Без stdlib</a></li><li><a href="intrinsics.html"><strong aria-hidden="true">6.4.</strong> Внутренние средства</a></li><li><a href="lang-items.html"><strong aria-hidden="true">6.5.</strong> Элементы языка</a></li><li><a href="advanced-linking.html"><strong aria-hidden="true">6.6.</strong> Продвинутое руководство по компоновке</a></li><li><a href="benchmark-tests.html"><strong aria-hidden="true">6.7.</strong> Тесты производительности</a></li><li><a href="box-syntax-and-patterns.html"><strong aria-hidden="true">6.8.</strong> Синтаксис упаковки и шаблоны match</a></li><li><a href="slice-patterns.html"><strong aria-hidden="true">6.9.</strong> Шаблоны match для срезов</a></li><li><a href="associated-constants.html"><strong aria-hidden="true">6.10.</strong> Ассоциированные константы</a></li><li><a href="custom-allocators.html"><strong aria-hidden="true">6.11.</strong> Пользовательские менеджеры памяти</a></li></ol></li><li><a href="glossary.html"><strong aria-hidden="true">7.</strong> Глоссарий</a></li><li><a href="syntax-index.html"><strong aria-hidden="true">8.</strong> Syntax Index</a></li><li><a href="bibliography.html"><strong aria-hidden="true">9.</strong> Библиография</a></li></ol>
-            </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
-        </nav>
-
         <div id="page-wrapper" class="page-wrapper">
-
             <div class="page">
-                
-                <div id="menu-bar" class="menu-bar">
-                    <div id="menu-bar-sticky-container">
-                        <div class="left-buttons">
-                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                                <i class="fa fa-bars"></i>
-                            </button>
-                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                                <i class="fa fa-paint-brush"></i>
-                            </button>
-                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
-                            </ul>
-                            
-                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
-                                <i class="fa fa-search"></i>
-                            </button>
-                            
-                        </div>
+                <div id="draft-warning" class="warning">
+    <span class="message">Вы читаете <strong>устаревшую</strong> версию TRPL. Новая версия <a href="https://doc.rust-lang.ru/book">здесь</a>.</span>
+    <button type="button" id="hide-draft-warning" title="Hide draft warning" class="button">
+        <i class="fa fa-times"></i>
+    </button>
+</div>
+<!-- Hide / unhide warning before it is displayed -->
+<script type="text/javascript">
+var warning = localStorage.getItem('trpl-first-edition-draft-warning');
 
-                        <h1 class="menu-title">Язык программирования Rust</h1>
+if (warning === 'hidden') {
+    Array
+    .from(document.querySelectorAll('#page-wrapper'))
+    .forEach(function(block) { block.classList.remove('has-warning'); });
+    var elem = document.getElementById("draft-warning");
+    elem.parentNode.removeChild(elem);
+}
 
-                        <div class="right-buttons">
-                            <a href="print.html" title="Print this book" aria-label="Print this book">
-                                <i id="print-button" class="fa fa-print"></i>
-                            </a>
-                            
-                        </div>
-                    </div>
-                </div>
+document.addEventListener("DOMContentLoaded", function(event) {
+    document.getElementById("hide-draft-warning").addEventListener("click", function(e) {
+        var elem = document.getElementById("draft-warning");
+        elem.parentNode.removeChild(elem);
 
-                
-                <div id="search-wrapper" class="hidden">
-                    <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
-                    </form>
-                    <div id="searchresults-outer" class="searchresults-outer hidden">
-                        <div id="searchresults-header" class="searchresults-header"></div>
-                        <ul id="searchresults">
-                        </ul>
-                    </div>
-                </div>
-                
-
-                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
-                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
-                    });
-                </script>
+        localStorage.setItem('trpl-first-edition-draft-warning', 'hidden');
+    });
+});
+</script>
 
                 <div id="content" class="content">
                     <main>
@@ -228,7 +138,7 @@
 когда мы сталкивались бы с чем-то неожиданным. (<code>panic</code> вызывает прерывание
 текущего потока и, в большинстве случаев, приводит к завершению всей программы.)
 Вот пример:</p>
-<pre><pre class="playpen"><code class="language-rust should_panic">// Попробуйте угадать число от 1 до 10.
+<pre><pre class="playground"><code class="language-rust should_panic">// Попробуйте угадать число от 1 до 10.
 // Если заданное число соответствует тому, что мы загадали, возвращается true.
 // В противном случае возвращается false.
 fn guess(n: i32) -&gt; bool {
@@ -249,7 +159,7 @@ fn main() {
 <p>Вот другой, менее надуманный пример. Программа, которая принимает число в
 качестве аргумента, удваивает его значение и печатает на экране.</p>
 <p><a name="code-unwrap-double"></a></p>
-<pre><pre class="playpen"><code class="language-rust should_panic">use std::env;
+<pre><pre class="playground"><code class="language-rust should_panic">use std::env;
 
 fn main() {
     let mut argv = env::args();
@@ -277,24 +187,25 @@ fn main() {
 <p><a name="the-option-type"></a></p>
 <h3><a class="header" href="#Тип-option" id="Тип-option">Тип <code>Option</code></a></h3>
 <p>Тип <code>Option</code> <a href="http://doc.rust-lang.org/std/option/enum.Option.html">объявлен в стандартной библиотеке</a>:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-enum Option&lt;T&gt; {
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>enum Option&lt;T&gt; {
     None,
     Some(T),
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Тип <code>Option</code> — это способ выразить <em>возможность отсутствия</em> чего бы то ни было,
 используя систему типов Rust. Выражение <em>возможности отсутствия</em> через систему
 типов является важной концепцией, поскольку такой подход позволяет компилятору
 требовать от разработчика обрабатывать такое отсутствие. Давайте взглянем на
 пример, который пытается найти символ в строке:</p>
 <p><a name="code-option-ex-string-find"></a></p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-// Поиск Unicode-символа `needle` в `haystack`. Когда первый символ найден,
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// Поиск Unicode-символа `needle` в `haystack`. Когда первый символ найден,
 // возвращается побайтовое смещение для этого символа. Иначе возвращается `None`.
 fn find(haystack: &amp;str, needle: char) -&gt; Option&lt;usize&gt; {
     for (offset, c) in haystack.char_indices() {
@@ -304,7 +215,8 @@ fn find(haystack: &amp;str, needle: char) -&gt; Option&lt;usize&gt; {
     }
     None
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Обратите внимание, что когда эта функция находит соответствующий символ, она
 возвращает не просто <code>offset</code>. Вместо этого она возвращает <code>Some(offset)</code>.
 <code>Some</code> — это вариант или <em>конструктор значения</em> для типа <code>Option</code>.
@@ -315,8 +227,8 @@ fn find(haystack: &amp;str, needle: char) -&gt; Option&lt;usize&gt; {
 истории. Вторая половина — это <em>использование</em> функции <code>find</code>, которую мы
 написали. Давайте попробуем использовать ее, чтобы найти расширение
 в имени файла.</p>
-<pre><pre class="playpen"><code class="language-rust"># fn find(_: &amp;str, _: char) -&gt; Option&lt;usize&gt; { None }
-fn main() {
+<pre><pre class="playground"><code class="language-rust"><span class="boring">fn find(_: &amp;str, _: char) -&gt; Option&lt;usize&gt; { None }
+</span>fn main() {
     let file_name = &quot;foobar.rs&quot;;
     match find(file_name, '.') {
         None =&gt; println!(&quot;Расширение файла не найдено.&quot;),
@@ -334,10 +246,10 @@ fn main() {
 вариативный анализ был перемещен внутрь метода <code>unwrap</code>. Вы можете сделать это
 самостоятельно, если захотите:</p>
 <p><a name="code-option-def-unwrap"></a></p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-enum Option&lt;T&gt; {
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>enum Option&lt;T&gt; {
     None,
     Some(T),
 }
@@ -351,7 +263,8 @@ impl&lt;T&gt; Option&lt;T&gt; {
         }
     }
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Метод <code>unwrap</code> <em>абстрагирует вариативный анализ</em>. Это именно то, что делает
 <code>unwrap</code> удобным в использовании. К сожалению, <code>panic!</code> означает, что <code>unwrap</code>
 неудобно сочетать с другим кодом: это слон в посудной лавке.</p>
@@ -366,11 +279,11 @@ impl&lt;T&gt; Option&lt;T&gt; {
 расширение не существует. В нашем случае мы просто печатаем сообщение об этом.</p>
 <p>Получение расширения имени файла — довольно распространенная операция,
 так что имеет смысл вынести код в отдельную функцию:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-# fn find(_: &amp;str, _: char) -&gt; Option&lt;usize&gt; { None }
-// Возвращает расширение заданного имени файла, а именно все символы,
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span><span class="boring">fn find(_: &amp;str, _: char) -&gt; Option&lt;usize&gt; { None }
+</span>// Возвращает расширение заданного имени файла, а именно все символы,
 // идущие за первым вхождением `.` в имя файла.
 // Если в `file_name` нет ни одного вхождения `.`, возвращается `None`.
 fn extension_explicit(file_name: &amp;str) -&gt; Option&lt;&amp;str&gt; {
@@ -379,7 +292,8 @@ fn extension_explicit(file_name: &amp;str) -&gt; Option&lt;&amp;str&gt; {
         Some(i) =&gt; Some(&amp;file_name[i+1..]),
     }
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>(Подсказка: не используйте этот код. Вместо этого используйте метод
 <a href="http://doc.rust-lang.org/std/path/struct.Path.html#method.extension"><code>extension</code></a> из стандартной
 библиотеки.)</p>
@@ -396,62 +310,65 @@ fn extension_explicit(file_name: &amp;str) -&gt; Option&lt;&amp;str&gt; {
 <p>Rust поддерживает параметрический полиморфизм, так что можно очень легко
 объявить комбинатор, который абстрагирует это поведение:</p>
 <p><a name="code-option-map"></a></p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-fn map&lt;F, T, A&gt;(option: Option&lt;T&gt;, f: F) -&gt; Option&lt;A&gt; where F: FnOnce(T) -&gt; A {
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn map&lt;F, T, A&gt;(option: Option&lt;T&gt;, f: F) -&gt; Option&lt;A&gt; where F: FnOnce(T) -&gt; A {
     match option {
         None =&gt; None,
         Some(value) =&gt; Some(f(value)),
     }
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>В действительности, <code>map</code> <a href="http://doc.rust-lang.org/std/option/enum.Option.html#method.map">определен в стандартной библиотеке</a> как метод <code>Option&lt;T&gt;</code>.</p>
 <p>Вооружившись нашим новым комбинатором, мы можем переписать наш метод
 <code>extension_explicit</code> так, чтобы избавиться от вариативного анализа:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-# fn find(_: &amp;str, _: char) -&gt; Option&lt;usize&gt; { None }
-// Возвращает расширение заданного имени файла, а именно все символы,
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span><span class="boring">fn find(_: &amp;str, _: char) -&gt; Option&lt;usize&gt; { None }
+</span>// Возвращает расширение заданного имени файла, а именно все символы,
 // идущие за первым вхождением `.` в имя файла.
 // Если в `file_name` нет ни одного вхождения `.`, возвращается `None`.
 fn extension(file_name: &amp;str) -&gt; Option&lt;&amp;str&gt; {
     find(file_name, '.').map(|i| &amp;file_name[i+1..])
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Есть еще одно поведение, которое можно часто встретить — это использование
 значения по умолчанию в случае, когда значение <code>Option</code> равно <code>None</code>.
 К примеру, ваша программа может считать, что расширение файла равно <code>rs</code>
 в случае, если на самом деле оно отсутствует.</p>
 <p>Легко представить, что этот случай вариативного анализа не специфичен
 только для расширений файлов — такой подход может работать с любым <code>Option&lt;T&gt;</code>:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-fn unwrap_or&lt;T&gt;(option: Option&lt;T&gt;, default: T) -&gt; T {
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn unwrap_or&lt;T&gt;(option: Option&lt;T&gt;, default: T) -&gt; T {
     match option {
         None =&gt; default,
         Some(value) =&gt; value,
     }
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Хитрость только в том, что значение по умолчанию должно иметь тот же тип, что и
 значение, которое может находится внутри  <code>Option&lt;T&gt;</code>. Использование этого
 метода элементарно:</p>
-<pre><pre class="playpen"><code class="language-rust"># fn find(haystack: &amp;str, needle: char) -&gt; Option&lt;usize&gt; {
-#     for (offset, c) in haystack.char_indices() {
-#         if c == needle {
-#             return Some(offset);
-#         }
-#     }
-#     None
-# }
-#
-# fn extension(file_name: &amp;str) -&gt; Option&lt;&amp;str&gt; {
-#     find(file_name, '.').map(|i| &amp;file_name[i+1..])
-# }
-fn main() {
+<pre><pre class="playground"><code class="language-rust"><span class="boring">fn find(haystack: &amp;str, needle: char) -&gt; Option&lt;usize&gt; {
+</span><span class="boring">    for (offset, c) in haystack.char_indices() {
+</span><span class="boring">        if c == needle {
+</span><span class="boring">            return Some(offset);
+</span><span class="boring">        }
+</span><span class="boring">    }
+</span><span class="boring">    None
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">fn extension(file_name: &amp;str) -&gt; Option&lt;&amp;str&gt; {
+</span><span class="boring">    find(file_name, '.').map(|i| &amp;file_name[i+1..])
+</span><span class="boring">}
+</span>fn main() {
     assert_eq!(extension(&quot;foobar.csv&quot;).unwrap_or(&quot;rs&quot;), &quot;csv&quot;);
     assert_eq!(extension(&quot;foobar&quot;).unwrap_or(&quot;rs&quot;), &quot;rs&quot;);
 }
@@ -470,11 +387,11 @@ fn main() {
 послужить пути <code>.</code>, <code>..</code> или <code>/</code>.</p>
 <p>Таким образом, мы определили задачу нахождения расширения заданного <em>файлового
 пути</em>. Начнем с явного вариативного анализа:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-# fn extension(file_name: &amp;str) -&gt; Option&lt;&amp;str&gt; { None }
-fn file_path_ext_explicit(file_path: &amp;str) -&gt; Option&lt;&amp;str&gt; {
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span><span class="boring">fn extension(file_name: &amp;str) -&gt; Option&lt;&amp;str&gt; { None }
+</span>fn file_path_ext_explicit(file_path: &amp;str) -&gt; Option&lt;&amp;str&gt; {
     match file_name(file_path) {
         None =&gt; None,
         Some(name) =&gt; match extension(name) {
@@ -487,35 +404,38 @@ fn file_path_ext_explicit(file_path: &amp;str) -&gt; Option&lt;&amp;str&gt; {
 fn file_name(file_path: &amp;str) -&gt; Option&lt;&amp;str&gt; {
   unimplemented!() // опустим реализацию
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Можно подумать, мы могли бы просто использовать комбинатор <code>map</code>, чтобы
 уменьшить вариативный анализ, но его тип не совсем подходит. Дело в том, что
 <code>map</code> принимает функцию, которая делает что-то только с внутренним значением.
 Результат такой функции <em>всегда</em> <a href="#code-option-map">оборачивается в <code>Some</code></a>.
 Вместо этого, нам нужен метод, похожий <code>map</code>, но который позволяет вызывающему
 передать еще один <code>Option</code>. Его общая реализация даже проще, чем <code>map</code>:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-fn and_then&lt;F, T, A&gt;(option: Option&lt;T&gt;, f: F) -&gt; Option&lt;A&gt;
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn and_then&lt;F, T, A&gt;(option: Option&lt;T&gt;, f: F) -&gt; Option&lt;A&gt;
         where F: FnOnce(T) -&gt; Option&lt;A&gt; {
     match option {
         None =&gt; None,
         Some(value) =&gt; f(value),
     }
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Теперь мы можем переписать нашу функцию <code>file_path_ext</code> без явного вариативного
 анализа:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-# fn extension(file_name: &amp;str) -&gt; Option&lt;&amp;str&gt; { None }
-# fn file_name(file_path: &amp;str) -&gt; Option&lt;&amp;str&gt; { None }
-fn file_path_ext(file_path: &amp;str) -&gt; Option&lt;&amp;str&gt; {
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span><span class="boring">fn extension(file_name: &amp;str) -&gt; Option&lt;&amp;str&gt; { None }
+</span><span class="boring">fn file_name(file_path: &amp;str) -&gt; Option&lt;&amp;str&gt; { None }
+</span>fn file_path_ext(file_path: &amp;str) -&gt; Option&lt;&amp;str&gt; {
     file_name(file_path).and_then(extension)
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Тип <code>Option</code> имеет много других комбинаторов <a href="http://doc.rust-lang.org/std/option/enum.Option.html">определенных в стандартной
 библиотеке</a>. Очень полезно просмотреть этот список и ознакомиться с
 доступными методами — они не раз помогут вам сократить количество вариативного
@@ -532,25 +452,27 @@ fn file_path_ext(file_path: &amp;str) -&gt; Option&lt;&amp;str&gt; {
 <h2><a class="header" href="#Тип-result" id="Тип-result">Тип <code>Result</code></a></h2>
 <p>Тип <code>Result</code> также <a href="http://doc.rust-lang.org/std/result/">определен в стандартной библиотеке</a>:</p>
 <p><a name="code-result-def"></a></p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-enum Result&lt;T, E&gt; {
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>enum Result&lt;T, E&gt; {
     Ok(T),
     Err(E),
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Тип <code>Result</code> — это продвинутая версия <code>Option</code>. Вместо того, чтобы выражать
 возможность <em>отсутствия</em>, как это делает <code>Option</code>, <code>Result</code> выражает возможность
 <em>ошибки</em>. Как правило, <em>ошибки</em> необходимы для объяснения того, почему
 результат определенного вычисления не был получен. Строго говоря, это более
 общая форма <code>Option</code>. Рассмотрим следующий псевдоним типа, который во всех
 смыслах семантически эквивалентен реальному <code>Option&lt;T&gt;</code>:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-type Option&lt;T&gt; = Result&lt;T, ()&gt;;
-#}</code></pre></pre>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>type Option&lt;T&gt; = Result&lt;T, ()&gt;;
+<span class="boring">}
+</span></code></pre></pre>
 <p>Здесь второй параметр типа <code>Result</code> фиксируется и определяется через <code>()</code>
 (произносится как &quot;unit&quot; или &quot;пустой кортеж&quot;). Тип <code>()</code> имеет ровно одно
 значение — <code>()</code>. (Да, это тип и значение этого типа, которые выглядят
@@ -560,11 +482,11 @@ type Option&lt;T&gt; = Result&lt;T, ()&gt;;
 как другой исход означает исключительную ситуацию или &quot;<code>Err</code>&quot;.</p>
 <p>Подобно <code>Option</code>, тип <code>Result</code> имеет метод <code>unwrap</code>,
 <a href="http://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap">определенный в стандартной библиотеке</a>. Давайте объявим его самостоятельно:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-# enum Result&lt;T, E&gt; { Ok(T), Err(E) }
-impl&lt;T, E: ::std::fmt::Debug&gt; Result&lt;T, E&gt; {
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span><span class="boring">enum Result&lt;T, E&gt; { Ok(T), Err(E) }
+</span>impl&lt;T, E: ::std::fmt::Debug&gt; Result&lt;T, E&gt; {
     fn unwrap(self) -&gt; T {
         match self {
             Result::Ok(val) =&gt; val,
@@ -573,7 +495,8 @@ impl&lt;T, E: ::std::fmt::Debug&gt; Result&lt;T, E&gt; {
         }
     }
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Это фактически то же самое, что и
 <a href="#code-option-def-unwrap">определение <code>Option::unwrap</code></a>, за исключением
 того, что мы добавили значение ошибки в сообщение <code>panic!</code>. Это упрощает
@@ -589,7 +512,7 @@ impl&lt;T, E: ::std::fmt::Debug&gt; Result&lt;T, E&gt; {
 <p>Стандартная библиотека Rust позволяет элементарно преобразовывать строки
 в целые числа. На самом деле это настолько просто, что возникает соблазн написать
 что-то вроде:</p>
-<pre><pre class="playpen"><code class="language-rust">fn double_number(number_str: &amp;str) -&gt; i32 {
+<pre><pre class="playground"><code class="language-rust">fn double_number(number_str: &amp;str) -&gt; i32 {
     2 * number_str.parse::&lt;i32&gt;().unwrap()
 }
 
@@ -633,7 +556,7 @@ fn main() {
 <code>Err</code>. Мы делаем это, чтобы определить конкретный тип ошибки. В данном
 случае, это <a href="http://doc.rust-lang.org/std/num/struct.ParseIntError.html"><code>std::num::ParseIntError</code></a>.
 Наконец, мы можем переписать нашу функцию:</p>
-<pre><pre class="playpen"><code class="language-rust">use std::num::ParseIntError;
+<pre><pre class="playground"><code class="language-rust">use std::num::ParseIntError;
 
 fn double_number(number_str: &amp;str) -&gt; Result&lt;i32, ParseIntError&gt; {
     match number_str.parse::&lt;i32&gt;() {
@@ -655,7 +578,7 @@ fn main() {
 комбинаторов, определенных в качестве методов. Существует большой
 список комбинаторов, общих между <code>Result</code> и <code>Option</code>. И <code>map</code> входит в этот
 список:</p>
-<pre><pre class="playpen"><code class="language-rust">use std::num::ParseIntError;
+<pre><pre class="playground"><code class="language-rust">use std::num::ParseIntError;
 
 fn double_number(number_str: &amp;str) -&gt; Result&lt;i32, ParseIntError&gt; {
     number_str.parse::&lt;i32&gt;().map(|n| 2 * n)
@@ -683,10 +606,10 @@ fn main() {
 заключается в определении псевдонима типа <code>Result</code>, который <em>фиксирует</em> один из
 параметров конкретным типом. Обычно фиксируется тип ошибки. Например, наш
 предыдущий пример с преобразованием строк в числа можно переписать так:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-use std::num::ParseIntError;
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use std::num::ParseIntError;
 use std::result;
 
 type Result&lt;T&gt; = result::Result&lt;T, ParseIntError&gt;;
@@ -694,7 +617,8 @@ type Result&lt;T&gt; = result::Result&lt;T, ParseIntError&gt;;
 fn double_number(number_str: &amp;str) -&gt; Result&lt;i32&gt; {
     unimplemented!();
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Зачем мы это делаем? Что ж, если у нас есть много функций, которые могут вернуть
 <code>ParseIntError</code>, то гораздо удобнее определить псевдоним, который всегда
 использует <code>ParseIntError</code>, так что мы не будем повторяться все время.</p>
@@ -756,7 +680,7 @@ value&quot;.</p>
 есть сочетания типов <code>Option</code> и <code>Result</code>. Должны ли мы прибегать к явному
 вариативному анализу, или можно продолжить использовать комбинаторы?</p>
 <p>Давайте на время вернемся к одному из первых примеров в этой главе:</p>
-<pre><pre class="playpen"><code class="language-rust should_panic">use std::env;
+<pre><pre class="playground"><code class="language-rust should_panic">use std::env;
 
 fn main() {
     let mut argv = env::args();
@@ -776,7 +700,7 @@ fn main() {
 пользователь не правильно вызвал программу. Мы могли бы просто использовать
 <code>String</code> для описания ошибки. Давайте попробуем:</p>
 <p><a name="code-error-double-string"></a></p>
-<pre><pre class="playpen"><code class="language-rust">use std::env;
+<pre><pre class="playground"><code class="language-rust">use std::env;
 
 fn double_arg(mut argv: env::Args) -&gt; Result&lt;i32, String&gt; {
     argv.nth(1)
@@ -797,16 +721,17 @@ fn main() {
 требует явного определения ошибки, которую необходимо вернуть в случае, когда
 значение <code>Option</code> равно <code>None</code>. Как и для всех комбинаторов, которые мы
 рассматривали, его объявление очень простое:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-fn ok_or&lt;T, E&gt;(option: Option&lt;T&gt;, err: E) -&gt; Result&lt;T, E&gt; {
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn ok_or&lt;T, E&gt;(option: Option&lt;T&gt;, err: E) -&gt; Result&lt;T, E&gt; {
     match option {
         Some(val) =&gt; Ok(val),
         None =&gt; Err(err),
     }
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Второй новый комбинатор, который мы использовали —
 <a href="http://doc.rust-lang.org/std/result/enum.Result.html#method.map_err"><code>Result::map_err</code></a>. Это то же
 самое, что и <code>Result::map</code>, за исключением того, функция применяется к
@@ -829,7 +754,7 @@ fn ok_or&lt;T, E&gt;(option: Option&lt;T&gt;, err: E) -&gt; Result&lt;T, E&gt; {
 на проблеме, а не на обработке ошибок, и это выявляет места, где надлежащая
 обработка ошибок необходима. Давайте начнем с того, что напишем просто
 работающий код, а затем отрефакторим его для лучшей обработки ошибок.</p>
-<pre><pre class="playpen"><code class="language-rust should_panic">use std::fs::File;
+<pre><pre class="playground"><code class="language-rust should_panic">use std::fs::File;
 use std::io::Read;
 use std::path::Path;
 
@@ -886,7 +811,7 @@ fn main() {
 возникнуть два <em>разных</em> типа ошибок, мы должны преобразовать их к общему типу.
 Одним из таких типов является <code>String</code>. Давайте посмотрим, как это отразится на
 нашем коде:</p>
-<pre><pre class="playpen"><code class="language-rust">use std::fs::File;
+<pre><pre class="playground"><code class="language-rust">use std::fs::File;
 use std::io::Read;
 use std::path::Path;
 
@@ -942,7 +867,7 @@ fn main() {
 <em>раннего возврата</em>. Ранний <code>return</code> позволяет выйти из функции досрочно. Мы не
 можем выполнить <code>return</code> для <code>file_double</code> внутри замыкания, поэтому нам
 необходимо вернуться к явному вариативному анализу.</p>
-<pre><pre class="playpen"><code class="language-rust">use std::fs::File;
+<pre><pre class="playground"><code class="language-rust">use std::fs::File;
 use std::io::Read;
 use std::path::Path;
 
@@ -987,22 +912,23 @@ fn main() {
 идею <em>досрочного возврата</em>, которую мы только что реализовали.</p>
 <p>Вот упрощенное определение макроса `try!:</p>
 <p><a name="code-try-def-simple"></a></p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-macro_rules! try {
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>macro_rules! try {
     ($e:expr) =&gt; (match $e {
         Ok(val) =&gt; val,
         Err(err) =&gt; return Err(err),
     });
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>(<a href="http://doc.rust-lang.org/std/macro.try!.html">Реальное определение</a> выглядит немного сложнее. Мы
 обсудим это далее).</p>
 <p>Использование макроса <code>try!</code> может очень легко упростить наш последний
 пример. Поскольку он выполняет анализ вариантов и досрочной возврат из функции,
 мы получаем более плотный код, который легче читать:</p>
-<pre><pre class="playpen"><code class="language-rust">use std::fs::File;
+<pre><pre class="playground"><code class="language-rust">use std::fs::File;
 use std::io::Read;
 use std::path::Path;
 
@@ -1068,10 +994,10 @@ fn main() {
 определение нашего собственного типа-суммы с помощью <code>enum</code>. В нашем случае,
 ошибка представляет собой либо <code>io::Error</code>, либо <code>num::ParseIntError</code>, из чего
 естественным образом вытекает определение:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-use std::io;
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use std::io;
 use std::num;
 
 // Мы реализуем `Debug` поскольку, по всей видимости, все типы должны реализовывать `Debug`.
@@ -1081,13 +1007,14 @@ enum CliError {
     Io(io::Error),
     Parse(num::ParseIntError),
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Осталось только немного подогнать наш код из примера. Вместо преобразования
 ошибок в строки, мы будем просто конвертировать их в наш тип <code>CliError</code>,
 используя соответствующий конструктор значения:</p>
-<pre><pre class="playpen"><code class="language-rust"># #[derive(Debug)]
-# enum CliError { Io(::std::io::Error), Parse(::std::num::ParseIntError) }
-use std::fs::File;
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#[derive(Debug)]
+</span><span class="boring">enum CliError { Io(::std::io::Error), Parse(::std::num::ParseIntError) }
+</span>use std::fs::File;
 use std::io::Read;
 use std::path::Path;
 
@@ -1131,10 +1058,10 @@ fn main() {
 <h2><a class="header" href="#Типаж-error" id="Типаж-error">Типаж <code>Error</code></a></h2>
 <p>Типаж <code>Error</code>
 <a href="http://doc.rust-lang.org/std/error/trait.Error.html">объявлен в стандартной библиотеке</a>:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-use std::fmt::{Debug, Display};
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use std::fmt::{Debug, Display};
 
 trait Error: Debug + Display {
   /// A short description of the error.
@@ -1143,7 +1070,8 @@ trait Error: Debug + Display {
   /// The lower level cause of this error, if any.
   fn cause(&amp;self) -&gt; Option&lt;&amp;Error&gt; { None }
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Этот типаж очень обобщенный, поскольку предполагается, что он должен быть
 реализован для <em>всех</em> типов, которые представляют собой ошибки. Как мы увидим
 дальше, он нам очень пригодится для написания сочетаемого кода. Этот типаж,
@@ -1166,10 +1094,10 @@ object). Обычно это выглядит как <code>Box&lt;Error&gt;</cod
 <p>В настоящее время достаточно показать пример, реализующий типаж <code>Error</code>.
 Давайте воспользуемся для этого типом ошибки, который мы определили в
 <a href="#defining-your-own-error-type">предыдущем разделе</a>:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-use std::io;
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use std::io;
 use std::num;
 
 // Мы реализуем `Debug` поскольку, по всей видимости, все типы должны реализовывать `Debug`.
@@ -1179,7 +1107,8 @@ enum CliError {
     Io(io::Error),
     Parse(num::ParseIntError),
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Данный тип ошибки отражает возможность возникновения двух других типов ошибок:
 ошибка работы с IО или ошибка преобразования строки в число. Определение ошибки может
 отражать столько других видов ошибок, сколько необходимо, за счет добавления
@@ -1228,26 +1157,28 @@ impl error::Error for CliError {
 <p>Типаж <code>std::convert::From</code> объявлен в
 <a href="http://doc.rust-lang.org/std/convert/trait.From.html">стандартной библиотеке</a>:</p>
 <p><a name="code-from-def"></a></p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-trait From&lt;T&gt; {
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>trait From&lt;T&gt; {
     fn from(T) -&gt; Self;
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Очень просто, не правда ли? Типаж <code>From</code> чрезвычайно полезен, поскольку
 создает общий подход для преобразования <em>из</em> определенного типа <code>Т</code> в какой-то
 другой тип (в данном случае, &quot;другим типом&quot; является тип, реализующий данный
 типаж, или <code>Self</code>). Самое важное в типаже <code>From</code> — <a href="http://doc.rust-lang.org/std/convert/trait.From.html">множество его реализаций,
 предоставляемых стандартной библиотекой</a>.</p>
 <p>Вот несколько простых примеров, демонстрирующих работу <code>From</code>:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-let string: String = From::from(&quot;foo&quot;);
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let string: String = From::from(&quot;foo&quot;);
 let bytes: Vec&lt;u8&gt; = From::from(&quot;foo&quot;);
 let cow: ::std::borrow::Cow&lt;str&gt; = From::from(&quot;foo&quot;);
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Итак, <code>From</code> полезен для выполнения преобразований между строками. Но как
 насчет ошибок? Оказывается, существует одна важная реализация:</p>
 <pre><code class="language-rust ignore">impl&lt;'a, E: Error + 'a&gt; From&lt;E&gt; for Box&lt;Error + 'a&gt;
@@ -1258,10 +1189,10 @@ let cow: ::std::borrow::Cow&lt;str&gt; = From::from(&quot;foo&quot;);
 <p>Помните те две ошибки, с которыми мы имели дело ранее, а именно, <code>io::Error</code>
 and <code>num::ParseIntError</code>? Поскольку обе они реализуют <code>Error</code>, они также
 работают с <code>From</code>:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-use std::error::Error;
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use std::error::Error;
 use std::fs;
 use std::io;
 use std::num;
@@ -1273,7 +1204,8 @@ let parse_err: num::ParseIntError = &quot;not a number&quot;.parse::&lt;i32&gt;(
 // Собственно, конвертация
 let err1: Box&lt;Error&gt; = From::from(io_err);
 let err2: Box&lt;Error&gt; = From::from(parse_err);
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Здесь нужно разобрать очень важный паттерн. Переменные <code>err1</code> и <code>err2</code> имеют
 <em>одинаковый тип</em> — типаж-объект. Это означает, что их реальные типы
 скрыты от компилятора, так что по факту он рассматривает <code>err1</code> и <code>err2</code> как
@@ -1287,39 +1219,41 @@ let err2: Box&lt;Error&gt; = From::from(parse_err);
 <p><a name="the-real-try-macro"></a></p>
 <h2><a class="header" href="#Настоящий-макрос-try" id="Настоящий-макрос-try">Настоящий макрос <code>try!</code></a></h2>
 <p>До этого мы привели такое определение <code>try!</code>:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-macro_rules! try {
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>macro_rules! try {
     ($e:expr) =&gt; (match $e {
         Ok(val) =&gt; val,
         Err(err) =&gt; return Err(err),
     });
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Но это не настоящее определение. Реальное определение можно найти
 в <a href="http://doc.rust-lang.org/std/macro.try!.html">стандартной библиотеке</a>:</p>
 <p><a name="code-try-def"></a></p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-macro_rules! try {
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>macro_rules! try {
     ($e:expr) =&gt; (match $e {
         Ok(val) =&gt; val,
         Err(err) =&gt; return Err(::std::convert::From::from(err)),
     });
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Здесь есть одно маленькое, но очень важное изменение: значение ошибки
 пропускается через вызов <code>From::from</code>. Это делает макрос <code>try!</code> очень мощным
 инструментом, поскольку он дает нам возможность бесплатно выполнять
 автоматическое преобразование типов.</p>
 <p>Вооружившись более мощным макросом <code>try!</code>, давайте взглянем на код, написанный
 нами ранее, который читает файл и конвертирует его содержимое в число:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-use std::fs::File;
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use std::fs::File;
 use std::io::Read;
 use std::path::Path;
 
@@ -1330,15 +1264,16 @@ fn file_double&lt;P: AsRef&lt;Path&gt;&gt;(file_path: P) -&gt; Result&lt;i32, St
     let n = try!(contents.trim().parse::&lt;i32&gt;().map_err(|e| e.to_string()));
     Ok(2 * n)
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Ранее мы говорили, что мы можем избавиться от вызовов <code>map_err</code>. На самом деле,
 все что мы должны для этого сделать — это найти тип, который работает с
 <code>From</code>. Как мы увидели в предыдущем разделе, <code>From</code> имеет реализацию, которая
 позволяет преобразовать любой тип ошибки в <code>Box&lt;Error&gt;</code>:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-use std::error::Error;
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use std::error::Error;
 use std::fs::File;
 use std::io::Read;
 use std::path::Path;
@@ -1350,7 +1285,8 @@ fn file_double&lt;P: AsRef&lt;Path&gt;&gt;(file_path: P) -&gt; Result&lt;i32, Bo
     let n = try!(contents.trim().parse::&lt;i32&gt;());
     Ok(2 * n)
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Мы уже очень близки к идеальной обработке ошибок. Наш код имеет очень мало
 накладных расходов из-за обработки ошибок, ведь макрос <code>try!</code> инкапсулирует
 сразу три вещи:</p>
@@ -1382,10 +1318,10 @@ fn file_double&lt;P: AsRef&lt;Path&gt;&gt;(file_path: P) -&gt; Result&lt;i32, Bo
 <p>Чтобы исправить это, мы используем средство, с которым мы уже знакомы:
 создание собственного типа ошибки. Давайте вспомним код, который считывает
 содержимое файла и преобразует его в целое число:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-use std::fs::File;
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use std::fs::File;
 use std::io::{self, Read};
 use std::num;
 use std::path::Path;
@@ -1405,19 +1341,20 @@ fn file_double_verbose&lt;P: AsRef&lt;Path&gt;&gt;(file_path: P) -&gt; Result&lt
     let n: i32 = try!(contents.trim().parse().map_err(CliError::Parse));
     Ok(2 * n)
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Обратите внимание, что здесь у нас еще остались вызовы <code>map_err</code>. Почему?
 Вспомните определения <a href="#code-try-def"><code>try!</code></a> и <a href="#code-from-def"><code>From</code></a>.
 Проблема в том, что не существует такой реализации <code>From</code>, которая позволяет
 конвертировать типы ошибок <code>io::Error</code> и <code>num::ParseIntError</code> в наш собственный
 тип <code>CliError</code>. Но мы можем легко это исправить! Поскольку мы определили тип
 <code>CliError</code>, мы можем также реализовать для него типаж <code>From</code>:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-# #[derive(Debug)]
-# enum CliError { Io(io::Error), Parse(num::ParseIntError) }
-use std::io;
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span><span class="boring">#[derive(Debug)]
+</span><span class="boring">enum CliError { Io(io::Error), Parse(num::ParseIntError) }
+</span>use std::io;
 use std::num;
 
 impl From&lt;io::Error&gt; for CliError {
@@ -1431,24 +1368,25 @@ impl From&lt;num::ParseIntError&gt; for CliError {
         CliError::Parse(err)
     }
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Все эти реализации позволяют <code>From</code> создавать значения <code>CliError</code> из других
 типов ошибок. В нашем случае такое создание состоит из простого вызова
 конструктора значения. <em>Как правило</em>, это все что нужно.</p>
 <p>Наконец, мы можем переписать <code>file_double</code>:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-# use std::io;
-# use std::num;
-# enum CliError { Io(::std::io::Error), Parse(::std::num::ParseIntError) }
-# impl From&lt;io::Error&gt; for CliError {
-#     fn from(err: io::Error) -&gt; CliError { CliError::Io(err) }
-# }
-# impl From&lt;num::ParseIntError&gt; for CliError {
-#     fn from(err: num::ParseIntError) -&gt; CliError { CliError::Parse(err) }
-# }
-
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span><span class="boring">use std::io;
+</span><span class="boring">use std::num;
+</span><span class="boring">enum CliError { Io(::std::io::Error), Parse(::std::num::ParseIntError) }
+</span><span class="boring">impl From&lt;io::Error&gt; for CliError {
+</span><span class="boring">    fn from(err: io::Error) -&gt; CliError { CliError::Io(err) }
+</span><span class="boring">}
+</span><span class="boring">impl From&lt;num::ParseIntError&gt; for CliError {
+</span><span class="boring">    fn from(err: num::ParseIntError) -&gt; CliError { CliError::Parse(err) }
+</span><span class="boring">}
+</span>
 use std::fs::File;
 use std::io::Read;
 use std::path::Path;
@@ -1460,7 +1398,8 @@ fn file_double&lt;P: AsRef&lt;Path&gt;&gt;(file_path: P) -&gt; Result&lt;i32, Cl
     let n: i32 = try!(contents.trim().parse());
     Ok(2 * n)
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Единственное, что мы сделали — это удалили вызовы <code>map_err</code>. Они нам больше не
 нужны, поскольку макрос <code>try!</code> выполняет <code>From::from</code> над значениями ошибок. И
 это работает, поскольку мы предоставили реализации <code>From</code> для всех типов
@@ -1469,10 +1408,10 @@ fn file_double&lt;P: AsRef&lt;Path&gt;&gt;(file_path: P) -&gt; Result&lt;i32, Cl
 выполнять какие-то другие операции, например, преобразовать строку в число
 с плавающей точкой, то мы должны были бы добавить новый вариант к нашему типу
 ошибок:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-use std::io;
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use std::io;
 use std::num;
 
 enum CliError {
@@ -1480,17 +1419,18 @@ enum CliError {
     ParseInt(num::ParseIntError),
     ParseFloat(num::ParseFloatError),
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>И добавить новую реализацию для <code>From</code>:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-# enum CliError {
-#     Io(::std::io::Error),
-#     ParseInt(num::ParseIntError),
-#     ParseFloat(num::ParseFloatError),
-# }
-
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span><span class="boring">enum CliError {
+</span><span class="boring">    Io(::std::io::Error),
+</span><span class="boring">    ParseInt(num::ParseIntError),
+</span><span class="boring">    ParseFloat(num::ParseFloatError),
+</span><span class="boring">}
+</span>
 use std::num;
 
 impl From&lt;num::ParseFloatError&gt; for CliError {
@@ -1498,7 +1438,8 @@ impl From&lt;num::ParseFloatError&gt; for CliError {
         CliError::ParseFloat(err)
     }
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Вот и все!</p>
 <p><a name="advice-for-library-writers"></a></p>
 <h2><a class="header" href="#Рекомендации-для-авторов-библиотек" id="Рекомендации-для-авторов-библиотек">Рекомендации для авторов библиотек</a></h2>
@@ -1568,85 +1509,8 @@ impl From&lt;num::ParseFloatError&gt; for CliError {
 </ul>
 
                     </main>
-
-                    <nav class="nav-wrapper" aria-label="Page navigation">
-                        <!-- Mobile navigation buttons -->
-                        
-                            <a rel="prev" href="concurrency.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
-                            </a>
-                        
-
-                        
-                            <a rel="next" href="choosing-your-guarantees.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        
-
-                        <div style="clear: both"></div>
-                    </nav>
                 </div>
             </div>
-
-            <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
-                    <a href="concurrency.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
-                    </a>
-                
-
-                
-                    <a href="choosing-your-guarantees.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
-                
-            </nav>
-
         </div>
-
-        
-
-        
-        <!-- Google Analytics Tag -->
-        <script type="text/javascript">
-            var localAddrs = ["localhost", "127.0.0.1", ""];
-
-            // make sure we don't activate google analytics if the developer is
-            // inspecting the book locally...
-            if (localAddrs.indexOf(document.location.hostname) === -1) {
-                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-                ga('create', 'UA-142155799-10', 'auto');
-                ga('send', 'pageview');
-            }
-        </script>
-        
-
-        
-        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
-        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
-        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
-        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
-        
-
-        
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
-        
-
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
-
-        <!-- Custom JS scripts -->
-        
-
-        
-
     </body>
 </html>

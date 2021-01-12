@@ -1,147 +1,57 @@
 <!DOCTYPE HTML>
-<html lang="ru" class="sidebar-visible no-js">
+<html lang="ru" class="no-js">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Ассоциированные типы - Язык программирования Rust</title>
-        
-
+        <title>Outdated link: Ассоциированные типы - Язык программирования Rust</title>
+        <meta name="robots" content="noindex,follow">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
 
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <base href="">
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="book.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
 
-        <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
         <link rel="stylesheet" href="tomorrow-night.css">
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
         
-
+        <link rel="stylesheet" href="theme/first-edition.css">
         
     </head>
     <body class="light">
-        <!-- Provide site root to javascript -->
-        <script type="text/javascript">
-            var path_to_root = "";
-            var default_theme = "light";
-        </script>
-
-        <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
-            try {
-                var theme = localStorage.getItem('mdbook-theme');
-                var sidebar = localStorage.getItem('mdbook-sidebar');
-
-                if (theme.startsWith('"') && theme.endsWith('"')) {
-                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
-                }
-
-                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
-                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
-                }
-            } catch (e) { }
-        </script>
-
-        <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
-            var theme;
-            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
-            if (theme === null || theme === undefined) { theme = default_theme; }
-            document.body.className = theme;
-            document.querySelector('html').className = theme + ' js';
-        </script>
-
-        <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
-            var html = document.querySelector('html');
-            var sidebar = 'hidden';
-            if (document.body.clientWidth >= 1080) {
-                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
-                sidebar = sidebar || 'visible';
-            }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
-        </script>
-
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li><a href="INTRODUCTION.html"><strong aria-hidden="true">1.</strong> Введение</a></li><li><a href="getting-started.html"><strong aria-hidden="true">2.</strong> C чего начать</a></li><li><a href="learn-rust.html"><strong aria-hidden="true">3.</strong> Изучение Rust</a></li><li><ol class="section"><li><a href="guessing-game.html"><strong aria-hidden="true">3.1.</strong> Угадайка</a></li><li><a href="dining-philosophers.html"><strong aria-hidden="true">3.2.</strong> Обедающие философы</a></li><li><a href="rust-inside-other-languages.html"><strong aria-hidden="true">3.3.</strong> Вызов кода на Rust из других языков</a></li></ol></li><li><a href="syntax-and-semantics.html"><strong aria-hidden="true">4.</strong> Синтаксис и семантика</a></li><li><ol class="section"><li><a href="variable-bindings.html"><strong aria-hidden="true">4.1.</strong> Связывание имён</a></li><li><a href="functions.html"><strong aria-hidden="true">4.2.</strong> Функции</a></li><li><a href="primitive-types.html"><strong aria-hidden="true">4.3.</strong> Простые типы</a></li><li><a href="comments.html"><strong aria-hidden="true">4.4.</strong> Комментарии</a></li><li><a href="if.html"><strong aria-hidden="true">4.5.</strong> Конструкция if</a></li><li><a href="loops.html"><strong aria-hidden="true">4.6.</strong> Циклы</a></li><li><a href="ownership.html"><strong aria-hidden="true">4.7.</strong> Владение</a></li><li><a href="references-and-borrowing.html"><strong aria-hidden="true">4.8.</strong> Ссылки и заимствование</a></li><li><a href="lifetimes.html"><strong aria-hidden="true">4.9.</strong> Время жизни</a></li><li><a href="mutability.html"><strong aria-hidden="true">4.10.</strong> Изменяемость</a></li><li><a href="structs.html"><strong aria-hidden="true">4.11.</strong> Структуры</a></li><li><a href="enums.html"><strong aria-hidden="true">4.12.</strong> Перечисления</a></li><li><a href="match.html"><strong aria-hidden="true">4.13.</strong> Конструкция match</a></li><li><a href="patterns.html"><strong aria-hidden="true">4.14.</strong> Шаблоны сопоставления match</a></li><li><a href="method-syntax.html"><strong aria-hidden="true">4.15.</strong> Синтаксис методов</a></li><li><a href="vectors.html"><strong aria-hidden="true">4.16.</strong> Вектора</a></li><li><a href="strings.html"><strong aria-hidden="true">4.17.</strong> Строки</a></li><li><a href="generics.html"><strong aria-hidden="true">4.18.</strong> Обобщённое программирование</a></li><li><a href="traits.html"><strong aria-hidden="true">4.19.</strong> Типажи</a></li><li><a href="drop.html"><strong aria-hidden="true">4.20.</strong> Типаж Drop</a></li><li><a href="if-let.html"><strong aria-hidden="true">4.21.</strong> Конструкция if let</a></li><li><a href="trait-objects.html"><strong aria-hidden="true">4.22.</strong> Типажи-объекты</a></li><li><a href="closures.html"><strong aria-hidden="true">4.23.</strong> Замыкания</a></li><li><a href="ufcs.html"><strong aria-hidden="true">4.24.</strong> Универсальный синтаксис вызова функций</a></li><li><a href="crates-and-modules.html"><strong aria-hidden="true">4.25.</strong> Контейнеры и модули</a></li><li><a href="const-and-static.html"><strong aria-hidden="true">4.26.</strong> const и static</a></li><li><a href="attributes.html"><strong aria-hidden="true">4.27.</strong> Атрибуты</a></li><li><a href="type-aliases.html"><strong aria-hidden="true">4.28.</strong> Псевдонимы типов</a></li><li><a href="casting-between-types.html"><strong aria-hidden="true">4.29.</strong> Приведение типов</a></li><li><a href="associated-types.html" class="active"><strong aria-hidden="true">4.30.</strong> Ассоциированные типы</a></li><li><a href="unsized-types.html"><strong aria-hidden="true">4.31.</strong> Безразмерные типы</a></li><li><a href="operators-and-overloading.html"><strong aria-hidden="true">4.32.</strong> Перегрузка операций</a></li><li><a href="deref-coercions.html"><strong aria-hidden="true">4.33.</strong> Преобразования при разыменовании</a></li><li><a href="macros.html"><strong aria-hidden="true">4.34.</strong> Макросы</a></li><li><a href="raw-pointers.html"><strong aria-hidden="true">4.35.</strong> Сырые указатели</a></li><li><a href="unsafe.html"><strong aria-hidden="true">4.36.</strong> Небезопасный код</a></li></ol></li><li><a href="effective-rust.html"><strong aria-hidden="true">5.</strong> Эффективное использование Rust</a></li><li><ol class="section"><li><a href="the-stack-and-the-heap.html"><strong aria-hidden="true">5.1.</strong> Стек и куча</a></li><li><a href="testing.html"><strong aria-hidden="true">5.2.</strong> Тестирование</a></li><li><a href="conditional-compilation.html"><strong aria-hidden="true">5.3.</strong> Условная компиляция</a></li><li><a href="documentation.html"><strong aria-hidden="true">5.4.</strong> Документация</a></li><li><a href="iterators.html"><strong aria-hidden="true">5.5.</strong> Итераторы</a></li><li><a href="concurrency.html"><strong aria-hidden="true">5.6.</strong> Многозадачность</a></li><li><a href="error-handling.html"><strong aria-hidden="true">5.7.</strong> Обработка ошибок</a></li><li><a href="choosing-your-guarantees.html"><strong aria-hidden="true">5.8.</strong> Выбор гарантий</a></li><li><a href="ffi.html"><strong aria-hidden="true">5.9.</strong> Интерфейс внешних функций</a></li><li><a href="borrow-and-asref.html"><strong aria-hidden="true">5.10.</strong> Типажи Borrow и AsRef</a></li><li><a href="release-channels.html"><strong aria-hidden="true">5.11.</strong> Каналы сборок</a></li><li><a href="using-rust-without-the-standard-library.html"><strong aria-hidden="true">5.12.</strong> Using Rust without the standard library</a></li></ol></li><li><a href="nightly-rust.html"><strong aria-hidden="true">6.</strong> Нестабильные возможности Rust</a></li><li><ol class="section"><li><a href="compiler-plugins.html"><strong aria-hidden="true">6.1.</strong> Плагины к компилятору</a></li><li><a href="inline-assembly.html"><strong aria-hidden="true">6.2.</strong> Встроенный ассемблерный код</a></li><li><a href="no-stdlib.html"><strong aria-hidden="true">6.3.</strong> Без stdlib</a></li><li><a href="intrinsics.html"><strong aria-hidden="true">6.4.</strong> Внутренние средства</a></li><li><a href="lang-items.html"><strong aria-hidden="true">6.5.</strong> Элементы языка</a></li><li><a href="advanced-linking.html"><strong aria-hidden="true">6.6.</strong> Продвинутое руководство по компоновке</a></li><li><a href="benchmark-tests.html"><strong aria-hidden="true">6.7.</strong> Тесты производительности</a></li><li><a href="box-syntax-and-patterns.html"><strong aria-hidden="true">6.8.</strong> Синтаксис упаковки и шаблоны match</a></li><li><a href="slice-patterns.html"><strong aria-hidden="true">6.9.</strong> Шаблоны match для срезов</a></li><li><a href="associated-constants.html"><strong aria-hidden="true">6.10.</strong> Ассоциированные константы</a></li><li><a href="custom-allocators.html"><strong aria-hidden="true">6.11.</strong> Пользовательские менеджеры памяти</a></li></ol></li><li><a href="glossary.html"><strong aria-hidden="true">7.</strong> Глоссарий</a></li><li><a href="syntax-index.html"><strong aria-hidden="true">8.</strong> Syntax Index</a></li><li><a href="bibliography.html"><strong aria-hidden="true">9.</strong> Библиография</a></li></ol>
-            </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
-        </nav>
-
         <div id="page-wrapper" class="page-wrapper">
-
             <div class="page">
-                
-                <div id="menu-bar" class="menu-bar">
-                    <div id="menu-bar-sticky-container">
-                        <div class="left-buttons">
-                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                                <i class="fa fa-bars"></i>
-                            </button>
-                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                                <i class="fa fa-paint-brush"></i>
-                            </button>
-                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
-                            </ul>
-                            
-                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
-                                <i class="fa fa-search"></i>
-                            </button>
-                            
-                        </div>
+                <div id="draft-warning" class="warning">
+    <span class="message">Вы читаете <strong>устаревшую</strong> версию TRPL. Новая версия <a href="https://doc.rust-lang.ru/book">здесь</a>.</span>
+    <button type="button" id="hide-draft-warning" title="Hide draft warning" class="button">
+        <i class="fa fa-times"></i>
+    </button>
+</div>
+<!-- Hide / unhide warning before it is displayed -->
+<script type="text/javascript">
+var warning = localStorage.getItem('trpl-first-edition-draft-warning');
 
-                        <h1 class="menu-title">Язык программирования Rust</h1>
+if (warning === 'hidden') {
+    Array
+    .from(document.querySelectorAll('#page-wrapper'))
+    .forEach(function(block) { block.classList.remove('has-warning'); });
+    var elem = document.getElementById("draft-warning");
+    elem.parentNode.removeChild(elem);
+}
 
-                        <div class="right-buttons">
-                            <a href="print.html" title="Print this book" aria-label="Print this book">
-                                <i id="print-button" class="fa fa-print"></i>
-                            </a>
-                            
-                        </div>
-                    </div>
-                </div>
+document.addEventListener("DOMContentLoaded", function(event) {
+    document.getElementById("hide-draft-warning").addEventListener("click", function(e) {
+        var elem = document.getElementById("draft-warning");
+        elem.parentNode.removeChild(elem);
 
-                
-                <div id="search-wrapper" class="hidden">
-                    <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
-                    </form>
-                    <div id="searchresults-outer" class="searchresults-outer hidden">
-                        <div id="searchresults-header" class="searchresults-header"></div>
-                        <ul id="searchresults">
-                        </ul>
-                    </div>
-                </div>
-                
-
-                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
-                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
-                    });
-                </script>
+        localStorage.setItem('trpl-first-edition-draft-warning', 'hidden');
+    });
+});
+</script>
 
                 <div id="content" class="content">
                     <main>
@@ -152,15 +62,16 @@
 Если вы хотите написать типаж <code>Graph</code>, то нужны два обобщенных параметра типа:
 тип узел и тип ребро. Исходя из этого, вы можете написать типаж <code>Graph&lt;N, E&gt;</code>,
 который выглядит следующим образом:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-trait Graph&lt;N, E&gt; {
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>trait Graph&lt;N, E&gt; {
     fn has_edge(&amp;self, &amp;N, &amp;N) -&gt; bool;
     fn edges(&amp;self, &amp;N) -&gt; Vec&lt;E&gt;;
     // etc
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Такое решение вроде бы достигает своей цели, но, в конечном счете, является
 неудобным. Например, любая функция, которая принимает <code>Graph</code> в качестве
 параметра, <em>также</em> должна быть обобщённой с параметрами <code>N</code> и <code>E</code>:</p>
@@ -173,10 +84,10 @@ trait Graph&lt;N, E&gt; {
 <p>Что действительно нужно заявить, это чтобы сформировать какого-либо вида
 <code>Graph</code>, нужны соответствующие типы <code>E</code> и <code>N</code>, собранные вместе. Мы можем
 сделать это с помощью ассоциированных типов:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-trait Graph {
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>trait Graph {
     type N;
     type E;
 
@@ -184,7 +95,8 @@ trait Graph {
     fn edges(&amp;self, &amp;Self::N) -&gt; Vec&lt;Self::E&gt;;
     // etc
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Теперь наши клиенты могут абстрагироваться от определенного <code>Graph</code>:</p>
 <pre><code class="language-rust ignore">fn distance&lt;G: Graph&gt;(graph: &amp;G, start: &amp;G::N, end: &amp;G::N) -&gt; u32 { ... }
 </code></pre>
@@ -192,26 +104,27 @@ trait Graph {
 <p>Давайте поговорим обо всем этом более подробно.</p>
 <h2><a class="header" href="#Определение-ассоциированных-типов" id="Определение-ассоциированных-типов">Определение ассоциированных типов</a></h2>
 <p>Давайте построим наш типаж <code>Graph</code>. Вот его определение:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-trait Graph {
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>trait Graph {
     type N;
     type E;
 
     fn has_edge(&amp;self, &amp;Self::N, &amp;Self::N) -&gt; bool;
     fn edges(&amp;self, &amp;Self::N) -&gt; Vec&lt;Self::E&gt;;
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Достаточно просто. Ассоциированные типы используют ключевое слово <code>type</code>, и
 расположены внутри тела типажа, наряду с функциями.</p>
 <p>Эти объявления <code>type</code> могут иметь все то же самое, как и при работе с функциями.
 Например, если бы мы хотели, чтобы тип <code>N</code> реализовывал <code>Display</code>, чтобы была
 возможность печатать узлы, мы могли бы сделать следующее:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-use std::fmt;
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use std::fmt;
 
 trait Graph {
     type N: fmt::Display;
@@ -220,20 +133,21 @@ trait Graph {
     fn has_edge(&amp;self, &amp;Self::N, &amp;Self::N) -&gt; bool;
     fn edges(&amp;self, &amp;Self::N) -&gt; Vec&lt;Self::E&gt;;
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <h2><a class="header" href="#Реализация-ассоциированных-типов" id="Реализация-ассоциированных-типов">Реализация ассоциированных типов</a></h2>
 <p>Типаж, который включает ассоциированные типы, как и любой другой типаж, для
 реализации использует ключевое слово <code>impl</code>. Вот простая реализация <code>Graph</code>:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-# trait Graph {
-#     type N;
-#     type E;
-#     fn has_edge(&amp;self, &amp;Self::N, &amp;Self::N) -&gt; bool;
-#     fn edges(&amp;self, &amp;Self::N) -&gt; Vec&lt;Self::E&gt;;
-# }
-struct Node;
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span><span class="boring">trait Graph {
+</span><span class="boring">    type N;
+</span><span class="boring">    type E;
+</span><span class="boring">    fn has_edge(&amp;self, &amp;Self::N, &amp;Self::N) -&gt; bool;
+</span><span class="boring">    fn edges(&amp;self, &amp;Self::N) -&gt; Vec&lt;Self::E&gt;;
+</span><span class="boring">}
+</span>struct Node;
 
 struct Edge;
 
@@ -251,7 +165,8 @@ impl Graph for MyGraph {
         Vec::new()
     }
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Это глупая реализация, которая всегда возвращает <code>true</code> и пустой <code>Vec&lt;Edge&gt;</code>, но
 она дает вам общее представление о том, как реализуются такие ​​вещи. Для начала
 нужны три <code>struct</code>, одна для графа, одна для узла и одна для ребра. В этой
@@ -267,26 +182,26 @@ impl Graph for MyGraph {
 <h2><a class="header" href="#Типажи-объекты-и-ассоциированные-типы" id="Типажи-объекты-и-ассоциированные-типы">Типажи-объекты и ассоциированные типы</a></h2>
 <p>Вот еще немного синтаксиса, о котором следует упомянуть: типажи-объекты. Если вы
 попытаетесь создать типаж-объект из ассоциированного типа, как в этом примере:</p>
-<pre><code class="language-rust ignore"># trait Graph {
-#     type N;
-#     type E;
-#     fn has_edge(&amp;self, &amp;Self::N, &amp;Self::N) -&gt; bool;
-#     fn edges(&amp;self, &amp;Self::N) -&gt; Vec&lt;Self::E&gt;;
-# }
-# struct Node;
-# struct Edge;
-# struct MyGraph;
-# impl Graph for MyGraph {
-#     type N = Node;
-#     type E = Edge;
-#     fn has_edge(&amp;self, n1: &amp;Node, n2: &amp;Node) -&gt; bool {
-#         true
-#     }
-#     fn edges(&amp;self, n: &amp;Node) -&gt; Vec&lt;Edge&gt; {
-#         Vec::new()
-#     }
-# }
-let graph = MyGraph;
+<pre><code class="language-rust ignore"><span class="boring">trait Graph {
+</span><span class="boring">    type N;
+</span><span class="boring">    type E;
+</span><span class="boring">    fn has_edge(&amp;self, &amp;Self::N, &amp;Self::N) -&gt; bool;
+</span><span class="boring">    fn edges(&amp;self, &amp;Self::N) -&gt; Vec&lt;Self::E&gt;;
+</span><span class="boring">}
+</span><span class="boring">struct Node;
+</span><span class="boring">struct Edge;
+</span><span class="boring">struct MyGraph;
+</span><span class="boring">impl Graph for MyGraph {
+</span><span class="boring">    type N = Node;
+</span><span class="boring">    type E = Edge;
+</span><span class="boring">    fn has_edge(&amp;self, n1: &amp;Node, n2: &amp;Node) -&gt; bool {
+</span><span class="boring">        true
+</span><span class="boring">    }
+</span><span class="boring">    fn edges(&amp;self, n: &amp;Node) -&gt; Vec&lt;Edge&gt; {
+</span><span class="boring">        Vec::new()
+</span><span class="boring">    }
+</span><span class="boring">}
+</span>let graph = MyGraph;
 let obj = Box::new(graph) as Box&lt;Graph&gt;;
 </code></pre>
 <p>Вы получите две ошибки:</p>
@@ -301,116 +216,40 @@ let obj = Box::new(graph) as Box&lt;Graph&gt;;
 </code></pre>
 <p>Мы не сможем создать типаж-объект, подобный этому, потому что у него нет
 информации об ассоциированных типах. Вместо этого, мы можем написать так:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-# trait Graph {
-#     type N;
-#     type E;
-#     fn has_edge(&amp;self, &amp;Self::N, &amp;Self::N) -&gt; bool;
-#     fn edges(&amp;self, &amp;Self::N) -&gt; Vec&lt;Self::E&gt;;
-# }
-# struct Node;
-# struct Edge;
-# struct MyGraph;
-# impl Graph for MyGraph {
-#     type N = Node;
-#     type E = Edge;
-#     fn has_edge(&amp;self, n1: &amp;Node, n2: &amp;Node) -&gt; bool {
-#         true
-#     }
-#     fn edges(&amp;self, n: &amp;Node) -&gt; Vec&lt;Edge&gt; {
-#         Vec::new()
-#     }
-# }
-let graph = MyGraph;
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span><span class="boring">trait Graph {
+</span><span class="boring">    type N;
+</span><span class="boring">    type E;
+</span><span class="boring">    fn has_edge(&amp;self, &amp;Self::N, &amp;Self::N) -&gt; bool;
+</span><span class="boring">    fn edges(&amp;self, &amp;Self::N) -&gt; Vec&lt;Self::E&gt;;
+</span><span class="boring">}
+</span><span class="boring">struct Node;
+</span><span class="boring">struct Edge;
+</span><span class="boring">struct MyGraph;
+</span><span class="boring">impl Graph for MyGraph {
+</span><span class="boring">    type N = Node;
+</span><span class="boring">    type E = Edge;
+</span><span class="boring">    fn has_edge(&amp;self, n1: &amp;Node, n2: &amp;Node) -&gt; bool {
+</span><span class="boring">        true
+</span><span class="boring">    }
+</span><span class="boring">    fn edges(&amp;self, n: &amp;Node) -&gt; Vec&lt;Edge&gt; {
+</span><span class="boring">        Vec::new()
+</span><span class="boring">    }
+</span><span class="boring">}
+</span>let graph = MyGraph;
 let obj = Box::new(graph) as Box&lt;Graph&lt;N=Node, E=Edge&gt;&gt;;
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Синтаксис <code>N=Node</code> позволяет нам предоставлять конкретный тип, <code>Node</code>, для
 параметра типа <code>N</code>. То же самое и для <code>E=Edge</code>. Если бы мы не предоставляли это
 ограничение, то не могли бы знать наверняка, какая <code>impl</code> соответствует этому
 типажу-объекту.</p>
 
                     </main>
-
-                    <nav class="nav-wrapper" aria-label="Page navigation">
-                        <!-- Mobile navigation buttons -->
-                        
-                            <a rel="prev" href="casting-between-types.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
-                            </a>
-                        
-
-                        
-                            <a rel="next" href="unsized-types.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        
-
-                        <div style="clear: both"></div>
-                    </nav>
                 </div>
             </div>
-
-            <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
-                    <a href="casting-between-types.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
-                    </a>
-                
-
-                
-                    <a href="unsized-types.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
-                
-            </nav>
-
         </div>
-
-        
-
-        
-        <!-- Google Analytics Tag -->
-        <script type="text/javascript">
-            var localAddrs = ["localhost", "127.0.0.1", ""];
-
-            // make sure we don't activate google analytics if the developer is
-            // inspecting the book locally...
-            if (localAddrs.indexOf(document.location.hostname) === -1) {
-                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-                ga('create', 'UA-142155799-10', 'auto');
-                ga('send', 'pageview');
-            }
-        </script>
-        
-
-        
-        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
-        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
-        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
-        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
-        
-
-        
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
-        
-
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
-
-        <!-- Custom JS scripts -->
-        
-
-        
-
     </body>
 </html>

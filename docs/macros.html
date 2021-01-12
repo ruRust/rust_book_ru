@@ -1,147 +1,57 @@
 <!DOCTYPE HTML>
-<html lang="ru" class="sidebar-visible no-js">
+<html lang="ru" class="no-js">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Макросы - Язык программирования Rust</title>
-        
-
+        <title>Outdated link: Макросы - Язык программирования Rust</title>
+        <meta name="robots" content="noindex,follow">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
 
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <base href="">
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="book.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
 
-        <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
         <link rel="stylesheet" href="tomorrow-night.css">
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
         
-
+        <link rel="stylesheet" href="theme/first-edition.css">
         
     </head>
     <body class="light">
-        <!-- Provide site root to javascript -->
-        <script type="text/javascript">
-            var path_to_root = "";
-            var default_theme = "light";
-        </script>
-
-        <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
-            try {
-                var theme = localStorage.getItem('mdbook-theme');
-                var sidebar = localStorage.getItem('mdbook-sidebar');
-
-                if (theme.startsWith('"') && theme.endsWith('"')) {
-                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
-                }
-
-                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
-                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
-                }
-            } catch (e) { }
-        </script>
-
-        <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
-            var theme;
-            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
-            if (theme === null || theme === undefined) { theme = default_theme; }
-            document.body.className = theme;
-            document.querySelector('html').className = theme + ' js';
-        </script>
-
-        <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
-            var html = document.querySelector('html');
-            var sidebar = 'hidden';
-            if (document.body.clientWidth >= 1080) {
-                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
-                sidebar = sidebar || 'visible';
-            }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
-        </script>
-
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li><a href="INTRODUCTION.html"><strong aria-hidden="true">1.</strong> Введение</a></li><li><a href="getting-started.html"><strong aria-hidden="true">2.</strong> C чего начать</a></li><li><a href="learn-rust.html"><strong aria-hidden="true">3.</strong> Изучение Rust</a></li><li><ol class="section"><li><a href="guessing-game.html"><strong aria-hidden="true">3.1.</strong> Угадайка</a></li><li><a href="dining-philosophers.html"><strong aria-hidden="true">3.2.</strong> Обедающие философы</a></li><li><a href="rust-inside-other-languages.html"><strong aria-hidden="true">3.3.</strong> Вызов кода на Rust из других языков</a></li></ol></li><li><a href="syntax-and-semantics.html"><strong aria-hidden="true">4.</strong> Синтаксис и семантика</a></li><li><ol class="section"><li><a href="variable-bindings.html"><strong aria-hidden="true">4.1.</strong> Связывание имён</a></li><li><a href="functions.html"><strong aria-hidden="true">4.2.</strong> Функции</a></li><li><a href="primitive-types.html"><strong aria-hidden="true">4.3.</strong> Простые типы</a></li><li><a href="comments.html"><strong aria-hidden="true">4.4.</strong> Комментарии</a></li><li><a href="if.html"><strong aria-hidden="true">4.5.</strong> Конструкция if</a></li><li><a href="loops.html"><strong aria-hidden="true">4.6.</strong> Циклы</a></li><li><a href="ownership.html"><strong aria-hidden="true">4.7.</strong> Владение</a></li><li><a href="references-and-borrowing.html"><strong aria-hidden="true">4.8.</strong> Ссылки и заимствование</a></li><li><a href="lifetimes.html"><strong aria-hidden="true">4.9.</strong> Время жизни</a></li><li><a href="mutability.html"><strong aria-hidden="true">4.10.</strong> Изменяемость</a></li><li><a href="structs.html"><strong aria-hidden="true">4.11.</strong> Структуры</a></li><li><a href="enums.html"><strong aria-hidden="true">4.12.</strong> Перечисления</a></li><li><a href="match.html"><strong aria-hidden="true">4.13.</strong> Конструкция match</a></li><li><a href="patterns.html"><strong aria-hidden="true">4.14.</strong> Шаблоны сопоставления match</a></li><li><a href="method-syntax.html"><strong aria-hidden="true">4.15.</strong> Синтаксис методов</a></li><li><a href="vectors.html"><strong aria-hidden="true">4.16.</strong> Вектора</a></li><li><a href="strings.html"><strong aria-hidden="true">4.17.</strong> Строки</a></li><li><a href="generics.html"><strong aria-hidden="true">4.18.</strong> Обобщённое программирование</a></li><li><a href="traits.html"><strong aria-hidden="true">4.19.</strong> Типажи</a></li><li><a href="drop.html"><strong aria-hidden="true">4.20.</strong> Типаж Drop</a></li><li><a href="if-let.html"><strong aria-hidden="true">4.21.</strong> Конструкция if let</a></li><li><a href="trait-objects.html"><strong aria-hidden="true">4.22.</strong> Типажи-объекты</a></li><li><a href="closures.html"><strong aria-hidden="true">4.23.</strong> Замыкания</a></li><li><a href="ufcs.html"><strong aria-hidden="true">4.24.</strong> Универсальный синтаксис вызова функций</a></li><li><a href="crates-and-modules.html"><strong aria-hidden="true">4.25.</strong> Контейнеры и модули</a></li><li><a href="const-and-static.html"><strong aria-hidden="true">4.26.</strong> const и static</a></li><li><a href="attributes.html"><strong aria-hidden="true">4.27.</strong> Атрибуты</a></li><li><a href="type-aliases.html"><strong aria-hidden="true">4.28.</strong> Псевдонимы типов</a></li><li><a href="casting-between-types.html"><strong aria-hidden="true">4.29.</strong> Приведение типов</a></li><li><a href="associated-types.html"><strong aria-hidden="true">4.30.</strong> Ассоциированные типы</a></li><li><a href="unsized-types.html"><strong aria-hidden="true">4.31.</strong> Безразмерные типы</a></li><li><a href="operators-and-overloading.html"><strong aria-hidden="true">4.32.</strong> Перегрузка операций</a></li><li><a href="deref-coercions.html"><strong aria-hidden="true">4.33.</strong> Преобразования при разыменовании</a></li><li><a href="macros.html" class="active"><strong aria-hidden="true">4.34.</strong> Макросы</a></li><li><a href="raw-pointers.html"><strong aria-hidden="true">4.35.</strong> Сырые указатели</a></li><li><a href="unsafe.html"><strong aria-hidden="true">4.36.</strong> Небезопасный код</a></li></ol></li><li><a href="effective-rust.html"><strong aria-hidden="true">5.</strong> Эффективное использование Rust</a></li><li><ol class="section"><li><a href="the-stack-and-the-heap.html"><strong aria-hidden="true">5.1.</strong> Стек и куча</a></li><li><a href="testing.html"><strong aria-hidden="true">5.2.</strong> Тестирование</a></li><li><a href="conditional-compilation.html"><strong aria-hidden="true">5.3.</strong> Условная компиляция</a></li><li><a href="documentation.html"><strong aria-hidden="true">5.4.</strong> Документация</a></li><li><a href="iterators.html"><strong aria-hidden="true">5.5.</strong> Итераторы</a></li><li><a href="concurrency.html"><strong aria-hidden="true">5.6.</strong> Многозадачность</a></li><li><a href="error-handling.html"><strong aria-hidden="true">5.7.</strong> Обработка ошибок</a></li><li><a href="choosing-your-guarantees.html"><strong aria-hidden="true">5.8.</strong> Выбор гарантий</a></li><li><a href="ffi.html"><strong aria-hidden="true">5.9.</strong> Интерфейс внешних функций</a></li><li><a href="borrow-and-asref.html"><strong aria-hidden="true">5.10.</strong> Типажи Borrow и AsRef</a></li><li><a href="release-channels.html"><strong aria-hidden="true">5.11.</strong> Каналы сборок</a></li><li><a href="using-rust-without-the-standard-library.html"><strong aria-hidden="true">5.12.</strong> Using Rust without the standard library</a></li></ol></li><li><a href="nightly-rust.html"><strong aria-hidden="true">6.</strong> Нестабильные возможности Rust</a></li><li><ol class="section"><li><a href="compiler-plugins.html"><strong aria-hidden="true">6.1.</strong> Плагины к компилятору</a></li><li><a href="inline-assembly.html"><strong aria-hidden="true">6.2.</strong> Встроенный ассемблерный код</a></li><li><a href="no-stdlib.html"><strong aria-hidden="true">6.3.</strong> Без stdlib</a></li><li><a href="intrinsics.html"><strong aria-hidden="true">6.4.</strong> Внутренние средства</a></li><li><a href="lang-items.html"><strong aria-hidden="true">6.5.</strong> Элементы языка</a></li><li><a href="advanced-linking.html"><strong aria-hidden="true">6.6.</strong> Продвинутое руководство по компоновке</a></li><li><a href="benchmark-tests.html"><strong aria-hidden="true">6.7.</strong> Тесты производительности</a></li><li><a href="box-syntax-and-patterns.html"><strong aria-hidden="true">6.8.</strong> Синтаксис упаковки и шаблоны match</a></li><li><a href="slice-patterns.html"><strong aria-hidden="true">6.9.</strong> Шаблоны match для срезов</a></li><li><a href="associated-constants.html"><strong aria-hidden="true">6.10.</strong> Ассоциированные константы</a></li><li><a href="custom-allocators.html"><strong aria-hidden="true">6.11.</strong> Пользовательские менеджеры памяти</a></li></ol></li><li><a href="glossary.html"><strong aria-hidden="true">7.</strong> Глоссарий</a></li><li><a href="syntax-index.html"><strong aria-hidden="true">8.</strong> Syntax Index</a></li><li><a href="bibliography.html"><strong aria-hidden="true">9.</strong> Библиография</a></li></ol>
-            </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
-        </nav>
-
         <div id="page-wrapper" class="page-wrapper">
-
             <div class="page">
-                
-                <div id="menu-bar" class="menu-bar">
-                    <div id="menu-bar-sticky-container">
-                        <div class="left-buttons">
-                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                                <i class="fa fa-bars"></i>
-                            </button>
-                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                                <i class="fa fa-paint-brush"></i>
-                            </button>
-                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
-                            </ul>
-                            
-                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
-                                <i class="fa fa-search"></i>
-                            </button>
-                            
-                        </div>
+                <div id="draft-warning" class="warning">
+    <span class="message">Вы читаете <strong>устаревшую</strong> версию TRPL. Новая версия <a href="https://doc.rust-lang.ru/book">здесь</a>.</span>
+    <button type="button" id="hide-draft-warning" title="Hide draft warning" class="button">
+        <i class="fa fa-times"></i>
+    </button>
+</div>
+<!-- Hide / unhide warning before it is displayed -->
+<script type="text/javascript">
+var warning = localStorage.getItem('trpl-first-edition-draft-warning');
 
-                        <h1 class="menu-title">Язык программирования Rust</h1>
+if (warning === 'hidden') {
+    Array
+    .from(document.querySelectorAll('#page-wrapper'))
+    .forEach(function(block) { block.classList.remove('has-warning'); });
+    var elem = document.getElementById("draft-warning");
+    elem.parentNode.removeChild(elem);
+}
 
-                        <div class="right-buttons">
-                            <a href="print.html" title="Print this book" aria-label="Print this book">
-                                <i id="print-button" class="fa fa-print"></i>
-                            </a>
-                            
-                        </div>
-                    </div>
-                </div>
+document.addEventListener("DOMContentLoaded", function(event) {
+    document.getElementById("hide-draft-warning").addEventListener("click", function(e) {
+        var elem = document.getElementById("draft-warning");
+        elem.parentNode.removeChild(elem);
 
-                
-                <div id="search-wrapper" class="hidden">
-                    <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
-                    </form>
-                    <div id="searchresults-outer" class="searchresults-outer hidden">
-                        <div id="searchresults-header" class="searchresults-header"></div>
-                        <ul id="searchresults">
-                        </ul>
-                    </div>
-                </div>
-                
-
-                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
-                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
-                    });
-                </script>
+        localStorage.setItem('trpl-first-edition-draft-warning', 'hidden');
+    });
+});
+</script>
 
                 <div id="content" class="content">
                     <main>
@@ -175,34 +85,36 @@
 <h1><a class="header" href="#Определение-макросов-Макроопределения" id="Определение-макросов-Макроопределения">Определение макросов (Макроопределения)</a></h1>
 <p>Вы, возможно, видели макрос <code>vec!</code>, который используется для инициализации
 <a href="vectors.html">вектора</a> с произвольным количеством элементов.</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-let x: Vec&lt;u32&gt; = vec![1, 2, 3];
-# assert_eq!(x, [1, 2, 3]);
-#}</code></pre></pre>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let x: Vec&lt;u32&gt; = vec![1, 2, 3];
+<span class="boring">assert_eq!(x, [1, 2, 3]);
+</span><span class="boring">}
+</span></code></pre></pre>
 <p>Его нельзя реализовать в виде обычной функции, так как он принимает любое
 количество аргументов. Но мы можем представить его в виде синтаксического
 сокращения для следующего кода</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-let x: Vec&lt;u32&gt; = {
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let x: Vec&lt;u32&gt; = {
     let mut temp_vec = Vec::new();
     temp_vec.push(1);
     temp_vec.push(2);
     temp_vec.push(3);
     temp_vec
 };
-# assert_eq!(x, [1, 2, 3]);
-#}</code></pre></pre>
+<span class="boring">assert_eq!(x, [1, 2, 3]);
+</span><span class="boring">}
+</span></code></pre></pre>
 <p>Мы можем реализовать это сокращение, используя макрос: <sup class="footnote-reference"><a href="#actual">1</a></sup></p>
 <div class="footnote-definition" id="actual"><sup class="footnote-definition-label">1</sup>
 <p>Фактическое определение <code>vec!</code> в libcollections отличается от
 представленного здесь по соображениям эффективности и повторного
 использования.</p>
 </div>
-<pre><pre class="playpen"><code class="language-rust">macro_rules! vec {
+<pre><pre class="playground"><code class="language-rust">macro_rules! vec {
     ( $( $x:expr ),* ) =&gt; {
         {
             let mut temp_vec = Vec::new();
@@ -213,10 +125,10 @@ let x: Vec&lt;u32&gt; = {
         }
     };
 }
-# fn main() {
-#     assert_eq!(vec![1,2,3], [1, 2, 3]);
-# }
-</code></pre></pre>
+<span class="boring">fn main() {
+</span><span class="boring">    assert_eq!(vec![1,2,3], [1, 2, 3]);
+</span><span class="boring">}
+</span></code></pre></pre>
 <p>Ого, тут много нового синтаксиса! Давайте разберем его.</p>
 <pre><code class="language-ignore">macro_rules! vec { ... }
 </code></pre>
@@ -244,7 +156,7 @@ let x: Vec&lt;u32&gt; = {
 <p>За исключением специального синтаксиса сопоставления с образцом, любые другие
 элементы Rust, которые появляются в образце, должны в точности совпадать.
 Например,</p>
-<pre><pre class="playpen"><code class="language-rust">macro_rules! foo {
+<pre><pre class="playground"><code class="language-rust">macro_rules! foo {
     (x =&gt; $e:expr) =&gt; (println!(&quot;mode X: {}&quot;, $e));
     (y =&gt; $e:expr) =&gt; (println!(&quot;mode Y: {}&quot;, $e));
 }
@@ -310,7 +222,7 @@ Rust. Но мы можем соединить кусочки раздробле�
 </ol>
 <p>Этот причудливый макрос иллюстрирует дублирования переменных из внешних уровней
 повторения.</p>
-<pre><pre class="playpen"><code class="language-rust">macro_rules! o_O {
+<pre><pre class="playground"><code class="language-rust">macro_rules! o_O {
     (
         $(
             $x:expr; [ $( $y:expr ),* ]
@@ -351,7 +263,7 @@ int main() {
 приоритет чем сложение. Если вы часто использовали C макросы, вы, наверное,
 знаете стандартные идиомы для устранения этой проблемы, а также пять или шесть
 других проблем. В Rust мы можем не беспокоиться об этом.</p>
-<pre><pre class="playpen"><code class="language-rust">macro_rules! five_times {
+<pre><pre class="playground"><code class="language-rust">macro_rules! five_times {
     ($x:expr) =&gt; (5 * $x);
 }
 
@@ -385,8 +297,8 @@ if (state &gt; 0) {
 <p>Вторая переменная с именем <code>state</code> затеняет первую. Это проблема, потому что
 команде печати требуется обращаться к ним обоим.</p>
 <p>Эквивалентный макрос в Rust обладает требуемым поведением.</p>
-<pre><pre class="playpen"><code class="language-rust"># fn get_log_state() -&gt; i32 { 3 }
-macro_rules! log {
+<pre><pre class="playground"><code class="language-rust"><span class="boring">fn get_log_state() -&gt; i32 { 3 }
+</span>macro_rules! log {
     ($msg:expr) =&gt; {{
         let state: i32 = get_log_state();
         if state &gt; 0 {
@@ -419,7 +331,7 @@ fn main() {
 </code></pre>
 <p>Вместо этого вы должны передавать имя переменной при вызове, тогда она будет
 обладать меткой правильного контекста синтаксиса.</p>
-<pre><pre class="playpen"><code class="language-rust">macro_rules! foo {
+<pre><pre class="playground"><code class="language-rust">macro_rules! foo {
     ($v:ident) =&gt; (let $v = 3);
 }
 
@@ -430,7 +342,7 @@ fn main() {
 </code></pre></pre>
 <p>Это справедливо для <code>let</code> привязок и меток loop, но не для <a href="https://doc.rust-lang.org/stable/reference.html#items">элементов</a>.
 Код, приведенный ниже, компилируется:</p>
-<pre><pre class="playpen"><code class="language-rust">macro_rules! foo {
+<pre><pre class="playground"><code class="language-rust">macro_rules! foo {
     () =&gt; (fn x() { });
 }
 
@@ -444,8 +356,8 @@ fn main() {
 вызовы того макроса, который раскрывается. Эти рекурсивные макросы могут быть
 использованы для обработки древовидного ввода, как показано на этом (упрощенном)
 HTML сокращение:</p>
-<pre><pre class="playpen"><code class="language-rust"># #![allow(unused_must_use)]
-macro_rules! write_html {
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused_must_use)]
+</span>macro_rules! write_html {
     ($w:expr, ) =&gt; (());
 
     ($w:expr, $e:tt) =&gt; (write!($w, &quot;{}&quot;, $e));
@@ -459,8 +371,8 @@ macro_rules! write_html {
 }
 
 fn main() {
-#   // FIXME(#21826)
-    use std::fmt::Write;
+<span class="boring">  // FIXME(#21826)
+</span>    use std::fmt::Write;
     let mut out = String::new();
 
     write_html!(&amp;mut out,
@@ -585,7 +497,7 @@ extern crate baz;
 <p>Чтобы загрузить макросы из контейнера <em>без</em> компоновки контейнера в выходной
 артефакт, можно использовать атрибут <code>#[no_link]</code>.</p>
 <p>Например:</p>
-<pre><pre class="playpen"><code class="language-rust">macro_rules! m1 { () =&gt; (()) }
+<pre><pre class="playground"><code class="language-rust">macro_rules! m1 { () =&gt; (()) }
 
 // здесь видны: m1
 
@@ -614,8 +526,8 @@ mod bar {
 }
 
 // здесь видны: m1, m3, m4
-# fn main() { }
-</code></pre></pre>
+<span class="boring">fn main() { }
+</span></code></pre></pre>
 <p>Когда эта библиотека загружается с помощью <code>#[macro_use] extern crate</code>, виден
 только макрос <code>m2</code>.</p>
 <p>Атрибуты, относящиеся к макросам,
@@ -623,7 +535,7 @@ mod bar {
 <h1><a class="header" href="#Переменная-crate" id="Переменная-crate">Переменная <code>$crate</code></a></h1>
 <p>Если макрос используется в нескольких контейнерах, всё становится ещё
 сложнее. Допустим, <code>mylib</code> определяет</p>
-<pre><pre class="playpen"><code class="language-rust">pub fn increment(x: u32) -&gt; u32 {
+<pre><pre class="playground"><code class="language-rust">pub fn increment(x: u32) -&gt; u32 {
     x + 1
 }
 
@@ -636,8 +548,8 @@ macro_rules! inc_a {
 macro_rules! inc_b {
     ($x:expr) =&gt; ( ::mylib::increment($x) )
 }
-# fn main() { }
-</code></pre></pre>
+<span class="boring">fn main() { }
+</span></code></pre></pre>
 <p><code>inc_a</code> работает только внутри <code>mylib</code>, а <code>inc_b</code> — только снаружи. Более того,
 <code>inc_b</code> сломается, если пользователь импортирует <code>mylib</code> под другим именем.</p>
 <p>В Rust пока нет гигиеничных ссылок на контейнеры, но есть простой способ обойти
@@ -645,12 +557,12 @@ macro_rules! inc_b {
 макроса, импортированного из контейнера <code>foo</code>. А когда макрос определён и
 используется в одном и том же контейнере, <code>$crate</code> станет пустой. Это означает,
 что мы можем написать</p>
-<pre><pre class="playpen"><code class="language-rust">#[macro_export]
+<pre><pre class="playground"><code class="language-rust">#[macro_export]
 macro_rules! inc {
     ($x:expr) =&gt; ( $crate::increment($x) )
 }
-# fn main() { }
-</code></pre></pre>
+<span class="boring">fn main() { }
+</span></code></pre></pre>
 <p>чтобы определить один макрос, который будет работать и внутри, и снаружи
 библиотеки. Имя функции раскроется или в <code>::increment</code>, или в
 <code>::mylib::increment</code>.</p>
@@ -666,10 +578,10 @@ macro_rules! inc {
 <a href="http://esolangs.org/wiki/Bitwise_Cyclic_Tag">Bitwise Cyclic Tag</a>. Стоит
 заметить, что мы не рекомендуем такой подход, а просто иллюстрируем возможности
 макросов.</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-macro_rules! bct {
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>macro_rules! bct {
     // cmd 0:  d ... =&gt; ...
     (0, $($ps:tt),* ; $_d:tt)
         =&gt; (bct!($($ps),*, 0 ; ));
@@ -690,7 +602,8 @@ macro_rules! bct {
     ( $($ps:tt),* ; )
         =&gt; (());
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>В качестве упражнения предлагаем читателю определить ещё один макрос, чтобы
 уменьшить степень дублирования кода в определении выше.</p>
 <h1><a class="header" href="#Распространённые-макросы" id="Распространённые-макросы">Распространённые макросы</a></h1>
@@ -698,34 +611,37 @@ macro_rules! bct {
 <h2><a class="header" href="#panic" id="panic">panic!</a></h2>
 <p>Этот макрос вызывает панику текущего потока. Вы можете указать сообщение, с
 которым поток завершится:</p>
-<pre><pre class="playpen"><code class="language-rust no_run">
-# #![allow(unused_variables)]
-#fn main() {
-panic!(&quot;о нет!&quot;);
-#}</code></pre></pre>
+<pre><pre class="playground"><code class="language-rust no_run">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>panic!(&quot;о нет!&quot;);
+<span class="boring">}
+</span></code></pre></pre>
 <h2><a class="header" href="#vec" id="vec">vec!</a></h2>
 <p>Макрос <code>vec!</code> используется по всей книге, поэтому вы наверняка уже видели его.
 Он упрощает создание <code>Vec&lt;T&gt;</code>:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-let v = vec![1, 2, 3, 4, 5];
-#}</code></pre></pre>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let v = vec![1, 2, 3, 4, 5];
+<span class="boring">}
+</span></code></pre></pre>
 <p>Он также позволяет вам создавать векторы с повторяющимися значениями. Например,
 вот сто нолей:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-let v = vec![0; 100];
-#}</code></pre></pre>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let v = vec![0; 100];
+<span class="boring">}
+</span></code></pre></pre>
 <h2><a class="header" href="#assert-and-assert_eq" id="assert-and-assert_eq">assert! and assert_eq!</a></h2>
 <p>Эти два макроса используются в тестах. <code>assert!</code> принимает логическое значение.
 <code>assert_eq!</code> принимает два значения и проверяет, что они равны. <code>true</code>
 засчитывается как успех, а <code>false</code> вызывает панику и проваливает тест. Вот так:</p>
-<pre><pre class="playpen"><code class="language-rust no_run">
-# #![allow(unused_variables)]
-#fn main() {
-// Работает!
+<pre><pre class="playground"><code class="language-rust no_run">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// Работает!
 
 assert!(true);
 assert_eq!(5, 3 + 2);
@@ -734,27 +650,29 @@ assert_eq!(5, 3 + 2);
 
 assert!(5 &lt; 3);
 assert_eq!(5, 3);
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <h2><a class="header" href="#try" id="try">try!</a></h2>
 <p><code>try!</code> используется для обработки ошибок. Он принимает нечто возвращающее
 <code>Result&lt;T, E&gt;</code> и возвращает <code>T</code> если было возвращено <code>Ok&lt;T&gt;</code>; иначе он делает
 возврат из функции со значением <code>Err(E)</code>. Вроде такого:</p>
-<pre><pre class="playpen"><code class="language-rust no_run">
-# #![allow(unused_variables)]
-#fn main() {
-use std::fs::File;
+<pre><pre class="playground"><code class="language-rust no_run">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use std::fs::File;
 
 fn foo() -&gt; std::io::Result&lt;()&gt; {
     let f = try!(File::create(&quot;foo.txt&quot;));
 
     Ok(())
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Такой код читается легче, чем этот:</p>
-<pre><pre class="playpen"><code class="language-rust no_run">
-# #![allow(unused_variables)]
-#fn main() {
-use std::fs::File;
+<pre><pre class="playground"><code class="language-rust no_run">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use std::fs::File;
 
 fn foo() -&gt; std::io::Result&lt;()&gt; {
     let f = File::create(&quot;foo.txt&quot;);
@@ -766,30 +684,33 @@ fn foo() -&gt; std::io::Result&lt;()&gt; {
 
     Ok(())
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <h2><a class="header" href="#unreachable" id="unreachable">unreachable!</a></h2>
 <p>Этот макрос применяется, когда вы хотите пометить какой-то код, который никогда
 не должен исполняться:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-if false {
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>if false {
     unreachable!();
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Иногда вам придётся определять ветви условных конструкций, которые точно никогда
 не исполнятся. В таком случае, используйте этот макрос, чтобы в случае ошибки
 программа запаниковала:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-let x: Option&lt;i32&gt; = None;
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let x: Option&lt;i32&gt; = None;
 
 match x {
     Some(_) =&gt; unreachable!(),
     None =&gt; println!(&quot;Я знаю, что x — это None!&quot;),
 }
-#}</code></pre></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <h2><a class="header" href="#unimplemented" id="unimplemented">unimplemented!</a></h2>
 <p>Макрос <code>unimplemented!</code> можно использовать, когда вы хотите, чтобы ваш код
 прошёл проверку типов, но пока не хотите реализовывать его настоящую логику.
@@ -805,85 +726,8 @@ match x {
 Rust. Иногда плагины расширения синтаксиса называются <em>процедурными макросами</em>.</p>
 
                     </main>
-
-                    <nav class="nav-wrapper" aria-label="Page navigation">
-                        <!-- Mobile navigation buttons -->
-                        
-                            <a rel="prev" href="deref-coercions.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
-                            </a>
-                        
-
-                        
-                            <a rel="next" href="raw-pointers.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        
-
-                        <div style="clear: both"></div>
-                    </nav>
                 </div>
             </div>
-
-            <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
-                    <a href="deref-coercions.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
-                    </a>
-                
-
-                
-                    <a href="raw-pointers.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
-                
-            </nav>
-
         </div>
-
-        
-
-        
-        <!-- Google Analytics Tag -->
-        <script type="text/javascript">
-            var localAddrs = ["localhost", "127.0.0.1", ""];
-
-            // make sure we don't activate google analytics if the developer is
-            // inspecting the book locally...
-            if (localAddrs.indexOf(document.location.hostname) === -1) {
-                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-                ga('create', 'UA-142155799-10', 'auto');
-                ga('send', 'pageview');
-            }
-        </script>
-        
-
-        
-        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
-        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
-        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
-        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
-        
-
-        
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
-        
-
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
-
-        <!-- Custom JS scripts -->
-        
-
-        
-
     </body>
 </html>
